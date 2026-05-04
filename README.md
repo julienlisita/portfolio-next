@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💼 Portfolio — Julien Lisita
 
-## Getting Started
+Site portfolio de développeur web freelance, conçu pour présenter mes services, mes réalisations et proposer des solutions web adaptées aux indépendants, artisans et petites entreprises.
 
-First, run the development server:
+## 🚀 Objectif
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Ce site a pour but de :
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Présenter mon activité de développeur web
+- Mettre en avant mes services (sites vitrines, outils sur mesure, maintenance)
+- Montrer des exemples de projets concrets
+- Générer des demandes de contact
+- Offrir une base évolutive pour de futurs projets
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧩 Fonctionnalités
 
-## Learn More
+- Site vitrine optimisé pour la conversion
+- Pages SEO (services, tarifs, réalisations…)
+- Structure claire orientée utilisateur
+- Design responsive (mobile / desktop)
+- Animations légères avec Framer Motion
+- Formulaire de contact
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Stack technique
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework** : Next.js (App Router)
+- **UI** : React + Tailwind CSS
+- **Styles** : Design system basé sur des tokens CSS
+- **Animations** : Framer Motion
+- **SEO** : Metadata par page (Next.js)
+- **Déploiement** : Vercel
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧠 Architecture
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le projet suit une organisation claire :
+
+```txt
+src/
+  app/            → pages (App Router)
+  components/     → composants UI & sections
+  styles/         → styles CSS (tokens + composants)
+  data/           → contenus (FAQ, projets…)

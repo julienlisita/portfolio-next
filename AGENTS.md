@@ -1,5 +1,10 @@
 <!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+This project follows strict conventions:
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+- Use Tailwind only for layout (spacing, flex, grid, responsive)
+- Use CSS files for visual styles (colors, borders, hover states)
+- Use design tokens defined in globals.css
+- Do not add backend, auth, or database unless explicitly requested
+- Use existing components when possible
+- Keep pages simple and SEO-focused
 <!-- END:nextjs-agent-rules -->
