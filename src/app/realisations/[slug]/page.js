@@ -1,7 +1,9 @@
+import RealisationDetailScreen from "@/screens/projects/realisations/RealisationDetailScreen";
+
+export const metadata = {
+  title: "Realisation",
+};
+
 export default function ProjectDetailPage() {
-  return (
-    <main>
-      <h1>Réalisation</h1>
-    </main>
-  );
+  return <RealisationDetailScreen />;
 }

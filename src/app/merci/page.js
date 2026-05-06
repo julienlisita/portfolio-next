@@ -1,7 +1,9 @@
+import ThanksScreen from "@/screens/ThanksScreen";
+
+export const metadata = {
+  title: "Merci",
+};
+
 export default function MerciPage() {
-  return (
-    <main>
-      <h1>Merci</h1>
-    </main>
-  );
+  return <ThanksScreen />;
 }

@@ -1,9 +1,9 @@
+import HomeScreen from "@/screens/HomeScreen";
+
+export const metadata = {
+  title: "Accueil",
+};
+
 export default function HomePage() {
-
-  return (
-    <main>
-      <h1>Julien Lisita — Création de sites web à Bordeaux</h1>
-    </main>
-  );
-
+  return <HomeScreen />;
 }

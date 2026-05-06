@@ -1,7 +1,9 @@
+import BlogArticleScreen from "@/screens/blog/BlogArticleScreen";
+
+export const metadata = {
+  title: "Article",
+};
+
 export default function ArticlePage() {
-  return (
-    <main>
-      <h1>Article</h1>
-    </main>
-  );
+  return <BlogArticleScreen />;
 }

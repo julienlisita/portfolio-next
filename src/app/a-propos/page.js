@@ -1,7 +1,9 @@
+import AboutScreen from "@/screens/AboutScreen";
+
+export const metadata = {
+  title: "A propos",
+};
+
 export default function AboutPage() {
-  return (
-    <main>
-      <h1>À propos</h1>
-    </main>
-  );
+  return <AboutScreen />;
 }

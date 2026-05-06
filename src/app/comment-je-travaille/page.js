@@ -1,7 +1,9 @@
+import HowIWorkScreen from "@/screens/HowIWorkScreen";
+
+export const metadata = {
+  title: "Comment je travaille",
+};
+
 export default function HowIWorkPage() {
-  return (
-    <main>
-      <h1>Comment je travaille</h1>
-    </main>
-  );
+  return <HowIWorkScreen />;
 }

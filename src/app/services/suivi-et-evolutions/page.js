@@ -1,7 +1,9 @@
+import MaintenanceScreen from "@/screens/services/MaintenanceScreen";
+
+export const metadata = {
+  title: "Suivi et evolutions",
+};
+
 export default function MaintenancePage() {
-  return (
-    <main>
-      <h1>Suivi et évolutions</h1>
-    </main>
-  );
+  return <MaintenanceScreen />;
 }

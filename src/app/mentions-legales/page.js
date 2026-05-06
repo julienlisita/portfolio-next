@@ -1,7 +1,9 @@
+import LegalAndPrivacyScreen from "@/screens/LegalAndPrivacyScreen";
+
+export const metadata = {
+  title: "Mentions legales",
+};
+
 export default function LegalAndPrivacyPage() {
-  return (
-    <main>
-      <h1>Mentions légales</h1>
-    </main>
-  );
+  return <LegalAndPrivacyScreen />;
 }

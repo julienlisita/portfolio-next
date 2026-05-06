@@ -1,7 +1,5 @@
+import NotFoundScreen from "@/screens/NotFoundScreen";
+
 export default function NotFoundPage() {
-  return (
-    <main>
-      <h1>Page introuvable</h1>
-    </main>
-  );
+  return <NotFoundScreen />;
 }

@@ -1,7 +1,9 @@
+import PricingScreen from "@/screens/PricingScreen";
+
+export const metadata = {
+  title: "Tarifs",
+};
+
 export default function PricingPage() {
-  return (
-    <main>
-      <h1>Tarifs</h1>
-    </main>
-  );
+  return <PricingScreen />;
 }

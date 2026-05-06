@@ -1,7 +1,9 @@
+import ServicesScreen from "@/screens/services/ServicesScreen";
+
+export const metadata = {
+  title: "Services",
+};
+
 export default function ServicesPage() {
-  return (
-    <main>
-      <h1>Services</h1>
-    </main>
-  );
+  return <ServicesScreen />;
 }

@@ -1,7 +1,9 @@
+import CustomFeaturesScreen from "@/screens/services/CustomFeaturesScreen";
+
+export const metadata = {
+  title: "Fonctionnalites sur mesure",
+};
+
 export default function CustomFeaturesPage() {
-  return (
-    <main>
-      <h1>Fonctionnalités sur mesure</h1>
-    </main>
-  );
+  return <CustomFeaturesScreen />;
 }

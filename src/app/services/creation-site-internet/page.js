@@ -1,7 +1,9 @@
+import WebsiteCreationScreen from "@/screens/services/WebsiteCreationScreen";
+
+export const metadata = {
+  title: "Creation de site internet",
+};
+
 export default function WebsiteCreationPage() {
-  return (
-    <main>
-      <h1>Création de site internet</h1>
-    </main>
-  );
+  return <WebsiteCreationScreen />;
 }
