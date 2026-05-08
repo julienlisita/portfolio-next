@@ -17,7 +17,7 @@ export default function SiteLayout({ children }) {
         className={
           (
             isHome
-              ? "scroll-smooth bg-[#222222] pb-16 sm:pb-20 lg:pb-24"
+              ? "bg-[#222222] pb-16 sm:pb-20 lg:pb-24"
               : "px-4 sm:px-8 lg:px-24 xl:px-32 bg-[#222222] pt-14 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24 text-gray-200"
           ) + " grow"
         }
