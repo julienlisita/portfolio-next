@@ -1,0 +1,65 @@
+/* src/components/home/LandingSection.module.css */
+
+/* Titre H1 */
+.neonTitleStrong {
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.35),
+    0 0 6px rgba(90,200,250,.25),
+    0 0 14px rgba(90,200,250,.15);
+}
+
+/* Sous-titre H2 */
+.subtitleOutline {
+  color: #ffffff;
+  text-shadow:
+    0 0 0 #0e0e0e,
+    0 0 0 #0e0e0e,
+    0 0 0 #0e0e0e,
+    0 2px 14px rgba(0,0,0,.35);
+}
+
+.subtitleNeonBlue {
+  color: #5AC8FA;
+  text-shadow:
+    0 0 8px rgba(90,200,250,.5),
+    0 0 18px rgba(0,122,255,.35);
+}
+
+.subtitleGradient {
+  background: linear-gradient(90deg, #5AC8FA 0%, #007AFF 40%, #9B59B6 75%, #FF66B2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(90,200,250,.25);
+}
+
+/* Tagline */
+.tagline {
+  color: #ECECEC;
+  line-height: 1.5;
+}
+
+/* Flèche scroll animée */
+@keyframes jlPulseY {
+  0%   { transform: translateY(0);    opacity: .85; }
+  50%  { transform: translateY(6px);  opacity: 1;   }
+  100% { transform: translateY(0);    opacity: .85; }
+}
+
+.pulseArrow {
+  animation: jlPulseY 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(90,200,250,.45));
+  transition: transform .2s ease;
+}
+
+.group:hover .pulseArrow {
+  animation-play-state: paused;
+  transform: translateY(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulseArrow {
+    animation: none !important;
+    transform: none !important;
+  }
+}
