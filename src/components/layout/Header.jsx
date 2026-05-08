@@ -105,7 +105,7 @@ export default function Header() {
           <div className="flex items-center gap-2">
             {/* CTA Contact – taille maîtrisée */}
             <Button
-              to="/contact"
+              href="/contact"
               variant="primary" size="sm"
               aria-label="Me contacter"
             >

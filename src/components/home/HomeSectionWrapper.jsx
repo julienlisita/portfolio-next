@@ -19,7 +19,7 @@ export default function HomeSectionWrapper({ id, title, children, link, classNam
           {/* Lien */}
           {link && (
             <div className="flex justify-center items-center">
-              <Button to={link.href}>{link.text}</Button>
+              <Button href={link.href}>{link.text}</Button>
             </div>
           )}
         </div>

@@ -1,5 +1,7 @@
 // src/components/common/CtaFinal.jsx
 
+'use client';
+
 import { motion } from "framer-motion";
 import Button from "../UI/Button";
 import Section from "../layout/Section";
@@ -33,11 +35,11 @@ export default function CtaFinal({title, tagline, primary, secondary}) {
          {tagline}
         </p>
         <div className="flex flex-row gap-4 flex-wrap justify-center  items-center">
-            <Button to={primary.href} variant="primary" className="w-auto">
+            <Button href={primary.href} variant="primary" className="w-auto">
             {primary.text}
             </Button>
             {secondary && (
-            <Button to={secondary.href} variant="secondary" className="w-auto">
+            <Button href={secondary.href} variant="secondary" className="w-auto">
                 {secondary.text}
             </Button>
             )}

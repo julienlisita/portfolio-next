@@ -154,7 +154,7 @@ const spotlightStyleDesktop = {
               {...fade}
               {...(!reduce && { transition: { ...fade.transition, delay: 0.3 } })}
             >
-              <Button to="/contact" variant="primary">
+              <Button href="/contact" variant="primary">
                 Discutons de votre projet
               </Button>
             </motion.div>

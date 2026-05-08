@@ -2,7 +2,7 @@
 
 import HomeSectionWrapper from "./HomeSectionWrapper";
 import { projects } from "../../data/projectsData";
-import ProjectCard from "../../screens/portfolio/ProjectCard";
+import ProjectCard from "../portfolio/ProjectCard";
 
 export default function ProjectsPreview() {
   const featuredSlugs = ["ccs", "lumiere-darcachon", "thomas-delaunay"];
