@@ -1,9 +1,9 @@
-import RealisationDetailScreen from "@/screens/projects/realisations/RealisationDetailScreen";
+import PortfolioDetailScreen from "@/screens/portfolio/RealisationDetailScreen";
 
 export const metadata = {
   title: "Realisation",
 };
 
 export default function ProjectDetailPage() {
-  return <RealisationDetailScreen />;
+  return <PortfolioDetailScreen />;
 }

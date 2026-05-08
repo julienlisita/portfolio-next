@@ -86,7 +86,7 @@ export default function ProjectCard({
         {/* Bouton */}
         <div className="mt-4 flex justify-center">
           <Button
-           to={`/realisations/${slug}`} variant="text">
+           href={`/realisations/${slug}`} variant="text">
             Voir le projet ›
           </Button>
         </div>
