@@ -3,7 +3,7 @@
 'use client';
 
 import { Monitor, Layers, LifeBuoy } from "lucide-react";
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "../services/ServiceCard";
 import HomeSectionWrapper from "./HomeSectionWrapper";
 import { motion } from "framer-motion";
 

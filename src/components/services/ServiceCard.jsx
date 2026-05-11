@@ -1,4 +1,4 @@
-// ServiceCard.jsx
+// src/components/services/ServiceCard.jsx
 
 import Button from "../UI/Button";
 
@@ -42,7 +42,7 @@ export default function ServiceCard({
 
         {link && (
           <div className="mt-4 flex justify-center">
-            <Button to={link} variant="text">
+            <Button href={link} variant="text">
               Découvrir ›
             </Button>
           </div>
