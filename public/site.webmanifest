@@ -1,0 +1,14 @@
+{
+  "name": "Julien Lisita",
+  "short_name": "Julien Lisita",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#222222",
+  "background_color": "#222222",
+  "display": "standalone"
+}
