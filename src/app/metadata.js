@@ -1,4 +1,4 @@
-// app/metadata.js
+// src/app/metadata.js
 
 export const metadata = {
   metadataBase: new URL("https://www.julienlisita.com"),
