@@ -5,7 +5,9 @@ import { projects } from "@/data/projectsData";
 
 export async function generateMetadata({ params }) {
 
-  const project = projects.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+
+  const project = projects.find((p) => p.slug === slug);
   if (!project) {
     return {
       title: "Réalisation introuvable",

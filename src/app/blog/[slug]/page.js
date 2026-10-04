@@ -5,7 +5,9 @@ import { articles } from "@/data/articles";
 
 export async function generateMetadata({ params }) {
 
-  const article = articles.find((a) => a.slug === params.slug);
+  const { slug } = await params;
+
+  const article = articles.find((p) => p.slug === slug);
   if (!article) {
     return {
       title: "Article introuvable",
