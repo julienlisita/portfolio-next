@@ -15,15 +15,15 @@ export default function sitemap() {
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/services/site-vitrine`,
+      url: `${baseUrl}/services/creation-site-internet`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/services/fonctionnalites-sur-mesure`,
+      url: `${baseUrl}/services/creation-site-internet-fonctionnalites-sur-mesure`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/services/maintenance`,
+      url: `${baseUrl}/services/suivi-et-evolutions`,
       lastModified: new Date(),
     },
     {
