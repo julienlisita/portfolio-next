@@ -57,7 +57,7 @@ export default function sitemap() {
     },
       ...articles.map((article) => ({
       url: `${baseUrl}/blog/${article.slug}`,
-      lastModified: new Date(article.date ?? new Date()),
+      lastModified: new Date(article.date),
     })),
   ];
 }

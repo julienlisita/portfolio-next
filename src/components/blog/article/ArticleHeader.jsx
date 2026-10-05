@@ -1,5 +1,6 @@
 // src/components/blog/article/ArticleHeader.jsx
 
+import { formatDate } from "@/utils/formatDate";
 import PageTitle from "../../UI/PageTitle";
 
 export default function ArticleHeader({ title, date, category }) {
@@ -8,7 +9,7 @@ export default function ArticleHeader({ title, date, category }) {
       <PageTitle>{title}</PageTitle>
 
       <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-400">
-        {date && <span>{date}</span>}
+        {date && <span>{formatDate(date)}</span>}
 
         {category && (
           <>
