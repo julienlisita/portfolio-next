@@ -1,27 +1,18 @@
 // src/screens/portfolio/PortfolioDetailPage.jsx
 
-'use client';
-
 import PageTitle from "../../components/UI/PageTitle";
-import { projects } from "../../data/projectsData";
 import Section from "../../components/layout/Section";
 import CtaFinal from "../../components/patterns/CtaFinal";
 
-import ProjectNotFound from "../../components/portfolio/projectDetail/ProjectNotFound";
 import ProjectHero from "../../components/portfolio/projectDetail/ProjectHero";
 import ProjectTextSection from "../../components/portfolio/projectDetail/ProjectTextSection";
 import ProjectListSection from "../../components/portfolio/projectDetail/ProjectListSection";
 import ProjectStackSection from "../../components/portfolio/projectDetail/ProjectStackSection";
 import ProjectLinksSection from "../../components/portfolio/projectDetail/ProjectLinksSection";
-import { useParams } from "next/navigation";
+
 import Link from "next/link";
 
-export default function PortfolioDetailPage() {
-  const { slug } = useParams();
-  const project = projects.find((p) => p.slug === slug);
-
-  if (!project) return <ProjectNotFound />;
-
+export default function PortfolioDetailScreen({ project }) {
   return (
     <>
       <PageTitle>{project.title}</PageTitle>
