@@ -17,8 +17,8 @@ const jsonLd = {
   telephone: "+33623000449",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Mérignac",
-    postalCode: "33700",
+    addressLocality: "Bordeaux",
+    postalCode: "33000",
     addressCountry: "FR",
   },
   areaServed: [
@@ -45,6 +45,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" data-scroll-behavior="smooth">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
         <SiteLayout>{children}</SiteLayout>
       </body>
     </html>
