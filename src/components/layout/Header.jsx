@@ -1,6 +1,7 @@
 // src/components/layout/Header.jsx
 
 'use client';
+import Image from "next/image";
 
 import { useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -67,13 +68,13 @@ export default function Header() {
         >
           {/* Logo */}
           <Link href="/" aria-label="Retour à l’accueil" className="flex items-center gap-2 shrink-0">
-            <img
-              src="/assets/logos/site/logo.png"
-              alt="Logo Julien Lisita"
-              className="h-9 sm:h-10 w-auto"
-              loading="eager"
-              decoding="async"
-            />
+          <Image
+            src="/assets/logos/site/logo.png"
+            alt="Logo Julien Lisita"
+            width={120}
+            height={120}
+            className="h-9 sm:h-10 w-auto"
+          />
             <span className="text-sm sm:text-base font-medium text-gray-100">
               Julien Lisita
             </span>

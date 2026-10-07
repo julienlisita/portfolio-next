@@ -1,18 +1,21 @@
 // src/components/portfolio/projectDetail/ProjectHero.jsx
 
 import Section from "../../layout/Section";
+import Image from "next/image";
 
 export default function ProjectHero({ project }) {
   return (
     <Section>
       <div className="flex justify-center">
-        <img
-          src={project.heroImage}
-          alt={project.title}
-          className="w-full max-w-[820px] object-cover rounded-lg"
-          loading="lazy"
-          decoding="async"
-        />
+      <Image
+        src={project.heroImage}
+        alt={`Aperçu du projet ${project.title}`}
+        width={820}
+        height={615}
+        className="w-full max-w-[820px] h-auto rounded-lg"
+        sizes="(max-width: 820px) 100vw, 820px"
+        loading="eager"
+      />
       </div>
 
       {project.clientType && (

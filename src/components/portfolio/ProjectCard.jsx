@@ -4,6 +4,7 @@
 
 import { motion } from "framer-motion";
 import Button from "../UI/Button";
+import Image from "next/image";
 
 export default function ProjectCard({
   slug,
@@ -37,22 +38,21 @@ export default function ProjectCard({
       className="w-full rounded-xl bg-[#2a2a2a] overflow-hidden flex flex-col"
     >
       {/* Image */}
-      <div className="relative">
-        <img
-          src={cardImage}
-          alt={`Aperçu du projet ${title}`}
-          className="h-48 w-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
-
-        {/* Badge catégorie (optionnel) */}
-        {categoryLabel && (
-          <span className="absolute top-3 left-3 text-xs bg-black/60 text-white px-2 py-1 rounded-md">
-            {categoryLabel}
-          </span>
-        )}
-      </div>
+        <div className="relative h-48 w-full">
+          <Image
+            src={cardImage}
+            alt={`Aperçu du projet ${title}`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+          {/* Badge catégorie (optionnel) */}
+          {categoryLabel && (
+            <span className="absolute top-3 left-3 text-xs bg-black/60 text-white px-2 py-1 rounded-md">
+              {categoryLabel}
+            </span>
+          )}
+        </div>
 
       {/* Contenu */}
       <div className="p-4 flex flex-col flex-1">

@@ -1,6 +1,7 @@
 // src/components/home/AboutPreview.jsx
 
 import HomeSectionWrapper from "./HomeSectionWrapper";
+import Image from "next/image";
 
 export default function AboutPreview() {
   return (
@@ -12,13 +13,14 @@ export default function AboutPreview() {
       <div className="flex flex-col sm:flex-row items-start justify-between gap-6 sm:gap-10">
         {/* Photo */}
         <div className="w-full sm:w-2/5 lg:w-1/3 rounded-2xl overflow-hidden relative">
-          <img
-            src="/assets/images/homepage-profile.avif"
-            alt="Julien Lisita, développeur web freelance à Bordeaux"
-            className="w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
-          />
+        <Image
+          src="/assets/images/homepage-profile.avif"
+          alt="Julien Lisita, développeur web freelance à Bordeaux"
+          width={800}
+          height={800}
+          className="w-full h-auto object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 40vw, 33vw"
+        />
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#222222] to-transparent" />
         </div>
 

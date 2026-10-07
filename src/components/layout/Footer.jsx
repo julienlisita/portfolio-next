@@ -1,5 +1,6 @@
 // src/components/layout/Footer.jsx
 
+import Image from "next/image";
 import Link from "next/link";
 import { LuLinkedin, LuGithub, LuFacebook } from "react-icons/lu";
 
@@ -14,13 +15,13 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-8">
           {/* Logo */}
           <div className="flex items-center gap-2 shrink-0">
-            <img
-              src="/assets/logos/site/logo.png"
-              alt="Logo Julien Lisita"
-              className="h-10 sm:h-11 lg:h-12 w-auto"
-              loading="lazy"
-              decoding="async"
-            />
+          <Image
+            src="/assets/logos/site/logo.png"
+            alt="Logo Julien Lisita"
+            width={120}
+            height={120}
+            className="h-10 sm:h-11 lg:h-12 w-auto"
+          />
             <span className="text-sm sm:text-base font-medium text-gray-100 whitespace-nowrap">
               Julien Lisita
             </span>
