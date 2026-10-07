@@ -97,7 +97,7 @@ const spotlightStyleDesktop = {
             "
           >
             <motion.img
-              src="/assets/logos/site/logo-blur.png"
+              src="/assets/logos/site/logo.png"
               alt="Logo initiales Julien Lisita"
               width={112}
               height={112}
