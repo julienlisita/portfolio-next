@@ -52,7 +52,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-3 left-0 right-0 z-50">
-      <div className="mx-auto max-w-screen-7xl px-3 sm:px-4">
+      <div className="mx-auto max-w-screen-xl px-3 sm:px-4">
         {/* Capsule flottante */}
         <div
           className="

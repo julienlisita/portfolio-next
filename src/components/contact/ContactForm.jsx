@@ -10,7 +10,16 @@ export default function ContactForm() {
     <form
       name="contact"
       action={sendContact}
-      className="space-y-6"
+      className="
+        w-full max-w-2xl
+        bg-[#2a2a2a]
+        rounded-2xl
+        p-8
+        space-y-6
+        transition-all duration-300
+        focus-within:shadow-[0_0_14px_rgba(0,122,255,0.35)]
+        focus-within:border-[#5AC8FA]
+      "
     >
       {/* Honeypot anti-spam */}
       <input
