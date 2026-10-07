@@ -38,12 +38,52 @@ const jsonLd = {
   ],
 };
 
+import {
+  Inter,
+  Poppins,
+  Space_Grotesk,
+  JetBrains_Mono,
+} from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-inter",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-poppins",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-space-grotesk",
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-jetbrains-mono",
+});
+
 export { metadata, viewport };
 
 export default function RootLayout({ children }) {
 
   return (
-    <html lang="fr" data-scroll-behavior="smooth">
+    <html
+      lang="fr"
+      data-scroll-behavior="smooth"
+      className={`
+        ${inter.variable}
+        ${poppins.variable}
+        ${spaceGrotesk.variable}
+        ${jetBrainsMono.variable}
+      `}
+    >
       <body>
         <script
           type="application/ld+json"
