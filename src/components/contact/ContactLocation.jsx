@@ -8,7 +8,7 @@ export default function ContactLocation() {
       </h3>
 
       <div className="space-y-2 text-gray-200 leading-relaxed">
-        <p>Mérignac - Bordeaux Métropole</p>
+        <p>Basé à Bordeaux</p>
         <p>À distance partout en France</p>
         <p>Déplacements possibles en Gironde sur demande</p>
       </div>

@@ -32,8 +32,7 @@ export default function HomeScreen() {
       <HomeSectionWrapper className="text-base sm:text-lg lg:text-xl">
         <p className="flex flex-col items-center text-center gap-2">
           <MapPin className="text-[#007AFF] mx-auto" size={32} />
-          <span>Mérignac</span>
-          <span>Disponible sur Bordeaux Métropole & à distance</span>
+          <span>Bordeaux & à distance</span>
         </p>
       </HomeSectionWrapper>
     </>
