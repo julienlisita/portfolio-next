@@ -11,29 +11,29 @@ export default function ServicesPreview() {
   const services = [
     {
       title: "Un site clair pour attirer des clients",
-      subtitle: "Site vitrine & visibilité",
+      subtitle: "Site vitrine, performance & référencement",
       icon: <Monitor />,
       description:
-        "Un site moderne pour présenter votre activité et faciliter les demandes de contact.",
+        "Un site professionnel, rapide et optimisé pour présenter votre activité, inspirer confiance et améliorer votre visibilité sur Google.",
       color: ["#5AC8FA", "#007AFF"],
       link: "/services/creation-site-internet",
     },
     {
       title: "Des outils pour gagner du temps",
-      subtitle: "Espace admin, réservation,  outils métier",
+      subtitle: "Applications web & outils métier",
       icon: <Layers />,
       description:
-        "Des fonctionnalités utiles pour simplifier votre organisation et éviter les tâches répétitives.",
-      color: ["#007AFF", "#9B59B6"],
+        "Des solutions sur mesure pour simplifier votre organisation : réservation, espace client, back-office, gestion interne ou processus spécifique.",
+      color: ["#007AFF", "#4A64D8"],
       link: "/services/creation-site-internet-fonctionnalites-sur-mesure",
     },
     {
       title: "Un suivi pour rester fiable", 
-      subtitle: "Maintenance, sécurité, évolutions",
+      subtitle: "Maintenance & évolutions",
       icon: <LifeBuoy />,
       description:
-        "Un accompagnement pour garder votre site rapide, à jour et prêt à évoluer avec votre activité.",
-      color: ["#9B59B6", "#FF66B2"],
+        "Un accompagnement pour maintenir votre site ou application fiable, sécurisé et à jour, et le faire évoluer selon vos besoins.",
+      color: ["#4A64D8", "#9B59B6"],
       link: "/services/suivi-et-evolutions",
     },
   ];
@@ -45,7 +45,7 @@ export default function ServicesPreview() {
       link={{ href: "/services", text: "Voir les services ›" }}
     >
       <p className="text-base sm:text-lg lg:text-xl">
-         Selon votre besoin, je vous aide à créer un site clair, ajouter des fonctionnalités utiles ou faire évoluer votre présence en ligne dans la durée.
+         Selon votre besoin, je vous accompagne de la création d’un site professionnel clair et rapide jusqu’au développement d’applications et d’outils sur mesure pour simplifier votre activité.
       </p>
 
       <div className="w-full grid gap-6 sm:gap-7 lg:gap-8 md:grid-cols-2 lg:grid-cols-3">

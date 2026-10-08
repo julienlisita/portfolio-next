@@ -6,29 +6,31 @@ export default function AboutRole() {
   return (
     <Section title="Ce que je fais" className="text-base sm:text-lg lg:text-xl">
       <p>
-        J’accompagne les artisans, indépendants, commerces et petites entreprises
-        dans la création de sites web professionnels, clairs et efficaces.
+        J’accompagne les indépendants, artisans et entreprises dans la conception
+        de solutions web adaptées à leurs besoins, du site professionnel à
+        l’application métier sur mesure.
       </p>
 
       <p className="mt-4">Selon votre activité et vos objectifs, je peux réaliser :</p>
 
       <ul className="list-disc ml-6 mt-4 space-y-2 text-gray-300">
         <li>
-          des sites vitrines pour présenter votre activité, vos services et
-          faciliter la prise de contact
+         des sites professionnels clairs, rapides et optimisés pour présenter
+          votre activité, développer votre visibilité et faciliter la prise de contact
         </li>
         <li>
-          des sites avec des fonctionnalités sur mesure : réservation en ligne,
-          formulaires avancés, espace administrable, candidatures…
+         des applications et outils sur mesure : réservation, espace client,
+          back-office, tableau de bord, gestion interne ou processus métier spécifique
         </li>
         <li>
-          la mise en ligne complète (hébergement, configuration) et le suivi
-          après livraison
+          la mise en ligne, la maintenance et l’évolution de votre site ou
+          application dans la durée
         </li>
       </ul>
 
       <p className="mt-4">
-        L’objectif est simple : un site rapide, bien référencé et pensé pour durer.
+        L’objectif : développer une solution utile, fiable et adaptée au
+        fonctionnement réel de votre activité.
       </p>
     </Section>
   );

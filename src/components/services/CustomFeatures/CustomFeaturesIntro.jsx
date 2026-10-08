@@ -6,9 +6,7 @@ export default function CustomFeaturesIntro() {
   return (
     <Section className="text-base sm:text-lg lg:text-xl">
       <p className="mb-6 text-gray-300">
-      Vous gérez encore vos rendez-vous, demandes ou contenus manuellement ?
-      Je développe des outils simples reliés à votre site pour automatiser certaines tâches
-      et vous faire gagner du temps au quotidien.
+        Vous gérez encore certaines tâches avec des fichiers, des emails ou des outils mal adaptés ? Je développe des applications web et outils sur mesure pour simplifier vos processus, centraliser vos informations et vous faire gagner du temps au quotidien.
       </p>
     </Section>
   );

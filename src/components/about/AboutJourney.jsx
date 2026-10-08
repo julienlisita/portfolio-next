@@ -28,8 +28,8 @@ export default function AboutJourney() {
       >
         <p>
           J’ai choisi le développement web pour me rapprocher des utilisateurs
-          finaux et voir rapidement l’impact d’un site bien conçu : plus de
-          clarté, plus de confiance, plus de demandes entrantes.
+          finaux et concevoir des solutions directement utiles : présenter une
+          activité, simplifier un parcours ou répondre à un besoin métier.
         </p>
         <p className="mt-4">
           Aujourd’hui, je conçois des sites et applications web avec{" "}

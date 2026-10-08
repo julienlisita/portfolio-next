@@ -5,9 +5,9 @@ import Section from "../../layout/Section";
 
 const useCases = [
   { icon: Briefcase, text: "Coach ou thérapeute : réservation avec créneaux et suivi des demandes" },
-  { icon: BarChart3, text: "Entreprise de services : gestion de candidatures, contenus ou actualités" },
+  { icon: BarChart3, text: "Entreprise de services : tableau de bord, gestion de dossiers ou suivi d’interventions" },
   { icon: Lock, text: "Structure B2B : espace client avec documents ou suivi sécurisé" },
-  { icon: Rocket, text: "Porteur de projet : prototype fonctionnel pour tester une idée" },
+  { icon: Rocket, text: "Porteur de projet : prototype fonctionnel ou MVP pour tester une idée" },
 ];
 
 export default function CustomFeaturesUseCases() {

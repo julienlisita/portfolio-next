@@ -5,10 +5,13 @@ import Section from "../../layout/Section";
 
 const items = [
   "Réservation en ligne avec créneaux, demandes et notifications",
-  "Espace administrateur pour modifier vos contenus ou gérer certaines demandes",
-  "Espace client sécurisé pour centraliser documents, informations ou suivi",
-  "Outil interne simple : planning, suivi, tableau de bord ou gestion de contenus",
-  "Logique métier adaptée à votre activité",
+  "Espace administrateur pour gérer votre activité et vos contenus",
+  "Espace client sécurisé avec accès à des informations ou services personnalisés",
+  "Tableau de bord métier pour centraliser et suivre les informations importantes",
+  "Gestion de demandes, dossiers, clients ou interventions",
+  "Outil interne pour simplifier un planning, un suivi ou un processus métier",
+  "Connexion à des services ou API externes",
+  "Logique métier adaptée au fonctionnement de votre activité",
 ];
 
 export default function CustomFeaturesOffer() {

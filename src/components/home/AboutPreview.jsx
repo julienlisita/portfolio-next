@@ -27,21 +27,21 @@ export default function AboutPreview() {
         {/* Texte */}
         <div className="w-full sm:flex-1 flex flex-col justify-center">
           <p className="text-base sm:text-lg lg:text-xl leading-snug text-gray-300">
-            Je suis Julien, développeur web basé à Bordeaux. J’aide les indépendants,
-            artisans et petites entreprises à créer des sites et des outils concrets
-            pour développer leur activité.
+            Je suis Julien, développeur web basé à Bordeaux. J’accompagne les
+            indépendants, artisans et entreprises dans la création de sites,
+            d’applications et d’outils adaptés à leur activité.
           </p>
 
           <p className="text-base sm:text-lg lg:text-xl mt-5 sm:mt-6 text-gray-300">
-            Mon rôle ne se limite pas à développer un site : je vous aide à clarifier
-            vos besoins, structurer vos contenus et choisir les fonctionnalités vraiment
-            utiles pour vos clients.
+            Mon rôle est d’abord de comprendre votre besoin et votre façon de
+            travailler pour concevoir une solution réellement utile, du site
+            professionnel à l’outil métier sur mesure.
           </p>
 
           <p className="text-base sm:text-lg lg:text-xl mt-5 sm:mt-6 text-gray-300">
-            Avec une méthode simple et progressive, je conçois des solutions claires,
-            rapides et évolutives, pensées pour être faciles à maintenir dans
-            la durée.
+           Avec une méthode simple et progressive, je conçois des solutions
+            claires, fiables et évolutives, pensées pour être faciles à maintenir
+            dans la durée.
           </p>
         </div>
       </div>

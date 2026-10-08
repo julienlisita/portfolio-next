@@ -67,7 +67,7 @@ export default function SkillesPreview() {
     link={{ href: "/comment-je-travaille", text: "Ma méthode de travail" }}
   >
     <p className="text-base sm:text-lg lg:text-xl">
-      Je mets en place une base technique fiable pour que votre site fonctionne correctement, reste rapide et puisse évoluer sans problème.
+     Je mets en place une base technique fiable pour que votre site ou application reste rapide, sécurisé et capable d’évoluer dans la durée.
     </p>
   
     <div className="flex flex-col gap-6">

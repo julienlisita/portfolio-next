@@ -6,22 +6,22 @@ export default function AudiencePreview() {
   return (
     <HomeSectionWrapper id="pour-qui" title="Pour qui ce type de projet est adapté ?">
       <p className="text-base sm:text-lg lg:text-xl">
-        J’accompagne surtout les professionnels qui veulent une présence en ligne claire,
-        utile et capable de soutenir leur activité au quotidien.
+        J’accompagne les indépendants et entreprises qui souhaitent développer leur
+        présence en ligne ou disposer d’outils adaptés à leur activité.
       </p>
 
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <AudienceCard
-          title="Indépendants & freelances"
-          description="Coach, consultant, thérapeute, photographe… Présentez vos services clairement et facilitez la prise de contact."
+          title="Indépendants & artisans"
+          description="Coach, artisan, consultant, thérapeute, photographe… Une présence web claire pour présenter vos services, faciliter la prise de contact ou proposer de la réservation."
         />
         <AudienceCard
-          title="Artisans & petites entreprises"
-          description="Bâtiment, services, restauration, commerces locaux… Une présence professionnelle pour inspirer confiance et recevoir plus de demandes."
+          title="TPE & PME"
+          description="Digitalisez un processus, centralisez vos informations ou développez un outil adapté au fonctionnement de votre entreprise."
         />
         <AudienceCard
-          title="Petites structures & services"
-          description="Associations, services à la personne, cabinets… Des informations accessibles, des formulaires utiles et une organisation simplifiée."
+          title="Porteurs de projet & services"
+          description="Développez un MVP, un espace client, un outil interne ou une application adaptée à un besoin spécifique."
         />
       </div>
     </HomeSectionWrapper>
