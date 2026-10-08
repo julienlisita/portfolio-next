@@ -10,7 +10,7 @@ export default function LegalNoticeSection() {
         <br />
         Julien Lisita – Développeur web freelance
         <br />
-        Adresse : 12 Avenue Pierre Mendes-France, 33700 Mérignac
+        Adresse : 63 rue Ernest Renan, 33000 Bordeaux
         <br />
         Email : contact@julienlisita.com
         <br />
@@ -24,17 +24,17 @@ export default function LegalNoticeSection() {
       <p className="mt-8 sm:mt-10 lg:mt-12">
         <strong>Hébergement :</strong>
         <br />
-        Netlify, Inc.
+        Vercel Inc.
         <br />
-        2325 3rd Street, Suite 296, San Francisco, CA 94107, USA
+        440 N Barranca Ave #4133, Covina, CA 91723, USA
         <br />
         <a
-          href="https://www.netlify.com"
+          href="https://vercel.com"
           target="_blank"
           rel="noopener noreferrer"
           className="underline text-[#5AC8FA]"
         >
-          https://www.netlify.com
+          https://vercel.com
         </a>
       </p>
 
