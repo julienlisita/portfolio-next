@@ -7,19 +7,25 @@ import { sendReservation } from "@/app/reservations/actions";
 const TZ = "Europe/Paris";
 
 function formatSlot(start, end) {
-  const formatter = new Intl.DateTimeFormat("fr-FR", {
+  const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
     timeZone: TZ,
     weekday: "long",
     day: "2-digit",
     month: "long",
+  });
+
+  const timeFormatter = new Intl.DateTimeFormat("fr-FR", {
+    timeZone: TZ,
     hour: "2-digit",
     minute: "2-digit",
   });
 
-  return formatter.formatRange(
-    new Date(start),
-    new Date(end)
-  );
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+
+  return `${dateFormatter.format(startDate)}, ${timeFormatter.format(
+    startDate
+  )} - ${timeFormatter.format(endDate)}`;
 }
 
 export default function ReservationForm({ slots }) {
