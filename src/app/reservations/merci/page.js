@@ -14,10 +14,15 @@ export default function ReservationThankYouPage() {
           Votre rendez-vous est réservé !
         </h1>
 
-        <p className="mb-8 text-gray-300">
-          Votre réservation a bien été enregistrée. Je reviendrai vers
-          vous avec les informations nécessaires pour notre échange.
+        <p className="mb-4 text-gray-300">
+        Votre réservation a bien été enregistrée. Vous allez recevoir un email
+        de confirmation avec les détails de votre rendez-vous.
         </p>
+
+        <p className="mb-8 text-sm text-gray-500">
+        Si vous ne le trouvez pas, pensez à vérifier vos courriers
+        indésirables.
+        </p>   
 
         <Link
           href="/"

@@ -7,9 +7,15 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 
 import {
+  getSlotById,
   createReservationFromPublicSafe,
   isReservationRateLimited,
 } from "@/server/services/reservations.service";
+
+import {
+  sendReservationAdminEmail,
+  sendReservationConfirmationEmail,
+} from "@/server/services/reservations.mail";
 
 const schema = z.object({
   website: z.string().max(0).optional(),
@@ -84,6 +90,40 @@ export async function sendReservation(formData) {
     }
 
     redirect("/reservations?error=unknown");
+  }
+
+  // Envoi des emails après l'enregistrement de la réservation.
+  // Une erreur Brevo ne doit pas annuler la réservation.
+  try {
+    const slot = await getSlotById(data.slotId);
+
+    if (!slot) {
+      console.warn(
+        "[sendReservation] réservation enregistrée mais créneau introuvable"
+      );
+    } else {
+      await Promise.all([
+        sendReservationConfirmationEmail({
+          clientEmail: data.clientEmail,
+          clientName: data.clientName,
+          slotStart: slot.startAt,
+          slotEnd: slot.endAt,
+        }),
+
+        sendReservationAdminEmail({
+          clientName: data.clientName,
+          clientEmail: data.clientEmail,
+          message: data.message,
+          slotStart: slot.startAt,
+          slotEnd: slot.endAt,
+        }),
+      ]);
+    }
+  } catch (error) {
+    console.error(
+      "[sendReservation] erreur lors de l'envoi des emails",
+      error
+    );
   }
 
   redirect("/reservations/merci");

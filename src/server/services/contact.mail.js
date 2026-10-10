@@ -1,8 +1,7 @@
 // src/server/services/contact.mail.js
 
 const brevoApiKey = process.env.BREVO_API_KEY;
-
-const contactNotificationEmail = process.env.CONTACT_NOTIFICATION_EMAIL;
+const contactNotificationEmail = process.env.CONTACT_TO_EMAIL;
 
 export async function sendContactAdminEmail({
   name,
@@ -18,7 +17,7 @@ export async function sendContactAdminEmail({
 
   if (!contactNotificationEmail) {
     console.warn(
-      "[sendContactAdminEmail] CONTACT_NOTIFICATION_EMAIL manquante, email non envoyé"
+      "[sendContactAdminEmail] CONTACT_TO_EMAIL manquante, email non envoyé"
     );
     return false;
   }
