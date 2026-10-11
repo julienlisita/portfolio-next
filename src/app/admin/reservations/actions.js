@@ -6,12 +6,14 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 import { cancelReservationAdmin } from "@/server/services/reservations.service";
+import { requireAdmin } from "@/server/guards/requireAdmin";
 
 const cancelSchema = z.object({
   reservationId: z.coerce.number().int().positive(),
 });
 
 export async function cancelReservationAction(formData) {
+  await requireAdmin();
   const parsed = cancelSchema.safeParse({
     reservationId: formData.get("reservationId"),
   });

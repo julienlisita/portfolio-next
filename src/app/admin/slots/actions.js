@@ -5,6 +5,7 @@
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { fromZonedTime } from "date-fns-tz";
+import { requireAdmin } from "@/server/guards/requireAdmin";
 
 import {
   createSlotAdmin,
@@ -20,6 +21,7 @@ const createSchema = z.object({
 });
 
 export async function createSlotAction(formData) {
+  await requireAdmin();
   const parsed = createSchema.safeParse({
     startAt: formData.get("startAt"),
     endAt: formData.get("endAt"),
@@ -56,6 +58,7 @@ const statusSchema = z.object({
 });
 
 export async function updateSlotStatusAction(formData) {
+  await requireAdmin();
   const parsed = statusSchema.safeParse({
     slotId: formData.get("slotId"),
     status: formData.get("status"),
@@ -85,6 +88,7 @@ const deleteSchema = z.object({
 });
 
 export async function deleteSlotAction(formData) {
+  await requireAdmin();
   const parsed = deleteSchema.safeParse({
     slotId: formData.get("slotId"),
   });
