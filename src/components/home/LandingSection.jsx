@@ -7,21 +7,18 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Button from "../UI/Button";
 import styles from "./LandingSection.module.css";
-import HeroBookingAnimation from "./HeroBookingAnimation";
 
 export default function LandingSection() {
   const reduce = useReducedMotion();
 
   const name = "Julien Lisita";
-  const eyebrow = "Pour indépendants, artisans et petites entreprises";
+  const audience = "Indépendants • Artisans • TPE / PME";
   const location = "Bordeaux & à distance";
-  const title = `Sites web & outils
-    pour développer
-    votre activité`;   
+  const title = `Sites & applications web sur mesure
+pour développer votre activité`;   
 
   const tagline = "Je conçois des sites clairs, rapides et évolutifs, avec des outils utiles quand votre activité en a besoin : réservation, espace admin, gestion de contenus…";
 
-  const VISUAL_SRC = "/assets/mockups/portfolio-services-ipad.png";
 
   const fadeUp = useMemo(
     () =>
@@ -68,126 +65,203 @@ const spotlightStyleDesktop = {
         className="pointer-events-none absolute inset-0"
         style={spotlightStyle}
       >
-        <div className="hidden lg:block absolute inset-0" style={spotlightStyleDesktop} />
+        <div
+          className="hidden lg:block absolute inset-0"
+          style={spotlightStyleDesktop}
+        />
       </div>
 
-      {/* Container */}
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-8 lg:px-12 min-h-svh">
-        {/* GRID */}
-        <div
-          className="
-            min-h-svh
-            grid
-            grid-rows-[auto_auto]
-            lg:grid-rows-1
-            lg:grid-cols-[1.12fr_0.88fr]
-            content-center
-            items-center
-            gap-1 sm:gap-12 lg:gap-12
-            py-8 sm:py-12 lg:py-0
-            pb-16 sm:pb-20 lg:pb-0
-          "
-        >
-          {/* TEXT */}
+      <div className="relative mx-auto max-w-7xl min-h-svh px-4 sm:px-8 lg:px-12">
+      <div
+        className="
+          min-h-svh
+          grid
+          grid-cols-1
+          lg:grid-cols-[1.15fr_0.85fr]
+          items-center
+          gap-5 sm:gap-8 lg:gap-16
+          pt-20 pb-20
+          sm:pt-24 sm:pb-24
+          lg:py-0
+        "
+      >
+          {/* Contenu */}
           <div
             className="
-              text-center lg:text-left
+              order-2 lg:order-1
               flex flex-col
-              space-y-4 sm:space-y-5
+              text-center lg:text-left
             "
           >
-            <motion.img
-              src="/assets/logos/site/logo.png"
-              alt="Logo initiales Julien Lisita"
-              width={112}
-              height={112}
-              className="
-                mx-auto lg:mx-0
-                h-16 w-16
-                sm:h-20 sm:w-20
-                mb-2 sm:mb-3
-              "
-              {...(!reduce && {
-                initial: { opacity: 0, scale: 0.94 },
-                animate: { opacity: 1, scale: 1 },
-                transition: { duration: 0.45, ease: "easeOut" },
-              })}
-            />
-
             <motion.p
-              className="text-xl sm:text-2xl lg:text-3xl font-semibold text-white tracking-tight"
-              {...(!reduce && { transition: { ...fade.transition, delay: 0.05 } })}
+              className="
+                mb-5
+                text-xl sm:text-2xl lg:text-3xl
+                font-semibold
+                text-white
+                tracking-tight
+              "
+              {...fade}
+              {...(!reduce && {
+                transition: { ...fade.transition, delay: 0.05 },
+              })}
             >
               {name}
             </motion.p>
 
-            <motion.div
-              className="space-y-1"
-              {...fade}
-              {...(!reduce && { transition: { ...fade.transition, delay: 0.1 } })}
-            >
-              <p className="text-sm sm:text-base text-gray-300">
-                {eyebrow}
-              </p>
-              <p className="text-sm sm:text-base text-gray-400">
-                {location}
-              </p>
-            </motion.div>
-
             <motion.h1
-              className={`text-white text-3xl sm:text-4xl lg:text-[3rem] xl:text-[3.2rem] font-extrabold leading-[1.18] tracking-tight whitespace-pre-line ${styles.neonTitleStrong}`}
+              className={`
+                text-white
+                text-3xl sm:text-4xl lg:text-5xl xl:text-[3.4rem]
+                font-extrabold
+                leading-[1.15]
+                tracking-tight
+                whitespace-pre-line
+                ${styles.neonTitleStrong}
+              `}
               {...fadeUp}
-              {...(!reduce && { transition: { ...fadeUp.transition, delay: 0.16 } })}
+              {...(!reduce && {
+                transition: { ...fadeUp.transition, delay: 0.12 },
+              })}
             >
               {title}
             </motion.h1>
 
             <motion.p
-              className={`max-w-2xl text-base sm:text-lg md:text-xl ${styles.tagline}`}
+              className={`
+                mt-6
+                max-w-2xl
+                mx-auto lg:mx-0
+                text-base sm:text-lg
+                leading-relaxed
+                ${styles.tagline}
+              `}
               {...fade}
-              {...(!reduce && { transition: { ...fade.transition, delay: 0.24 } })}
+              {...(!reduce && {
+                transition: { ...fade.transition, delay: 0.2 },
+              })}
             >
               {tagline}
             </motion.p>
+
+            {/* CTA */}
             <motion.div
-              className="pt-2 flex justify-center lg:justify-start"
+              className="
+                mt-8
+                flex flex-col sm:flex-row
+                items-center
+                justify-center lg:justify-start
+                gap-3
+              "
               {...fade}
-              {...(!reduce && { transition: { ...fade.transition, delay: 0.3 } })}
+              {...(!reduce && {
+                transition: { ...fade.transition, delay: 0.28 },
+              })}
             >
               <Button href="/contact" variant="primary">
-                Discutons de votre projet
+                Discuter de votre projet
               </Button>
+
+              <Button href="/reservations" variant="secondary">
+                Réserver un échange
+              </Button>
+            </motion.div>
+
+            {/* Cible + localisation */}
+            <motion.div
+              className="
+                mt-7
+                space-y-1
+                text-sm sm:text-base
+              "
+              {...fade}
+              {...(!reduce && {
+                transition: { ...fade.transition, delay: 0.34 },
+              })}
+            >
+              <p className="text-gray-300">
+                {audience}
+              </p>
+
+              <p className="text-gray-500">
+                {location}
+              </p>
             </motion.div>
           </div>
 
-          <div className="mt-5 sm:mt-8 lg:mt-0 w-full max-w-65 sm:max-w-90 lg:max-w-107.5 justify-self-center lg:justify-self-end">
-            <HeroBookingAnimation />
-          </div>
-
+          {/* Logo */}
+          <motion.div
+            className="
+              order-1 lg:order-2
+              flex
+              items-center
+              justify-center
+            "
+            {...(!reduce && {
+              initial: { opacity: 0, scale: 0.92 },
+              animate: { opacity: 1, scale: 1 },
+              transition: {
+                duration: 0.6,
+                ease: "easeOut",
+                delay: 0.12,
+              },
+            })}
+          >
+            <img
+              src="/assets/logos/site/logo.png"
+              alt="Logo initiales Julien Lisita"
+              width={320}
+              height={320}
+              className="
+                h-28 w-28
+                sm:h-36 sm:w-36
+                lg:h-72 lg:w-72
+                xl:h-80 xl:w-80
+                object-contain
+              "
+            />
+          </motion.div>
         </div>
       </div>
 
       {/* Scroll hint */}
       <motion.div
-        className="absolute bottom-3 sm:bottom-5 left-0 right-0 flex flex-col items-center"
+        className="
+          absolute
+          bottom-3 sm:bottom-5
+          left-0 right-0
+          flex flex-col
+          items-center
+        "
         {...fade}
-        {...(!reduce && { transition: { ...fade.transition, delay: 0.7 } })}
+        {...(!reduce && {
+          transition: { ...fade.transition, delay: 0.7 },
+        })}
       >
         <a
           href="#problemes"
           onClick={(e) => {
             e.preventDefault();
-            document.querySelector("#problemes")?.scrollIntoView({ behavior: "smooth" });
+            document
+              .querySelector("#problemes")
+              ?.scrollIntoView({ behavior: "smooth" });
           }}
           className="group"
           aria-label="Aller à la section suivante"
         >
           <ArrowDown
-            className={`h-10 w-10 sm:h-12 sm:w-12 text-[#5AC8FA] ${styles.pulseArrow}`}
+            className={`
+              h-10 w-10 sm:h-12 sm:w-12
+              text-[#5AC8FA]
+              ${styles.pulseArrow}
+            `}
             aria-hidden
           />
         </a>
-        <p className="text-gray-500 text-xs mt-1">Faites défiler ou cliquez</p>
+
+        <p className="mt-1 text-xs text-gray-500">
+          Faites défiler ou cliquez
+        </p>
       </motion.div>
     </section>
   );
