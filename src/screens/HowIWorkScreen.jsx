@@ -69,10 +69,10 @@ export default function HowIWorkScreen() {
       <FaqSection title="FAQ — Méthode" faq={howIWorkFaq} ariaLabelledby="faq-skills-title" />
 
       <CtaFinal
-        title="On en parle ?"
-        tagline="Expliquez-moi votre activité et vos objectifs : je vous propose la bonne approche."
-        primary={{ href: "/contact", text: "Discuter de votre projet" }}
-        secondary={{ href: "/tarifs", text: "Voir les tarifs" }}
+        title="Quel budget pour votre projet ?"
+        tagline="Découvrez mes tarifs et quelques exemples pour mieux situer le budget correspondant à votre besoin."
+        primary={{ href: "/tarifs", text: "Voir les tarifs" }}
+        secondary={{ href: "/reservations", text: "Réserver un échange" }}
       />
     </>
   );

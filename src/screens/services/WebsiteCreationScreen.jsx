@@ -23,10 +23,10 @@ export default function WebsiteCreationScreen() {
       <FaqSection title="FAQ — Création de site internet" faq={websiteCreationFaq} ariaLabelledby="faq-vitrine-title" />
 
       <CtaFinal
-        title="Créons un site utile pour votre activité"
-        tagline="Un site pensé pour rassurer vos visiteurs et faciliter la prise de contact."
-        primary={{ href: "/contact", text: "Discuter du projet" }}
-        secondary={{ href: "/tarifs", text: "Voir les tarifs" }}
+        title="Découvrez des projets concrets"
+        tagline="Découvrez des sites et projets réalisés pour voir comment ces solutions prennent forme."
+        primary={{ href: "/realisations", text: "Voir mes réalisations" }}
+        secondary={{ href: "/reservations", text: "Réserver un échange" }}
       />
     </>
   );

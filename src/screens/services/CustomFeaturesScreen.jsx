@@ -22,10 +22,10 @@ export default function CustomFeaturesScreen() {
       <FaqSection title="FAQ — Fonctionnalités sur mesure" faq={customFeaturesFaq} ariaLabelledby="faq-apps-title" />
 
       <CtaFinal
-        title="Discutons de votre besoin"
-        tagline="Vous avez une idée, un besoin ou un outil à créer ? Voyons ensemble la solution la plus simple et la plus utile."
-        primary={{ href: "/contact", text: "Discuter du projet" }}
-        secondary={{ href: "/realisations", text: "Voir des réalisations" }}
+        title="Découvrez des solutions concrètes"
+        tagline="Découvrez des applications et outils web réalisés pour répondre à des besoins métier."
+        primary={{ href: "/realisations", text: "Voir mes réalisations" }}
+        secondary={{ href: "/reservations", text: "Réserver un échange" }}
       />
     </>
   );

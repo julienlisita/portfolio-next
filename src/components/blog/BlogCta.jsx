@@ -6,19 +6,19 @@ import Button from "../UI/Button";
 export default function BlogCta() {
   return (
     <Section>
-      <div className="bg-[#1e1e1e] border border-[#2f2f2f] rounded-xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div className="bg-[#1e1e1e] border border-[#2f2f2f] rounded-xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <p className="text-sm text-gray-300">
-          Un projet de site ? Je peux vous conseiller et vous faire une proposition adaptée.
+          Un projet web en tête ? Découvrez ce que je peux concevoir pour votre activité.
         </p>
 
-        <div className="flex items-center gap-3">
-          <Button href="/contact" variant="text">
-            Me contacter ›
+        <div className="flex flex-wrap items-center gap-3">
+          <Button href="/services" variant="text">
+            Découvrir mes services ›
           </Button>
 
-          <a href="/realisations" className="text-sm text-gray-400 hover:underline">
-            Voir des réalisations ›
-          </a>
+          <Button href="/reservations" variant="text">
+            Réserver un échange ›
+          </Button>
         </div>
       </div>
     </Section>

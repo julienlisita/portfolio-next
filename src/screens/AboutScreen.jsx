@@ -29,10 +29,10 @@ export default function AboutScreen() {
 
       {/* CTA final */}
       <CtaFinal
-        title="Envie de collaborer ?"
-        tagline="Discutons ensemble de votre projet et voyons comment le concrétiser."
-        primary={{ href: "/contact", text: "Me contacter" }}
-        secondary={{ href: "/realisations", text: "Voir des projets réalisés" }}
+        title="Parlons de votre projet"
+        tagline="Une idée ou un besoin à concrétiser ? Choisissez la façon la plus simple pour en discuter."
+        primary={{ href: "/contact", text: "M'envoyer un message" }}
+        secondary={{ href: "/reservations", text: "Réserver un échange" }}
       />
     </>
   );

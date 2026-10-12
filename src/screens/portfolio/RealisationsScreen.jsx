@@ -21,10 +21,16 @@ export default function PortfolioScreen() {
       <PortfolioGrid title="Applications web" projects={tools} />
 
       <CtaFinal
-        title="Votre projet, le prochain ?"
-        tagline="Je vous propose une solution claire, moderne et adaptée à votre activité."
-        primary={{ href: "/contact", text: "Discuter de votre projet" }}
-        secondary={{ href: "/services", text: "Voir mes services" }}
+        title="Comment se déroule un projet ?"
+        tagline="Découvrez ma méthode, les différentes étapes d’un projet et les choix techniques qui permettent de construire une solution durable."
+        primary={{
+          href: "/comment-je-travaille",
+          text: "Découvrir ma méthode",
+        }}
+        secondary={{
+          href: "/reservations",
+          text: "Réserver un échange",
+        }}
       />
     </>
   );

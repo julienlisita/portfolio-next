@@ -32,8 +32,6 @@ export default function BlogScreen() {
         totalPages={totalPages}
         onPageChange={setCurrentPage}
       />
-
-      <BlogCta />
     </>
   );
 }

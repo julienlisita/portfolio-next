@@ -23,9 +23,9 @@ export default function MaintenanceScreen() {
 
       <CtaFinal
         title="Gardons votre site fiable dans la durée"
-        tagline="Corrections, suivi et petites évolutions pour éviter les blocages et faire avancer votre site avec votre activité."
-        primary={{ href: "/contact", text: "Demander un suivi" }}
-        secondary={{ href: "/tarifs", text: "Voir les tarifs" }}
+        tagline="Découvrez les formules de suivi et les tarifs pour choisir l’accompagnement adapté à votre site."
+        primary={{ href: "/tarifs", text: "Voir les tarifs" }}
+        secondary={{ href: "/reservations", text: "Réserver un échange" }}
       />
     </>
   );

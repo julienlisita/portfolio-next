@@ -22,10 +22,10 @@ export default function ServicesScreen() {
       <FaqSection title="FAQ — Services" faq={servicesFaq} ariaLabelledby="faq-services" />
 
       <CtaFinal
-        title="Discutons de votre besoin"
-        tagline="Vous avez un projet, un site à améliorer ou une fonctionnalité à ajouter ? Échangeons simplement pour voir quelle solution serait la plus utile."
-        primary={{ href: "/contact", text: "Discuter du projet" }}
-        secondary={{ href: "/realisations", text: "Voir des réalisations" }}
+        title="Découvrez mes réalisations"
+        tagline="Découvrez des projets concrets, du site professionnel aux applications et outils web sur mesure."
+        primary={{ href: "/realisations", text: "Voir mes réalisations" }}
+        secondary={{ href: "/reservations", text: "Réserver un échange" }}
       />
     </>
   );

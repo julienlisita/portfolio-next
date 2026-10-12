@@ -39,10 +39,16 @@ export default function PortfolioDetailScreen({ project }) {
       </Section>
 
       <CtaFinal
-        title="Vous voulez un site dans ce style ?"
-        tagline="Expliquez-moi votre activité et vos objectifs, je vous propose une solution adaptée."
-        primary={{ href: "/contact", text: "Me contacter" }}
-        secondary={{ href: "/services", text: "Voir mes services" }}
+        title="Vous avez un projet similaire ?"
+        tagline="Découvrez mes autres réalisations ou échangeons directement autour de votre besoin."
+        primary={{
+          href: "/realisations",
+          text: "Voir d’autres réalisations",
+        }}
+        secondary={{
+          href: "/reservations",
+          text: "Réserver un échange",
+        }}
       />
     </>
   );

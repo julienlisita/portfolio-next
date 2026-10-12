@@ -13,7 +13,7 @@ export default function ContactScreen() {
     <>
       <PageTitle>Contact</PageTitle>
 
-      <Section title="Discutons de vos besoins">
+      <Section title="Parlons de votre projet">
         <div className="grid gap-6 sm:gap-8 lg:gap-10 lg:grid-cols-3">
           <ContactIntro />
 

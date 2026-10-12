@@ -3,6 +3,7 @@
 import { Mail, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import HomeSectionWrapper from "./HomeSectionWrapper";
+import Button from "../UI/Button";
 
 export default function ContactTeaser()
 {
@@ -16,6 +17,12 @@ export default function ContactTeaser()
                 Un projet, une question ou besoin d’un devis ?
                 Expliquez-moi votre besoin, je vous réponds simplement avec une solution adaptée.
             </p>
+            <div className="flex justify-center sm:justify-start my-8">
+                <Button href="/reservations" variant="primary">
+                    Réserver un échange
+                </Button>
+            </div>
+            
             {/* Coordonnées rapides */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-base">
             

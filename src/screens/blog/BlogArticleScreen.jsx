@@ -12,6 +12,7 @@ export default function BlogArticleScreen({article, markdown,}) {
         category={article.category}
       />
       <ArticleContent markdown={markdown} />
+      <BlogCta />
     </>
   );
 }

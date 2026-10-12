@@ -20,10 +20,10 @@ export default function PricingScreen() {
       <FaqSection title="FAQ — Tarifs" faq={pricingFaq} ariaLabelledby="faq-pricing-title" />
 
       <CtaFinal
-        title="Discutons de votre projet"
-        tagline="Expliquez-moi votre besoin : je vous propose une solution claire, adaptée et un devis précis après un échange gratuit."
-        primary={{ href: "/contact", text: "Demander un devis" }}
-        secondary={{ href: "/realisations", text: "Voir des projets" }}
+        title="Qui se cache derrière vos projets ?"
+        tagline="Découvrez mon parcours, mon expérience et l’approche que j’apporte à chaque collaboration."
+        primary={{ href: "/a-propos", text: "En savoir plus sur moi" }}
+        secondary={{ href: "/reservations", text: "Réserver un échange" }}
       />
     </>
   );
