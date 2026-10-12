@@ -9,7 +9,6 @@ import { articles } from "../../data/articles";
 
 import BlogIntro from "../../components/blog/BlogIntro";
 import BlogList from "../../components/blog/BlogList";
-import BlogCta from "../../components/blog/BlogCta";
 
 export default function BlogScreen() {
   const articlesPerPage = 10;

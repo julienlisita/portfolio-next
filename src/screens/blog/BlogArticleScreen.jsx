@@ -2,6 +2,7 @@
 
 import ArticleHeader from "../../components/blog/article/ArticleHeader";
 import ArticleContent from "../../components/blog/article/ArticleContent";
+import BlogCta from "../../components/blog/BlogCta";
 
 export default function BlogArticleScreen({article, markdown,}) {
   return (
