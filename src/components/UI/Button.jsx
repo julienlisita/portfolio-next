@@ -74,8 +74,13 @@ export default function Button({
     className: mergedClassName,
   };
 
-  if (props.href) return <a href={props.href} download={props.download} {...newProps} />;
-  if (props.href) return <Link {...newProps} />;
+  if (props.href?.startsWith("/")) {
+    return <Link {...newProps} />;
+  }
+
+  if (props.href) {
+    return <a {...newProps} />;
+  }
 
   return <button {...newProps} />;
 }

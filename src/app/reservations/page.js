@@ -1,8 +1,9 @@
 // src/app/reservations/page.js
 
 import ReservationForm from "@/components/reservations/ReservationForm";
-
 import { listAvailableSlots } from "@/server/services/reservations.service";
+import PageTitle from "@/components/UI/PageTitle";
+import Section from "@/components/layout/Section";
 
 export const dynamic = "force-dynamic";
 
@@ -33,31 +34,25 @@ export default async function ReservationsPage({ searchParams }) {
   const slots = await listAvailableSlots();
 
   return (
-    <main className="min-h-screen bg-[#1f1f1f] px-6 py-16 text-white">
-      <div className="mx-auto max-w-3xl">
-        <header className="mb-10">
-          <p className="mb-2 text-sm text-gray-400">
-            Discutons de votre projet
+    <>
+      <PageTitle>Réserver un échange</PageTitle>
+
+      <Section title="Discutons de votre projet">
+        <div className="mx-auto max-w-3xl">
+          <p className="mb-8 text-base sm:text-lg text-gray-300">
+            Choisissez le créneau qui vous convient pour un premier échange
+            autour de votre projet.
           </p>
 
-          <h1 className="mb-4 text-3xl font-bold md:text-4xl">
-            Réserver un échange
-          </h1>
+          {errorMessage && (
+            <div className="mb-6 rounded-lg border border-red-900 bg-red-950/30 p-4 text-red-300">
+              {errorMessage}
+            </div>
+          )}
 
-          <p className="max-w-2xl text-gray-300">
-            Choisissez le créneau qui vous convient pour un premier
-            échange autour de votre projet.
-          </p>
-        </header>
-
-        {errorMessage && (
-          <div className="mb-6 rounded-lg border border-red-900 bg-red-950/30 p-4 text-red-300">
-            {errorMessage}
-          </div>
-        )}
-
-        <ReservationForm slots={slots} />
-      </div>
-    </main>
+          <ReservationForm slots={slots} />
+        </div>
+      </Section>
+    </>
   );
 }
