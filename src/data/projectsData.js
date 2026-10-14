@@ -4,7 +4,7 @@ export const projects = [
     {
     slug: "lumiere-darcachon",
     title: "Lumière d’Arcachon",
-    category: "web",
+    category: "site",
     description:
         "Projet personnel mêlant photographie et développement web : un site éditorial dédié aux lumières du Bassin d’Arcachon.",
     cardImage: "/assets/images/projects/lumieredarcachon.png",
@@ -43,7 +43,7 @@ export const projects = [
     {
     slug: "thomas-delaunay",
     title: "Thomas Delaunay Coaching",
-    category: "web",
+    category: "application",
     description:
         "Application web complète : site vitrine moderne, réservation en ligne et espace administrateur sécurisé pour la gestion des créneaux.",
     cardImage: "/assets/images/projects/thomas-delaunay.png", 
@@ -94,10 +94,10 @@ export const projects = [
 {
     slug: "ccs",
     title: "Compagnie Care & Services",
-    category: "vitrines",
+    category: "site",
     description:
         "Site professionnel pour une entreprise d’aide à domicile, incluant pages informatives, actualités, formulaire de contact et candidature avec CV.",
-    cardImage: "/assets/images/projects/ccs.jpg",
+    cardImage: "/assets/images/projects/ccs.png",
     heroImage: "/assets/images/projects/ccs-hero.avif",
     technos: ["Next.js", "TypeScript", "Tailwind"],
     liveSite: "https://compagnie-careandservices.vercel.app",
@@ -144,9 +144,9 @@ export const projects = [
     {
         slug: "brunchbordelais",
         title: "Le Brunch Bordelais",
-        category: "vitrines",
+        category: "site",
         description: "Site vitrine moderne et chaleureux conçu pour présenter l’univers culinaire et l’ambiance du restaurant.",
-        cardImage: "/assets/images/projects/brunchbordelais.avif",
+        cardImage: "/assets/images/projects/brunchbordelais.png",
         heroImage: "/assets/images/projects/brunchbordelais-hero.avif",
         technos: ["Next.js", "JavaScript", "Tailwind"],
         liveSite: "https://le-brunch-bordelais.vercel.app",
@@ -175,7 +175,7 @@ export const projects = [
     {
         slug: "shogiconnect",
         title: "ShogiConnect",
-        category: "web",
+        category: "application",
         description: "Plateforme communautaire dédiée au shogi, avec profils, forum et interface de jeu en ligne.",
         cardImage: "/assets/images/projects/shogiconnect.png",
         heroImage: "/assets/images/projects/shogiconnect-hero.avif",
@@ -209,33 +209,72 @@ export const projects = [
         }
     },
     {
-        slug: "portfolio",
-        title: "Julien Lisita – Site professionnel",
-        category: "vitrines",
-        description: "Site vitrine responsive pour présenter mes projets et mes services de développeur.",
-        cardImage: "/assets/images/projects/portfolio.png",
-        heroImage: "/assets/images/projects/portfolio-hero.avif",
-        technos: ["React", "Tailwind", "Framer Motion"],
-        liveSite: "https://julienlisita.com",
-        sourceCode: [
-        { label: "Client", url: "https://github.com/julienlisita/portfolio-react" },
+    slug: "portfolio",
+    title: "Julien Lisita – Site professionnel & réservation",
+    category: "application",
+    description:
+        "Site professionnel Next.js avec blog, système de réservation, espace d’administration et gestion des rendez-vous.",
+
+    cardImage: "/assets/images/projects/portfolio.png",
+    heroImage: "/assets/images/projects/portfolio-hero.avif",
+
+    technos: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Prisma",
+        "PostgreSQL",
+    ],
+
+    liveSite: "https://www.julienlisita.com",
+
+    sourceCode: [
+        {
+        label: "Code source",
+        url: "https://github.com/julienlisita/portfolio-next",
+        },
+    ],
+
+    demo: null,
+
+    summary: [
+        "Mon site professionnel a été entièrement repensé et migré vers Next.js afin de dépasser le cadre d’un simple site vitrine. Il présente mon activité, mes services et mes réalisations tout en intégrant des fonctionnalités applicatives destinées à faciliter la prise de contact et la gestion des rendez-vous.",
+        "Le projet intègre notamment un système de réservation connecté à une base de données PostgreSQL, un espace d’administration sécurisé pour gérer les créneaux et les réservations, ainsi que l’envoi d’e-mails transactionnels. Une attention particulière a également été portée au référencement, aux performances et à l’expérience utilisateur.",
+    ],
+
+    features: [
+        "Présentation responsive des services, réalisations, tarifs et du parcours professionnel.",
+        "Blog et fiches réalisations générés avec Next.js pour favoriser les performances et le référencement.",
+        "Système de réservation avec affichage des disponibilités par date et sélection de créneaux.",
+        "Enregistrement et gestion des réservations avec PostgreSQL et Prisma.",
+        "Espace d’administration sécurisé permettant de créer, désactiver et supprimer des créneaux ainsi que de gérer les rendez-vous.",
+        "Envoi automatique d’e-mails transactionnels lors des réservations et prises de contact avec Brevo.",
+        "Formulaires validés côté serveur avec protections anti-spam.",
+        "SEO technique avec métadonnées, sitemap, robots.txt et contenus pré-rendus.",
+    ],
+
+    stack: {
+        frontend: [
+        "JavaScript",
+        "Next.js",
+        "React",
+        "Tailwind CSS",
         ],
-        demo: null,
-        summary: [
-            "Ce portfolio a pour objectif de présenter mon parcours, mes compétences et mes projets en tant que développeur web full stack. Il vise à offrir une vitrine professionnelle claire, moderne et évolutive, que ce soit pour des recruteurs, des entreprises ou des clients potentiels. L’accent est mis à la fois sur l’ergonomie, l’accessibilité et la qualité du code."
+
+        backend: [
+        "Next.js Server Actions",
+        "Prisma",
+        "Brevo",
+        "Jose",
+        "bcryptjs",
+        "Zod",
         ],
-        features: [
-            "Présentation claire et responsive du parcours, des services et des compétences techniques.",
-            "Affichage dynamique des projets avec description détaillée, visuels, stacks utilisés et liens vers le code source.",
-            "Section blog intégrée pour partager des articles autour du développement web et des retours d’expérience.",
-            "Formulaire de contact pour faciliter la prise de contact professionnelle."
-        ],
-        stack: {
-            frontend: ["Javascript", "React", "Tailwind CSS", "Framer Motion"],
-            backend: null,
-            database: null,
-            test: null,
-            deployment: ["Netlify"]
-        }
+
+        database: ["PostgreSQL"],
+
+        test: null,
+
+        deployment: ["Vercel"],
+    },
     },
 ];

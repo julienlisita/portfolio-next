@@ -8,8 +8,8 @@ import PortfolioIntro from "../../components/portfolio/PortfolioIntro";
 import PortfolioGrid from "../../components/portfolio/PortfolioGrid";
 
 export default function PortfolioScreen() {
-  const vitrines = projects.filter((p) => p.category === "vitrines");
-  const tools = projects.filter((p) => p.category === "web");
+  const applications = projects.filter((p) => p.category === "application");
+  const sites = projects.filter((p) => p.category === "site");
 
   return (
     <>
@@ -17,8 +17,8 @@ export default function PortfolioScreen() {
 
       <PortfolioIntro />
 
-      <PortfolioGrid title="Sites vitrines" projects={vitrines} />
-      <PortfolioGrid title="Applications web" projects={tools} />
+      <PortfolioGrid title="Applications web" projects={applications} />
+      <PortfolioGrid title="Sites web" projects={sites} />
 
       <CtaFinal
         title="Comment se déroule un projet ?"

@@ -16,10 +16,10 @@ export default function ProjectCard({
   category,
 }) {
   const categoryLabel =
-    category === "vitrines"
-      ? "Site vitrine"
-      : category === "web"
-      ? "Sur mesure"
+    category === "site"
+      ? "Site web"
+      : category === "application"
+      ? "Application web"
       : null;
 
   return (
