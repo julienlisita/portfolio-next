@@ -14,10 +14,9 @@ export default function LandingSection() {
   const name = "Julien Lisita";
   const audience = "Indépendants • Artisans • TPE / PME";
   const location = "Bordeaux & à distance";
-  const title = `Sites & applications web sur mesure
-pour développer votre activité`;   
+  const title = `Sites & applications web sur mesure`;   
 
-  const tagline = "Je conçois des sites clairs, rapides et évolutifs, avec des outils utiles quand votre activité en a besoin : réservation, espace admin, gestion de contenus…";
+  const tagline = "Attirez de nouveaux clients, gagnez du temps et simplifiez votre quotidien grâce à des outils pensés pour votre activité.";
 
 
   const fadeUp = useMemo(
@@ -77,9 +76,11 @@ const spotlightStyleDesktop = {
           min-h-svh
           grid
           grid-cols-1
+          grid-rows-[auto_auto]
           lg:grid-cols-[1.15fr_0.85fr]
           items-center
-          gap-5 sm:gap-8 lg:gap-16
+          content-center
+          gap-2 sm:gap-8 lg:gap-16
           pt-20 pb-20
           sm:pt-24 sm:pb-24
           lg:py-0
@@ -95,7 +96,7 @@ const spotlightStyleDesktop = {
           >
             <motion.p
               className="
-                mb-5
+                mb-3 lg:mb-5
                 text-xl sm:text-2xl lg:text-3xl
                 font-semibold
                 text-white
@@ -162,8 +163,8 @@ const spotlightStyleDesktop = {
                 Discuter de votre projet
               </Button>
 
-              <Button href="/reservations" variant="secondary">
-                Réserver un échange
+              <Button href="/portfolio" variant="secondary">
+                Voir mes réalisations
               </Button>
             </motion.div>
 
