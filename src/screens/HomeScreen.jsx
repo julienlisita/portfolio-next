@@ -18,13 +18,13 @@ export default function HomeScreen() {
   return (
     <>
       <LandingSection />
-      <ProblemSection/>
+      {/* <ProblemSection/> */}
       <ServicesPreview />
-      <BenefitsSection />
+      {/* <BenefitsSection /> */}
       <ProjectsPreview />
       <TarifsTeaser/>
-      <WhyWorkWithMe />
-      <AudiencePreview />
+      {/* <WhyWorkWithMe /> */}
+      {/* <AudiencePreview /> */}
       <AboutPreview />
       <SkillsPreview />
       <ContactTeaser />

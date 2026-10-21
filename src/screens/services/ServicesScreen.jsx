@@ -5,9 +5,9 @@ import FaqSection from "../../components/patterns/FaqSection";
 import CtaFinal from "../../components/patterns/CtaFinal";
 
 import ServicesIntro from "../../components/services/ServicesIntro";
-import ServicesOffers from "../../components/services/ServicesOffers";
 import ServicesMethod from "../../components/services/ServicesMethod";
 import { servicesFaq } from "../../data/faqs";
+import ServicesShowcase from "@/components/services/ServicesShowcase";
 
 export default function ServicesScreen() {
 
@@ -16,7 +16,7 @@ export default function ServicesScreen() {
       <PageTitle>Mes services</PageTitle>
 
       <ServicesIntro />
-      <ServicesOffers />
+      <ServicesShowcase />
       <ServicesMethod />
 
       <FaqSection title="FAQ — Services" faq={servicesFaq} ariaLabelledby="faq-services" />
