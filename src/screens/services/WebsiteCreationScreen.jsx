@@ -9,11 +9,17 @@ import WebsiteCreationDeliverables from "../../components/services/websiteCreati
 import WebsiteCreationWhyAndSeo from "../../components/services/websiteCreation/WebsiteCreationWhyAndSeo";
 import PageTitle from "../../components/UI/PageTitle";
 import { websiteCreationFaq } from "../../data/faqs";
+import WebsiteHero from "@/components/services/websiteCreation/WebsiteHero";
+import WebsiteResponsive from "@/components/services/websiteCreation/WebsiteResponsive";
+import WebsiteBenefits from "@/components/services/websiteCreation/WebsiteBenefits";
 
 export default function WebsiteCreationScreen() {
 
   return (
     <>
+      <WebsiteHero />
+      <WebsiteBenefits />
+      <WebsiteResponsive />
       <PageTitle>Création de site internet</PageTitle>
       <WebsiteCreationIntro />
       <WebsiteCreationAudience />
