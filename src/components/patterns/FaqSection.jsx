@@ -5,7 +5,10 @@
 import { useId } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { Plus } from "lucide-react";
-import Section from "../layout/Section";
+
+import Section from "@/components/layout/Section";
+import SectionWrapper from "@/components/layout/SectionWrapper";
+import SectionHeading from "@/components/layout/SectionHeading";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -25,11 +28,12 @@ export default function FaqSection({
   return (
     <Section
       id={id}
-      className="faq-section bg-[#222222] py-20 sm:py-24 lg:py-32"
-      aria-labelledby={headingId}
+      labelledBy={headingId}
+      bgColor="#222222"
+      className="faq-section relative"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+      <SectionWrapper>
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
 
           {/* Introduction */}
           <motion.div
@@ -46,32 +50,12 @@ export default function FaqSection({
             }}
             className="lg:sticky lg:top-32 lg:self-start"
           >
-            {/* Eyebrow */}
-            <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-8 bg-[#5AC8FA]" />
-
-              <span className="text-xs font-semibold tracking-[0.16em] text-[#5AC8FA]">
-                QUESTIONS FRÉQUENTES
-              </span>
-            </div>
-
-            {/* Titre */}
-            <h2
+            <SectionHeading
               id={headingId}
-              className="
-                text-3xl font-bold leading-tight tracking-tight
-                text-white sm:text-4xl lg:text-5xl
-              "
-            >
-              {title}
-            </h2>
-
-            {/* Description */}
-            {description && (
-              <p className="mt-6 max-w-md text-base leading-relaxed text-gray-300 sm:text-lg">
-                {description}
-              </p>
-            )}
+              eyebrow="QUESTIONS FRÉQUENTES"
+              title={title}
+              description={description}
+            />
           </motion.div>
 
           {/* Accordéon */}
@@ -88,7 +72,7 @@ export default function FaqSection({
               delay: reducedMotion ? 0 : 0.1,
               ease,
             }}
-            className="border-t border-white/10"
+            className="min-w-0 border-t border-white/10"
           >
             {faq.map(({ q, a }, index) => (
               <details
@@ -100,10 +84,10 @@ export default function FaqSection({
                   className="
                     flex cursor-pointer list-none
                     items-center justify-between gap-6
-                    py-6 text-left
+                    py-5 text-left
                     marker:content-none
                     [&::-webkit-details-marker]:hidden
-                    sm:py-8
+                    sm:py-6
                   "
                 >
                   {/* Question */}
@@ -133,6 +117,7 @@ export default function FaqSection({
                   >
                     <Plus
                       size={18}
+                      aria-hidden="true"
                       className="
                         text-gray-400
                         transition-transform duration-300
@@ -144,14 +129,14 @@ export default function FaqSection({
                 </summary>
 
                 {/* Réponse */}
-                <div className="max-w-xl pb-7 pr-12 text-sm leading-7 text-gray-300 sm:text-base">
+                <div className="max-w-xl pb-6 pr-12 text-sm leading-7 text-gray-300 sm:text-base">
                   {a}
                 </div>
               </details>
             ))}
           </motion.div>
         </div>
-      </div>
+      </SectionWrapper>
 
       {/* Données structurées FAQ */}
       {jsonLd && faq.length > 0 && (
