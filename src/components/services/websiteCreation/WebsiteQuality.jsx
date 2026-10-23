@@ -4,6 +4,12 @@
 
 import { motion, useReducedMotion } from "motion/react";
 
+import Link from "next/link";
+
+import Section from "@/components/layout/Section";
+import SectionWrapper from "@/components/layout/SectionWrapper";
+import SectionHeading from "@/components/layout/SectionHeading";
+
 import {
   Activity,
   ArrowUpRight,
@@ -19,8 +25,6 @@ import {
   Wrench,
   Zap,
 } from "lucide-react";
-
-import Link from "next/link";
 
 // ─────────────────────────────────────────────
 // Données
@@ -77,12 +81,7 @@ function StatusBadge({ children }) {
         px-3 py-1.5
       "
     >
-      <span
-        className="
-          h-1.5 w-1.5 rounded-full
-          bg-[#5AC8FA]
-        "
-      />
+      <span className="h-1.5 w-1.5 rounded-full bg-[#5AC8FA]" />
 
       <span className="text-[11px] font-medium text-[#5AC8FA]">
         {children}
@@ -465,17 +464,16 @@ export default function WebsiteQuality() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <section
-      aria-labelledby="website-quality-title"
-      className="
-        relative overflow-hidden
-        py-20 sm:py-24 lg:py-32
-      "
+    <Section
+      id="website-quality"
+      labelledBy="website-quality-title"
+      className="relative overflow-hidden"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12">
-        <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+      <SectionWrapper>
+        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
           {/* Contenu */}
-          <div>
+          <div className="min-w-0">
+            {/* En-tête */}
             <motion.div
               initial={
                 reducedMotion
@@ -489,73 +487,61 @@ export default function WebsiteQuality() {
                 ease,
               }}
             >
-              <div className="mb-5 flex items-center gap-3">
-                <span className="h-px w-8 bg-[#5AC8FA]" />
-
-                <span className="text-xs font-semibold tracking-[0.16em] text-[#5AC8FA]">
-                  QUALITÉ & PÉRENNITÉ
-                </span>
-              </div>
-
-              <h2
+              <SectionHeading
                 id="website-quality-title"
-                className="
-                  text-3xl font-bold leading-tight
-                  tracking-tight text-white
-                  sm:text-4xl lg:text-5xl
-                "
-              >
-                Un site conçu pour durer.
-              </h2>
-
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-gray-300 sm:text-lg">
-                Un site internet ne doit pas seulement être esthétique.
-                Il doit aussi être fiable, agréable à utiliser et
-                capable d'évoluer avec votre activité.
-              </p>
+                eyebrow="QUALITÉ & PÉRENNITÉ"
+                title="Un site conçu pour durer."
+                description="Un site internet ne doit pas seulement être esthétique. Il doit aussi être fiable, agréable à utiliser et capable d'évoluer avec votre activité."
+              />
             </motion.div>
 
             {/* Arguments */}
-            <div className="mt-10 space-y-8 lg:mt-14">
-              {qualities.map(({ number, icon: Icon, title, description }, index) => (
-                <motion.div
-                  key={number}
-                  initial={
-                    reducedMotion
-                      ? false
-                      : { opacity: 0, x: -20 }
-                  }
-                  whileInView={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{
-                    duration: reducedMotion ? 0 : 0.6,
-                    delay: reducedMotion ? 0 : index * 0.08,
-                    ease,
-                  }}
-                  className="flex items-start gap-5"
-                >
-                  <span className="pt-1 text-sm font-semibold text-[#5AC8FA]">
-                    {number}
-                  </span>
+            <div className="mt-8 space-y-6 sm:mt-10 sm:space-y-8">
+              {qualities.map(
+                ({ number, icon: Icon, title, description }, index) => (
+                  <motion.div
+                    key={number}
+                    initial={
+                      reducedMotion
+                        ? false
+                        : { opacity: 0, x: -20 }
+                    }
+                    whileInView={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{
+                      duration: reducedMotion ? 0 : 0.6,
+                      delay: reducedMotion ? 0 : index * 0.08,
+                      ease,
+                    }}
+                    className="flex items-start gap-4"
+                  >
+                    <span className="pt-1 text-sm font-semibold text-[#5AC8FA]">
+                      {number}
+                    </span>
 
-                  <div className="flex-1 border-b border-white/10 pb-7">
-                    <div className="flex items-center gap-3">
-                      <Icon size={20} className="text-[#5AC8FA]" />
+                    <div className="min-w-0 flex-1 border-b border-white/10 pb-6">
+                      <div className="flex items-center gap-3">
+                        <Icon
+                          size={20}
+                          className="shrink-0 text-[#5AC8FA]"
+                          aria-hidden="true"
+                        />
 
-                      <h3 className="text-lg font-semibold text-white sm:text-xl">
-                        {title}
-                      </h3>
+                        <h3 className="text-lg font-semibold text-white sm:text-xl">
+                          {title}
+                        </h3>
+                      </div>
+
+                      <p className="mt-3 max-w-md text-sm leading-relaxed text-gray-300 sm:text-base">
+                        {description}
+                      </p>
                     </div>
-
-                    <p className="mt-3 max-w-md text-sm leading-relaxed text-gray-300 sm:text-base">
-                      {description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                )
+              )}
             </div>
 
             {/* Lien vers la maintenance */}
@@ -569,7 +555,7 @@ export default function WebsiteQuality() {
               viewport={{ once: true }}
               transition={{
                 duration: reducedMotion ? 0 : 0.6,
-                delay: 0.2,
+                delay: reducedMotion ? 0 : 0.2,
               }}
               className="mt-8"
             >
@@ -586,8 +572,9 @@ export default function WebsiteQuality() {
 
                 <ArrowUpRight
                   size={17}
+                  aria-hidden="true"
                   className="
-                    transition-transform
+                    shrink-0 transition-transform
                     group-hover:translate-x-1
                     group-hover:-translate-y-1
                   "
@@ -617,7 +604,7 @@ export default function WebsiteQuality() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </SectionWrapper>
+    </Section>
   );
 }

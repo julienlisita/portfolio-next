@@ -4,12 +4,14 @@
 
 import { motion, useReducedMotion } from "motion/react";
 
+import Section from "@/components/layout/Section";
+import SectionWrapper from "@/components/layout/SectionWrapper";
+import SectionHeading from "@/components/layout/SectionHeading";
+
 import {
   ArrowUpRight,
   Check,
   CheckCircle2,
-  Code2,
-  FileText,
   Globe2,
   LayoutTemplate,
   Mail,
@@ -38,6 +40,7 @@ function DesignVisual() {
         <div className="p-4">
           <div className="mb-5 flex items-center justify-between">
             <div className="h-3 w-20 rounded bg-white/70" />
+
             <div className="flex gap-2">
               <div className="h-2 w-8 rounded bg-white/20" />
               <div className="h-2 w-8 rounded bg-white/20" />
@@ -86,12 +89,14 @@ function StructureVisual() {
       </div>
 
       <div className="h-6 w-px bg-[#5AC8FA]/40" />
-
       <div className="h-px w-[70%] bg-[#5AC8FA]/40" />
 
       <div className="flex w-[70%] justify-between">
         {[0, 1, 2].map((item) => (
-          <div key={item} className="h-5 w-px bg-[#5AC8FA]/40" />
+          <div
+            key={item}
+            className="h-5 w-px bg-[#5AC8FA]/40"
+          />
         ))}
       </div>
 
@@ -145,6 +150,7 @@ function SEOVisual() {
     <div className="mt-7 rounded-xl border border-white/10 bg-[#1C1C1C] p-4">
       <div className="flex items-center gap-2 border-b border-white/10 pb-3">
         <Search size={15} className="text-gray-400" />
+
         <span className="text-xs text-gray-400">
           Recherche de services
         </span>
@@ -177,7 +183,10 @@ function ResponsiveVisual() {
   return (
     <div className="mt-7 flex items-end justify-center gap-5 sm:gap-8">
       {devices.map(({ icon: Icon, label }) => (
-        <div key={label} className="flex flex-col items-center gap-3">
+        <div
+          key={label}
+          className="flex flex-col items-center gap-3"
+        >
           <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-white/10 bg-[#1C1C1C]">
             <Icon size={24} className="text-[#5AC8FA]" />
           </div>
@@ -220,7 +229,10 @@ function LaunchVisual() {
           </p>
         </div>
 
-        <Check size={18} className="ml-auto shrink-0 text-[#5AC8FA]" />
+        <Check
+          size={18}
+          className="ml-auto shrink-0 text-[#5AC8FA]"
+        />
       </div>
     </div>
   );
@@ -296,11 +308,12 @@ export default function WebsiteFeatures() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <section
-      aria-labelledby="website-features-title"
-      className="relative bg-[#222222] py-20 sm:py-24 lg:py-32"
+    <Section
+      id="website-features"
+      labelledBy="website-features-title"
+      bgColor="#222222"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12">
+      <SectionWrapper>
         {/* En-tête */}
         <motion.div
           initial={
@@ -311,28 +324,14 @@ export default function WebsiteFeatures() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7 }}
-          className="mb-14 max-w-3xl lg:mb-20"
+          className="mb-8 max-w-3xl sm:mb-10 lg:mb-12"
         >
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-8 bg-[#5AC8FA]" />
-
-            <span className="text-xs font-semibold tracking-[0.16em] text-[#5AC8FA]">
-              VOTRE SITE, DE A À Z
-            </span>
-          </div>
-
-          <h2
+          <SectionHeading
             id="website-features-title"
-            className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
-          >
-            Ce qui est inclus dans votre site.
-          </h2>
-
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">
-            De la conception à la mise en ligne, je prends en charge
-            les éléments essentiels pour créer un site professionnel,
-            fonctionnel et adapté à votre activité.
-          </p>
+            eyebrow="VOTRE SITE, DE A À Z"
+            title="Ce qui est inclus dans votre site."
+            description="De la conception à la mise en ligne, je prends en charge les éléments essentiels pour créer un site professionnel, fonctionnel et adapté à votre activité."
+          />
         </motion.div>
 
         {/* Bento grid */}
@@ -405,7 +404,7 @@ export default function WebsiteFeatures() {
             <LaunchVisual />
           </FeatureCard>
         </div>
-      </div>
-    </section>
+      </SectionWrapper>
+    </Section>
   );
 }

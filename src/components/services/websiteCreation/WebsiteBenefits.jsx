@@ -4,6 +4,11 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
+
+import Section from "@/components/layout/Section";
+import SectionWrapper from "@/components/layout/SectionWrapper";
+import SectionHeading from "@/components/layout/SectionHeading";
+
 import {
   ArrowUpRight,
   Check,
@@ -15,6 +20,10 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
+
+// ─────────────────────────────────────────────
+// Données
+// ─────────────────────────────────────────────
 
 const benefits = [
   {
@@ -55,6 +64,7 @@ function TrustPreview() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#5AC8FA]/10">
             <Sparkles size={16} className="text-[#5AC8FA]" />
           </div>
+
           <span className="text-sm font-semibold text-white">
             Votre entreprise
           </span>
@@ -73,6 +83,7 @@ function TrustPreview() {
               strokeWidth={1.5}
               className="mx-auto text-[#5AC8FA]"
             />
+
             <p className="mt-3 text-sm font-semibold text-white">
               Votre savoir-faire en valeur
             </p>
@@ -82,6 +93,7 @@ function TrustPreview() {
         <div className="mt-6">
           <div className="mb-3 flex items-center gap-2 text-[#5AC8FA]">
             <CheckCircle2 size={16} />
+
             <span className="text-xs font-medium">
               Une présentation soignée
             </span>
@@ -105,7 +117,10 @@ function TrustPreview() {
           </div>
 
           <span className="flex items-center gap-1.5 text-xs text-gray-300">
-            <ShieldCheck size={15} className="text-[#5AC8FA]" />
+            <ShieldCheck
+              size={15}
+              className="text-[#5AC8FA]"
+            />
             Une image professionnelle
           </span>
         </div>
@@ -122,7 +137,10 @@ function VisibilityPreview() {
   return (
     <div className="w-full max-w-[420px] rounded-2xl border border-white/10 bg-[#252525] p-5 shadow-2xl sm:p-7">
       <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#1C1C1C] px-4 py-3">
-        <Search size={18} className="shrink-0 text-gray-400" />
+        <Search
+          size={18}
+          className="shrink-0 text-gray-400"
+        />
 
         <span className="min-w-0 flex-1 truncate text-sm text-gray-300">
           artisan près de chez moi
@@ -164,8 +182,14 @@ function VisibilityPreview() {
         </div>
 
         <div className="mt-5 flex items-center gap-2 text-xs text-gray-400">
-          <MapPin size={15} className="text-[#5AC8FA]" />
-          <span>Une présence en ligne pour votre activité locale</span>
+          <MapPin
+            size={15}
+            className="shrink-0 text-[#5AC8FA]"
+          />
+
+          <span>
+            Une présence en ligne pour votre activité locale
+          </span>
         </div>
       </div>
     </div>
@@ -218,7 +242,10 @@ function ContactPreview() {
       </div>
 
       <div className="mt-5 flex items-center gap-2 rounded-lg border border-[#5AC8FA]/20 bg-[#5AC8FA]/[0.05] px-3 py-3">
-        <Check size={16} className="shrink-0 text-[#5AC8FA]" />
+        <Check
+          size={16}
+          className="shrink-0 text-[#5AC8FA]"
+        />
 
         <span className="text-xs text-gray-300">
           Un parcours simple pour vos futurs clients
@@ -249,45 +276,39 @@ export default function WebsiteBenefits() {
   const ActivePreview = previews[activeBenefit];
 
   return (
-    <section
-      aria-labelledby="website-benefits-title"
-      className="relative overflow-hidden bg-[#222222] py-20 sm:py-24 lg:py-32"
+    <Section
+      id="website-benefits"
+      labelledBy="website-benefits-title"
+      bgColor="#222222"
+      className="relative overflow-hidden"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12">
+      <SectionWrapper>
         {/* En-tête */}
         <motion.div
-          initial={reducedMotion ? false : { opacity: 0, y: 25 }}
+          initial={
+            reducedMotion
+              ? false
+              : { opacity: 0, y: 25 }
+          }
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.7 }}
-          className="mb-14 max-w-3xl lg:mb-20"
+          transition={{
+            duration: reducedMotion ? 0 : 0.7,
+          }}
+          className="mb-8 max-w-3xl sm:mb-10 lg:mb-12"
         >
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-8 bg-[#5AC8FA]" />
-
-            <span className="text-xs font-semibold tracking-[0.16em] text-[#5AC8FA]">
-              LES BÉNÉFICES
-            </span>
-          </div>
-
-          <h2
+          <SectionHeading
             id="website-benefits-title"
-            className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
-          >
-            Bien plus qu'une présence en ligne.
-          </h2>
-
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">
-            Votre site internet est un véritable outil pour développer
-            votre activité. Il doit vous aider à être visible, à inspirer
-            confiance et à transformer les visites en opportunités.
-          </p>
+            eyebrow="LES BÉNÉFICES"
+            title="Bien plus qu'une présence en ligne."
+            description="Votre site internet est un véritable outil pour développer votre activité. Il doit vous aider à être visible, à inspirer confiance et à transformer les visites en opportunités."
+          />
         </motion.div>
 
         {/* Contenu */}
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-12">
           {/* Liste des bénéfices */}
-          <div className="border-t border-white/10">
+          <div className="min-w-0 border-t border-white/10">
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
               const active = activeBenefit === benefit.id;
@@ -298,25 +319,35 @@ export default function WebsiteBenefits() {
                   type="button"
                   aria-pressed={active}
                   onClick={() => setActiveBenefit(benefit.id)}
-                  className="group relative w-full border-b border-white/10 py-7 text-left sm:py-9"
+                  className="
+                    group relative w-full
+                    border-b border-white/10
+                    py-5 text-left sm:py-7
+                  "
                 >
                   {/* Barre active */}
                   {active && (
                     <motion.span
                       layoutId="website-benefit-indicator"
-                      className="absolute bottom-0 left-0 top-0 w-[2px] bg-[#5AC8FA]"
+                      className="
+                        absolute bottom-0 left-0 top-0
+                        w-[2px] bg-[#5AC8FA]
+                      "
                       transition={{
                         type: "spring",
                         stiffness: 350,
                         damping: 35,
+                        duration: reducedMotion ? 0 : undefined,
                       }}
                     />
                   )}
 
-                  <div className="flex items-start gap-5 pl-5 sm:gap-7 sm:pl-7">
+                  <div className="flex items-start gap-4 pl-4 sm:gap-5 sm:pl-5">
                     <span
                       className={`pt-1 text-sm font-semibold ${
-                        active ? "text-[#5AC8FA]" : "text-gray-500"
+                        active
+                          ? "text-[#5AC8FA]"
+                          : "text-gray-500"
                       }`}
                     >
                       {benefit.number}
@@ -325,17 +356,22 @@ export default function WebsiteBenefits() {
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-4">
                         <h3
-                          className={`text-xl font-semibold transition-colors sm:text-2xl ${
-                            active
-                              ? "text-white"
-                              : "text-gray-400 group-hover:text-white"
-                          }`}
+                          className={`
+                            text-lg font-semibold
+                            transition-colors sm:text-xl
+                            ${
+                              active
+                                ? "text-white"
+                                : "text-gray-400 group-hover:text-white"
+                            }
+                          `}
                         >
                           {benefit.title}
                         </h3>
 
                         <Icon
                           size={21}
+                          aria-hidden="true"
                           className={
                             active
                               ? "shrink-0 text-[#5AC8FA]"
@@ -360,10 +396,12 @@ export default function WebsiteBenefits() {
                             }}
                             exit={
                               reducedMotion
-                                ? { opacity: 0 }
+                                ? { opacity: 0, height: 0 }
                                 : { opacity: 0, height: 0, y: -6 }
                             }
-                            transition={{ duration: 0.3 }}
+                            transition={{
+                              duration: reducedMotion ? 0 : 0.3,
+                            }}
                             className="overflow-hidden text-sm leading-relaxed text-gray-300 sm:text-base"
                           >
                             <span className="block pt-4">
@@ -380,11 +418,28 @@ export default function WebsiteBenefits() {
           </div>
 
           {/* Illustration dynamique */}
-          <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden rounded-3xl border border-white/[0.06] bg-[#1C1C1C] px-5 py-10 sm:min-h-[520px] sm:px-10">
+          <div
+            className="
+              relative flex min-h-[350px]
+              items-center justify-center
+              overflow-hidden rounded-3xl
+              border border-white/[0.06]
+              bg-[#1C1C1C]
+              px-5 py-8
+              sm:min-h-[440px] sm:px-8
+            "
+          >
             {/* Halo */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#5AC8FA]/[0.055] blur-[90px]"
+              className="
+                pointer-events-none absolute
+                left-1/2 top-1/2
+                h-[300px] w-[350px]
+                -translate-x-1/2 -translate-y-1/2
+                rounded-full bg-[#5AC8FA]/[0.055]
+                blur-[90px]
+              "
             />
 
             <AnimatePresence mode="wait">
@@ -395,7 +450,11 @@ export default function WebsiteBenefits() {
                     ? false
                     : { opacity: 0, y: 16, scale: 0.97 }
                 }
-                animate={{ opacity: 1, y: 0, scale: 1 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                }}
                 exit={
                   reducedMotion
                     ? { opacity: 0 }
@@ -412,7 +471,7 @@ export default function WebsiteBenefits() {
             </AnimatePresence>
           </div>
         </div>
-      </div>
-    </section>
+      </SectionWrapper>
+    </Section>
   );
 }

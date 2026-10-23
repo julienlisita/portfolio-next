@@ -19,6 +19,10 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
+import Section from "@/components/layout/Section";
+import SectionWrapper from "@/components/layout/SectionWrapper";
+import SectionHeading from "@/components/layout/SectionHeading";
+
 // ─────────────────────────────────────────────
 // Configuration des appareils
 // ─────────────────────────────────────────────
@@ -31,7 +35,7 @@ const devices = [
     width: "100%",
     maxWidth: 720,
     image: "/assets/images/services/lumieredarcachon-desktop.webp",
-    alt: "Aperçu du site Compagnie Care & Services sur ordinateur",
+    alt: "Aperçu du site Lumière d'Arcachon sur ordinateur",
   },
   {
     id: "tablet",
@@ -40,7 +44,7 @@ const devices = [
     width: "75%",
     maxWidth: 470,
     image: "/assets/images/services/lumieredarcachon-tablet.webp",
-    alt: "Présentation illustrative du site au format tablette",
+    alt: "Aperçu du site Lumière d'Arcachon sur tablette",
   },
   {
     id: "mobile",
@@ -49,7 +53,7 @@ const devices = [
     width: "55%",
     maxWidth: 250,
     image: "/assets/images/services/lumieredarcachon-mobile.webp",
-    alt: "Aperçu du site Compagnie Care & Services sur mobile",
+    alt: "Aperçu du site Lumière d'Arcachon sur mobile",
   },
 ];
 
@@ -103,6 +107,7 @@ function DeviceSelector({ activeDevice, onChange }) {
                   type: "spring",
                   stiffness: 350,
                   damping: 30,
+                  duration: 0.3,
                 }}
               />
             )}
@@ -133,26 +138,26 @@ function DevicePreview({ device, reducedMotion }) {
 
   return (
     <motion.div
-    layout
-    initial={false}
-    animate={{
+      layout
+      initial={false}
+      animate={{
         width: device.width,
         maxWidth: device.maxWidth,
-    }}
-    transition={{
+      }}
+      transition={{
         duration: reducedMotion ? 0 : 0.65,
         ease: [0.22, 1, 0.36, 1],
-    }}
-    className="
+      }}
+      className="
         relative mx-auto
         overflow-hidden
         border border-white/10
         bg-[#252525]
         shadow-[0_25px_70px_rgba(0,0,0,0.45)]
-    "
-    style={{
+      "
+      style={{
         borderRadius: isMobile ? 28 : isTablet ? 20 : 14,
-    }}
+      }}
     >
       {/* Barre supérieure selon l'appareil */}
       {isMobile ? (
@@ -251,14 +256,12 @@ export default function WebsiteResponsive() {
     devices[0];
 
   return (
-    <section
-      aria-labelledby="website-responsive-title"
-      className="
-        relative overflow-hidden
-        py-20 sm:py-24 lg:py-32
-      "
+    <Section
+      id="website-responsive"
+      labelledBy="website-responsive-title"
+      className="relative overflow-hidden"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12">
+      <SectionWrapper>
         {/* Introduction */}
         <motion.div
           initial={
@@ -272,46 +275,19 @@ export default function WebsiteResponsive() {
             duration: 0.7,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="mx-auto max-w-3xl text-center"
+          className="mx-auto max-w-3xl"
         >
-          {/* Catégorie */}
-          <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-[#5AC8FA]" />
-
-            <span className="text-xs font-semibold tracking-[0.16em] text-[#5AC8FA]">
-              UNE EXPÉRIENCE ADAPTÉE
-            </span>
-
-            <span className="h-px w-8 bg-[#5AC8FA]" />
-          </div>
-
-          <h2
+          <SectionHeading
             id="website-responsive-title"
-            className="
-              text-3xl font-bold
-              leading-tight tracking-tight text-white
-              sm:text-4xl lg:text-5xl
-            "
-          >
-            Votre site, sur tous les écrans.
-          </h2>
-
-          <p
-            className="
-              mx-auto mt-6 max-w-2xl
-              text-base leading-relaxed text-gray-300
-              sm:text-lg
-            "
-          >
-            Vos clients consultent votre site depuis leur téléphone,
-            leur tablette ou leur ordinateur. Chaque interface est
-            pensée pour offrir une navigation claire et agréable,
-            quel que soit le support utilisé.
-          </p>
+            eyebrow="UNE EXPÉRIENCE ADAPTÉE"
+            title="Votre site, sur tous les écrans."
+            description="Vos clients consultent votre site depuis leur téléphone, leur tablette ou leur ordinateur. Chaque interface est pensée pour offrir une navigation claire et agréable, quel que soit le support utilisé."
+            align="center"
+          />
         </motion.div>
 
         {/* Sélecteur */}
-        <div className="mt-10 flex justify-center sm:mt-12">
+        <div className="mt-8 flex justify-center sm:mt-10">
           <DeviceSelector
             activeDevice={activeDevice}
             onChange={setActiveDevice}
@@ -321,15 +297,15 @@ export default function WebsiteResponsive() {
         {/* Zone de démonstration */}
         <div
           className="
-            relative mt-10 flex min-h-[420px]
+            relative mt-8 flex min-h-[350px]
             items-center justify-center
             overflow-hidden rounded-3xl
             border border-white/[0.06]
             bg-[#1C1C1C]
-            px-5 py-10
-            sm:mt-12 sm:min-h-[650px]
-            sm:px-10 sm:py-14
-            lg:min-h-[720px]
+            px-5 py-8
+            sm:mt-10 sm:min-h-[480px]
+            sm:px-10 sm:py-10
+            lg:min-h-[560px]
           "
         >
           {/* Halo de fond */}
@@ -357,15 +333,16 @@ export default function WebsiteResponsive() {
         {/* Informations complémentaires */}
         <div
           className="
-            mt-10 flex flex-col
+            mt-8 flex flex-col
             items-start justify-between gap-6
-            sm:flex-row sm:items-center
+            sm:mt-10 sm:flex-row sm:items-center
           "
         >
           <div className="flex items-start gap-3">
             <CheckCircle2
               size={21}
               className="mt-0.5 shrink-0 text-[#5AC8FA]"
+              aria-hidden="true"
             />
 
             <div>
@@ -394,6 +371,7 @@ export default function WebsiteResponsive() {
 
             <ArrowUpRight
               size={17}
+              aria-hidden="true"
               className="
                 transition-transform
                 group-hover:translate-x-1
@@ -402,7 +380,7 @@ export default function WebsiteResponsive() {
             />
           </a>
         </div>
-      </div>
-    </section>
+      </SectionWrapper>
+    </Section>
   );
 }
