@@ -1,66 +1,98 @@
 // src/components/howIWork/HowIWorkTechStack.jsx
 
 import Section from "../layout/Section";
+import SectionWrapper from "../layout/SectionWrapper";
+import SectionHeading from "../layout/SectionHeading";
+
 import TechCard from "./TechCard";
 
-export default function HowIWorkTechStack({ technologies }) {
+import { technologies } from "../../data/technologies";
+
+const categories = [
+  {
+    id: "frontend",
+    title: "Front-end",
+    color: "#007AFF",
+  },
+  {
+    id: "backend",
+    title: "Back-end & données",
+    color: "#007AFF",
+  },
+  {
+    id: "deployment",
+    title: "Déploiement & outils",
+    color: "#007AFF",
+  },
+  {
+    id: "complementary",
+    title: "Complément (profil technique)",
+    color: "#9B59B6",
+    description:
+      "Avant le web, j’ai travaillé sur des projets plus techniques (C, C++, Java). Ça renforce ma rigueur et ma capacité à concevoir des solutions robustes.",
+  },
+];
+
+export default function HowIWorkTechStack() {
   return (
-    <>
-      <Section title="Choix techniques (pour les curieux)" className="text-base sm:text-lg lg:text-xl">
-        <p className="text-gray-300">
-          Pour garantir performance, SEO et maintenabilité, j’utilise une stack moderne.
-          Si vous n’êtes pas “tech”, vous pouvez ignorer cette partie.
-        </p>
-      </Section>
+    <Section
+      id="how-i-work-tech-stack"
+      labelledBy="how-i-work-tech-stack-title"
+    >
+      <SectionWrapper>
+        <SectionHeading
+          id="how-i-work-tech-stack-title"
+          eyebrow="TECHNOLOGIES"
+          title="Mes choix techniques"
+          description="Pour garantir performance, SEO et maintenabilité, j’utilise une stack moderne. Si vous n’êtes pas particulièrement technique, cette partie est facultative."
+          className="mb-10 sm:mb-12"
+        />
 
-      <Section title="Front-end">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-8">
-          {technologies.filter((t) => t.category === "frontend").map((t) => (
-            <TechCard key={t.name} color="#007AFF" {...t} />
-          ))}
+        <div className="space-y-12">
+          {categories.map((category) => {
+            const items = technologies.filter(
+              (technology) => technology.category === category.id
+            );
+
+            return (
+              <div key={category.id}>
+                <h3 className="mb-5 text-lg font-semibold text-gray-100">
+                  {category.title}
+                </h3>
+
+                {category.description && (
+                  <p className="mb-6 max-w-4xl text-sm leading-relaxed text-gray-300 sm:text-base">
+                    {category.description}
+                  </p>
+                )}
+
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-4">
+                  {items.map((technology) => (
+                    <TechCard
+                      key={technology.name}
+                      {...technology}
+                      color={category.color}
+                    />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
-      </Section>
 
-      <Section title="Back-end & données">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-8">
-          {technologies.filter((t) => t.category === "backend").map((t) => (
-            <TechCard key={t.name} color="#007AFF" {...t} />
-          ))}
-        </div>
-      </Section>
-
-      <Section title="Déploiement & outils">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-8">
-          {technologies.filter((t) => t.category === "deployment").map((t) => (
-            <TechCard key={t.name} color="#007AFF" {...t} />
-          ))}
-        </div>
-      </Section>
-
-      <Section title="Complément (profil technique)">
-        <p className="text-base sm:text-lg lg:text-xl text-gray-300">
-          Avant le web, j’ai travaillé sur des projets plus techniques (C, C++, Java). Ça renforce ma rigueur
-          et ma capacité à concevoir des solutions robustes.
-        </p>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-8">
-          {technologies.filter((t) => t.category === "complementary").map((t) => (
-            <TechCard key={t.name} color="#9B59B6" {...t} />
-          ))}
-        </div>
-
-        <p className="text-sm text-center text-gray-500 mt-6">
-          🔗 GitHub :
+        <p className="mt-10 text-center text-sm text-gray-400">
+          Retrouvez également mes projets sur{" "}
           <a
             href="https://github.com/julienlisita"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#007AFF] hover:underline ml-1"
+            className="font-medium text-[#5AC8FA] transition-colors hover:underline"
           >
-            github.com/julienlisita
+            GitHub
           </a>
+          .
         </p>
-      </Section>
-    </>
+      </SectionWrapper>
+    </Section>
   );
 }
