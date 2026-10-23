@@ -14,11 +14,11 @@ export default function ContactForm() {
         w-full max-w-2xl
         bg-[#2a2a2a]
         rounded-2xl
-        p-8
+        p-5 sm:p-8
         space-y-6
         transition-all duration-300
-        focus-within:shadow-[0_0_14px_rgba(0,122,255,0.35)]
         focus-within:border-[#5AC8FA]
+        focus-within:shadow-[0_0_14px_rgba(0,122,255,0.35)]
       "
     >
       {/* Honeypot anti-spam */}

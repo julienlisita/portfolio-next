@@ -1,32 +1,23 @@
 // src/screens/ContactScreen.jsx
 
-import PageTitle from "../components/UI/PageTitle";
-import Section from "../components/layout/Section";
+import PageHero from "../components/layout/PageHero";
 
-import ContactIntro from "../components/contact/ContactIntro";
-import ContactDetails from "../components/contact/ContactDetails";
-import ContactLocation from "../components/contact/ContactLocation";
+import ContactContent from "../components/contact/ContactContent";
 import ContactMap from "../components/contact/ContactMap";
 
 export default function ContactScreen() {
   return (
     <>
-      <PageTitle>Contact</PageTitle>
+      <PageHero
+        id="contact-hero"
+        eyebrow="CONTACT"
+        title="Parlons de votre projet"
+        description="Un site web, une application métier ou une idée à concrétiser ? Parlons de votre projet et de vos besoins pour imaginer une solution adaptée."
+      />
 
-      <Section title="Parlons de votre projet">
-        <div className="grid gap-6 sm:gap-8 lg:gap-10 lg:grid-cols-3">
-          <ContactIntro />
+      <ContactContent />
 
-          <aside className="lg:col-span-1 space-y-6">
-            <ContactDetails />
-            <ContactLocation />
-          </aside>
-        </div>
-      </Section>
-
-      <Section title="Carte">
-        <ContactMap />
-      </Section>
+      <ContactMap />
     </>
   );
 }
