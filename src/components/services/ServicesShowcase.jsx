@@ -12,6 +12,9 @@ import {
   Gauge,
 } from "lucide-react";
 
+import Section from "../layout/Section";
+import SectionWrapper from "../layout/SectionWrapper";
+
 // ─────────────────────────────────────────────
 // Données des services
 // ─────────────────────────────────────────────
@@ -475,11 +478,12 @@ function ServiceTitle({ title }) {
 
 export default function ServicesShowcase() {
   return (
-    <section
+    <Section
+      id="services-showcase"
+      bgColor="#222222"
       aria-label="Mes prestations"
-      className="bg-[#222222] py-12 sm:py-16 lg:py-24"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-12">
+      <SectionWrapper>
         {services.map((service, index) => {
           const Visual = visuals[service.visual];
           const reversed = index % 2 !== 0;
@@ -514,7 +518,7 @@ export default function ServicesShowcase() {
                     </span>
                   </div>
 
-                  {/* Titre blanc */}
+                  {/* Titre */}
                   <ServiceTitle title={service.title} />
 
                   {/* Description */}
@@ -600,7 +604,7 @@ export default function ServicesShowcase() {
             </Fragment>
           );
         })}
-      </div>
-    </section>
+      </SectionWrapper>
+    </Section>
   );
 }

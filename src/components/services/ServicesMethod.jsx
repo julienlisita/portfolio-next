@@ -24,6 +24,9 @@ import {
 } from "lucide-react";
 
 import Section from "../layout/Section";
+import SectionWrapper from "../layout/SectionWrapper";
+import SectionHeading from "../layout/SectionHeading";
+
 import Button from "../UI/Button";
 
 // ─────────────────────────────────────────────
@@ -122,24 +125,30 @@ function buildPath(points, desktop) {
 // réelle du chemin SVG.
 function getPathThresholds(path, points) {
   if (!path || points.length < 2) {
-    return steps.map((_, index) => index / (steps.length - 1));
+    return steps.map(
+      (_, index) => index / (steps.length - 1)
+    );
   }
 
   const namespace = "http://www.w3.org/2000/svg";
 
-  const svg = document.createElementNS(namespace, "svg");
-  const pathElement = document.createElementNS(namespace, "path");
+  const pathElement = document.createElementNS(
+    namespace,
+    "path"
+  );
 
   pathElement.setAttribute("d", path);
-  svg.appendChild(pathElement);
 
   const totalLength = pathElement.getTotalLength();
 
   if (!totalLength) {
-    return steps.map((_, index) => index / (steps.length - 1));
+    return steps.map(
+      (_, index) => index / (steps.length - 1)
+    );
   }
 
   const thresholds = [0];
+
   let previousLength = 0;
 
   for (let index = 1; index < points.length - 1; index++) {
@@ -148,12 +157,14 @@ function getPathThresholds(path, points) {
     let bestLength = previousLength;
     let bestDistance = Infinity;
 
-    const samples = 1200;
+    // 80 échantillons au lieu de 1200
+    const samples = 80;
 
     for (let sample = 0; sample <= samples; sample++) {
       const length =
         previousLength +
-        ((totalLength - previousLength) * sample) / samples;
+        ((totalLength - previousLength) * sample) /
+          samples;
 
       const point = pathElement.getPointAtLength(length);
 
@@ -168,6 +179,7 @@ function getPathThresholds(path, points) {
     }
 
     previousLength = bestLength;
+
     thresholds.push(bestLength / totalLength);
   }
 
@@ -196,7 +208,6 @@ function usePathGeometry(containerRef, nodeRefs, desktop) {
 
     const measure = () => {
       const containerRect = container.getBoundingClientRect();
-
       const nodes = nodeRefs.current;
 
       if (
@@ -278,7 +289,6 @@ function useJourneyProgress(containerRef, geometry) {
       if (!container) return;
 
       const rect = container.getBoundingClientRect();
-
       const triggerY = window.innerHeight * 0.75;
 
       const firstY = rect.top + geometry.points[0].y;
@@ -388,6 +398,7 @@ function AnimatedStep({
             size={mobile ? 30 : 32}
             strokeWidth={1.6}
             style={{ color: step.color }}
+            aria-hidden="true"
           />
         </div>
 
@@ -716,36 +727,53 @@ export default function ServicesMethod() {
 
   return (
     <Section
-      id="method"
-      title="Ma méthode de travail"
-      className="py-16 text-gray-300 sm:py-24"
+      id="services-method"
+      labelledBy="services-method-title"
     >
-      {/* Introduction */}
-      <p className="max-w-3xl text-base leading-relaxed text-gray-300 sm:text-lg">
-        De notre premier échange jusqu'à la mise en ligne, chaque étape est
-        pensée pour faire avancer votre projet sereinement, avec une vision
-        claire de son évolution.
-      </p>
+      <SectionWrapper>
+        <SectionHeading
+          id="services-method-title"
+          eyebrow="MON ACCOMPAGNEMENT"
+          title="Ma méthode de travail"
+          description="De notre premier échange jusqu'à la mise en ligne, chaque étape est pensée pour faire avancer votre projet sereinement, avec une vision claire de son évolution."
+          align="left"
+        />
 
-      {/* Desktop : zigzag animé */}
-      <Journey reducedMotion={reducedMotion} />
+        {/* Desktop : zigzag animé */}
+        <Journey reducedMotion={reducedMotion} />
 
-      {/* Mobile / tablette : ligne verticale animée */}
-      <Journey mobile reducedMotion={reducedMotion} />
+        {/* Mobile / tablette : ligne verticale animée */}
+        <Journey mobile reducedMotion={reducedMotion} />
 
-      {/* Lien vers la méthode détaillée */}
-      <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-gray-300 sm:text-base">
-          Découvrez plus en détail mon approche et mes choix techniques.
-        </p>
+        {/* Lien vers la méthode détaillée */}
+        <div
+          className="
+            mt-16 flex flex-col gap-4
+            border-t border-white/10 pt-8
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+          "
+        >
+          <p className="text-sm text-gray-300 sm:text-base">
+            Découvrez plus en détail mon approche et mes choix techniques.
+          </p>
 
-        <Button variant="text" href="/comment-je-travaille">
-          <span className="inline-flex items-center gap-2">
-            Comment je travaille
-            <ArrowUpRight size={17} />
-          </span>
-        </Button>
-      </div>
+          <Button
+            variant="text"
+            href="/comment-je-travaille"
+          >
+            <span className="inline-flex items-center gap-2">
+              Comment je travaille
+
+              <ArrowUpRight
+                size={17}
+                aria-hidden="true"
+              />
+            </span>
+          </Button>
+        </div>
+      </SectionWrapper>
     </Section>
   );
 }
