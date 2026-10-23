@@ -1,41 +1,63 @@
 // src/components/about/AboutIntro.jsx
 
 import Section from "../layout/Section";
+import SectionWrapper from "../layout/SectionWrapper";
+
+const informations = [
+  {
+    label: "Spécialités",
+    value: "React, Next.js, Node.js",
+  },
+  {
+    label: "Localisation",
+    value: "Bordeaux",
+    detail: "Travail à distance possible",
+  },
+  {
+    label: "Clients",
+    value: "Artisans, indépendants, commerces, TPE/PME",
+  },
+  {
+    label: "Approche",
+    value: "Claire, itérative, orientée résultat",
+  },
+];
 
 export default function AboutIntro() {
   return (
-    <>
-      {/* Photo */}
-      <div className="flex justify-center my-8">
-        <img
-          src="/assets/images/profile-pic.avif"
-          alt="Portrait de Julien Lisita, développeur web freelance"
-          className="w-32 h-32 sm:w-40 sm:h-40 md:w-52 md:h-52 rounded-full object-cover shadow-lg"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          width="208"
-          height="208"
-        />
-      </div>
+    <Section
+      id="about-intro"
+      aria-label="Mon profil en bref"
+    >
+      <SectionWrapper>
+        <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {informations.map((information) => (
+            <li
+              key={information.label}
+              className="
+                rounded-xl
+                border border-[#2f2f2f]
+                bg-[#2a2a2a]
+                p-5
+              "
+            >
+              <h2 className="mb-3 text-sm font-semibold text-[#5AC8FA]">
+                {information.label}
+              </h2>
 
-      {/* En bref */}
-      <Section className="text-base sm:text-lg lg:text-xl">
-        <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-gray-300">
-          <li>
-            <strong>Spécialités :</strong> React, Next.js, Node.js
-          </li>
-          <li>
-            <strong>Localisation :</strong> Mérignac – Bordeaux (remote possible)
-          </li>
-          <li>
-            <strong>Clients :</strong> artisans, indépendants, commerces, TPE/PME
-          </li>
-          <li>
-            <strong>Approche :</strong> claire, itérative, orientée résultat
-          </li>
+              <p className="text-sm leading-relaxed text-gray-200">
+                {information.value}
+              </p>
+
+              {information.detail && (
+                <p className="mt-1 text-xs text-gray-400">
+                  {information.detail}
+                </p>
+              )}
+            </li>
+          ))}
         </ul>
-      </Section>
-    </>
+      </SectionWrapper>
+    </Section>
   );
 }
