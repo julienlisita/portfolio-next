@@ -1,14 +1,40 @@
 // src/components/layout/Section.jsx
 
-import SectionTitle from "../UI/SectionTitle";
+const resolveColor = (color) => {
+  if (
+    color.startsWith("#") ||
+    color.startsWith("rgb") ||
+    color.startsWith("hsl")
+  ) {
+    return color;
+  }
 
-export default function Section({ id, title, children, className }) {
-return (
-  <section>
-        {title && <SectionTitle id={id}>{title}</SectionTitle>}
-        <div className={`mt-8 sm:mt-10 lg:mt-12 ${className}`}>
-            {children}
-        </div>
+  return `var(--color-${color})`;
+};
+
+export default function Section({
+  children,
+  className = "",
+  bgColor,
+  id,
+  labelledBy,
+  describedBy,
+  ...props
+}) {
+  const style = bgColor
+    ? { backgroundColor: resolveColor(bgColor) }
+    : undefined;
+
+  return (
+    <section
+      id={id}
+      aria-labelledby={labelledBy}
+      aria-describedby={describedBy}
+      className={`py-8 sm:py-10 md:py-12 lg:py-16 ${className}`}
+      style={style}
+      {...props}
+    >
+      {children}
     </section>
   );
 }

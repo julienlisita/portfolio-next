@@ -1,16 +1,31 @@
 // src/components/UI/SectionTitle.jsx
 
-export default function SectionTitle({ className, children,id }) {
-    return (
-      <h2 
-        id={id}
-        className={`${className}
-        mt-8 sm:mt-10 lg:mt-12
-        text-xl sm:text-2xl lg:text-3xl 
-        font-heading font-semibold text-gray-100
-        text-center scroll-mt-18 sm:scroll-mt-18 lg:scroll-mt-24`}
-      >
-        {children}
-      </h2>
-    );
-  }
+const alignmentClasses = {
+  left: "text-left",
+  center: "text-center",
+  right: "text-right",
+};
+
+export default function SectionTitle({
+  id,
+  children,
+  className = "",
+  align = "center",
+  focusable = false,
+}) {
+  return (
+    <h2
+      id={id}
+      tabIndex={focusable ? -1 : undefined}
+      className={`
+        text-2xl sm:text-3xl
+        font-bold
+        text-white
+        ${alignmentClasses[align] ?? alignmentClasses.left}
+        ${className}
+      `}
+    >
+      {children}
+    </h2>
+  );
+}
