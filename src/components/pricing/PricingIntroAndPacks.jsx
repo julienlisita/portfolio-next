@@ -1,6 +1,10 @@
 // src/components/pricing/PricingIntroAndPacks.jsx
 
+import { Check } from "lucide-react";
+
 import Section from "../layout/Section";
+import SectionWrapper from "../layout/SectionWrapper";
+import SectionHeading from "../layout/SectionHeading";
 
 const packs = [
   {
@@ -19,7 +23,7 @@ const packs = [
     ],
   },
   {
-   title: "Site sur mesure",
+    title: "Site sur mesure",
     subtitle: "Pour une identité et une expérience plus travaillées",
     price: "À partir de 1 400 €",
     description:
@@ -52,48 +56,74 @@ const packs = [
 
 export default function PricingIntroAndPacks() {
   return (
-    <Section>
-      <p className="text-left text-base sm:text-lg lg:text-xl mt-4 mb-4 text-gray-300">
-        Les tarifs dépendent du niveau de personnalisation, du contenu à intégrer
-        et des fonctionnalités nécessaires. Voici des repères pour vous situer
-        avant un devis personnalisé.
-      </p>
+    <Section
+      id="pricing-packs"
+      labelledBy="pricing-packs-title"
+      bgColor="#222222"
+    >
+      <SectionWrapper>
+        <SectionHeading
+          id="pricing-packs-title"
+          eyebrow="MES OFFRES"
+          title="Une solution adaptée à vos besoins."
+          description="Du site professionnel à l'application sur mesure, choisissez une solution adaptée à votre activité et à vos objectifs."
+          className="mb-8 sm:mb-10 lg:mb-12"
+        />
 
-      <div className="grid lg:grid-cols-3 gap-6 mt-6">
-        {packs.map((pack) => (
-          <div
-            key={pack.title}
-            className="bg-[#2a2a2a] p-5 rounded-2xl text-gray-200 border border-[#2f2f2f] flex flex-col"
-          >
-            <h3 className="font-semibold text-gray-100 text-lg mb-1 text-center">
-              {pack.title}
-            </h3>
+        <div className="grid gap-6 xl:grid-cols-3">
+          {packs.map((pack) => (
+            <article
+              key={pack.title}
+              className="
+                flex h-full flex-col
+                rounded-2xl border border-[#2f2f2f]
+                bg-[#2a2a2a] p-5
+                text-gray-200
+                sm:p-6
+              "
+            >
+              <h3 className="mb-1 text-center text-lg font-semibold text-gray-100">
+                {pack.title}
+              </h3>
 
-            <p className="text-sm text-[#007AFF] text-center font-medium mb-3">
-              {pack.subtitle}
-            </p>
+              <p className="mb-3 text-center text-sm font-medium text-[#5AC8FA]">
+                {pack.subtitle}
+              </p>
 
-            <p className="text-sm text-gray-400 text-center mb-4">
-              {pack.description}
-            </p>
+              <p className="mb-5 text-center text-sm leading-relaxed text-gray-400">
+                {pack.description}
+              </p>
 
-            <ul className="text-sm text-gray-300 space-y-2 flex-1">
-              {pack.items.map((item) => (
-                <li key={item}>• {item}</li>
-              ))}
-            </ul>
+              <ul className="flex-1 space-y-3">
+                {pack.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm leading-relaxed text-gray-300"
+                  >
+                    <Check
+                      size={16}
+                      aria-hidden="true"
+                      className="mt-0.5 shrink-0 text-[#5AC8FA]"
+                    />
 
-            <p className="text-[#5AC8FA] font-bold text-base mt-5 text-center">
-              {pack.price}
-            </p>
-          </div>
-        ))}
-      </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
 
-      <p className="text-xs text-gray-400 mt-4">
-        Ces tarifs sont indicatifs. Le devis final dépend du nombre de pages,
-        du contenu fourni, du niveau de design souhaité et des fonctionnalités à intégrer.
-      </p>
+              <p className="mt-6 border-t border-white/10 pt-5 text-center text-base font-bold text-[#5AC8FA]">
+                {pack.price}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-6 text-xs leading-relaxed text-gray-400">
+          Ces tarifs sont indicatifs. Le devis final dépend du nombre de
+          pages, du contenu fourni, du niveau de design souhaité et des
+          fonctionnalités à intégrer.
+        </p>
+      </SectionWrapper>
     </Section>
   );
 }

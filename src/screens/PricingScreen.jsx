@@ -1,19 +1,23 @@
 // src/screens/PricingScreen.jsx
 
-import PageTitle from "../components/UI/PageTitle";
-
 import PricingIntroAndPacks from "../components/pricing/PricingIntroAndPacks";
 import PricingOptions from "../components/pricing/PricingOptions";
 import PricingExamples from "../components/pricing/PricingExamples";
 import FaqSection from "../components/patterns/FaqSection";
 import CtaFinal from "../components/patterns/CtaFinal";
 import { pricingFaq } from "../data/faqs";
+import PageHero from "@/components/layout/PageHero";
 
 export default function PricingScreen() {
 
   return (
     <>
-      <PageTitle>Tarifs</PageTitle>
+      <PageHero
+        id="pricing-hero"
+        eyebrow="TARIFS & PRESTATIONS"
+        title="Des tarifs adaptés à votre projet."
+        description="Les tarifs dépendent du niveau de personnalisation, du contenu à intégrer et des fonctionnalités nécessaires. Voici des repères pour vous situer avant un devis personnalisé."
+      />
       <PricingIntroAndPacks />
       <PricingOptions />
       <PricingExamples />
