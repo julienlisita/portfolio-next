@@ -1,25 +1,37 @@
 // src/components/blog/article/ArticleHeader.jsx
 
+import PageHero from "../../layout/PageHero";
+
 import { formatDate } from "@/utils/formatDate";
-import PageTitle from "../../UI/PageTitle";
 
 export default function ArticleHeader({ title, date, category }) {
   return (
-    <header className="mb-8">
-      <PageTitle>{title}</PageTitle>
+    <PageHero
+      id="article-hero"
+      eyebrow="BLOG"
+      title={title}
+    >
+      {(date || category) && (
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-gray-400">
+          {date && (
+            <time dateTime={date}>
+              {formatDate(date)}
+            </time>
+          )}
 
-      <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-400">
-        {date && <span>{formatDate(date)}</span>}
+          {date && category && (
+            <span aria-hidden="true" className="opacity-60">
+              •
+            </span>
+          )}
 
-        {category && (
-          <>
-            <span className="opacity-60">•</span>
-            <span className="px-2 py-1 rounded-md bg-[#1e1e1e] text-gray-300 text-xs">
+          {category && (
+            <span className="rounded-md bg-[#2a2a2a] px-3 py-1 text-xs text-gray-300">
               {category}
             </span>
-          </>
-        )}
-      </div>
-    </header>
+          )}
+        </div>
+      )}
+    </PageHero>
   );
 }
