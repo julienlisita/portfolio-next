@@ -1,11 +1,10 @@
 // src/screens/portfolio/PortfolioScreen.jsx
 
 import { projects } from "../../data/projectsData";
-import PageTitle from "../../components/UI/PageTitle";
 import CtaFinal from "../../components/patterns/CtaFinal";
 
-import PortfolioIntro from "../../components/portfolio/PortfolioIntro";
 import PortfolioGrid from "../../components/portfolio/PortfolioGrid";
+import PageHero from "@/components/layout/PageHero";
 
 export default function PortfolioScreen() {
   const applications = projects.filter((p) => p.category === "application");
@@ -13,9 +12,12 @@ export default function PortfolioScreen() {
 
   return (
     <>
-      <PageTitle>Réalisations</PageTitle>
-
-      <PortfolioIntro />
+      <PageHero
+        id="portfolio-hero"
+        eyebrow="PORTFOLIO"
+        title="Réalisations"
+        description="Quelques projets représentatifs : sites vitrines et applications web. Chaque fiche détaille le contexte, les objectifs et les choix clés (UX, SEO, performance, évolutivité)."
+      />
 
       <PortfolioGrid title="Applications web" projects={applications} />
       <PortfolioGrid title="Sites web" projects={sites} />
