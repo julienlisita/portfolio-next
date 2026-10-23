@@ -1,36 +1,20 @@
 // src/screens/blog/BlogScreen.jsx
 
-'use client';
+import PageHero from "../../components/layout/PageHero";
 
-import { useState } from "react";
-import Pagination from "../../components/navigation/Pagination";
-import PageTitle from "../../components/UI/PageTitle";
-import { articles } from "../../data/articles";
-
-import BlogIntro from "../../components/blog/BlogIntro";
 import BlogList from "../../components/blog/BlogList";
 
 export default function BlogScreen() {
-  const articlesPerPage = 10;
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const start = (currentPage - 1) * articlesPerPage;
-  const paginatedArticles = articles.slice(start, start + articlesPerPage);
-  const totalPages = Math.ceil(articles.length / articlesPerPage);
-
   return (
     <>
-      <PageTitle>Blog</PageTitle>
-
-      <BlogIntro />
-
-      <BlogList articles={paginatedArticles} />
-
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={setCurrentPage}
+      <PageHero
+        id="blog-hero"
+        eyebrow="BLOG"
+        title="Conseils & ressources"
+        description="Des conseils concrets pour les artisans, indépendants et petites entreprises : visibilité locale, site vitrine, performance et choix techniques. L'objectif : vous aider à prendre les bonnes décisions pour votre site."
       />
+
+      <BlogList />
     </>
   );
 }
