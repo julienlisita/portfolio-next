@@ -8,6 +8,7 @@ import MaintenanceOutro from "../../components/services/maintenance/MaintenanceO
 import { maintenanceFaq } from "../../data/faqs";
 import MaintenanceHero from "@/components/services/maintenance/MaintenanceHero";
 import MaintenanceBenefits from "@/components/services/maintenance/MaintenanceBenefits";
+import MaintenanceServices from "@/components/services/maintenance/MaintenanceServices";
 
 export default function MaintenanceScreen() {
 
@@ -16,6 +17,8 @@ export default function MaintenanceScreen() {
       <MaintenanceHero />
 
       <MaintenanceBenefits />
+
+      <MaintenanceServices />
 
       <MaintenanceIncluded />
       <MaintenanceTerms />
