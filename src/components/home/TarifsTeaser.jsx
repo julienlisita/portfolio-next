@@ -1,55 +1,122 @@
 // src/components/home/TarifsTeaser.jsx
 
-import HomeSectionWrapper from "./HomeSectionWrapper";
-import { BadgeEuro, Clock, Wrench } from "lucide-react";
+import { Clock3, Code2 } from "lucide-react";
+
+import Button from "../UI/Button";
+import Section from "../layout/Section";
+import SectionWrapper from "../layout/SectionWrapper";
+import SectionHeading from "../layout/SectionHeading";
 
 export default function TarifsTeaser() {
   return (
-    <HomeSectionWrapper
-      id="tarifs"
-      title="Des tarifs clairs et adaptés"
-      link={{ href: "/tarifs", text: "Voir les tarifs" }}
-    >
-      <p className="text-base sm:text-lg lg:text-xl text-gray-300">
-        Chaque projet est estimé selon vos objectifs, vos contenus et les fonctionnalités nécessaires. L’idée : vous proposer une solution claire, utile et adaptée à votre budget.
-      </p>
+    <Section id="tarifs" labelledBy="tarifs-title">
+      <SectionWrapper>
+        <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
 
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <TeaserCard
-          icon={<BadgeEuro size={22} aria-hidden />}
-          title="Site vitrine"
-          desc="À partir de 900 € – site clair et structuré pour faciliter les prises de contact"
-        />
-        <TeaserCard
-          icon={<Wrench size={22} aria-hidden />}
-          
-          title="Fonctionnalités & outils"
-          desc="Sur devis – réservation, espace admin, automatisation selon votre activité"
-        />
-        <TeaserCard
-          icon={<Clock size={22} aria-hidden />}
-          title="Délais"
-          desc="En général 2 à 4 semaines selon le projet"
-        />
-      </div>
-    </HomeSectionWrapper>
-  );
-}
+          {/* En-tête */}
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+            <SectionHeading
+              id="tarifs-title"
+              eyebrow="MES TARIFS"
+              title="Des tarifs clairs, adaptés à votre projet"
+              description="Chaque projet est différent. Je vous propose une solution adaptée à vos objectifs et à votre budget, avec un devis détaillé avant de commencer."
+            />
 
-function TeaserCard({ icon, title, desc }) {
-  return (
-    <div className="bg-[#1f1f1f] rounded-2xl p-6 h-full shadow-lg">
-      <div className="flex items-start gap-3">
-          <div className="mt-0.5 inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#007AFF]/10 text-[#007AFF]">
-            {icon}
+            <div className="shrink-0">
+              <Button href="/tarifs" variant="secondary">
+                Découvrir mes tarifs
+              </Button>
+            </div>
           </div>
-        <div>
-          <h3 className="text-base sm:text-lg font-semibold text-gray-100">
-            {title}
-          </h3>
-          <p className="text-sm sm:text-base text-gray-200 mt-1">{desc}</p>
+
+          {/* Bloc tarifaire */}
+          <div
+            className="
+              grid grid-cols-1 lg:grid-cols-3
+              overflow-hidden
+              rounded-2xl
+              border border-white/10
+              bg-[#1D1D1D]
+            "
+          >
+            {/* Site vitrine */}
+            <div className="flex flex-col p-6 sm:p-8 lg:p-10">
+              <span className="text-sm font-medium text-gray-400">
+                Création de site vitrine
+              </span>
+
+              <div className="mt-4">
+                <span className="block text-xs uppercase tracking-wider text-gray-500">
+                  À partir de
+                </span>
+
+                <span className="mt-1 block text-4xl sm:text-5xl font-bold tracking-tight text-[#5AC8FA]">
+                  900 €
+                </span>
+              </div>
+
+              <p className="mt-5 text-sm sm:text-base leading-relaxed text-gray-400">
+                Un site professionnel, responsive et conçu pour
+                présenter votre activité et faciliter les prises de contact.
+              </p>
+            </div>
+
+            {/* Applications sur mesure */}
+            <div
+              className="
+                flex flex-col
+                border-t border-white/10
+                lg:border-t-0 lg:border-l
+                p-6 sm:p-8 lg:p-10
+              "
+            >
+              <div className="flex items-center gap-3 text-[#5AC8FA]">
+                <Code2 size={22} aria-hidden="true" />
+
+                <span className="text-sm font-medium text-gray-400">
+                  Applications et fonctionnalités
+                </span>
+              </div>
+
+              <h3 className="mt-6 text-2xl sm:text-3xl font-bold text-white">
+                Sur devis
+              </h3>
+
+              <p className="mt-5 text-sm sm:text-base leading-relaxed text-gray-400">
+                Des fonctionnalités et applications personnalisées
+                selon les besoins et la complexité de votre projet.
+              </p>
+            </div>
+
+            {/* Délais */}
+            <div
+              className="
+                flex flex-col
+                border-t border-white/10
+                lg:border-t-0 lg:border-l
+                p-6 sm:p-8 lg:p-10
+              "
+            >
+              <div className="flex items-center gap-3 text-[#5AC8FA]">
+                <Clock3 size={22} aria-hidden="true" />
+
+                <span className="text-sm font-medium text-gray-400">
+                  Délais de réalisation
+                </span>
+              </div>
+
+              <h3 className="mt-6 text-2xl sm:text-3xl font-bold text-white">
+                2 à 4 semaines
+              </h3>
+
+              <p className="mt-5 text-sm sm:text-base leading-relaxed text-gray-400">
+                Pour un site vitrine, selon les fonctionnalités
+                souhaitées et la disponibilité des contenus.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </SectionWrapper>
+    </Section>
   );
 }
