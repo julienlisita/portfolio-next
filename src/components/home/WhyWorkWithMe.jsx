@@ -1,62 +1,132 @@
 // src/components/home/WhyWorkWithMe.jsx
 
-import HomeSectionWrapper from "./HomeSectionWrapper";
-import { Check } from "lucide-react";
+import {
+  MessageCircle,
+  Users,
+  Gauge,
+  RefreshCw,
+} from "lucide-react";
 
-const points = [
-{
-    title: "Un accompagnement clair",
-    description:
-      "Je vous aide à cadrer le besoin, prioriser les fonctionnalités utiles et avancer étape par étape.",
-  },
+import Button from "../UI/Button";
+import Section from "../layout/Section";
+import SectionWrapper from "../layout/SectionWrapper";
+import SectionHeading from "../layout/SectionHeading";
+
+const commitments = [
   {
-    title: "Une solution pensée pour vos utilisateurs",
-    description:
-      "Structure, contenus et parcours sont conçus pour faciliter la compréhension et la prise de contact.",
-  },
-  {
-    title: "Une base rapide et durable",
-    description:
-      "Le site est développé proprement, avec une attention portée à la performance, au SEO et à l’évolutivité.",
-  },
-  {
+    icon: MessageCircle,
     title: "Des échanges simples et transparents",
     description:
-      "Vous savez ce qui est prévu, pourquoi c’est fait et comment votre projet avance.",
+      "Nous échangeons directement tout au long du projet. Vous savez ce qui est prévu, pourquoi et comment votre projet avance.",
+  },
+  {
+    icon: Users,
+    title: "Une solution adaptée à votre activité",
+    description:
+      "Je prends le temps de comprendre votre métier, vos objectifs et vos utilisateurs pour concevoir une solution réellement utile.",
+  },
+  {
+    icon: Gauge,
+    title: "Une attention portée à la qualité",
+    description:
+      "Performance, accessibilité, référencement et qualité du code sont pris en compte dès la conception.",
+  },
+  {
+    icon: RefreshCw,
+    title: "Un projet pensé pour durer",
+    description:
+      "Je privilégie des solutions fiables, maintenables et capables d'évoluer avec votre activité.",
   },
 ];
 
 export default function WhyWorkWithMe() {
   return (
-    <HomeSectionWrapper
+    <Section
       id="pourquoi"
-      title="Une façon de travailler simple et efficace"
+      labelledBy="pourquoi-title"
+      bgColor="#1D1D1D"
     >
-      <p className="text-base sm:text-lg lg:text-xl text-gray-300">
-        Mon objectif est de vous accompagner avec une méthode simple, des choix expliqués clairement et une solution pensée pour durer.
-      </p>
-
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-        {points.map((point) => (
-          <div
-            key={point.title}
-            className="flex items-start gap-3 bg-[#1f1f1f] rounded-2xl p-4 sm:p-5"
-          >
-            <Check
-              className="mt-1 flex-shrink-0 text-[#007AFF]"
-              size={20}
+      <SectionWrapper>
+        <div
+          className="
+            grid grid-cols-1
+            lg:grid-cols-[0.85fr_1.15fr]
+            gap-10 lg:gap-20
+          "
+        >
+          {/* Présentation */}
+          <div className="flex flex-col items-start">
+            <SectionHeading
+              id="pourquoi-title"
+              eyebrow="MON APPROCHE"
+              title="Un accompagnement humain, des solutions pensées pour durer"
+              description="Chaque projet commence par une discussion. Mon rôle est de comprendre vos besoins, de vous conseiller et de construire une solution adaptée à votre activité."
             />
-            <div>
-              <h3 className="text-base sm:text-lg font-semibold mb-1 text-gray-100">
-                {point.title}
-              </h3>
-              <p className="text-sm sm:text-base text-gray-300">
-                {point.description}
-              </p>
+
+            <div className="mt-8">
+              <Button
+                href="/comment-je-travaille"
+                variant="secondary"
+              >
+                Découvrir ma méthode
+              </Button>
             </div>
           </div>
-        ))}
-      </div>
-    </HomeSectionWrapper>
+
+          {/* Engagements */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+            {commitments.map((commitment) => {
+              const Icon = commitment.icon;
+
+              return (
+                <div
+                  key={commitment.title}
+                  className="
+                    group
+                    flex flex-col
+                    rounded-2xl
+                    border border-white/10
+                    bg-white/[0.025]
+                    p-4 sm:p-5 lg:p-6
+                    transition-colors duration-300
+                    hover:bg-white/[0.05]
+                  "
+                >
+                  {/* Icône */}
+                  <div
+                    className="
+                      mb-3 sm:mb-5
+                      flex h-11 w-11
+                      items-center justify-center
+                      rounded-xl
+                      bg-[#5AC8FA]/10
+                      text-[#5AC8FA]
+                    "
+                  >
+                    <Icon size={22} aria-hidden="true" />
+                  </div>
+
+                  {/* Titre */}
+                  <h3 className="text-lg font-semibold text-white">
+                    {commitment.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p
+                    className="
+                      mt-2 sm:mt-3
+                      text-sm sm:text-base
+                      leading-relaxed text-gray-400
+                    "
+                  >
+                    {commitment.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </SectionWrapper>
+    </Section>
   );
 }

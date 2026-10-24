@@ -22,8 +22,8 @@ export default function HomeScreen() {
       <ServicesPreview />
       {/* <BenefitsSection /> */}
       <ProjectsPreview />
+      <WhyWorkWithMe />
       <TarifsTeaser/>
-      {/* <WhyWorkWithMe /> */}
       {/* <AudiencePreview /> */}
       <AboutPreview />
       <SkillsPreview />
