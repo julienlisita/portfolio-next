@@ -240,11 +240,11 @@ const spotlightStyleDesktop = {
         })}
       >
         <a
-          href="#problemes"
+          href="#service"
           onClick={(e) => {
             e.preventDefault();
             document
-              .querySelector("#problemes")
+              .querySelector("#service")
               ?.scrollIntoView({ behavior: "smooth" });
           }}
           className="group"

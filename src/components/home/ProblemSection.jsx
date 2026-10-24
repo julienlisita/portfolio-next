@@ -1,26 +1,26 @@
-/* src/components/home/ProblemSection.jsx */
+// src/components/home/ProblemSection.jsx
 
+import { ArrowUpRight } from "lucide-react";
 import HomeSectionWrapper from "./HomeSectionWrapper";
-import { Clock, Search, MousePointerClick } from "lucide-react";
 
 const problems = [
   {
-    icon: <Search size={22} aria-hidden/>,
-    title: "Peu de visibilité",
+    number: "01",
+    title: "Vous manquez de visibilité",
     description:
-      "Votre activité existe, mais vos clients potentiels ne vous trouvent pas ou ne comprennent pas clairement ce que vous proposez.",
+      "Votre activité mérite d’être trouvée facilement. Vos futurs clients doivent pouvoir comprendre rapidement ce que vous proposez et pourquoi faire appel à vous.",
   },
   {
-    icon: <MousePointerClick size={22} aria-hidden/>,
-    title: "Peu de demandes",
+    number: "02",
+    title: "Vous souhaitez attirer davantage de clients ",
     description:
-      "Votre site présente votre activité, mais il ne guide pas assez vos visiteurs vers une prise de contact.",
+      "Que vous ayez déjà un site ou non, une présence en ligne claire et professionnelle peut inspirer confiance et faciliter les prises de contact.",
   },
   {
-    icon: <Clock size={22} aria-hidden/>,
-    title: "Trop de tâches manuelles",
+    number: "03",
+    title: "Vous perdez du temps sur des tâches répétitives",
     description:
-      "Réponses répétitives, rendez-vous à organiser, formulaires à traiter… certaines actions pourraient être simplifiées.",
+      "Gestion des demandes, rendez-vous, suivi des clients… Des outils adaptés peuvent simplifier votre organisation et vous libérer du temps.",
   },
 ];
 
@@ -28,31 +28,51 @@ export default function ProblemSection() {
   return (
     <HomeSectionWrapper
       id="problemes"
-      title="Votre site vous aide-t-il vraiment à développer votre activité ?"
+      eyebrow="VOS ENJEUX"
+      title="Des solutions adaptées aux défis de votre activité"
+      description="Chaque activité rencontre ses propres défis. Un site ou une application bien pensé peut vous aider à les relever."
     >
-      <p className="text-base sm:text-lg lg:text-xl text-gray-300">
-        Un site web ne doit pas seulement être joli ou présent en ligne.
-        Il doit inspirer confiance, générer des demandes et simplifier une partie
-        de votre organisation.
-      </p>
-
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="w-full border-t border-white/10">
         {problems.map((problem) => (
           <div
-            key={problem.title}
-            className="bg-[#1f1f1f] rounded-2xl p-6 h-full shadow-lg"
+            key={problem.number}
+            className="
+              group
+              grid grid-cols-1
+              gap-2 sm:gap-3
+              border-b border-white/10
+              py-6 sm:py-8
+              md:grid-cols-[70px_1fr_1.2fr_24px]
+              md:items-start
+              md:gap-6
+              transition-colors duration-300
+              hover:bg-white/[0.02]
+            "
           >
-            <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#007AFF]/10 text-[#007AFF]">
-              {problem.icon}
-            </div>
+            <span className="text-sm font-semibold text-[#5AC8FA]">
+              {problem.number}
+            </span>
 
-            <h3 className="text-lg font-semibold text-gray-100 mb-2">
+            <h3 className="text-lg sm:text-xl font-semibold text-white">
               {problem.title}
             </h3>
 
-            <p className="text-sm sm:text-base text-gray-300">
+            <p className="text-sm sm:text-base leading-relaxed text-gray-400">
               {problem.description}
             </p>
+
+            <ArrowUpRight
+              size={20}
+              aria-hidden="true"
+              className="
+                hidden md:block
+                text-gray-500
+                transition-all duration-300
+                group-hover:-translate-y-1
+                group-hover:translate-x-1
+                group-hover:text-[#5AC8FA]
+              "
+            />
           </div>
         ))}
       </div>

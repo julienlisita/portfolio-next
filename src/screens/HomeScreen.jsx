@@ -18,7 +18,7 @@ export default function HomeScreen() {
   return (
     <>
       <LandingSection />
-      {/* <ProblemSection/> */}
+      <ProblemSection/>
       <ServicesPreview />
       {/* <BenefitsSection /> */}
       <ProjectsPreview />
