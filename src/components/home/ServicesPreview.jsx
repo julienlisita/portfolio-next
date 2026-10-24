@@ -41,12 +41,11 @@ export default function ServicesPreview() {
   return (
     <HomeSectionWrapper
       id="service"
+      eyebrow="MES PRESTATIONS"
       title="Comment je peux vous aider"
+      description="Selon votre besoin, je vous accompagne de la création d’un site professionnel clair et rapide jusqu’au développement d’applications et d’outils sur mesure pour simplifier votre activité."
       link={{ href: "/services", text: "Voir les services ›" }}
     >
-      <p className="text-base sm:text-lg lg:text-xl">
-         Selon votre besoin, je vous accompagne de la création d’un site professionnel clair et rapide jusqu’au développement d’applications et d’outils sur mesure pour simplifier votre activité.
-      </p>
 
       <div className="w-full grid gap-6 sm:gap-7 lg:gap-8 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, i) => (
