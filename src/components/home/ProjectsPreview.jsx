@@ -4,24 +4,29 @@ import HomeSectionWrapper from "./HomeSectionWrapper";
 import { projects } from "../../data/projectsData";
 import ProjectCard from "../portfolio/ProjectCard";
 
-export default function ProjectsPreview() {
-  const featuredSlugs = ["ccs", "lumiere-darcachon", "thomas-delaunay"];
+const featuredSlugs = [
+  "ccs",
+  "lumiere-darcachon",
+  "thomas-delaunay",
+];
 
+export default function ProjectsPreview() {
   const featuredProjects = featuredSlugs
-    .map((slug) => projects.find((p) => p.slug === slug))
+    .map((slug) => projects.find((project) => project.slug === slug))
     .filter(Boolean);
 
   return (
     <HomeSectionWrapper
       id="portfolio"
+      eyebrow="MES RÉALISATIONS"
       title="Des projets pensés pour des besoins réels"
-      link={{ href: "/realisations", text: "Voir d'autres projets" }}
+      description="Découvrez quelques exemples de sites et d'applications conçus pour répondre à des objectifs concrets : présenter une activité, faciliter les prises de contact, gérer des réservations ou organiser du contenu."
+      link={{
+        href: "/realisations",
+        text: "Voir d'autres projets",
+      }}
     >
-      <p className="text-base sm:text-lg lg:text-xl text-gray-300">
-        Des exemples de projets pensés pour répondre à des besoins réels : présenter une activité, générer des contacts, faciliter la réservation ou gérer du contenu.
-      </p>
-
-      <div className="w-full grid gap-6 sm:gap-7 lg:gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid w-full grid-cols-1 gap-6 sm:gap-7 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {featuredProjects.map((project) => (
           <ProjectCard key={project.slug} {...project} />
         ))}
