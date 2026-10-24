@@ -1,14 +1,11 @@
 // src/components/home/SkillsPreview.jsx
 
-import HomeSectionWrapper from "./HomeSectionWrapper";
 import {
-  FaReact,
   FaNodeJs,
-  FaJsSquare,
-  
   FaGitAlt,
   FaFigma,
 } from "react-icons/fa";
+
 import {
   SiTypescript,
   SiTailwindcss,
@@ -20,66 +17,70 @@ import {
   SiSequelize,
   SiVercel,
 } from "react-icons/si";
-import SkillCard from "../home/SkillCard";
 
-export default function SkillesPreview() {
+import HomeSectionWrapper from "./HomeSectionWrapper";
+import SkillCard from "./SkillCard";
 
-    const skillsData = [
-    {
-      title: " Interfaces modernes ",
-      description:
-        "Je conçois des interfaces modernes, rapides et adaptées à tous les écrans, à partir de maquettes Figma, pour que vos visiteurs aient une expérience fluide et agréable.",
-      icons: [
-        <FaFigma key="Figma" />,
-        <SiTypescript key="typescript"/>,
-        <SiNextdotjs key="next"/>,
-        <SiTailwindcss key="tailwind" />,
-      ],
-    },
-    {
-      title: "Services web & données",
-      description:
-        "Je mets en place une base technique claire pour gérer vos contenus, utilisateurs et formulaires de manière sécurisée et évolutive.",
-      icons: [
-        <FaNodeJs key="node" />,
-        <SiExpress key="express" />,
-        <SiSequelize key="sequelize" />,
-        <SiPostgresql key="postgres" />,
-      ],
-    },
-    {
-      title: "Mise en ligne & fiabilité",
-      description:
-        "Je m’occupe de la mise en production sur des plateformes fiables (Vercel, Railway…) pour que votre site soit accessible, rapide et simple à maintenir.",
-      icons: [
-        <SiNetlify key="netlify" />,
-        <SiRailway key="railway" />,
-        <SiVercel key="vercel" />,
-        <FaGitAlt key="git" />,
-      ],
-    },
-  ];
+const skillsData = [
+  {
+    title: "Interfaces modernes",
+    description:
+      "Je conçois des interfaces modernes, rapides et adaptées à tous les écrans, à partir de maquettes Figma, pour offrir une expérience fluide et agréable.",
+    icons: [
+      <FaFigma key="figma" />,
+      <SiTypescript key="typescript" />,
+      <SiNextdotjs key="nextjs" />,
+      <SiTailwindcss key="tailwind" />,
+    ],
+  },
+  {
+    title: "Services web & données",
+    description:
+      "Je développe des solutions pour gérer vos contenus, utilisateurs et données, avec une architecture fiable, sécurisée et évolutive.",
+    icons: [
+      <FaNodeJs key="nodejs" />,
+      <SiExpress key="express" />,
+      <SiSequelize key="sequelize" />,
+      <SiPostgresql key="postgresql" />,
+    ],
+  },
+  {
+    title: "Mise en ligne & fiabilité",
+    description:
+      "Je prends en charge la mise en ligne de votre projet sur des plateformes adaptées, en veillant à ses performances et à sa facilité de maintenance.",
+    icons: [
+      <SiNetlify key="netlify" />,
+      <SiRailway key="railway" />,
+      <SiVercel key="vercel" />,
+      <FaGitAlt key="git" />,
+    ],
+  },
+];
 
+export default function SkillsPreview() {
   return (
     <HomeSectionWrapper
-    id="competences"
-    title="Une base technique fiable"
-    link={{ href: "/comment-je-travaille", text: "Ma méthode de travail" }}
-  >
-    <p className="text-base sm:text-lg lg:text-xl">
-     Je mets en place une base technique fiable pour que votre site ou application reste rapide, sécurisé et capable d’évoluer dans la durée.
-    </p>
-  
-    <div className="flex flex-col gap-6">
-      {skillsData.map(({ title, description, icons }, index) => (
-     <SkillCard
-        key={index}
-        title={title}
-        description={description}
-        icons={icons}
-     />
-      ))}
-    </div>
-  </HomeSectionWrapper>
+      id="competences"
+      eyebrow="TECHNOLOGIES & SAVOIR-FAIRE"
+      title="Une base technique fiable"
+      description="Je sélectionne les technologies adaptées à chaque projet pour concevoir des sites et applications performants, sécurisés et capables d’évoluer dans la durée."
+    >
+      <div
+        className="
+          grid grid-cols-1
+          gap-10 sm:gap-12
+          lg:grid-cols-3 lg:gap-10
+        "
+      >
+        {skillsData.map((skill) => (
+          <SkillCard
+            key={skill.title}
+            title={skill.title}
+            description={skill.description}
+            icons={skill.icons}
+          />
+        ))}
+      </div>
+    </HomeSectionWrapper>
   );
 }
