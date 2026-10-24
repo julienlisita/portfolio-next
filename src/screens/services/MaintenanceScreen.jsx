@@ -2,14 +2,12 @@
 
 import FaqSection from "../../components/patterns/FaqSection";
 import CtaFinal from "../../components/patterns/CtaFinal";
-import MaintenanceIncluded from "../../components/services/maintenance/MaintenanceIncluded";
-import MaintenanceTerms from "../../components/services/maintenance/MaintenanceTerms";
-import MaintenanceOutro from "../../components/services/maintenance/MaintenanceOutro";
 import { maintenanceFaq } from "../../data/faqs";
 import MaintenanceHero from "@/components/services/maintenance/MaintenanceHero";
 import MaintenanceBenefits from "@/components/services/maintenance/MaintenanceBenefits";
 import MaintenanceServices from "@/components/services/maintenance/MaintenanceServices";
 import MaintenanceSupport from "@/components/services/maintenance/MaintenanceSupport";
+import MaintenanceProcess from "@/components/services/maintenance/MaintenanceProcess";
 
 export default function MaintenanceScreen() {
 
@@ -23,9 +21,7 @@ export default function MaintenanceScreen() {
 
       <MaintenanceSupport />
 
-      <MaintenanceIncluded />
-      <MaintenanceTerms />
-      <MaintenanceOutro />
+      <MaintenanceProcess />
 
       <FaqSection title="FAQ — Suivi & maintenance" faq={maintenanceFaq} ariaLabelledby="faq-support-title" />
 
