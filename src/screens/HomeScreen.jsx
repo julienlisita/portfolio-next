@@ -13,6 +13,7 @@ import TarifsTeaser from "../components/home/TarifsTeaser";
 import HomeSectionWrapper from "../components/home/HomeSectionWrapper";
 import ProblemSection from "../components/home/ProblemSection";
 import BenefitsSection from "../components/home/BenefitsSection";
+import CtaFinal from "@/components/patterns/CtaFinal";
 
 export default function HomeScreen() {
   return (
@@ -27,14 +28,14 @@ export default function HomeScreen() {
       {/* <AudiencePreview /> */}
       <AboutPreview />
       <SkillsPreview />
-      <ContactTeaser />
-      {/* Localisation */}
-      <HomeSectionWrapper className="text-base sm:text-lg lg:text-xl">
-        <p className="flex flex-col items-center text-center gap-2">
-          <MapPin className="text-[#007AFF] mx-auto" size={32} />
-          <span>Bordeaux & à distance</span>
-        </p>
-      </HomeSectionWrapper>
+      <CtaFinal
+        title="Parlons de votre projet"
+        tagline="Vous avez une idée, un besoin ou simplement une question ? Échangeons sur votre projet pour trouver ensemble une solution adaptée à votre activité."
+        primary={{
+          href: "/contact",
+          text: "Discuter de mon projet",
+        }}
+      />
     </>
   );
 }

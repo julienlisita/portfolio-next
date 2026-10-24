@@ -1,66 +1,104 @@
 // src/components/home/ContactTeaser.jsx
 
-import { Mail, Phone } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
-import HomeSectionWrapper from "./HomeSectionWrapper";
+import { ArrowUpRight } from "lucide-react";
+
 import Button from "../UI/Button";
+import Section from "../layout/Section";
+import SectionWrapper from "../layout/SectionWrapper";
 
-export default function ContactTeaser()
-{
-    return (
-        <HomeSectionWrapper
-            id="contact"
-            title="Discutons de votre projet"
-            link={{href:"/contact", text:"Page de contact"}}
-        > 
-            <p className="text-base sm:text-lg lg:text-xl">
-                Un projet, une question ou besoin d’un devis ?
-                Expliquez-moi votre besoin, je vous réponds simplement avec une solution adaptée.
+export default function ContactTeaser() {
+  return (
+    <Section id="contact" labelledBy="contact-title" bgColor="#222222">
+      <SectionWrapper>
+        <div
+          className="
+            relative isolate overflow-hidden
+            rounded-3xl
+            border border-white/10
+            bg-[#1A1A1A]
+            px-6 py-10
+            sm:px-10 sm:py-14
+            lg:px-16 lg:py-16
+          "
+        >
+          {/* Décor bleu et violet */}
+          <div
+            aria-hidden="true"
+            className="
+              pointer-events-none
+              absolute -right-24 -top-32
+              h-80 w-80
+              rounded-full
+              bg-[#007AFF]/15
+              blur-[100px]
+            "
+          />
+
+          <div
+            aria-hidden="true"
+            className="
+              pointer-events-none
+              absolute -bottom-40 right-20
+              h-80 w-80
+              rounded-full
+              bg-[#9B59B6]/15
+              blur-[100px]
+            "
+          />
+
+          {/* Contenu */}
+          <div className="relative z-10 max-w-3xl">
+            <div className="mb-5 flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-8 bg-[#5AC8FA]"
+              />
+
+              <span
+                className="
+                  text-xs font-semibold
+                  uppercase tracking-[0.18em]
+                  text-[#5AC8FA]
+                "
+              >
+                UN PROJET EN TÊTE ?
+              </span>
+            </div>
+
+            <h2
+              id="contact-title"
+              className="
+                text-3xl font-bold tracking-tight text-white
+                sm:text-4xl
+                lg:text-5xl
+              "
+            >
+              Parlons de votre projet.
+            </h2>
+
+            <p
+              className="
+                mt-5 max-w-2xl
+                text-base leading-relaxed text-gray-300
+                sm:text-lg
+              "
+            >
+              Vous avez une idée, un besoin ou simplement une question ?
+              Échangeons sur votre projet pour trouver ensemble
+              une solution adaptée à votre activité.
             </p>
-            <div className="flex justify-center sm:justify-start my-8">
-                <Button href="/reservations" variant="primary">
-                    Réserver un échange
-                </Button>
-            </div>
-            
-            {/* Coordonnées rapides */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-base">
-            
-            {/* Téléphone */}
-            <div className="flex items-center gap-3">
-                <Phone className="text-[#007AFF]" size={28} aria-hidden />
-                <a
-                href="tel:+33623000449"
-                className="font-medium hover:text-[#5AC8FA] transition"
-                >
-                06 23 00 04 49
-                </a>
-            </div>
 
-            {/* WhatsApp */}
-            <div className="flex items-center gap-3">
-                <FaWhatsapp className="text-[#007AFF]" size={26} aria-hidden />
-                <a
-                href="https://wa.me/33623000449?text=Bonjour%20Julien%2C%20je%20souhaite%20des%20informations%20sur%20la%20cr%C3%A9ation%20d%27un%20site%20internet"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium hover:text-[#5AC8FA] transition"
-                >
-                Discuter sur WhatsApp
-                </a>
+            <div className="mt-8 sm:mt-10">
+              <Button href="/contact">
+                <span className="inline-flex items-center gap-2">
+                  Discuter de mon projet
+                  <ArrowUpRight size={19} aria-hidden="true" />
+                </span>
+              </Button>
             </div>
-
-            {/* Email */}
-            <div className="flex items-center gap-3">
-                <Mail className="text-[#007AFF]" size={28} aria-hidden />
-                <a
-                href="mailto:contact@julienlisita.com"
-                className="font-medium hover:text-[#5AC8FA] transition"
-                >
-                contact@julienlisita.com
-                </a>
-            </div>
-            </div>
-        </HomeSectionWrapper>
-    )
+          </div>
+        </div>
+      </SectionWrapper>
+    </Section>
+  );
 }

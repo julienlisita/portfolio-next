@@ -163,7 +163,7 @@ const spotlightStyleDesktop = {
                 Discuter de votre projet
               </Button>
 
-              <Button href="/portfolio" variant="secondary">
+              <Button href="/realisations" variant="secondary">
                 Voir mes réalisations
               </Button>
             </motion.div>
@@ -240,11 +240,11 @@ const spotlightStyleDesktop = {
         })}
       >
         <a
-          href="#service"
+          href="#problemes"
           onClick={(e) => {
             e.preventDefault();
             document
-              .querySelector("#service")
+              .querySelector("#problemes")
               ?.scrollIntoView({ behavior: "smooth" });
           }}
           className="group"
