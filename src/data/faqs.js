@@ -70,27 +70,31 @@ export const customFeaturesFaq = [
   ];
 
 export const maintenanceFaq = [
-    {
-      q: "Pourquoi prévoir une maintenance après la mise en ligne ?",
-      a: "Pour éviter qu’un site se dégrade avec le temps : bugs, formulaires qui ne fonctionnent plus, lenteurs, contenus à ajuster ou petites évolutions à ajouter.",
-    },
-    {
-      q: "Proposez-vous un forfait mensuel ?",
-      a: "Oui. Le forfait mensuel convient si vous voulez un suivi régulier, des vérifications préventives et une meilleure réactivité en cas de besoin.",
-    },
-    {
-      q: "Puis-je vous contacter seulement quand j’ai besoin ?",
-      a: "Oui. L’intervention ponctuelle est possible pour corriger un bug, modifier une page, ajuster un formulaire ou ajouter une petite évolution.",
-    },
-    {
-      q: "Mon site n’a pas été réalisé par vous : vous pouvez le maintenir ?",
-      a: "Oui, après un audit rapide pour vérifier la base technique, identifier les risques éventuels et confirmer ce qui peut être pris en charge.",
-    },
-    {
-      q: "Quels sont les délais de réponse ?",
-      a: "Je réponds généralement sous 24 à 48h ouvrées. Les demandes incluses dans un forfait peuvent être traitées en priorité selon la formule choisie.",
-    },
-  ];
+  {
+    q: "Est-il obligatoire de souscrire un contrat de maintenance ?",
+    a: "Non. Vous pouvez me contacter pour une intervention ponctuelle, sans engagement récurrent. Si votre site nécessite un suivi régulier, nous pouvons également définir un accompagnement adapté à vos besoins.",
+  },
+  {
+    q: "Pouvez-vous intervenir sur un site que vous n'avez pas créé ?",
+    a: "Oui, c'est possible. J'effectue d'abord une analyse de votre site et de son environnement technique pour vérifier sa compatibilité et déterminer les interventions envisageables.",
+  },
+  {
+    q: "Que comprend un accompagnement régulier ?",
+    a: "Selon les besoins de votre site, il peut comprendre des vérifications techniques, des mises à jour, des contrôles de sécurité et un suivi des interventions. Le contenu et la fréquence des prestations sont définis ensemble à l'avance.",
+  },
+  {
+    q: "Les modifications et nouvelles fonctionnalités sont-elles comprises dans la maintenance ?",
+    a: "Pas systématiquement. Certaines petites modifications peuvent être incluses selon l'accompagnement choisi. Les évolutions importantes et les nouvelles fonctionnalités font généralement l'objet d'un devis complémentaire.",
+  },
+  {
+    q: "Combien coûte une intervention de maintenance ?",
+    a: "Le tarif dépend de la nature de votre demande, de la complexité de votre site et du temps d'intervention nécessaire. Après avoir étudié votre besoin, je vous propose une solution et un tarif adaptés.",
+  },
+  {
+    q: "Mon site doit-il être hébergé chez vous pour bénéficier de la maintenance ?",
+    a: "Non. Je peux intervenir sur des sites hébergés auprès de différents prestataires, sous réserve de compatibilité technique et de disposer des accès nécessaires.",
+  },
+];
 
 export const pricingFaq = [
     {

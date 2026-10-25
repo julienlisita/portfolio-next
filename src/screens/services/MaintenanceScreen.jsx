@@ -23,13 +23,20 @@ export default function MaintenanceScreen() {
 
       <MaintenanceProcess />
 
-      <FaqSection title="FAQ — Suivi & maintenance" faq={maintenanceFaq} ariaLabelledby="faq-support-title" />
+      <FaqSection
+        id="maintenance-faq"
+        title="Vos questions sur la maintenance."
+        description="Intervention ponctuelle, suivi régulier, tarifs ou maintenance d'un site existant : retrouvez les réponses aux questions les plus fréquentes."
+        faq={maintenanceFaq}
+      />
 
       <CtaFinal
-        title="Gardons votre site fiable dans la durée"
-        tagline="Découvrez les formules de suivi et les tarifs pour choisir l’accompagnement adapté à votre site."
-        primary={{ href: "/tarifs", text: "Voir les tarifs" }}
-        secondary={{ href: "/reservations", text: "Réserver un échange" }}
+        title="Besoin d'un coup de main pour votre site ?"
+        tagline="Un problème à résoudre, une modification à prévoir ou simplement besoin d'un accompagnement technique ? Parlons de votre site et trouvons une solution adaptée."
+        primary={{
+          href: "/contact",
+          text: "Discuter de mon besoin",
+        }}
       />
     </>
   );
