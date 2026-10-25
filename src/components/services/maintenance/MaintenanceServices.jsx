@@ -51,7 +51,7 @@ const services = [
       "Vérification du responsive",
       "Tests après intervention",
     ],
-    color: "#9B59B6",
+    color: "#007AFF",
   },
   {
     id: "evolution",
@@ -183,7 +183,7 @@ function ServicePanel({ service, active, onSelect, reducedMotion }) {
               <li key={item} className="flex items-start gap-3">
                 <Check
                   size={16}
-                  className="mt-0.5 shrink-0 text-[#5AC8FA]"
+                  className="mt-0.5 shrink-0 text-[#007AFF]"
                   aria-hidden="true"
                 />
 

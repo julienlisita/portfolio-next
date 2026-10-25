@@ -99,8 +99,8 @@ export default function WhyWorkWithMe() {
                       flex h-11 w-11
                       items-center justify-center
                       rounded-xl
-                      bg-[#5AC8FA]/10
-                      text-[#5AC8FA]
+                      bg-[#007AFF]/10
+                      text-[#007AFF]
                     "
                   >
                     <Icon size={22} aria-hidden="true" />

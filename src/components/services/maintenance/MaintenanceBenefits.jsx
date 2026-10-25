@@ -37,7 +37,7 @@ const benefits = [
     title: "Fiabilité",
     description:
       "Identifier les dysfonctionnements et intervenir pour préserver le bon fonctionnement de votre site.",
-    color: "#9B59B6",
+    color: "#007AFF",
   },
   {
     id: "performance",
@@ -55,7 +55,7 @@ const benefits = [
     title: "Pérennité",
     description:
       "Faire évoluer votre site pour qu'il reste compatible avec les technologies et adapté à vos besoins.",
-    color: "#9B59B6",
+    color: "#007AFF",
   },
 ];
 

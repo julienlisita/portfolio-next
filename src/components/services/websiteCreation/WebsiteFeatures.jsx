@@ -9,7 +9,6 @@ import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
 
 import {
-  ArrowUpRight,
   Check,
   CheckCircle2,
   Globe2,
@@ -122,7 +121,7 @@ function ContactVisual() {
           Demande de contact
         </span>
 
-        <Mail size={15} className="text-[#5AC8FA]" />
+        <Mail size={15} className="text-[#007AFF]" />
       </div>
 
       <div className="space-y-2.5">
@@ -133,7 +132,7 @@ function ContactVisual() {
 
       <div className="mt-4 flex items-center justify-between">
         <div className="flex items-center gap-1.5 text-[11px] text-gray-400">
-          <CheckCircle2 size={13} className="text-[#5AC8FA]" />
+          <CheckCircle2 size={13} className="text-[#007AFF]" />
           Prise de contact simplifiée
         </div>
 
@@ -188,7 +187,7 @@ function ResponsiveVisual() {
           className="flex flex-col items-center gap-3"
         >
           <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-white/10 bg-[#1C1C1C]">
-            <Icon size={24} className="text-[#5AC8FA]" />
+            <Icon size={24} className="text-[#007AFF]" />
           </div>
 
           <span className="text-[11px] text-gray-400">
@@ -216,7 +215,7 @@ function LaunchVisual() {
 
       <div className="mt-5 flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#5AC8FA]/10">
-          <Globe2 size={20} className="text-[#5AC8FA]" />
+          <Globe2 size={20} className="text-[#007AFF]" />
         </div>
 
         <div className="min-w-0">
@@ -277,14 +276,8 @@ function FeatureCard({
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#5AC8FA]/15 bg-[#5AC8FA]/[0.07]">
-          <Icon size={21} className="text-[#5AC8FA]" />
+          <Icon size={21} className="text-[#007AFF]" />
         </div>
-
-        <ArrowUpRight
-          size={18}
-          className="text-gray-600 transition-colors duration-300 group-hover:text-[#5AC8FA]"
-          aria-hidden="true"
-        />
       </div>
 
       <h3 className="mt-6 text-xl font-semibold text-white">

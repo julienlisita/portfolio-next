@@ -70,6 +70,19 @@ const spotlightStyleDesktop = {
         />
       </div>
 
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute inset-0
+          hidden lg:block
+        "
+        style={{
+          background:
+            "radial-gradient(500px 450px at 82% 55%, rgba(155,89,182,0.10), transparent 70%)",
+        }}
+      />
+
       <div className="relative mx-auto max-w-7xl min-h-svh px-4 sm:px-8 lg:px-12">
       <div
         className="

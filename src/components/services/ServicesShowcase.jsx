@@ -1,5 +1,3 @@
-// src/components/services/ServicesShowcase.jsx
-
 import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,6 +12,16 @@ import {
 
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
+
+// ─────────────────────────────────────────────
+// Couleurs de l'identité visuelle
+// ─────────────────────────────────────────────
+
+const COLORS = {
+  cyan: "#5AC8FA",
+  blue: "#007AFF",
+  purple: "#9B59B6",
+};
 
 // ─────────────────────────────────────────────
 // Données des services
@@ -34,7 +42,7 @@ const services = [
     href: "/services/creation-site-internet",
     cta: "Découvrir les sites vitrines",
     visual: "website",
-    color: "#5AC8FA",
+    color: COLORS.cyan,
   },
   {
     number: "02",
@@ -50,7 +58,7 @@ const services = [
     href: "/services/creation-site-internet-fonctionnalites-sur-mesure",
     cta: "Découvrir les outils sur mesure",
     visual: "application",
-    color: "#007AFF",
+    color: COLORS.blue,
   },
   {
     number: "03",
@@ -66,7 +74,7 @@ const services = [
     href: "/services/suivi-et-evolutions",
     cta: "Découvrir la maintenance",
     visual: "maintenance",
-    color: "#9B59B6",
+    color: COLORS.purple,
   },
 ];
 
@@ -74,7 +82,7 @@ const services = [
 // Cadre commun des illustrations
 // ─────────────────────────────────────────────
 
-function VisualFrame({ children, color = "#007AFF" }) {
+function VisualFrame({ children, color = COLORS.blue }) {
   return (
     <div
       className="
@@ -88,14 +96,35 @@ function VisualFrame({ children, color = "#007AFF" }) {
         lg:min-h-[430px]
       "
     >
-      {/* Halo discret correspondant au service */}
+      {/* Halo personnalisé selon le service */}
       <div
         aria-hidden="true"
         className="
-          pointer-events-none absolute inset-10
-          rounded-full opacity-10 blur-[90px]
+          pointer-events-none absolute
+          left-1/2 top-1/2
+          h-[70%] w-[70%]
+          -translate-x-1/2 -translate-y-1/2
+          rounded-full blur-[90px]
         "
-        style={{ backgroundColor: color }}
+        style={{
+          backgroundColor: color,
+          opacity: 0.12,
+        }}
+      />
+
+      {/* Halo secondaire plus diffus */}
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none absolute
+          -bottom-20 -right-20
+          h-56 w-56 rounded-full
+          blur-[100px]
+        "
+        style={{
+          backgroundColor: color,
+          opacity: 0.06,
+        }}
       />
 
       <div className="relative z-10 w-full max-w-lg">
@@ -108,6 +137,7 @@ function VisualFrame({ children, color = "#007AFF" }) {
 // ─────────────────────────────────────────────
 // Illustration 1 — Site vitrine
 // Mockup ordinateur + smartphone
+// Couleur dominante : cyan
 // ─────────────────────────────────────────────
 
 function WebsiteVisual({ color }) {
@@ -125,9 +155,12 @@ function WebsiteVisual({ color }) {
         >
           {/* Barre navigateur */}
           <div className="flex h-8 items-center gap-1.5 bg-[#2A2A2A] px-3">
-            <span className="h-2 w-2 rounded-full bg-[#9B59B6]" />
-            <span className="h-2 w-2 rounded-full bg-[#007AFF]" />
-            <span className="h-2 w-2 rounded-full bg-[#5AC8FA]" />
+            <span
+              className="h-2 w-2 rounded-full"
+              style={{ backgroundColor: color }}
+            />
+            <span className="h-2 w-2 rounded-full bg-white/20" />
+            <span className="h-2 w-2 rounded-full bg-white/20" />
 
             <div className="ml-3 h-4 flex-1 rounded-md bg-[#1C1C1C] px-3">
               <div className="mt-1.5 h-1 w-1/2 rounded bg-white/15" />
@@ -148,7 +181,7 @@ function WebsiteVisual({ color }) {
         </div>
 
         {/* Pied de l'ordinateur */}
-        <div className="mx-auto h-5 w-16 bg-gradient-to-b from-[#353535] to-[#252525]" />
+        <div className="mx-auto h-5 w-16 bg-linear-to-b from-[#353535] to-[#252525]" />
 
         <div className="mx-auto h-1.5 w-28 rounded-full bg-[#353535]" />
 
@@ -190,6 +223,7 @@ function WebsiteVisual({ color }) {
 // ─────────────────────────────────────────────
 // Illustration 2 — Application sur mesure
 // Capture réelle dans une fenêtre navigateur
+// Couleur dominante : bleu électrique
 // ─────────────────────────────────────────────
 
 function ApplicationVisual({ color }) {
@@ -200,9 +234,13 @@ function ApplicationVisual({ color }) {
         <div
           aria-hidden="true"
           className="
-            pointer-events-none absolute -inset-4
-            rounded-3xl bg-[#163B70]/10 blur-2xl
+            pointer-events-none absolute
+            -inset-4 rounded-3xl blur-2xl
           "
+          style={{
+            backgroundColor: color,
+            opacity: 0.08,
+          }}
         />
 
         {/* Fenêtre navigateur */}
@@ -222,9 +260,13 @@ function ApplicationVisual({ color }) {
               bg-[#2A2A2A] px-4
             "
           >
-            <span className="h-2 w-2 rounded-full bg-[#9B59B6]" />
-            <span className="h-2 w-2 rounded-full bg-[#007AFF]" />
-            <span className="h-2 w-2 rounded-full bg-[#5AC8FA]" />
+            <span
+              className="h-2 w-2 rounded-full"
+              style={{ backgroundColor: color }}
+            />
+
+            <span className="h-2 w-2 rounded-full bg-white/20" />
+            <span className="h-2 w-2 rounded-full bg-white/20" />
 
             <div
               className="
@@ -265,10 +307,16 @@ function ApplicationVisual({ color }) {
           <div
             className="
               flex h-8 w-8 items-center justify-center
-              rounded-lg bg-[#163B70]/40
+              rounded-lg
             "
+            style={{
+              backgroundColor: `${color}20`,
+            }}
           >
-            <CheckCircle2 size={18} style={{ color }} />
+            <CheckCircle2
+              size={18}
+              style={{ color }}
+            />
           </div>
 
           <div>
@@ -289,6 +337,7 @@ function ApplicationVisual({ color }) {
 // ─────────────────────────────────────────────
 // Illustration 3 — Maintenance
 // Interface graphique sobre
+// Couleur dominante : violet
 // ─────────────────────────────────────────────
 
 function MaintenanceVisual({ color }) {
@@ -387,14 +436,15 @@ function MaintenanceVisual({ color }) {
               {/* Barre de progression décorative */}
               <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
                 <div
-                  className="
-                    h-full rounded-full
-                    bg-gradient-to-r
-                    from-[#007AFF]
-                    via-[#4A64D8]
-                    to-[#9B59B6]
-                  "
-                  style={{ width }}
+                  className="h-full rounded-full"
+                  style={{
+                    width,
+                    background: `linear-gradient(
+                      90deg,
+                      ${COLORS.blue},
+                      ${color}
+                    )`,
+                  }}
                 />
               </div>
             </div>
@@ -416,7 +466,7 @@ const visuals = {
 };
 
 // ─────────────────────────────────────────────
-// Séparateur technologique dégradé
+// Séparateur technologique
 // ─────────────────────────────────────────────
 
 function ServiceSeparator({ from, to }) {
@@ -427,23 +477,27 @@ function ServiceSeparator({ from, to }) {
     >
       {/* Halo diffus */}
       <div
-        className="pointer-events-none absolute h-8 w-3/4 max-w-2xl rounded-full opacity-20 blur-xl"
+        className="
+          pointer-events-none absolute
+          h-8 w-3/4 max-w-2xl
+          rounded-full opacity-15 blur-xl
+        "
         style={{
           background: `linear-gradient(90deg, ${from}, ${to})`,
         }}
       />
 
-      {/* Ligne élégante qui s'élargit au centre */}
+      {/* Ligne dégradée */}
       <div
-        className="relative h-[5px] w-full max-w-3xl"
+        className="relative h-[3px] w-full max-w-3xl"
         style={{
           background: `linear-gradient(
             90deg,
             ${from}00 0%,
-            ${from}80 25%,
+            ${from}60 25%,
             ${from} 45%,
             ${to} 55%,
-            ${to}80 75%,
+            ${to}60 75%,
             ${to}00 100%
           )`,
           clipPath:
@@ -501,19 +555,13 @@ export default function ServicesShowcase() {
                 <div className={reversed ? "lg:order-2" : "lg:order-1"}>
                   {/* Numéro et catégorie */}
                   <div className="mb-5 flex items-center gap-3">
-                    <span
-                      className="text-sm font-bold"
-                      style={{ color: service.color }}
-                    >
+                    <span className="text-sm font-bold text-[#5AC8FA]">
                       {service.number}
                     </span>
 
-                    <span
-                      className="h-px w-8"
-                      style={{ backgroundColor: service.color }}
-                    />
+                    <span className="h-px w-8 bg-[#5AC8FA]" />
 
-                    <span className="text-xs font-semibold tracking-[0.15em] text-gray-400">
+                    <span className="text-xs font-semibold tracking-[0.15em] text-[#5AC8FA]">
                       {service.category}
                     </span>
                   </div>
@@ -545,8 +593,7 @@ export default function ServicesShowcase() {
                       >
                         <CheckCircle2
                           size={18}
-                          className="mt-0.5 shrink-0"
-                          style={{ color: service.color }}
+                          className="mt-0.5 shrink-0 text-[#007AFF]"
                           aria-hidden="true"
                         />
 
@@ -560,24 +607,21 @@ export default function ServicesShowcase() {
                     href={service.href}
                     className="
                       group mt-9 inline-flex items-center gap-2
-                      border-b pb-1
-                      text-base font-semibold
-                      transition-colors hover:text-white
+                      border-b border-[#5AC8FA]/50 pb-1
+                      text-base font-semibold text-[#5AC8FA]
+                      transition-colors duration-300
+                      hover:border-white/60 hover:text-white
                       focus-visible:outline-2
                       focus-visible:outline-offset-4
+                      focus-visible:outline-[#5AC8FA]
                     "
-                    style={{
-                      color: service.color,
-                      borderColor: `${service.color}80`,
-                      outlineColor: service.color,
-                    }}
                   >
                     {service.cta}
 
                     <ArrowUpRight
                       size={19}
                       className="
-                        transition-transform
+                        transition-transform duration-300
                         group-hover:translate-x-1
                         group-hover:-translate-y-1
                       "
@@ -592,7 +636,7 @@ export default function ServicesShowcase() {
                 </div>
               </article>
 
-              {/* Séparateur vers le service suivant */}
+              {/* Séparateur */}
               {nextService && (
                 <div className="my-14 sm:my-20 lg:my-24">
                   <ServiceSeparator

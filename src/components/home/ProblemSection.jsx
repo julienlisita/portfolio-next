@@ -49,7 +49,7 @@ export default function ProblemSection() {
               hover:bg-white/[0.02]
             "
           >
-            <span className="text-sm font-semibold text-[#5AC8FA]">
+            <span className="text-sm font-semibold text-[#007AFF]">
               {problem.number}
             </span>
 

@@ -2,7 +2,6 @@
 
 import FaqSection from "../../components/patterns/FaqSection";
 import CtaFinal from "../../components/patterns/CtaFinal";
-import PageTitle from "../../components/UI/PageTitle";
 import { websiteCreationFaq } from "../../data/faqs";
 import WebsiteHero from "@/components/services/websiteCreation/WebsiteHero";
 import WebsiteResponsive from "@/components/services/websiteCreation/WebsiteResponsive";
@@ -19,8 +18,11 @@ export default function WebsiteCreationScreen() {
       <WebsiteResponsive />
       <WebsiteFeatures />
       <WebsiteQuality />
-      <FaqSection title="FAQ — Création de site internet" faq={websiteCreationFaq} ariaLabelledby="faq-vitrine-title" />
-
+      <FaqSection 
+        title="FAQ — Création de site internet" 
+        faq={websiteCreationFaq} 
+        ariaLabelledby="faq-vitrine-title" 
+      />
       <CtaFinal
         title="Découvrez des projets concrets"
         tagline="Découvrez des sites et projets réalisés pour voir comment ces solutions prennent forme."

@@ -101,7 +101,7 @@ export default function AboutPreview() {
               <MapPin
                 size={18}
                 aria-hidden="true"
-                className="shrink-0 text-[#5AC8FA]"
+                className="shrink-0 text-[#007AFF]"
               />
 
               <span>

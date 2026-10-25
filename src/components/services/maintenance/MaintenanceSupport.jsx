@@ -29,7 +29,7 @@ const supportOptions = [
     description:
       "Un problème à résoudre ou une modification à effectuer ? Je vous accompagne sur un besoin précis, sans engagement récurrent.",
     icon: Wrench,
-    color: "#007AFF",
+    color: "#5AC8FA",
     features: [
       "Diagnostic et intervention ciblée",
       "Corrections ou modifications définies ensemble",
@@ -344,7 +344,7 @@ function SupportCard({ option, index, reducedMotion }) {
             >
               <CheckCircle2
                 size={17}
-                className="mt-0.5 shrink-0 text-[#5AC8FA]"
+                className="mt-0.5 shrink-0 text-[#007AFF]"
                 aria-hidden="true"
               />
 

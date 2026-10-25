@@ -99,7 +99,7 @@ function PerformancePanel({ reducedMotion }) {
     <div className="rounded-xl border border-white/[0.08] bg-[#292929] p-5">
       <div className="mb-6 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <Gauge size={17} className="text-[#5AC8FA]" />
+          <Gauge size={17} className="text-[#007AFF]" />
 
           <span className="text-sm font-semibold text-white">
             Performance
@@ -271,7 +271,7 @@ function SecurityPanel({ reducedMotion }) {
   return (
     <div className="rounded-xl border border-white/[0.08] bg-[#292929] p-5">
       <div className="mb-5 flex items-center gap-2">
-        <ShieldCheck size={17} className="text-[#5AC8FA]" />
+        <ShieldCheck size={17} className="text-[#007AFF]" />
 
         <span className="text-sm font-semibold text-white">
           Sécurité & fiabilité
@@ -329,7 +329,7 @@ function EvolutionPanel({ reducedMotion }) {
   return (
     <div className="rounded-xl border border-white/[0.08] bg-[#292929] p-5">
       <div className="mb-5 flex items-center gap-2">
-        <GitBranch size={17} className="text-[#5AC8FA]" />
+        <GitBranch size={17} className="text-[#007AFF]" />
 
         <span className="text-sm font-semibold text-white">
           Évolutivité
@@ -426,7 +426,7 @@ function QualityDashboard({ reducedMotion }) {
       <div className="mb-6 flex items-center justify-between gap-3 border-b border-white/10 pb-5">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#5AC8FA]/10">
-            <Activity size={20} className="text-[#5AC8FA]" />
+            <Activity size={20} className="text-[#007AFF]" />
           </div>
 
           <div>
@@ -526,7 +526,7 @@ export default function WebsiteQuality() {
                       <div className="flex items-center gap-3">
                         <Icon
                           size={20}
-                          className="shrink-0 text-[#5AC8FA]"
+                          className="shrink-0 text-[#007AFF]"
                           aria-hidden="true"
                         />
 

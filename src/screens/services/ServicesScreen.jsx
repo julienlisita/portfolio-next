@@ -22,7 +22,7 @@ export default function ServicesScreen() {
 
       <ServicesShowcase />
 
-      {/* <ServicesMethod /> */}
+      <ServicesMethod />
 
       <FaqSection
         id="faq-services"

@@ -62,7 +62,7 @@ function TrustPreview() {
       <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
         <div className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#5AC8FA]/10">
-            <Sparkles size={16} className="text-[#5AC8FA]" />
+            <Sparkles size={16} className="text-[#007AFF]" />
           </div>
 
           <span className="text-sm font-semibold text-white">
@@ -81,7 +81,7 @@ function TrustPreview() {
             <Sparkles
               size={30}
               strokeWidth={1.5}
-              className="mx-auto text-[#5AC8FA]"
+              className="mx-auto text-[#007AFF]"
             />
 
             <p className="mt-3 text-sm font-semibold text-white">
@@ -374,7 +374,7 @@ export default function WebsiteBenefits() {
                           aria-hidden="true"
                           className={
                             active
-                              ? "shrink-0 text-[#5AC8FA]"
+                              ? "shrink-0 text-[#007AFF]"
                               : "shrink-0 text-gray-500"
                           }
                         />

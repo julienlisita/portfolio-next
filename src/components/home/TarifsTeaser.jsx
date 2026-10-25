@@ -70,7 +70,7 @@ export default function TarifsTeaser() {
                 p-6 sm:p-8 lg:p-10
               "
             >
-              <div className="flex items-center gap-3 text-[#5AC8FA]">
+              <div className="flex items-center gap-3 text-[#007AFF]">
                 <Code2 size={22} aria-hidden="true" />
 
                 <span className="text-sm font-medium text-gray-400">
@@ -97,7 +97,7 @@ export default function TarifsTeaser() {
                 p-6 sm:p-8 lg:p-10
               "
             >
-              <div className="flex items-center gap-3 text-[#5AC8FA]">
+              <div className="flex items-center gap-3 text-[#007AFF]">
                 <Clock3 size={22} aria-hidden="true" />
 
                 <span className="text-sm font-medium text-gray-400">
