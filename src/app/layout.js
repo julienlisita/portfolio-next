@@ -3,6 +3,7 @@
 import "./globals.css";
 import SiteLayout from "@/components/layout/SiteLayout";
 import { metadata, viewport } from "./metadata";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -92,6 +93,8 @@ export default function RootLayout({ children }) {
           }}
         />
         <SiteLayout>{children}</SiteLayout>
+
+        <GoogleAnalytics/>
       </body>
     </html>
   );
