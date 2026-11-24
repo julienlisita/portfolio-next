@@ -3,7 +3,7 @@
 'use client';
 
 import { useMemo } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "motion/react";
 import { ArrowDown } from "lucide-react";
 import Button from "../UI/Button";
 import styles from "./LandingSection.module.css";

@@ -67,7 +67,7 @@ Principes :
 
 ## Animations
 
-- Bibliothèque : `motion/react` (pour tout nouveau code ; quelques fichiers anciens importent encore `framer-motion`).
+- Bibliothèque : `motion/react` exclusivement. Ne pas importer `framer-motion` (dépendance supprimée du projet).
 - **Sobriété** : l'animation sert la lecture (apparition, hiérarchie, feedback), jamais la décoration continue ou envahissante.
 - **Cohérence** : réutiliser les patterns existants (fondu + translation Y modérée, `whileInView` avec `viewport={{ once: true }}`, easing `[0.22, 1, 0.36, 1]`, durées proches de l'existant). Ne pas introduire un nouveau style de mouvement sans raison.
 - **Mutualisation** : si un pattern se répète, l'extraire (variants partagés, petit composant) plutôt que le recopier.

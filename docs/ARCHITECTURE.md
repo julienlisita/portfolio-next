@@ -126,7 +126,7 @@ Les tokens sont définis dans `src/app/globals.css` via `@theme static` (Tailwin
 
 ## 8. Animations
 
-- Bibliothèque principale : `motion` (`motion/react`), très majoritaire. `framer-motion` est encore importé dans quelques fichiers (au moment de l'analyse : `ProjectCard`, `SkillCard`, `LandingSection`, `HeroBookingAnimation`), ce qui laisse deux dépendances pour le même usage *(recommandation : converger vers `motion/react`)*.
+- Bibliothèque : `motion`, importée uniquement via `motion/react`. La dépendance directe `framer-motion` a été retirée ; `motion` embarque sa propre copie en dépendance interne, qui n'est pas à importer directement.
 - Patterns : entrée en fondu + translation (`y` 22–30 px) ; `PageHero` utilise des `variants` avec `staggerChildren` (0,12 s) ; sections utilisent `whileInView` avec `viewport={{ once: true, amount }}` ; easing `[0.22, 1, 0.36, 1]`.
 - Accessibilité : `useReducedMotion()` annule déplacements et durées dans les composants principaux (`PageHero`, `FaqSection`).
 - Éléments spécifiques : animation de réservation du hero d'accueil (`HeroBookingAnimation`), frise « process » de la page maintenance, mockups animés des pages de services.
@@ -155,7 +155,6 @@ GA4 chargé via `next/script` si `NEXT_PUBLIC_GA_ID` est défini et `NEXT_PUBLIC
 
 1. Layout admin rendu dans le `SiteLayout` public : volontaire ?
 2. `DATABASE_URL_PROD`, `SHADOW_DATABASE_URL` et `CONTACT_FROM_EMAIL` figurent dans le `.env` local mais ne sont pas lues par le code : usage prévu ?
-3. Convergence vers `motion/react` (fin du doublon avec `framer-motion`) ?
-4. Politique d'indexation de `/admin` et `/login` (voir §9).
-5. Procédure de migration Prisma en production (aucun script ni CI dans le dépôt).
-6. Gris isolés non tokenisés (voir §7) : à tokeniser ou à laisser.
+3. Politique d'indexation de `/admin` et `/login` (voir §9).
+4. Procédure de migration Prisma en production (aucun script ni CI dans le dépôt).
+5. Gris isolés non tokenisés (voir §7) : à tokeniser ou à laisser.

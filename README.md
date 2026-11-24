@@ -26,7 +26,7 @@ Production : https://www.julienlisita.com
 | Framework | Next.js 16 (App Router), React 19 |
 | Langage | JavaScript (JS / JSX, pas de TypeScript) |
 | Styles | Tailwind CSS 4 (`@tailwindcss/postcss`, plugin typography) |
-| Animations | `motion` (import `motion/react`), `framer-motion` (résiduel) |
+| Animations | `motion` (import `motion/react`) |
 | Icônes | `lucide-react`, `react-icons` |
 | Base de données | PostgreSQL via Prisma 7 (`@prisma/adapter-pg`) |
 | Auth admin | `jose` (JWT en cookie), `bcryptjs` |
