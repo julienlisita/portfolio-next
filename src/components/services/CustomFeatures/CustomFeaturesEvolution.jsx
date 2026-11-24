@@ -20,6 +20,7 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import { alpha } from "@/utils/color";
 
 const steps = [
   {
@@ -55,7 +56,7 @@ const modules = [
     detail: "Vue d'ensemble",
     icon: LayoutDashboard,
     step: 1,
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "clients",
@@ -63,7 +64,7 @@ const modules = [
     detail: "Informations centralisées",
     icon: Users,
     step: 1,
-    color: "#9B59B6",
+    color: "var(--color-violet)",
   },
   {
     id: "booking",
@@ -71,7 +72,7 @@ const modules = [
     detail: "Planning en ligne",
     icon: CalendarDays,
     step: 2,
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "requests",
@@ -79,7 +80,7 @@ const modules = [
     detail: "Gestion des dossiers",
     icon: ClipboardList,
     step: 2,
-    color: "#9B59B6",
+    color: "var(--color-violet)",
   },
   {
     id: "automation",
@@ -87,7 +88,7 @@ const modules = [
     detail: "Tâches simplifiées",
     icon: Workflow,
     step: 3,
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "analytics",
@@ -95,7 +96,7 @@ const modules = [
     detail: "Indicateurs clés",
     icon: BarChart3,
     step: 3,
-    color: "#9B59B6",
+    color: "var(--color-violet)",
   },
 ];
 
@@ -114,12 +115,12 @@ function EvolutionStep({ step, activeStep, onSelect }) {
         transition-all duration-300
         focus-visible:outline-2
         focus-visible:outline-offset-4
-        focus-visible:outline-[#5AC8FA]
+        focus-visible:outline-accent
         sm:p-6
         ${
           active
-            ? "border-[#5AC8FA]/35 bg-[#5AC8FA]/[0.06]"
-            : "border-white/[0.06] bg-[#252525]/50 hover:border-white/15"
+            ? "border-accent/35 bg-accent/[0.06]"
+            : "border-white/[0.06] bg-surface/50 hover:border-white/15"
         }
       `}
     >
@@ -132,9 +133,9 @@ function EvolutionStep({ step, activeStep, onSelect }) {
           transition-colors duration-300
           ${
             active
-              ? "border-[#5AC8FA]/40 bg-[#5AC8FA]/10 text-[#5AC8FA]"
+              ? "border-accent/40 bg-accent/10 text-accent"
               : completed
-                ? "border-[#007AFF]/30 bg-[#007AFF]/10 text-[#007AFF]"
+                ? "border-blue/30 bg-blue/10 text-blue"
                 : "border-white/10 bg-white/[0.03] text-gray-500"
           }
         `}
@@ -148,7 +149,7 @@ function EvolutionStep({ step, activeStep, onSelect }) {
         <span
           className={`
             text-[10px] font-semibold tracking-[0.16em]
-            ${active ? "text-[#5AC8FA]" : "text-gray-500"}
+            ${active ? "text-accent" : "text-gray-500"}
           `}
         >
           {step.label}
@@ -178,7 +179,7 @@ function EvolutionStep({ step, activeStep, onSelect }) {
           mt-1 shrink-0 transition-all duration-300
           ${
             active
-              ? "translate-x-1 text-[#5AC8FA]"
+              ? "translate-x-1 text-accent"
               : "text-gray-600 group-hover:translate-x-1"
           }
         `}
@@ -223,7 +224,7 @@ function ApplicationModule({ module, reducedMotion }) {
       className="
         flex min-w-0 items-start gap-3
         rounded-xl border border-white/[0.07]
-        bg-[#252525] p-4
+        bg-surface p-4
         sm:p-5
       "
     >
@@ -233,7 +234,7 @@ function ApplicationModule({ module, reducedMotion }) {
           items-center justify-center rounded-xl
         "
         style={{
-          backgroundColor: `${module.color}18`,
+          backgroundColor: `${alpha(module.color, "18")}`,
         }}
       >
         <Icon
@@ -269,7 +270,7 @@ function ApplicationPreview({ activeStep, reducedMotion }) {
         aria-hidden="true"
         className="
           pointer-events-none absolute -inset-8
-          rounded-full bg-[#007AFF]/10
+          rounded-full bg-blue/10
           blur-[90px]
         "
       />
@@ -279,7 +280,7 @@ function ApplicationPreview({ activeStep, reducedMotion }) {
       <div
         className="
           relative overflow-hidden rounded-2xl
-          border border-white/10 bg-[#1C1C1C]
+          border border-white/10 bg-surface-deep
           shadow-[0_30px_80px_rgba(0,0,0,0.3)]
         "
       >
@@ -289,13 +290,13 @@ function ApplicationPreview({ activeStep, reducedMotion }) {
           className="
             flex h-11 items-center justify-between
             border-b border-white/[0.06]
-            bg-[#252525] px-4
+            bg-surface px-4
           "
         >
           <div className="flex items-center gap-1.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#9B59B6]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#007AFF]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#5AC8FA]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-violet" />
+            <span className="h-2.5 w-2.5 rounded-full bg-blue" />
+            <span className="h-2.5 w-2.5 rounded-full bg-accent" />
           </div>
 
           <span className="text-[10px] text-gray-500">
@@ -321,9 +322,9 @@ function ApplicationPreview({ activeStep, reducedMotion }) {
 
             <div
               className="
-                rounded-full border border-[#007AFF]/20
-                bg-[#007AFF]/10 px-3 py-1.5
-                text-[10px] font-medium text-[#76B4FF]
+                rounded-full border border-blue/20
+                bg-blue/10 px-3 py-1.5
+                text-[10px] font-medium text-blue-light
               "
             >
               Version {activeStep}.0
@@ -360,7 +361,7 @@ function ApplicationPreview({ activeStep, reducedMotion }) {
             "
           >
             <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#007AFF]" />
+              <span className="h-2 w-2 rounded-full bg-blue" />
 
               <span className="text-[11px] text-gray-400">
                 {visibleModules.length} modules disponibles
@@ -379,7 +380,7 @@ function ApplicationPreview({ activeStep, reducedMotion }) {
       <div className="mt-6 flex items-center justify-center gap-2">
         <Sparkles
           size={16}
-          className="text-[#9B59B6]"
+          className="text-violet"
           aria-hidden="true"
         />
 
@@ -396,7 +397,7 @@ export default function CustomFeaturesEvolution() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <Section id="custom-features-evolution" bgColor="#222222">
+    <Section id="custom-features-evolution" bgColor="canvas">
       <SectionWrapper>
         <SectionHeading
           eyebrow="UNE SOLUTION ÉVOLUTIVE"

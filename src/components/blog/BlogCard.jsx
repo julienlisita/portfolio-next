@@ -15,11 +15,11 @@ export default function BlogCard({ article }) {
       className="
         flex h-full flex-col
         rounded-xl
-        border border-[#2f2f2f]
-        bg-[#2a2a2a]
+        border border-line-subtle
+        bg-surface-raised
         p-5 sm:p-6
         transition-colors duration-300
-        hover:border-[#444]
+        hover:border-line-hover
       "
     >
       {/* Métadonnées */}
@@ -40,7 +40,7 @@ export default function BlogCard({ article }) {
               •
             </span>
 
-            <span className="rounded-md bg-[#1e1e1e] px-2 py-1 text-gray-300">
+            <span className="rounded-md bg-surface-admin px-2 py-1 text-gray-300">
               {article.category}
             </span>
           </>

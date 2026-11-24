@@ -36,7 +36,7 @@ export default function PricingExamples() {
     <Section
       id="pricing-examples"
       labelledBy="pricing-examples-title"
-      bgColor="#222222"
+      bgColor="canvas"
     >
       <SectionWrapper>
         <SectionHeading
@@ -53,8 +53,8 @@ export default function PricingExamples() {
               key={example.title}
               className="
                 flex h-full flex-col
-                rounded-xl border border-[#2f2f2f]
-                bg-[#2a2a2a] p-5
+                rounded-xl border border-line-subtle
+                bg-surface-raised p-5
               "
             >
               <h3 className="font-semibold text-gray-100">
@@ -65,7 +65,7 @@ export default function PricingExamples() {
                 {example.description}
               </p>
 
-              <p className="mt-6 border-t border-white/10 pt-4 font-bold text-[#5AC8FA]">
+              <p className="mt-6 border-t border-white/10 pt-4 font-bold text-accent">
                 {example.price}
               </p>
             </article>

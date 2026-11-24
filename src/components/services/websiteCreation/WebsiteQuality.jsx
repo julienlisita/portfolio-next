@@ -76,14 +76,14 @@ function StatusBadge({ children }) {
     <div
       className="
         inline-flex items-center gap-2
-        rounded-full border border-[#5AC8FA]/20
-        bg-[#5AC8FA]/[0.07]
+        rounded-full border border-accent/20
+        bg-accent/[0.07]
         px-3 py-1.5
       "
     >
-      <span className="h-1.5 w-1.5 rounded-full bg-[#5AC8FA]" />
+      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
 
-      <span className="text-[11px] font-medium text-[#5AC8FA]">
+      <span className="text-[11px] font-medium text-accent">
         {children}
       </span>
     </div>
@@ -96,10 +96,10 @@ function StatusBadge({ children }) {
 
 function PerformancePanel({ reducedMotion }) {
   return (
-    <div className="rounded-xl border border-white/[0.08] bg-[#292929] p-5">
+    <div className="rounded-xl border border-white/[0.08] bg-surface-soft p-5">
       <div className="mb-6 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <Gauge size={17} className="text-[#007AFF]" />
+          <Gauge size={17} className="text-blue" />
 
           <span className="text-sm font-semibold text-white">
             Performance
@@ -131,7 +131,7 @@ function PerformancePanel({ reducedMotion }) {
               cy="60"
               r="48"
               fill="none"
-              stroke="#5AC8FA"
+              stroke="var(--color-accent)"
               strokeWidth="8"
               strokeLinecap="round"
               strokeDasharray="301.59"
@@ -155,7 +155,7 @@ function PerformancePanel({ reducedMotion }) {
           <div className="absolute text-center">
             <Zap
               size={24}
-              className="mx-auto text-[#5AC8FA]"
+              className="mx-auto text-accent"
             />
 
             <span className="mt-1 block text-[10px] text-gray-400">
@@ -172,7 +172,7 @@ function PerformancePanel({ reducedMotion }) {
                 Chargement
               </span>
 
-              <Check size={14} className="text-[#5AC8FA]" />
+              <Check size={14} className="text-accent" />
             </div>
 
             <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
@@ -185,7 +185,7 @@ function PerformancePanel({ reducedMotion }) {
                   delay: 0.3,
                   ease,
                 }}
-                className="h-full rounded-full bg-[#5AC8FA]"
+                className="h-full rounded-full bg-accent"
               />
             </div>
           </div>
@@ -196,7 +196,7 @@ function PerformancePanel({ reducedMotion }) {
                 Fluidité
               </span>
 
-              <Check size={14} className="text-[#5AC8FA]" />
+              <Check size={14} className="text-accent" />
             </div>
 
             <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
@@ -209,7 +209,7 @@ function PerformancePanel({ reducedMotion }) {
                   delay: 0.45,
                   ease,
                 }}
-                className="h-full rounded-full bg-[#5AC8FA]"
+                className="h-full rounded-full bg-accent"
               />
             </div>
           </div>
@@ -220,7 +220,7 @@ function PerformancePanel({ reducedMotion }) {
                 Expérience mobile
               </span>
 
-              <Check size={14} className="text-[#5AC8FA]" />
+              <Check size={14} className="text-accent" />
             </div>
 
             <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
@@ -233,7 +233,7 @@ function PerformancePanel({ reducedMotion }) {
                   delay: 0.6,
                   ease,
                 }}
-                className="h-full rounded-full bg-[#5AC8FA]"
+                className="h-full rounded-full bg-accent"
               />
             </div>
           </div>
@@ -269,9 +269,9 @@ function SecurityPanel({ reducedMotion }) {
   ];
 
   return (
-    <div className="rounded-xl border border-white/[0.08] bg-[#292929] p-5">
+    <div className="rounded-xl border border-white/[0.08] bg-surface-soft p-5">
       <div className="mb-5 flex items-center gap-2">
-        <ShieldCheck size={17} className="text-[#007AFF]" />
+        <ShieldCheck size={17} className="text-blue" />
 
         <span className="text-sm font-semibold text-white">
           Sécurité & fiabilité
@@ -299,7 +299,7 @@ function SecurityPanel({ reducedMotion }) {
             className="
               flex items-center justify-between
               rounded-lg border border-white/[0.05]
-              bg-[#1C1C1C] px-3 py-3
+              bg-surface-deep px-3 py-3
             "
           >
             <div className="flex items-center gap-3">
@@ -312,7 +312,7 @@ function SecurityPanel({ reducedMotion }) {
 
             <CheckCircle2
               size={16}
-              className="text-[#5AC8FA]"
+              className="text-accent"
             />
           </motion.div>
         ))}
@@ -327,9 +327,9 @@ function SecurityPanel({ reducedMotion }) {
 
 function EvolutionPanel({ reducedMotion }) {
   return (
-    <div className="rounded-xl border border-white/[0.08] bg-[#292929] p-5">
+    <div className="rounded-xl border border-white/[0.08] bg-surface-soft p-5">
       <div className="mb-5 flex items-center gap-2">
-        <GitBranch size={17} className="text-[#007AFF]" />
+        <GitBranch size={17} className="text-blue" />
 
         <span className="text-sm font-semibold text-white">
           Évolutivité
@@ -342,11 +342,11 @@ function EvolutionPanel({ reducedMotion }) {
           className="
             flex h-12 w-12 shrink-0
             items-center justify-center
-            rounded-xl border border-[#5AC8FA]/30
-            bg-[#5AC8FA]/10
+            rounded-xl border border-accent/30
+            bg-accent/10
           "
         >
-          <Globe2 size={21} className="text-[#5AC8FA]" />
+          <Globe2 size={21} className="text-accent" />
         </div>
 
         {/* Ligne */}
@@ -374,7 +374,7 @@ function EvolutionPanel({ reducedMotion }) {
               className="
                 flex h-10 w-10 items-center justify-center
                 rounded-lg border border-white/10
-                bg-[#1C1C1C]
+                bg-surface-deep
               "
             >
               <Icon size={17} className="text-gray-300" />
@@ -384,7 +384,7 @@ function EvolutionPanel({ reducedMotion }) {
       </div>
 
       <div className="mt-4 flex items-center gap-2 text-xs text-gray-400">
-        <CheckCircle2 size={14} className="text-[#5AC8FA]" />
+        <CheckCircle2 size={14} className="text-accent" />
 
         Des fonctionnalités à ajouter selon vos besoins
       </div>
@@ -417,7 +417,7 @@ function QualityDashboard({ reducedMotion }) {
       className="
         relative overflow-hidden
         rounded-2xl border border-white/[0.08]
-        bg-[#1C1C1C]
+        bg-surface-deep
         p-4 shadow-[0_30px_90px_rgba(0,0,0,0.25)]
         sm:p-6
       "
@@ -425,8 +425,8 @@ function QualityDashboard({ reducedMotion }) {
       {/* Barre supérieure */}
       <div className="mb-6 flex items-center justify-between gap-3 border-b border-white/10 pb-5">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#5AC8FA]/10">
-            <Activity size={20} className="text-[#007AFF]" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10">
+            <Activity size={20} className="text-blue" />
           </div>
 
           <div>
@@ -518,7 +518,7 @@ export default function WebsiteQuality() {
                     }}
                     className="flex items-start gap-4"
                   >
-                    <span className="pt-1 text-sm font-semibold text-[#5AC8FA]">
+                    <span className="pt-1 text-sm font-semibold text-accent">
                       {number}
                     </span>
 
@@ -526,7 +526,7 @@ export default function WebsiteQuality() {
                       <div className="flex items-center gap-3">
                         <Icon
                           size={20}
-                          className="shrink-0 text-[#007AFF]"
+                          className="shrink-0 text-blue"
                           aria-hidden="true"
                         />
 
@@ -563,8 +563,8 @@ export default function WebsiteQuality() {
                 href="/services/suivi-et-evolutions"
                 className="
                   group inline-flex items-center gap-2
-                  border-b border-[#5AC8FA]/50 pb-1
-                  text-sm font-semibold text-[#5AC8FA]
+                  border-b border-accent/50 pb-1
+                  text-sm font-semibold text-accent
                   transition-colors hover:text-white
                 "
               >
@@ -594,7 +594,7 @@ export default function WebsiteQuality() {
                 h-[60%] w-[75%]
                 -translate-x-1/2 -translate-y-1/2
                 rounded-full
-                bg-[#5AC8FA]/[0.045]
+                bg-accent/[0.045]
                 blur-[90px]
               "
             />

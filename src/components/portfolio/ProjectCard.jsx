@@ -35,7 +35,7 @@ export default function ProjectCard({
         scale: { duration: 0.3, ease: "easeOut" },
       }}
       viewport={{ once: true }}
-      className="w-full rounded-xl bg-[#2a2a2a] overflow-hidden flex flex-col"
+      className="w-full rounded-xl bg-surface-raised overflow-hidden flex flex-col"
     >
       {/* Image */}
         <div className="relative h-48 w-full">
@@ -75,7 +75,7 @@ export default function ProjectCard({
             {technos.map((tech, i) => (
               <span
                 key={i}
-                className="text-xs bg-[#1f1f1f] text-gray-300 px-2 py-1 rounded-md"
+                className="text-xs bg-surface-alt text-gray-300 px-2 py-1 rounded-md"
               >
                 {tech}
               </span>

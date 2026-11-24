@@ -16,8 +16,8 @@ export default function BlogCta() {
           className="
             flex flex-col gap-5
             rounded-xl
-            border border-[#2f2f2f]
-            bg-[#1e1e1e]
+            border border-line-subtle
+            bg-surface-admin
             p-5 sm:p-6
             lg:flex-row
             lg:items-center

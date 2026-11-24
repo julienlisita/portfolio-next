@@ -27,13 +27,13 @@ export default function ContactIntro() {
 
         {/* Séparateur */}
         <div className="my-6 flex items-center gap-4">
-          <div className="h-px flex-1 bg-[#3a3a3a]" />
+          <div className="h-px flex-1 bg-line-strong" />
 
           <span className="text-sm text-gray-500">
             ou
           </span>
 
-          <div className="h-px flex-1 bg-[#3a3a3a]" />
+          <div className="h-px flex-1 bg-line-strong" />
         </div>
 
         <p className="text-sm text-gray-400">

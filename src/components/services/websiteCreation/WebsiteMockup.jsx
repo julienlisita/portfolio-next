@@ -20,7 +20,7 @@ export default function WebsiteMockup() {
         h-[65%] w-[80%]
         -translate-x-1/2 -translate-y-1/2
         rounded-full
-        bg-[#5AC8FA]/[0.12]
+        bg-accent/[0.12]
         blur-[110px]
     "
     />
@@ -43,7 +43,7 @@ export default function WebsiteMockup() {
           className="
             relative overflow-hidden rounded-xl
             border border-white/10
-            bg-[#1C1C1C]
+            bg-surface-deep
             shadow-[0_30px_90px_rgba(0,0,0,0.45)]
             sm:rounded-2xl
           "
@@ -53,14 +53,14 @@ export default function WebsiteMockup() {
             className="
               flex h-9 items-center gap-2
               border-b border-white/[0.06]
-              bg-[#2A2A2A] px-3
+              bg-surface-raised px-3
               sm:h-11 sm:px-5
             "
           >
             <div className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#9B59B6]" />
-              <span className="h-2 w-2 rounded-full bg-[#007AFF]" />
-              <span className="h-2 w-2 rounded-full bg-[#5AC8FA]" />
+              <span className="h-2 w-2 rounded-full bg-violet" />
+              <span className="h-2 w-2 rounded-full bg-blue" />
+              <span className="h-2 w-2 rounded-full bg-accent" />
             </div>
 
             {/* Barre d'adresse */}
@@ -69,7 +69,7 @@ export default function WebsiteMockup() {
                 mx-auto flex h-5 w-[55%]
                 items-center justify-center
                 rounded-md border border-white/[0.05]
-                bg-[#1C1C1C]
+                bg-surface-deep
                 sm:h-6
               "
             >
@@ -110,8 +110,8 @@ export default function WebsiteMockup() {
             absolute bottom-0 right-0 z-10
             w-[24%] min-w-[85px]
             overflow-hidden rounded-[18px]
-            border-[5px] border-[#252525]
-            bg-[#252525]
+            border-[5px] border-surface
+            bg-surface
             shadow-[0_25px_65px_rgba(0,0,0,0.55)]
             sm:rounded-[28px] sm:border-[7px]
           "

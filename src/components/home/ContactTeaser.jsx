@@ -8,7 +8,7 @@ import SectionWrapper from "../layout/SectionWrapper";
 
 export default function ContactTeaser() {
   return (
-    <Section id="contact" labelledBy="contact-title" bgColor="#222222">
+    <Section id="contact" labelledBy="contact-title" bgColor="canvas">
       <SectionWrapper>
         <div
           className="
@@ -29,7 +29,7 @@ export default function ContactTeaser() {
               absolute -right-24 -top-32
               h-80 w-80
               rounded-full
-              bg-[#007AFF]/15
+              bg-blue/15
               blur-[100px]
             "
           />
@@ -41,7 +41,7 @@ export default function ContactTeaser() {
               absolute -bottom-40 right-20
               h-80 w-80
               rounded-full
-              bg-[#9B59B6]/15
+              bg-violet/15
               blur-[100px]
             "
           />
@@ -51,14 +51,14 @@ export default function ContactTeaser() {
             <div className="mb-5 flex items-center gap-3">
               <span
                 aria-hidden="true"
-                className="h-px w-8 bg-[#5AC8FA]"
+                className="h-px w-8 bg-accent"
               />
 
               <span
                 className="
                   text-xs font-semibold
                   uppercase tracking-[0.18em]
-                  text-[#5AC8FA]
+                  text-accent
                 "
               >
                 UN PROJET EN TÊTE ?

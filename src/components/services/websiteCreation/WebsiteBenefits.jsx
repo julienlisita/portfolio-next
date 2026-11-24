@@ -58,11 +58,11 @@ const benefits = [
 
 function TrustPreview() {
   return (
-    <div className="w-full max-w-[390px] overflow-hidden rounded-2xl border border-white/10 bg-[#252525] shadow-2xl">
+    <div className="w-full max-w-[390px] overflow-hidden rounded-2xl border border-white/10 bg-surface shadow-2xl">
       <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#5AC8FA]/10">
-            <Sparkles size={16} className="text-[#007AFF]" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10">
+            <Sparkles size={16} className="text-blue" />
           </div>
 
           <span className="text-sm font-semibold text-white">
@@ -70,18 +70,18 @@ function TrustPreview() {
           </span>
         </div>
 
-        <span className="rounded-full bg-[#5AC8FA]/10 px-3 py-1 text-[10px] font-medium text-[#5AC8FA]">
+        <span className="rounded-full bg-accent/10 px-3 py-1 text-[10px] font-medium text-accent">
           Site professionnel
         </span>
       </div>
 
       <div className="p-5 sm:p-7">
-        <div className="flex h-32 items-center justify-center rounded-xl bg-gradient-to-br from-[#343434] to-[#1C1C1C] sm:h-40">
+        <div className="flex h-32 items-center justify-center rounded-xl bg-gradient-to-br from-[#343434] to-surface-deep sm:h-40">
           <div className="text-center">
             <Sparkles
               size={30}
               strokeWidth={1.5}
-              className="mx-auto text-[#007AFF]"
+              className="mx-auto text-blue"
             />
 
             <p className="mt-3 text-sm font-semibold text-white">
@@ -91,7 +91,7 @@ function TrustPreview() {
         </div>
 
         <div className="mt-6">
-          <div className="mb-3 flex items-center gap-2 text-[#5AC8FA]">
+          <div className="mb-3 flex items-center gap-2 text-accent">
             <CheckCircle2 size={16} />
 
             <span className="text-xs font-medium">
@@ -109,7 +109,7 @@ function TrustPreview() {
             {["A", "B", "C"].map((letter) => (
               <div
                 key={letter}
-                className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#252525] bg-[#414141] text-xs font-semibold text-white"
+                className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-surface bg-[#414141] text-xs font-semibold text-white"
               >
                 {letter}
               </div>
@@ -119,7 +119,7 @@ function TrustPreview() {
           <span className="flex items-center gap-1.5 text-xs text-gray-300">
             <ShieldCheck
               size={15}
-              className="text-[#5AC8FA]"
+              className="text-accent"
             />
             Une image professionnelle
           </span>
@@ -135,8 +135,8 @@ function TrustPreview() {
 
 function VisibilityPreview() {
   return (
-    <div className="w-full max-w-[420px] rounded-2xl border border-white/10 bg-[#252525] p-5 shadow-2xl sm:p-7">
-      <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#1C1C1C] px-4 py-3">
+    <div className="w-full max-w-[420px] rounded-2xl border border-white/10 bg-surface p-5 shadow-2xl sm:p-7">
+      <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-surface-deep px-4 py-3">
         <Search
           size={18}
           className="shrink-0 text-gray-400"
@@ -154,13 +154,13 @@ function VisibilityPreview() {
           Exemple illustratif de résultat de recherche
         </p>
 
-        <div className="rounded-xl border border-[#5AC8FA]/25 bg-[#5AC8FA]/[0.04] p-5">
+        <div className="rounded-xl border border-accent/25 bg-accent/[0.04] p-5">
           <div className="flex items-center gap-2 text-xs text-gray-400">
             <Globe2 size={14} />
             <span>votre-entreprise.fr</span>
           </div>
 
-          <h3 className="mt-3 text-base font-semibold text-[#5AC8FA] sm:text-lg">
+          <h3 className="mt-3 text-base font-semibold text-accent sm:text-lg">
             Votre entreprise — Votre savoir-faire
           </h3>
 
@@ -184,7 +184,7 @@ function VisibilityPreview() {
         <div className="mt-5 flex items-center gap-2 text-xs text-gray-400">
           <MapPin
             size={15}
-            className="shrink-0 text-[#5AC8FA]"
+            className="shrink-0 text-accent"
           />
 
           <span>
@@ -202,10 +202,10 @@ function VisibilityPreview() {
 
 function ContactPreview() {
   return (
-    <div className="w-full max-w-[390px] rounded-2xl border border-white/10 bg-[#252525] p-5 shadow-2xl sm:p-7">
+    <div className="w-full max-w-[390px] rounded-2xl border border-white/10 bg-surface p-5 shadow-2xl sm:p-7">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <p className="text-xs font-medium text-[#5AC8FA]">
+          <p className="text-xs font-medium text-accent">
             PRENDRE CONTACT
           </p>
 
@@ -214,37 +214,37 @@ function ContactPreview() {
           </h3>
         </div>
 
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#5AC8FA]/10">
-          <Mail size={20} className="text-[#5AC8FA]" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10">
+          <Mail size={20} className="text-accent" />
         </div>
       </div>
 
       <div className="space-y-4">
         <div>
           <div className="mb-2 h-2 w-16 rounded-full bg-white/20" />
-          <div className="h-10 rounded-lg border border-white/10 bg-[#1C1C1C]" />
+          <div className="h-10 rounded-lg border border-white/10 bg-surface-deep" />
         </div>
 
         <div>
           <div className="mb-2 h-2 w-24 rounded-full bg-white/20" />
-          <div className="h-10 rounded-lg border border-white/10 bg-[#1C1C1C]" />
+          <div className="h-10 rounded-lg border border-white/10 bg-surface-deep" />
         </div>
 
         <div>
           <div className="mb-2 h-2 w-20 rounded-full bg-white/20" />
-          <div className="h-20 rounded-lg border border-white/10 bg-[#1C1C1C]" />
+          <div className="h-20 rounded-lg border border-white/10 bg-surface-deep" />
         </div>
 
-        <div className="flex h-10 items-center justify-center gap-2 rounded-lg bg-[#5AC8FA] text-sm font-semibold text-[#1C1C1C]">
+        <div className="flex h-10 items-center justify-center gap-2 rounded-lg bg-accent text-sm font-semibold text-surface-deep">
           Envoyer ma demande
           <ArrowUpRight size={16} />
         </div>
       </div>
 
-      <div className="mt-5 flex items-center gap-2 rounded-lg border border-[#5AC8FA]/20 bg-[#5AC8FA]/[0.05] px-3 py-3">
+      <div className="mt-5 flex items-center gap-2 rounded-lg border border-accent/20 bg-accent/[0.05] px-3 py-3">
         <Check
           size={16}
-          className="shrink-0 text-[#5AC8FA]"
+          className="shrink-0 text-accent"
         />
 
         <span className="text-xs text-gray-300">
@@ -279,7 +279,7 @@ export default function WebsiteBenefits() {
     <Section
       id="website-benefits"
       labelledBy="website-benefits-title"
-      bgColor="#222222"
+      bgColor="canvas"
       className="relative overflow-hidden"
     >
       <SectionWrapper>
@@ -331,7 +331,7 @@ export default function WebsiteBenefits() {
                       layoutId="website-benefit-indicator"
                       className="
                         absolute bottom-0 left-0 top-0
-                        w-[2px] bg-[#5AC8FA]
+                        w-[2px] bg-accent
                       "
                       transition={{
                         type: "spring",
@@ -346,7 +346,7 @@ export default function WebsiteBenefits() {
                     <span
                       className={`pt-1 text-sm font-semibold ${
                         active
-                          ? "text-[#5AC8FA]"
+                          ? "text-accent"
                           : "text-gray-500"
                       }`}
                     >
@@ -374,7 +374,7 @@ export default function WebsiteBenefits() {
                           aria-hidden="true"
                           className={
                             active
-                              ? "shrink-0 text-[#007AFF]"
+                              ? "shrink-0 text-blue"
                               : "shrink-0 text-gray-500"
                           }
                         />
@@ -424,7 +424,7 @@ export default function WebsiteBenefits() {
               items-center justify-center
               overflow-hidden rounded-3xl
               border border-white/[0.06]
-              bg-[#1C1C1C]
+              bg-surface-deep
               px-5 py-8
               sm:min-h-[440px] sm:px-8
             "
@@ -437,7 +437,7 @@ export default function WebsiteBenefits() {
                 left-1/2 top-1/2
                 h-[300px] w-[350px]
                 -translate-x-1/2 -translate-y-1/2
-                rounded-full bg-[#5AC8FA]/[0.055]
+                rounded-full bg-accent/[0.055]
                 blur-[90px]
               "
             />

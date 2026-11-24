@@ -5,9 +5,9 @@ import { CalendarDays, CheckCircle, MousePointerClick } from "lucide-react";
 
 export default function HeroBookingAnimation() {
   return (
-    <div className="relative mx-auto w-full max-w-md rounded-3xl border border-[#5AC8FA]/25 bg-white p-3 sm:p-4 shadow-xl shadow-[#5AC8FA]/10">
+    <div className="relative mx-auto w-full max-w-md rounded-3xl border border-accent/25 bg-white p-3 sm:p-4 shadow-xl shadow-accent/10">
       
-      <div className="relative h-44 sm:h-60 lg:h-72 overflow-hidden rounded-2xl bg-[#007AFF]/5 p-3 sm:p-4">
+      <div className="relative h-44 sm:h-60 lg:h-72 overflow-hidden rounded-2xl bg-blue/5 p-3 sm:p-4">
         
         {/* Étape 1 : site vitrine */}
         <motion.div
@@ -32,7 +32,7 @@ export default function HeroBookingAnimation() {
           </div>
 
           <motion.button
-            className="mt-4 sm:mt-6 flex items-center gap-2 rounded-full bg-[#007AFF] px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white shadow-md shadow-[#007AFF]/20"
+            className="mt-4 sm:mt-6 flex items-center gap-2 rounded-full bg-blue px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white shadow-md shadow-blue/20"
             animate={{ scale: [1, 1, 0.96, 1] }}
             transition={{
               duration: 7,
@@ -61,7 +61,7 @@ export default function HeroBookingAnimation() {
           }}
         >
           <div className="mb-3 flex items-center gap-2">
-            <CalendarDays size={16} className="text-[#007AFF]" />
+            <CalendarDays size={16} className="text-blue" />
             <h4 className="text-sm sm:text-base font-semibold text-slate-900">
               Choisir un créneau
             </h4>
@@ -97,7 +97,7 @@ export default function HeroBookingAnimation() {
             ))}
           </div>
 
-          <div className="mt-4 sm:mt-6 rounded-xl bg-[#5AC8FA]/10 p-2 sm:p-3 text-xs sm:text-sm text-slate-600">
+          <div className="mt-4 sm:mt-6 rounded-xl bg-accent/10 p-2 sm:p-3 text-xs sm:text-sm text-slate-600">
             Créneau sélectionné.
           </div>
         </motion.div>
@@ -119,7 +119,7 @@ export default function HeroBookingAnimation() {
         >
           <CheckCircle
             size={38}
-            className="mb-3 text-[#007AFF] sm:size-[46px]"
+            className="mb-3 text-blue sm:size-[46px]"
           />
 
           <h4 className="text-base sm:text-lg font-semibold text-slate-900">

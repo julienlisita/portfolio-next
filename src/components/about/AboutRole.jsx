@@ -29,7 +29,7 @@ export default function AboutRole() {
             Selon votre activité et vos objectifs, je peux réaliser :
           </p>
 
-          <ul className="ml-6 list-disc space-y-3 marker:text-[#5AC8FA]">
+          <ul className="ml-6 list-disc space-y-3 marker:text-accent">
             <li>
               Des sites professionnels clairs, rapides et optimisés pour
               présenter votre activité, développer votre visibilité et

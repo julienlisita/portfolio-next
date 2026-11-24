@@ -34,7 +34,7 @@ export default function ProjectStackSection({ stack }) {
               {items.map((tech, i) => (
                 <span
                   key={i}
-                  className="bg-[#2a2a2a] border border-[#3a3a3a] px-3 py-1 rounded-md text-sm text-gray-200"
+                  className="bg-surface-raised border border-line-strong px-3 py-1 rounded-md text-sm text-gray-200"
                 >
                   {tech}
                 </span>

@@ -50,7 +50,7 @@ export default function TarifsTeaser() {
                   À partir de
                 </span>
 
-                <span className="mt-1 block text-4xl sm:text-5xl font-bold tracking-tight text-[#5AC8FA]">
+                <span className="mt-1 block text-4xl sm:text-5xl font-bold tracking-tight text-accent">
                   900 €
                 </span>
               </div>
@@ -70,7 +70,7 @@ export default function TarifsTeaser() {
                 p-6 sm:p-8 lg:p-10
               "
             >
-              <div className="flex items-center gap-3 text-[#007AFF]">
+              <div className="flex items-center gap-3 text-blue">
                 <Code2 size={22} aria-hidden="true" />
 
                 <span className="text-sm font-medium text-gray-400">
@@ -97,7 +97,7 @@ export default function TarifsTeaser() {
                 p-6 sm:p-8 lg:p-10
               "
             >
-              <div className="flex items-center gap-3 text-[#007AFF]">
+              <div className="flex items-center gap-3 text-blue">
                 <Clock3 size={22} aria-hidden="true" />
 
                 <span className="text-sm font-medium text-gray-400">

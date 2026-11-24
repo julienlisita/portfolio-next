@@ -57,7 +57,7 @@ const spotlightStyleDesktop = {
   return (
     <section
       id="landing"
-      className="relative min-h-svh bg-[#222222] overflow-hidden"
+      className="relative min-h-svh bg-canvas overflow-hidden"
     >
       {/* Spotlight */}
       <div
@@ -266,7 +266,7 @@ const spotlightStyleDesktop = {
           <ArrowDown
             className={`
               h-10 w-10 sm:h-12 sm:w-12
-              text-[#5AC8FA]
+              text-accent
               ${styles.pulseArrow}
             `}
             aria-hidden

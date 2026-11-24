@@ -17,7 +17,7 @@ export default function ReservationThankYouPage() {
         <div className="mx-auto max-w-2xl">
           <div
             className="
-              bg-[#2a2a2a]
+              bg-surface-raised
               rounded-2xl
               p-6 sm:p-8
               text-center

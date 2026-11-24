@@ -30,10 +30,10 @@ export default function SectionHeading({
         >
           <span
             aria-hidden="true"
-            className="h-px w-8 bg-[#5AC8FA]"
+            className="h-px w-8 bg-accent"
           />
 
-          <span className="text-xs font-semibold tracking-[0.16em] text-[#5AC8FA]">
+          <span className="text-xs font-semibold tracking-[0.16em] text-accent">
             {eyebrow}
           </span>
         </div>

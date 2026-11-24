@@ -26,7 +26,7 @@ export default function ContactDetails() {
   return (
     <div className="space-y-6">
       {/* Coordonnées */}
-      <div className="rounded-2xl bg-[#2a2a2a] p-6">
+      <div className="rounded-2xl bg-surface-raised p-6">
         <h3 className="mb-5 text-lg font-semibold text-white">
           Mes coordonnées
         </h3>
@@ -37,12 +37,12 @@ export default function ContactDetails() {
               <Phone
                 size={20}
                 aria-hidden="true"
-                className="shrink-0 text-[#5AC8FA]"
+                className="shrink-0 text-accent"
               />
 
               <a
                 href="tel:+33623000449"
-                className="text-sm text-gray-200 transition-colors hover:text-[#5AC8FA] sm:text-base"
+                className="text-sm text-gray-200 transition-colors hover:text-accent sm:text-base"
               >
                 06 23 00 04 49
               </a>
@@ -52,14 +52,14 @@ export default function ContactDetails() {
               <FaWhatsapp
                 size={20}
                 aria-hidden="true"
-                className="shrink-0 text-[#5AC8FA]"
+                className="shrink-0 text-accent"
               />
 
               <a
                 href="https://wa.me/33623000449"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-200 transition-colors hover:text-[#5AC8FA] sm:text-base"
+                className="text-sm text-gray-200 transition-colors hover:text-accent sm:text-base"
               >
                 Discuter sur WhatsApp
               </a>
@@ -69,12 +69,12 @@ export default function ContactDetails() {
               <Mail
                 size={20}
                 aria-hidden="true"
-                className="shrink-0 text-[#5AC8FA]"
+                className="shrink-0 text-accent"
               />
 
               <a
                 href="mailto:contact@julienlisita.com"
-                className="break-all text-sm text-gray-200 transition-colors hover:text-[#5AC8FA] sm:text-base"
+                className="break-all text-sm text-gray-200 transition-colors hover:text-accent sm:text-base"
               >
                 contact@julienlisita.com
               </a>
@@ -84,7 +84,7 @@ export default function ContactDetails() {
       </div>
 
       {/* Réseaux sociaux */}
-      <div className="rounded-2xl bg-[#2a2a2a] p-6">
+      <div className="rounded-2xl bg-surface-raised p-6">
         <h3 className="mb-5 text-lg font-semibold text-white">
           Réseaux
         </h3>
@@ -102,10 +102,10 @@ export default function ContactDetails() {
                   rounded-lg p-2
                   text-gray-300
                   transition-colors
-                  hover:text-[#5AC8FA]
+                  hover:text-accent
                   focus-visible:outline-2
                   focus-visible:outline-offset-2
-                  focus-visible:outline-[#5AC8FA]
+                  focus-visible:outline-accent
                 "
               >
                 <Icon size={28} aria-hidden="true" />

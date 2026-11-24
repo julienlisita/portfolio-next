@@ -35,15 +35,15 @@ export default function HowIWorkOutcomes() {
               className="
                 flex items-start gap-3
                 rounded-xl
-                border border-[#2f2f2f]
-                bg-[#2a2a2a]
+                border border-line-subtle
+                bg-surface-raised
                 p-5
               "
             >
               <Check
                 size={20}
                 aria-hidden="true"
-                className="mt-0.5 shrink-0 text-[#5AC8FA]"
+                className="mt-0.5 shrink-0 text-accent"
               />
 
               <span className="text-sm leading-relaxed text-gray-300 sm:text-base">

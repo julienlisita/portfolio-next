@@ -33,24 +33,24 @@ export default function Button({
 
   const variantStyles = {
     primary: `
-      text-[#222222]
-      bg-[#5AC8FA]
-      border-[#5AC8FA]
-      hover:bg-[#222222]
-      hover:text-[#5AC8FA]
-      hover:shadow-[0_0_10px_2px_#5AC8FA]
-      active:bg-[#3FCBFF]
-      active:text-[#222222]
+      text-canvas
+      bg-accent
+      border-accent
+      hover:bg-canvas
+      hover:text-accent
+      hover:shadow-[0_0_10px_2px_var(--color-accent)]
+      active:bg-accent-strong
+      active:text-canvas
     `,
     secondary: `
-      text-[#5AC8FA]
-      bg-[#222222]
-      border-[#5AC8FA]
-      hover:bg-[#3FCBFF]
-      hover:text-[#222222]
-      hover:shadow-[0_0_8px_2px_#5AC8FA]
-      active:bg-[#3FCBFF]
-      active:text-[#222222]
+      text-accent
+      bg-canvas
+      border-accent
+      hover:bg-accent-strong
+      hover:text-canvas
+      hover:shadow-[0_0_8px_2px_var(--color-accent)]
+      active:bg-accent-strong
+      active:text-canvas
     `,
     text: `
       px-0 py-0
@@ -58,9 +58,9 @@ export default function Button({
       border-none
       rounded-none
       bg-transparent
-      text-[#5AC8FA]
+      text-accent
       font-medium
-      hover:text-[#3FCBFF]
+      hover:text-accent-strong
       hover:shadow-none
       hover:scale-100
       transition-colors

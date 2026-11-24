@@ -61,16 +61,16 @@ export default function PageHero({
             >
               <span
                 aria-hidden="true"
-                className="h-px w-8 bg-[#5AC8FA]"
+                className="h-px w-8 bg-accent"
               />
 
-              <span className="text-xs font-semibold tracking-[0.18em] text-[#5AC8FA] sm:text-sm">
+              <span className="text-xs font-semibold tracking-[0.18em] text-accent sm:text-sm">
                 {eyebrow}
               </span>
 
               <span
                 aria-hidden="true"
-                className="h-px w-8 bg-[#5AC8FA]"
+                className="h-px w-8 bg-accent"
               />
             </motion.div>
           )}
@@ -110,15 +110,15 @@ export default function PageHero({
                   className="
                     group inline-flex min-h-12
                     items-center justify-center gap-2
-                    rounded-xl bg-[#5AC8FA]
+                    rounded-xl bg-accent
                     px-6 py-3
-                    text-sm font-semibold text-[#1C1C1C]
+                    text-sm font-semibold text-surface-deep
                     transition-all duration-300
-                    hover:bg-[#83D6FB]
+                    hover:bg-accent-soft
                     hover:shadow-[0_0_30px_rgba(90,200,250,0.2)]
                     focus-visible:outline-2
                     focus-visible:outline-offset-4
-                    focus-visible:outline-[#5AC8FA]
+                    focus-visible:outline-accent
                   "
                 >
                   {primaryAction.label}
@@ -150,7 +150,7 @@ export default function PageHero({
                     hover:bg-white/[0.04]
                     focus-visible:outline-2
                     focus-visible:outline-offset-4
-                    focus-visible:outline-[#5AC8FA]
+                    focus-visible:outline-accent
                   "
                 >
                   {secondaryAction.label}
@@ -188,7 +188,7 @@ export default function PageHero({
           >
             <span
               aria-hidden="true"
-              className="h-1.5 w-1.5 rounded-full bg-[#5AC8FA]"
+              className="h-1.5 w-1.5 rounded-full bg-accent"
             />
 
             {typeof caption === "string" ? (

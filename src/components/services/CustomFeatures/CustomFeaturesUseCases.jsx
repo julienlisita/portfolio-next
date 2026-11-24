@@ -14,14 +14,14 @@ export default function CustomFeaturesUseCases() {
   return (
     <Section className="text-base sm:text-lg lg:text-xl">
       <h2 className="text-xl font-semibold mt-10 mb-3 flex items-center gap-2">
-        <Briefcase className="w-5 h-5 text-[#9B59B6]" />
+        <Briefcase className="w-5 h-5 text-violet" />
         Exemples de cas d’usage
       </h2>
 
       <ul className="list-none ml-6 space-y-2">
         {useCases.map((it) => (
           <li key={it.text} className="flex items-start gap-2">
-            <it.icon className="w-5 h-5 text-[#9B59B6] mt-1" />
+            <it.icon className="w-5 h-5 text-violet mt-1" />
             <div className="flex-1">{it.text}</div>
           </li>
         ))}

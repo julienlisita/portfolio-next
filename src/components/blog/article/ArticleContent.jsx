@@ -20,11 +20,11 @@ export default function ArticleContent({ markdown }) {
             text-gray-200
             prose-headings:scroll-mt-24
             prose-headings:text-white
-            prose-a:text-[#5AC8FA]
+            prose-a:text-accent
             prose-a:transition-colors
-            hover:prose-a:text-[#007AFF]
+            hover:prose-a:text-blue
             prose-strong:text-white
-            prose-code:text-[#5AC8FA]
+            prose-code:text-accent
           "
         >
           <ReactMarkdown>

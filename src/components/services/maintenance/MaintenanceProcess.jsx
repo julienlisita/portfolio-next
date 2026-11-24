@@ -23,7 +23,7 @@ const steps = [
     title: "Votre demande",
     description:
       "Vous m'expliquez le problème rencontré ou la modification souhaitée.",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     number: "02",
@@ -31,7 +31,7 @@ const steps = [
     title: "Diagnostic",
     description:
       "J'analyse la situation et vous propose une intervention adaptée, avec un périmètre défini.",
-    color: "#9B59B6",
+    color: "var(--color-violet)",
   },
   {
     number: "03",
@@ -39,7 +39,7 @@ const steps = [
     title: "Intervention",
     description:
       "Après votre accord, je réalise les corrections ou modifications convenues.",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     number: "04",
@@ -47,7 +47,7 @@ const steps = [
     title: "Vérification",
     description:
       "Je vérifie le résultat et vous informe des actions effectuées.",
-    color: "#9B59B6",
+    color: "var(--color-violet)",
   },
 ];
 
@@ -86,7 +86,7 @@ function ProcessStep({ step, index, reducedMotion }) {
           className="
             flex h-14 w-14 items-center justify-center
             rounded-2xl border border-white/10
-            bg-[#252525]
+            bg-surface
             shadow-[0_10px_30px_rgba(0,0,0,0.15)]
           "
         >
@@ -133,7 +133,7 @@ export default function MaintenanceProcess() {
   return (
     <Section
       id="maintenance-process"
-      bgColor="#1C1C1C"
+      bgColor="surface-deep"
     >
       <SectionWrapper>
         <SectionHeading
@@ -164,9 +164,9 @@ export default function MaintenanceProcess() {
               }}
               className="
                 w-full bg-linear-to-b
-                from-[#007AFF]
-                via-[#9B59B6]
-                to-[#007AFF]
+                from-blue
+                via-violet
+                to-blue
               "
             />
           </div>
@@ -191,9 +191,9 @@ export default function MaintenanceProcess() {
               }}
               className="
                 h-full bg-linear-to-r
-                from-[#007AFF]
-                via-[#9B59B6]
-                to-[#007AFF]
+                from-blue
+                via-violet
+                to-blue
               "
             />
           </div>
@@ -224,13 +224,13 @@ export default function MaintenanceProcess() {
             mx-auto mt-8 flex max-w-3xl
             items-start gap-4 rounded-2xl
             border border-white/[0.07]
-            bg-[#252525]/60 p-5
+            bg-surface/60 p-5
             sm:mt-12 sm:items-center sm:p-6
           "
         >
           <ArrowRight
             size={20}
-            className="mt-0.5 shrink-0 text-[#9B59B6] sm:mt-0"
+            className="mt-0.5 shrink-0 text-violet sm:mt-0"
             aria-hidden="true"
           />
 

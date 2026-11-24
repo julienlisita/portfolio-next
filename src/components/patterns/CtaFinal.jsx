@@ -66,7 +66,7 @@ export default function CtaFinal({
           className="
             rounded-xl
             bg-linear-to-r
-            from-[#1e1e1e] to-[#2a2a2a]
+            from-surface-admin to-surface-raised
             px-6 py-8
             text-center
             sm:px-8 sm:py-10

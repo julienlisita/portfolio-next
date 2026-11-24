@@ -20,31 +20,32 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import { alpha } from "@/utils/color";
 
 const scatteredTools = [
   {
     icon: Mail,
     label: "Emails",
     detail: "Demandes clients",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     icon: FileSpreadsheet,
     label: "Tableaux",
     detail: "Suivi manuel",
-    color: "#9B59B6",
+    color: "var(--color-violet)",
   },
   {
     icon: CalendarDays,
     label: "Agenda",
     detail: "Rendez-vous",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     icon: MessageSquare,
     label: "Messages",
     detail: "Échanges",
-    color: "#9B59B6",
+    color: "var(--color-violet)",
   },
 ];
 
@@ -77,7 +78,7 @@ function ScatteredTools({ reducedMotion }) {
         aria-hidden="true"
         className="
           pointer-events-none absolute inset-8
-          rounded-full bg-[#9B59B6]/10
+          rounded-full bg-violet/10
           blur-[70px]
         "
       />
@@ -120,7 +121,7 @@ function ScatteredTools({ reducedMotion }) {
               }}
               className="
                 rounded-2xl border border-white/[0.08]
-                bg-[#252525] p-4
+                bg-surface p-4
                 shadow-[0_15px_35px_rgba(0,0,0,0.15)]
                 sm:p-5
               "
@@ -132,7 +133,7 @@ function ScatteredTools({ reducedMotion }) {
                   rounded-xl
                 "
                 style={{
-                  backgroundColor: `${tool.color}18`,
+                  backgroundColor: `${alpha(tool.color, "18")}`,
                 }}
               >
                 <Icon
@@ -157,7 +158,7 @@ function ScatteredTools({ reducedMotion }) {
       {/* Étiquette */}
 
       <div className="mt-6 flex items-center justify-center gap-2">
-        <span className="h-1.5 w-1.5 rounded-full bg-[#9B59B6]" />
+        <span className="h-1.5 w-1.5 rounded-full bg-violet" />
 
         <span className="text-xs text-gray-400">
           Informations dispersées
@@ -199,7 +200,7 @@ function CentralizedApp({ reducedMotion }) {
         aria-hidden="true"
         className="
           pointer-events-none absolute -inset-8
-          rounded-full bg-[#007AFF]/15
+          rounded-full bg-blue/15
           blur-[80px]
         "
       />
@@ -209,8 +210,8 @@ function CentralizedApp({ reducedMotion }) {
       <div
         className="
           relative overflow-hidden rounded-2xl
-          border border-[#007AFF]/20
-          bg-[#252525]
+          border border-blue/20
+          bg-surface
           shadow-[0_25px_60px_rgba(0,0,0,0.3)]
         "
       >
@@ -221,7 +222,7 @@ function CentralizedApp({ reducedMotion }) {
           className="
             flex items-center gap-3
             border-b border-white/[0.06]
-            bg-[#2A2A2A] px-5 py-4
+            bg-surface-raised px-5 py-4
           "
         >
           <div
@@ -229,7 +230,7 @@ function CentralizedApp({ reducedMotion }) {
               flex h-9 w-9 items-center justify-center
               rounded-lg
               bg-linear-to-br
-              from-[#007AFF] to-[#9B59B6]
+              from-blue to-violet
             "
           >
             <LayoutDashboard
@@ -251,7 +252,7 @@ function CentralizedApp({ reducedMotion }) {
 
           <CheckCircle2
             size={19}
-            className="ml-auto text-[#007AFF]"
+            className="ml-auto text-blue"
             aria-hidden="true"
           />
         </div>
@@ -265,12 +266,12 @@ function CentralizedApp({ reducedMotion }) {
               className="
                 flex items-center gap-2
                 rounded-xl border border-white/[0.06]
-                bg-[#1C1C1C] px-3 py-4
+                bg-surface-deep px-3 py-4
               "
             >
               <Icon
                 size={17}
-                className="shrink-0 text-[#007AFF]"
+                className="shrink-0 text-blue"
                 aria-hidden="true"
               />
 
@@ -285,7 +286,7 @@ function CentralizedApp({ reducedMotion }) {
 
         <div className="border-t border-white/[0.06] px-5 py-4">
           <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-[#007AFF]" />
+            <span className="h-2 w-2 rounded-full bg-blue" />
 
             <p className="text-xs text-gray-300">
               Toutes vos informations au même endroit
@@ -297,7 +298,7 @@ function CentralizedApp({ reducedMotion }) {
       {/* Étiquette */}
 
       <div className="mt-6 flex items-center justify-center gap-2">
-        <span className="h-1.5 w-1.5 rounded-full bg-[#007AFF]" />
+        <span className="h-1.5 w-1.5 rounded-full bg-blue" />
 
         <span className="text-xs text-gray-400">
           Une organisation centralisée
@@ -323,9 +324,9 @@ function ConnectionArrow({ reducedMotion }) {
         className="
           absolute h-20 w-px
           bg-linear-to-b
-          from-[#9B59B6]/30
-          via-[#007AFF]
-          to-[#007AFF]/30
+          from-violet/30
+          via-blue
+          to-blue/30
           lg:hidden
         "
       />
@@ -336,9 +337,9 @@ function ConnectionArrow({ reducedMotion }) {
         className="
           absolute hidden h-px w-24
           bg-linear-to-r
-          from-[#9B59B6]/30
-          via-[#007AFF]
-          to-[#007AFF]/30
+          from-violet/30
+          via-blue
+          to-blue/30
           lg:block
         "
       />
@@ -362,14 +363,14 @@ function ConnectionArrow({ reducedMotion }) {
           relative z-10 flex h-11 w-11
           items-center justify-center
           rounded-full
-          border border-[#007AFF]/30
-          bg-[#1C1C1C]
+          border border-blue/30
+          bg-surface-deep
           shadow-[0_0_30px_rgba(0,122,255,0.12)]
         "
       >
         <ArrowRight
           size={20}
-          className="rotate-90 text-[#007AFF] lg:rotate-0"
+          className="rotate-90 text-blue lg:rotate-0"
         />
       </motion.div>
     </div>
@@ -382,7 +383,7 @@ export default function CustomFeaturesWorkflow() {
   return (
     <Section
       id="custom-features-workflow"
-      bgColor="#1C1C1C"
+      bgColor="surface-deep"
     >
       <SectionWrapper>
 
@@ -432,13 +433,13 @@ export default function CustomFeaturesWorkflow() {
             items-start gap-4
             rounded-2xl
             border border-white/[0.06]
-            bg-[#252525] p-5
+            bg-surface p-5
             sm:items-center sm:p-6
           "
         >
           <Sparkles
             size={23}
-            className="mt-0.5 shrink-0 text-[#9B59B6] sm:mt-0"
+            className="mt-0.5 shrink-0 text-violet sm:mt-0"
             aria-hidden="true"
           />
 

@@ -89,12 +89,12 @@ function ReservationsByDay({
               </span>
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-[#333] bg-[#252525]">
+            <div className="overflow-hidden rounded-xl border border-line bg-surface">
               {dayReservations.map((reservation) => (
                 <article
                   key={reservation.id}
                   className="
-                    border-b border-[#333]
+                    border-b border-line
                     p-5
                     last:border-b-0
                   "
@@ -107,11 +107,11 @@ function ReservationsByDay({
                           className="
                             inline-flex
                             rounded-lg
-                            border border-[#5AC8FA]/30
-                            bg-[#5AC8FA]/10
+                            border border-accent/30
+                            bg-accent/10
                             px-3 py-1.5
                             text-sm font-semibold
-                            text-[#5AC8FA]
+                            text-accent
                           "
                         >
                           {formatTime(
@@ -136,7 +136,7 @@ function ReservationsByDay({
 
                         <a
                           href={`mailto:${reservation.clientEmail}`}
-                          className="text-sm text-[#5AC8FA] hover:underline"
+                          className="text-sm text-accent hover:underline"
                         >
                           {reservation.clientEmail}
                         </a>
@@ -228,7 +228,7 @@ export default async function ReservationsAdminPage() {
     groupReservationsByDay(pastReservations).reverse();
 
   return (
-    <main className="min-h-screen bg-[#1f1f1f] px-6 py-12 text-white">
+    <main className="min-h-screen bg-surface-alt px-6 py-12 text-white">
       <div className="mx-auto max-w-5xl space-y-10">
         <header>
           <p className="mb-2 text-sm text-gray-400">
@@ -270,7 +270,7 @@ export default async function ReservationsAdminPage() {
 
         {/* Historique */}
         {pastReservations.length > 0 && (
-          <section className="border-t border-[#333] pt-8">
+          <section className="border-t border-line pt-8">
             <details className="group">
               <summary
                 className="
@@ -299,7 +299,7 @@ export default async function ReservationsAdminPage() {
 
                 <span
                   className="
-                    text-2xl text-[#5AC8FA]
+                    text-2xl text-accent
                     transition-transform
                     group-open:rotate-45
                   "

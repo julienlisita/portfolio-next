@@ -51,8 +51,8 @@ const requests = [
 function StatusBadge({ status, color }) {
   const styles =
     color === "violet"
-      ? "bg-[#9B59B6]/15 text-[#C79ADD]"
-      : "bg-[#007AFF]/15 text-[#76B4FF]";
+      ? "bg-violet/15 text-violet-light"
+      : "bg-blue/15 text-blue-light";
 
   return (
     <span
@@ -73,7 +73,7 @@ function StatCard({ icon: Icon, label, value, color, detail }) {
     <div
       className="
         rounded-xl border border-white/[0.06]
-        bg-[#252525] p-3
+        bg-surface p-3
         sm:p-4
       "
     >
@@ -136,7 +136,7 @@ export default function CustomFeaturesMockup() {
           pointer-events-none absolute
           -left-10 top-1/4
           h-64 w-64 rounded-full
-          bg-[#007AFF]/15 blur-[100px]
+          bg-blue/15 blur-[100px]
           sm:h-96 sm:w-96
         "
       />
@@ -147,7 +147,7 @@ export default function CustomFeaturesMockup() {
           pointer-events-none absolute
           -right-10 bottom-0
           h-64 w-64 rounded-full
-          bg-[#9B59B6]/15 blur-[100px]
+          bg-violet/15 blur-[100px]
           sm:h-96 sm:w-96
         "
       />
@@ -159,7 +159,7 @@ export default function CustomFeaturesMockup() {
         className="
           relative overflow-hidden rounded-2xl
           border border-white/10
-          bg-[#1C1C1C]
+          bg-surface-deep
           shadow-[0_30px_90px_rgba(0,0,0,0.45)]
         "
       >
@@ -170,20 +170,20 @@ export default function CustomFeaturesMockup() {
           className="
             flex h-11 items-center justify-between
             border-b border-white/[0.06]
-            bg-[#252525] px-4
+            bg-surface px-4
             sm:h-12 sm:px-5
           "
         >
           <div className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#9B59B6]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#007AFF]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#5AC8FA]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-violet" />
+            <span className="h-2.5 w-2.5 rounded-full bg-blue" />
+            <span className="h-2.5 w-2.5 rounded-full bg-accent" />
           </div>
 
           <div
             className="
               rounded-md border border-white/[0.06]
-              bg-[#1C1C1C] px-4 py-1
+              bg-surface-deep px-4 py-1
               text-[10px] text-gray-500
               sm:text-xs
             "
@@ -214,7 +214,7 @@ export default function CustomFeaturesMockup() {
                   flex h-9 w-9 items-center justify-center
                   rounded-lg
                   bg-linear-to-br
-                  from-[#007AFF] to-[#9B59B6]
+                  from-blue to-violet
                   font-bold text-white
                 "
               >
@@ -242,7 +242,7 @@ export default function CustomFeaturesMockup() {
                         px-3 py-2.5 text-xs
                         ${
                           active
-                            ? "bg-[#5AC8FA]/10 text-[#5AC8FA]"
+                            ? "bg-accent/10 text-accent"
                             : "text-gray-500"
                         }
                       `}
@@ -295,8 +295,8 @@ export default function CustomFeaturesMockup() {
                 <div
                   className="
                     hidden h-8 w-8 items-center justify-center
-                    rounded-full bg-[#007AFF]/20
-                    text-xs font-semibold text-[#76B4FF]
+                    rounded-full bg-blue/20
+                    text-xs font-semibold text-blue-light
                     sm:flex
                   "
                 >
@@ -319,7 +319,7 @@ export default function CustomFeaturesMockup() {
                 label="Clients"
                 value="128"
                 detail="Clients enregistrés"
-                color="#007AFF"
+                color="var(--color-blue)"
               />
 
               <StatCard
@@ -327,7 +327,7 @@ export default function CustomFeaturesMockup() {
                 label="Réservations"
                 value="24"
                 detail="Ce mois-ci"
-                color="#9B59B6"
+                color="var(--color-violet)"
               />
 
               <div className="col-span-2 lg:col-span-1">
@@ -336,7 +336,7 @@ export default function CustomFeaturesMockup() {
                   label="Demandes"
                   value="+18 %"
                   detail="Sur les 30 derniers jours"
-                  color="#007AFF"
+                  color="var(--color-blue)"
                 />
               </div>
             </motion.div>
@@ -348,7 +348,7 @@ export default function CustomFeaturesMockup() {
               className="
                 mt-5 overflow-hidden rounded-xl
                 border border-white/[0.06]
-                bg-[#252525]
+                bg-surface
               "
             >
               <div
@@ -370,7 +370,7 @@ export default function CustomFeaturesMockup() {
 
                 <ArrowUpRight
                   size={17}
-                  className="text-[#5AC8FA]"
+                  className="text-accent"
                   aria-hidden="true"
                 />
               </div>
@@ -446,7 +446,7 @@ export default function CustomFeaturesMockup() {
           flex w-fit max-w-[calc(100%-2rem)]
           items-center gap-3
           rounded-xl border border-white/10
-          bg-[#2A2A2A] px-4 py-3
+          bg-surface-raised px-4 py-3
           shadow-[0_15px_45px_rgba(0,0,0,0.45)]
           sm:absolute sm:-bottom-6 sm:-right-5
           sm:mx-0 sm:mt-0 sm:max-w-none
@@ -457,12 +457,12 @@ export default function CustomFeaturesMockup() {
           className="
             flex h-10 w-10 shrink-0
             items-center justify-center
-            rounded-xl bg-[#9B59B6]/15
+            rounded-xl bg-violet/15
           "
         >
           <CheckCircle2
             size={21}
-            className="text-[#9B59B6]"
+            className="text-violet"
             aria-hidden="true"
           />
         </div>

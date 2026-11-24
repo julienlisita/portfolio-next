@@ -20,6 +20,7 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import { alpha } from "@/utils/color";
 
 const examples = [
   {
@@ -35,7 +36,7 @@ const examples = [
       "Confirmations automatiques",
     ],
     icon: CalendarDays,
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "requests",
@@ -50,7 +51,7 @@ const examples = [
       "Vue d'ensemble de l'activité",
     ],
     icon: ClipboardList,
-    color: "#9B59B6",
+    color: "var(--color-violet)",
   },
   {
     id: "portal",
@@ -65,7 +66,7 @@ const examples = [
       "Suivi simplifié",
     ],
     icon: FolderLock,
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
 ];
 
@@ -90,7 +91,7 @@ function BookingPreview() {
           </h4>
         </div>
 
-        <CalendarDays size={22} className="text-[#007AFF]" />
+        <CalendarDays size={22} className="text-blue" />
       </div>
 
       <div className="grid grid-cols-5 gap-2">
@@ -101,7 +102,7 @@ function BookingPreview() {
               rounded-xl border px-1 py-3 text-center
               ${
                 index === 2
-                  ? "border-[#5AC8FA]/60 bg-[#5AC8FA]/10"
+                  ? "border-accent/60 bg-accent/10"
                   : "border-white/[0.06] bg-white/[0.03]"
               }
             `}
@@ -109,7 +110,7 @@ function BookingPreview() {
             <p className="text-[10px] text-gray-400">{day}</p>
             <p
               className={`mt-1 text-sm font-semibold ${
-                index === 2 ? "text-[#5AC8FA]" : "text-white"
+                index === 2 ? "text-accent" : "text-white"
               }`}
             >
               {date}
@@ -131,8 +132,8 @@ function BookingPreview() {
               rounded-lg border px-3 py-3 text-sm
               ${
                 index === 1
-                  ? "border-[#5AC8FA] bg-[#5AC8FA]/10 text-[#5AC8FA]"
-                  : "border-white/10 bg-[#252525] text-gray-300"
+                  ? "border-accent bg-accent/10 text-accent"
+                  : "border-white/10 bg-surface text-gray-300"
               }
             `}
           >
@@ -142,7 +143,7 @@ function BookingPreview() {
         ))}
       </div>
 
-      <div className="mt-6 flex items-center justify-between rounded-xl bg-[#007AFF]/10 p-4">
+      <div className="mt-6 flex items-center justify-between rounded-xl bg-blue/10 p-4">
         <div>
           <p className="text-xs font-medium text-white">
             Mercredi 14 octobre
@@ -152,7 +153,7 @@ function BookingPreview() {
           </p>
         </div>
 
-        <Check size={18} className="text-[#5AC8FA]" />
+        <Check size={18} className="text-accent" />
       </div>
     </div>
   );
@@ -164,19 +165,19 @@ function RequestsPreview() {
       name: "Création d'un devis",
       client: "Sophie Martin",
       status: "À traiter",
-      color: "#9B59B6",
+      color: "var(--color-violet)",
     },
     {
       name: "Demande d'intervention",
       client: "Thomas Bernard",
       status: "En cours",
-      color: "#007AFF",
+      color: "var(--color-blue)",
     },
     {
       name: "Suivi de prestation",
       client: "Marie Laurent",
       status: "Terminé",
-      color: "#5AC8FA",
+      color: "var(--color-accent)",
     },
   ];
 
@@ -190,7 +191,7 @@ function RequestsPreview() {
           </h4>
         </div>
 
-        <ClipboardList size={22} className="text-[#9B59B6]" />
+        <ClipboardList size={22} className="text-violet" />
       </div>
 
       <div className="space-y-3">
@@ -200,7 +201,7 @@ function RequestsPreview() {
             className="
               flex items-center justify-between gap-3
               rounded-xl border border-white/[0.06]
-              bg-[#252525] p-4
+              bg-surface p-4
             "
           >
             <div className="min-w-0">
@@ -216,7 +217,7 @@ function RequestsPreview() {
               className="shrink-0 rounded-full px-2.5 py-1 text-[10px]"
               style={{
                 color: request.color,
-                backgroundColor: `${request.color}18`,
+                backgroundColor: `${alpha(request.color, "18")}`,
               }}
             >
               {request.status}
@@ -225,8 +226,8 @@ function RequestsPreview() {
         ))}
       </div>
 
-      <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#9B59B6]/10 p-4">
-        <MessageSquare size={18} className="text-[#9B59B6]" />
+      <div className="mt-5 flex items-center gap-3 rounded-xl bg-violet/10 p-4">
+        <MessageSquare size={18} className="text-violet" />
 
         <p className="text-xs text-gray-300">
           3 demandes suivies dans votre espace
@@ -249,10 +250,10 @@ function PortalPreview() {
         <div
           className="
             flex h-11 w-11 items-center justify-center
-            rounded-xl bg-[#007AFF]/15
+            rounded-xl bg-blue/15
           "
         >
-          <UserRound size={21} className="text-[#007AFF]" />
+          <UserRound size={21} className="text-blue" />
         </div>
 
         <div>
@@ -263,7 +264,7 @@ function PortalPreview() {
         </div>
       </div>
 
-      <div className="mb-5 rounded-xl border border-[#007AFF]/20 bg-[#007AFF]/10 p-4">
+      <div className="mb-5 rounded-xl border border-blue/20 bg-blue/10 p-4">
         <p className="text-xs text-gray-400">Votre dossier</p>
 
         <div className="mt-3 flex items-center justify-between">
@@ -271,13 +272,13 @@ function PortalPreview() {
             Prestation en cours
           </p>
 
-          <span className="rounded-full bg-[#007AFF]/20 px-2 py-1 text-[10px] text-[#76B4FF]">
+          <span className="rounded-full bg-blue/20 px-2 py-1 text-[10px] text-blue-light">
             En cours
           </span>
         </div>
 
         <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/10">
-          <div className="h-full w-2/3 rounded-full bg-linear-to-r from-[#007AFF] to-[#9B59B6]" />
+          <div className="h-full w-2/3 rounded-full bg-linear-to-r from-blue to-violet" />
         </div>
       </div>
 
@@ -292,10 +293,10 @@ function PortalPreview() {
             className="
               flex items-center gap-3 rounded-lg
               border border-white/[0.06]
-              bg-[#252525] p-3
+              bg-surface p-3
             "
           >
-            <FileText size={17} className="text-[#9B59B6]" />
+            <FileText size={17} className="text-violet" />
 
             <div className="min-w-0 flex-1">
               <p className="truncate text-xs text-white">
@@ -328,7 +329,7 @@ export default function CustomFeaturesShowcase() {
   const ActivePreview = previews[activeId];
 
   return (
-    <Section id="custom-features-showcase" bgColor="#222222">
+    <Section id="custom-features-showcase" bgColor="canvas">
       <SectionWrapper>
         <SectionHeading
           eyebrow="DES SOLUTIONS CONCRÈTES"
@@ -366,8 +367,8 @@ export default function CustomFeaturesShowcase() {
                       sm:text-sm
                       ${
                         active
-                          ? "border-[#5AC8FA]/50 bg-[#5AC8FA]/10 text-[#5AC8FA]"
-                          : "border-white/10 bg-[#252525] text-gray-400 hover:border-white/20 hover:text-white"
+                          ? "border-accent/50 bg-accent/10 text-accent"
+                          : "border-white/10 bg-surface text-gray-400 hover:border-white/20 hover:text-white"
                       }
                     `}
                   >
@@ -407,7 +408,7 @@ export default function CustomFeaturesShowcase() {
                     <div key={benefit} className="flex items-center gap-3">
                       <Check
                         size={17}
-                        className="shrink-0 text-[#5AC8FA]"
+                        className="shrink-0 text-accent"
                         aria-hidden="true"
                       />
 
@@ -432,7 +433,7 @@ export default function CustomFeaturesShowcase() {
               items-center justify-center
               overflow-hidden rounded-3xl
               border border-white/[0.06]
-              bg-[#1C1C1C] p-5
+              bg-surface-deep p-5
               sm:p-8 lg:min-h-[500px]
             "
           >

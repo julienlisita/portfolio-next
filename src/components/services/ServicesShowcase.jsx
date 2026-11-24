@@ -12,15 +12,16 @@ import {
 
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
+import { alpha } from "@/utils/color";
 
 // ─────────────────────────────────────────────
 // Couleurs de l'identité visuelle
 // ─────────────────────────────────────────────
 
 const COLORS = {
-  cyan: "#5AC8FA",
-  blue: "#007AFF",
-  purple: "#9B59B6",
+  cyan: "var(--color-accent)",
+  blue: "var(--color-blue)",
+  purple: "var(--color-violet)",
 };
 
 // ─────────────────────────────────────────────
@@ -90,7 +91,7 @@ function VisualFrame({ children, color = COLORS.blue }) {
         items-center justify-center
         overflow-hidden rounded-3xl
         border border-white/[0.06]
-        bg-[#1C1C1C]
+        bg-surface-deep
         p-6
         sm:min-h-[380px] sm:p-10
         lg:min-h-[430px]
@@ -148,13 +149,13 @@ function WebsiteVisual({ color }) {
         <div
           className="
             overflow-hidden rounded-xl
-            border-[5px] border-[#252525]
-            bg-[#252525]
+            border-[5px] border-surface
+            bg-surface
             shadow-[0_25px_60px_rgba(0,0,0,0.4)]
           "
         >
           {/* Barre navigateur */}
-          <div className="flex h-8 items-center gap-1.5 bg-[#2A2A2A] px-3">
+          <div className="flex h-8 items-center gap-1.5 bg-surface-raised px-3">
             <span
               className="h-2 w-2 rounded-full"
               style={{ backgroundColor: color }}
@@ -162,7 +163,7 @@ function WebsiteVisual({ color }) {
             <span className="h-2 w-2 rounded-full bg-white/20" />
             <span className="h-2 w-2 rounded-full bg-white/20" />
 
-            <div className="ml-3 h-4 flex-1 rounded-md bg-[#1C1C1C] px-3">
+            <div className="ml-3 h-4 flex-1 rounded-md bg-surface-deep px-3">
               <div className="mt-1.5 h-1 w-1/2 rounded bg-white/15" />
             </div>
           </div>
@@ -181,7 +182,7 @@ function WebsiteVisual({ color }) {
         </div>
 
         {/* Pied de l'ordinateur */}
-        <div className="mx-auto h-5 w-16 bg-linear-to-b from-[#353535] to-[#252525]" />
+        <div className="mx-auto h-5 w-16 bg-linear-to-b from-[#353535] to-surface" />
 
         <div className="mx-auto h-1.5 w-28 rounded-full bg-[#353535]" />
 
@@ -191,12 +192,12 @@ function WebsiteVisual({ color }) {
             absolute bottom-0 right-0
             w-[25%] min-w-[70px]
             overflow-hidden rounded-[16px]
-            border-[4px] border-[#252525]
-            bg-[#252525]
+            border-[4px] border-surface
+            bg-surface
             shadow-[0_15px_40px_rgba(0,0,0,0.5)]
           "
         >
-          <div className="flex h-4 items-center justify-center bg-[#252525]">
+          <div className="flex h-4 items-center justify-center bg-surface">
             <span className="h-1 w-6 rounded-full bg-white/20" />
           </div>
 
@@ -248,7 +249,7 @@ function ApplicationVisual({ color }) {
           className="
             relative overflow-hidden rounded-xl
             border border-white/10
-            bg-[#252525]
+            bg-surface
             shadow-[0_25px_60px_rgba(0,0,0,0.45)]
           "
         >
@@ -257,7 +258,7 @@ function ApplicationVisual({ color }) {
             className="
               flex h-10 items-center gap-2
               border-b border-white/[0.06]
-              bg-[#2A2A2A] px-4
+              bg-surface-raised px-4
             "
           >
             <span
@@ -272,7 +273,7 @@ function ApplicationVisual({ color }) {
               className="
                 ml-3 flex h-5 flex-1 items-center
                 rounded-md border border-white/[0.04]
-                bg-[#1C1C1C] px-3
+                bg-surface-deep px-3
               "
             >
               <span className="h-1 w-1/3 rounded-full bg-white/15" />
@@ -299,7 +300,7 @@ function ApplicationVisual({ color }) {
             absolute -bottom-1 -right-2
             flex items-center gap-2
             rounded-xl border border-white/10
-            bg-[#2A2A2A] px-4 py-3
+            bg-surface-raised px-4 py-3
             shadow-[0_12px_35px_rgba(0,0,0,0.35)]
             sm:-right-4
           "
@@ -310,7 +311,7 @@ function ApplicationVisual({ color }) {
               rounded-lg
             "
             style={{
-              backgroundColor: `${color}20`,
+              backgroundColor: `${alpha(color, "20")}`,
             }}
           >
             <CheckCircle2
@@ -365,7 +366,7 @@ function MaintenanceVisual({ color }) {
         className="
           mx-auto w-full max-w-[400px]
           rounded-2xl border border-white/10
-          bg-[#252525] p-6 sm:p-8
+          bg-surface p-6 sm:p-8
           shadow-[0_25px_60px_rgba(0,0,0,0.35)]
         "
       >
@@ -396,8 +397,8 @@ function MaintenanceVisual({ color }) {
             rounded-xl p-4 sm:p-5
           "
           style={{
-            border: `1px solid ${color}33`,
-            backgroundColor: `${color}0D`,
+            border: `1px solid ${alpha(color, "33")}`,
+            backgroundColor: `${alpha(color, "0D")}`,
           }}
         >
           <CheckCircle2
@@ -493,12 +494,12 @@ function ServiceSeparator({ from, to }) {
         style={{
           background: `linear-gradient(
             90deg,
-            ${from}00 0%,
-            ${from}60 25%,
+            ${alpha(from, "00")} 0%,
+            ${alpha(from, "60")} 25%,
             ${from} 45%,
             ${to} 55%,
-            ${to}60 75%,
-            ${to}00 100%
+            ${alpha(to, "60")} 75%,
+            ${alpha(to, "00")} 100%
           )`,
           clipPath:
             "polygon(0 50%, 35% 25%, 50% 0, 65% 25%, 100% 50%, 65% 75%, 50% 100%, 35% 75%)",
@@ -534,7 +535,7 @@ export default function ServicesShowcase() {
   return (
     <Section
       id="services-showcase"
-      bgColor="#222222"
+      bgColor="canvas"
       aria-label="Mes prestations"
     >
       <SectionWrapper>
@@ -555,13 +556,13 @@ export default function ServicesShowcase() {
                 <div className={reversed ? "lg:order-2" : "lg:order-1"}>
                   {/* Numéro et catégorie */}
                   <div className="mb-5 flex items-center gap-3">
-                    <span className="text-sm font-bold text-[#5AC8FA]">
+                    <span className="text-sm font-bold text-accent">
                       {service.number}
                     </span>
 
-                    <span className="h-px w-8 bg-[#5AC8FA]" />
+                    <span className="h-px w-8 bg-accent" />
 
-                    <span className="text-xs font-semibold tracking-[0.15em] text-[#5AC8FA]">
+                    <span className="text-xs font-semibold tracking-[0.15em] text-accent">
                       {service.category}
                     </span>
                   </div>
@@ -593,7 +594,7 @@ export default function ServicesShowcase() {
                       >
                         <CheckCircle2
                           size={18}
-                          className="mt-0.5 shrink-0 text-[#007AFF]"
+                          className="mt-0.5 shrink-0 text-blue"
                           aria-hidden="true"
                         />
 
@@ -607,13 +608,13 @@ export default function ServicesShowcase() {
                     href={service.href}
                     className="
                       group mt-9 inline-flex items-center gap-2
-                      border-b border-[#5AC8FA]/50 pb-1
-                      text-base font-semibold text-[#5AC8FA]
+                      border-b border-accent/50 pb-1
+                      text-base font-semibold text-accent
                       transition-colors duration-300
                       hover:border-white/60 hover:text-white
                       focus-visible:outline-2
                       focus-visible:outline-offset-4
-                      focus-visible:outline-[#5AC8FA]
+                      focus-visible:outline-accent
                     "
                   >
                     {service.cta}

@@ -27,13 +27,13 @@ import {
 
 function DesignVisual() {
   return (
-    <div className="relative mt-8 overflow-hidden rounded-xl border border-white/10 bg-[#1C1C1C] p-5 sm:p-6">
+    <div className="relative mt-8 overflow-hidden rounded-xl border border-white/10 bg-surface-deep p-5 sm:p-6">
       {/* Mini navigateur */}
-      <div className="overflow-hidden rounded-lg border border-white/10 bg-[#292929]">
+      <div className="overflow-hidden rounded-lg border border-white/10 bg-surface-soft">
         <div className="flex h-8 items-center gap-1.5 border-b border-white/10 px-3">
-          <span className="h-2 w-2 rounded-full bg-[#9B59B6]" />
-          <span className="h-2 w-2 rounded-full bg-[#007AFF]" />
-          <span className="h-2 w-2 rounded-full bg-[#5AC8FA]" />
+          <span className="h-2 w-2 rounded-full bg-violet" />
+          <span className="h-2 w-2 rounded-full bg-blue" />
+          <span className="h-2 w-2 rounded-full bg-accent" />
         </div>
 
         <div className="p-4">
@@ -55,10 +55,10 @@ function DesignVisual() {
               <div className="mt-4 h-2 w-full rounded bg-white/15" />
               <div className="mt-2 h-2 w-4/5 rounded bg-white/15" />
 
-              <div className="mt-5 h-7 w-24 rounded-md bg-[#5AC8FA]" />
+              <div className="mt-5 h-7 w-24 rounded-md bg-accent" />
             </div>
 
-            <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-[#5AC8FA]/40 via-[#007AFF]/20 to-[#9B59B6]/30" />
+            <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-accent/40 via-blue/20 to-violet/30" />
           </div>
         </div>
       </div>
@@ -70,9 +70,9 @@ function DesignVisual() {
         </span>
 
         <div className="flex items-center gap-2">
-          <span className="h-5 w-5 rounded-full bg-[#5AC8FA]" />
-          <span className="h-5 w-5 rounded-full bg-[#007AFF]" />
-          <span className="h-5 w-5 rounded-full bg-[#9B59B6]" />
+          <span className="h-5 w-5 rounded-full bg-accent" />
+          <span className="h-5 w-5 rounded-full bg-blue" />
+          <span className="h-5 w-5 rounded-full bg-violet" />
           <span className="h-5 w-5 rounded-full bg-white" />
         </div>
       </div>
@@ -83,18 +83,18 @@ function DesignVisual() {
 function StructureVisual() {
   return (
     <div className="mt-7 flex flex-col items-center">
-      <div className="rounded-lg border border-[#5AC8FA]/40 bg-[#5AC8FA]/10 px-5 py-3 text-sm font-medium text-white">
+      <div className="rounded-lg border border-accent/40 bg-accent/10 px-5 py-3 text-sm font-medium text-white">
         Accueil
       </div>
 
-      <div className="h-6 w-px bg-[#5AC8FA]/40" />
-      <div className="h-px w-[70%] bg-[#5AC8FA]/40" />
+      <div className="h-6 w-px bg-accent/40" />
+      <div className="h-px w-[70%] bg-accent/40" />
 
       <div className="flex w-[70%] justify-between">
         {[0, 1, 2].map((item) => (
           <div
             key={item}
-            className="h-5 w-px bg-[#5AC8FA]/40"
+            className="h-5 w-px bg-accent/40"
           />
         ))}
       </div>
@@ -103,7 +103,7 @@ function StructureVisual() {
         {["Services", "À propos", "Contact"].map((item) => (
           <div
             key={item}
-            className="rounded-lg border border-white/10 bg-[#1C1C1C] px-2 py-3 text-[11px] text-gray-300 sm:text-xs"
+            className="rounded-lg border border-white/10 bg-surface-deep px-2 py-3 text-[11px] text-gray-300 sm:text-xs"
           >
             {item}
           </div>
@@ -115,28 +115,28 @@ function StructureVisual() {
 
 function ContactVisual() {
   return (
-    <div className="mt-7 rounded-xl border border-white/10 bg-[#1C1C1C] p-4">
+    <div className="mt-7 rounded-xl border border-white/10 bg-surface-deep p-4">
       <div className="mb-4 flex items-center justify-between">
         <span className="text-xs font-medium text-white">
           Demande de contact
         </span>
 
-        <Mail size={15} className="text-[#007AFF]" />
+        <Mail size={15} className="text-blue" />
       </div>
 
       <div className="space-y-2.5">
-        <div className="h-8 rounded-md border border-white/10 bg-[#292929]" />
-        <div className="h-8 rounded-md border border-white/10 bg-[#292929]" />
-        <div className="h-14 rounded-md border border-white/10 bg-[#292929]" />
+        <div className="h-8 rounded-md border border-white/10 bg-surface-soft" />
+        <div className="h-8 rounded-md border border-white/10 bg-surface-soft" />
+        <div className="h-14 rounded-md border border-white/10 bg-surface-soft" />
       </div>
 
       <div className="mt-4 flex items-center justify-between">
         <div className="flex items-center gap-1.5 text-[11px] text-gray-400">
-          <CheckCircle2 size={13} className="text-[#007AFF]" />
+          <CheckCircle2 size={13} className="text-blue" />
           Prise de contact simplifiée
         </div>
 
-        <div className="rounded-md bg-[#5AC8FA] px-3 py-2 text-[11px] font-semibold text-[#1C1C1C]">
+        <div className="rounded-md bg-accent px-3 py-2 text-[11px] font-semibold text-surface-deep">
           Envoyer
         </div>
       </div>
@@ -146,7 +146,7 @@ function ContactVisual() {
 
 function SEOVisual() {
   return (
-    <div className="mt-7 rounded-xl border border-white/10 bg-[#1C1C1C] p-4">
+    <div className="mt-7 rounded-xl border border-white/10 bg-surface-deep p-4">
       <div className="flex items-center gap-2 border-b border-white/10 pb-3">
         <Search size={15} className="text-gray-400" />
 
@@ -161,7 +161,7 @@ function SEOVisual() {
           votre-entreprise.fr
         </div>
 
-        <div className="mt-2 h-3 w-4/5 rounded bg-[#5AC8FA]/80" />
+        <div className="mt-2 h-3 w-4/5 rounded bg-accent/80" />
 
         <div className="mt-3 space-y-2">
           <div className="h-2 w-full rounded bg-white/15" />
@@ -186,8 +186,8 @@ function ResponsiveVisual() {
           key={label}
           className="flex flex-col items-center gap-3"
         >
-          <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-white/10 bg-[#1C1C1C]">
-            <Icon size={24} className="text-[#007AFF]" />
+          <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-white/10 bg-surface-deep">
+            <Icon size={24} className="text-blue" />
           </div>
 
           <span className="text-[11px] text-gray-400">
@@ -201,21 +201,21 @@ function ResponsiveVisual() {
 
 function LaunchVisual() {
   return (
-    <div className="mt-7 rounded-xl border border-white/10 bg-[#1C1C1C] p-4">
+    <div className="mt-7 rounded-xl border border-white/10 bg-surface-deep p-4">
       <div className="flex items-center justify-between gap-3">
         <span className="text-xs text-gray-400">
           Mise en ligne du site
         </span>
 
-        <span className="flex items-center gap-1.5 rounded-full bg-[#5AC8FA]/10 px-3 py-1 text-[11px] text-[#5AC8FA]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#5AC8FA]" />
+        <span className="flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-[11px] text-accent">
+          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
           En ligne
         </span>
       </div>
 
       <div className="mt-5 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#5AC8FA]/10">
-          <Globe2 size={20} className="text-[#007AFF]" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
+          <Globe2 size={20} className="text-blue" />
         </div>
 
         <div className="min-w-0">
@@ -230,7 +230,7 @@ function LaunchVisual() {
 
         <Check
           size={18}
-          className="ml-auto shrink-0 text-[#5AC8FA]"
+          className="ml-auto shrink-0 text-accent"
         />
       </div>
     </div>
@@ -267,16 +267,16 @@ function FeatureCard({
       className={`
         group relative overflow-hidden
         rounded-2xl border border-white/[0.07]
-        bg-[#292929] p-6
+        bg-surface-soft p-6
         transition-colors duration-300
-        hover:border-[#5AC8FA]/25
+        hover:border-accent/25
         sm:p-7
         ${className}
       `}
     >
       <div className="flex items-start justify-between gap-4">
-        <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#5AC8FA]/15 bg-[#5AC8FA]/[0.07]">
-          <Icon size={21} className="text-[#007AFF]" />
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-accent/15 bg-accent/[0.07]">
+          <Icon size={21} className="text-blue" />
         </div>
       </div>
 
@@ -304,7 +304,7 @@ export default function WebsiteFeatures() {
     <Section
       id="website-features"
       labelledBy="website-features-title"
-      bgColor="#222222"
+      bgColor="canvas"
     >
       <SectionWrapper>
         {/* En-tête */}

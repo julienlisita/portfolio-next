@@ -32,7 +32,7 @@ export default function LegalNoticeSection() {
               <p>
                 <a
                   href="mailto:contact@julienlisita.com"
-                  className="text-[#5AC8FA] transition-colors hover:underline"
+                  className="text-accent transition-colors hover:underline"
                 >
                   contact@julienlisita.com
                 </a>
@@ -61,7 +61,7 @@ export default function LegalNoticeSection() {
               href="https://vercel.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block text-[#5AC8FA] transition-colors hover:underline"
+              className="mt-2 inline-block text-accent transition-colors hover:underline"
             >
               Site de Vercel
             </a>

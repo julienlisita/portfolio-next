@@ -130,7 +130,7 @@ function getStatusClasses(status) {
       return "border-green-900/60 bg-green-950/30 text-green-400";
 
     case "BOOKED":
-      return "border-[#5AC8FA]/40 bg-[#5AC8FA]/10 text-[#5AC8FA]";
+      return "border-accent/40 bg-accent/10 text-accent";
 
     case "DISABLED":
       return "border-gray-700 bg-gray-800/50 text-gray-400";
@@ -163,13 +163,13 @@ function SlotsByDay({ groupedSlots, historical = false }) {
             </span>
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-[#333] bg-[#252525]">
+          <div className="overflow-hidden rounded-xl border border-line bg-surface">
             {daySlots.map((slot) => (
               <article
                 key={slot.id}
                 className="
                   flex flex-col gap-4
-                  border-b border-[#333]
+                  border-b border-line
                   p-4
                   last:border-b-0
                   sm:flex-row sm:items-center sm:justify-between
@@ -222,7 +222,7 @@ function SlotsByDay({ groupedSlots, historical = false }) {
                             px-3 py-2
                             text-sm
                             transition
-                            hover:border-[#5AC8FA]
+                            hover:border-accent
                           "
                         >
                           Rendre disponible
@@ -252,7 +252,7 @@ function SlotsByDay({ groupedSlots, historical = false }) {
                             px-3 py-2
                             text-sm
                             transition
-                            hover:border-[#5AC8FA]
+                            hover:border-accent
                           "
                         >
                           Désactiver
@@ -329,7 +329,7 @@ export default async function SlotsAdminPage() {
     groupSlotsByDay(pastSlots).reverse();
 
   return (
-    <main className="min-h-screen bg-[#1f1f1f] px-6 py-12 text-white">
+    <main className="min-h-screen bg-surface-alt px-6 py-12 text-white">
       <div className="mx-auto max-w-5xl space-y-10">
         <header>
           <p className="mb-2 text-sm text-gray-400">
@@ -342,7 +342,7 @@ export default async function SlotsAdminPage() {
         </header>
 
         {/* Création */}
-        <section className="rounded-xl border border-[#333] bg-[#252525] p-6">
+        <section className="rounded-xl border border-line bg-surface p-6">
           <h2 className="mb-5 text-xl font-semibold">
             Ajouter un créneau
           </h2>
@@ -366,8 +366,8 @@ export default async function SlotsAdminPage() {
                 required
                 className="
                   rounded-lg
-                  border border-[#444]
-                  bg-[#1f1f1f]
+                  border border-line-hover
+                  bg-surface-alt
                   px-3 py-2
                 "
               />
@@ -388,8 +388,8 @@ export default async function SlotsAdminPage() {
                 defaultValue=""
                 className="
                   rounded-lg
-                  border border-[#444]
-                  bg-[#1f1f1f]
+                  border border-line-hover
+                  bg-surface-alt
                   px-3 py-2
                 "
               >
@@ -449,7 +449,7 @@ export default async function SlotsAdminPage() {
 
         {/* Historique */}
         {pastSlots.length > 0 && (
-          <section className="border-t border-[#333] pt-8">
+          <section className="border-t border-line pt-8">
             <details className="group">
               <summary
                 className="
@@ -474,7 +474,7 @@ export default async function SlotsAdminPage() {
 
                 <span
                   className="
-                    text-2xl text-[#5AC8FA]
+                    text-2xl text-accent
                     transition-transform
                     group-open:rotate-45
                   "

@@ -9,7 +9,7 @@ export default function ContactMap() {
     <Section
       id="contact-map"
       labelledBy="contact-map-title"
-      bgColor="#222222"
+      bgColor="canvas"
     >
       <SectionWrapper>
         <SectionHeading

@@ -4,15 +4,15 @@ export default function TechCard({
   icon: Icon,
   name,
   description,
-  color = "#007AFF",
+  color = "var(--color-blue)",
 }) {
   return (
     <div
       className="
         flex flex-col items-center
         rounded-2xl
-        border border-[#333]
-        bg-[#2a2a2a]
+        border border-line
+        bg-surface-raised
         p-4
         text-center text-gray-200
         shadow-[0_0_6px_rgba(0,0,0,0.4)]

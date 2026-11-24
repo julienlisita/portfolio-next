@@ -45,9 +45,9 @@ export default function BenefitsSection() {
         {benefits.map((benefit) => (
           <div
             key={benefit.title}
-            className="bg-[#1f1f1f] rounded-2xl p-6 h-full shadow-lg flex flex-col"
+            className="bg-surface-alt rounded-2xl p-6 h-full shadow-lg flex flex-col"
           >
-            <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#007AFF]/10 text-[#007AFF]">
+            <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-blue/10 text-blue">
               {benefit.icon}
             </div>
 

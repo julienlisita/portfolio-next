@@ -24,7 +24,7 @@ export default function SkillCard({
           h-full w-1
           origin-top
           bg-linear-to-t
-          from-[#9B59B6] to-[#007AFF]
+          from-violet to-blue
           blur-[6px]
         "
         initial={
@@ -54,7 +54,7 @@ export default function SkillCard({
           h-full w-1
           origin-top
           bg-linear-to-t
-          from-[#9B59B6] to-[#007AFF]
+          from-violet to-blue
         "
         initial={
           prefersReducedMotion
@@ -90,7 +90,7 @@ export default function SkillCard({
             mt-4
             flex flex-wrap items-center
             gap-4 sm:gap-5
-            text-[#9B59B6]
+            text-violet
             text-2xl sm:text-[28px]
           "
         >

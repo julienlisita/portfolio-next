@@ -37,7 +37,7 @@ export default function AboutMethod() {
     <Section
       id="about-method"
       labelledBy="about-method-title"
-      bgColor="#222222"
+      bgColor="canvas"
     >
       <SectionWrapper>
         <SectionHeading
@@ -64,7 +64,7 @@ export default function AboutMethod() {
             </Button>
           </p>
 
-          <ul className="ml-6 list-disc space-y-3 marker:text-[#5AC8FA]">
+          <ul className="ml-6 list-disc space-y-3 marker:text-accent">
             {steps.map((step) => (
               <li key={step}>
                 {step}
@@ -83,8 +83,8 @@ export default function AboutMethod() {
               key={pillar.title}
               className="
                 rounded-xl
-                border border-[#2f2f2f]
-                bg-[#2a2a2a]
+                border border-line-subtle
+                bg-surface-raised
                 p-5
               "
             >

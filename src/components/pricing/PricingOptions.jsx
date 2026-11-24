@@ -44,7 +44,7 @@ const advancedOptions = [
 
 function OptionsCard({ title, options, note }) {
   return (
-    <div className="rounded-xl border border-[#2f2f2f] bg-[#1e1e1e] p-5 sm:p-6">
+    <div className="rounded-xl border border-line-subtle bg-surface-admin p-5 sm:p-6">
       <h3 className="font-semibold text-gray-100">
         {title}
       </h3>
@@ -80,7 +80,7 @@ export default function PricingOptions() {
     <Section
       id="pricing-options"
       labelledBy="pricing-options-title"
-      bgColor="#222222"
+      bgColor="canvas"
     >
       <SectionWrapper>
         <SectionHeading

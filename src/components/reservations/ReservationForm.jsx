@@ -112,7 +112,7 @@ export default function ReservationForm({ slots }) {
       action={sendReservation}
       className="
         w-full
-        bg-[#2a2a2a]
+        bg-surface-raised
         rounded-2xl
         p-6 sm:p-8
         space-y-8
@@ -157,12 +157,12 @@ export default function ReservationForm({ slots }) {
                   key={dayKey}
                   className={`
                     overflow-hidden rounded-xl border
-                    bg-[#1f1f1f]
+                    bg-surface-alt
                     transition-all duration-200
                     ${
                       isOpen
-                        ? "border-[#5AC8FA] shadow-[0_0_8px_rgba(90,200,250,0.18)]"
-                        : "border-[#3a3a3a] hover:border-[#5AC8FA]/60"
+                        ? "border-accent shadow-[0_0_8px_rgba(90,200,250,0.18)]"
+                        : "border-line-strong hover:border-accent/60"
                     }
                   `}
                 >
@@ -197,7 +197,7 @@ export default function ReservationForm({ slots }) {
                         shrink-0
                         items-center justify-center
                         rounded-full
-                        text-xl text-[#5AC8FA]
+                        text-xl text-accent
                       "
                       aria-hidden="true"
                     >
@@ -206,7 +206,7 @@ export default function ReservationForm({ slots }) {
                   </button>
 
                   {isOpen && (
-                    <div className="border-t border-[#3a3a3a] px-4 pb-5">
+                    <div className="border-t border-line-strong px-4 pb-5">
                       {morningSlots.length > 0 && (
                         <SlotGroup
                           title="Matin"
@@ -244,13 +244,13 @@ export default function ReservationForm({ slots }) {
                   }
                   className="
                     rounded-full
-                    border border-[#3a3a3a]
+                    border border-line-strong
                     px-5 py-2.5
                     text-sm font-semibold
-                    text-[#5AC8FA]
+                    text-accent
                     transition-all duration-200
-                    hover:border-[#5AC8FA]
-                    hover:bg-[#5AC8FA]/5
+                    hover:border-accent
+                    hover:bg-accent/5
                   "
                 >
                   Voir plus de dates
@@ -339,8 +339,8 @@ function SlotGroup({
                 transition-all duration-200
                 ${
                   selected
-                    ? "border-[#5AC8FA] bg-[#5AC8FA]/10 text-[#5AC8FA] shadow-[0_0_8px_rgba(90,200,250,0.2)]"
-                    : "border-[#3a3a3a] bg-[#262626] text-gray-200 hover:border-[#5AC8FA]/70 hover:text-[#5AC8FA]"
+                    ? "border-accent bg-accent/10 text-accent shadow-[0_0_8px_rgba(90,200,250,0.2)]"
+                    : "border-line-strong bg-[#262626] text-gray-200 hover:border-accent/70 hover:text-accent"
                 }
               `}
             >

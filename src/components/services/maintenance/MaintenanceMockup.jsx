@@ -21,21 +21,21 @@ const indicators = [
     label: "Sécurité",
     value: "Protégé",
     detail: "Certificat SSL actif",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     icon: DatabaseBackup,
     label: "Sauvegardes",
     value: "À jour",
     detail: "Dernière sauvegarde réussie",
-    color: "#9B59B6",
+    color: "var(--color-violet)",
   },
   {
     icon: Gauge,
     label: "Performances",
     value: "Optimisé",
     detail: "Suivi des performances",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
 ];
 
@@ -79,25 +79,25 @@ export default function MaintenanceMockup() {
       {/* Halos décoratifs */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-10 top-1/4 h-72 w-72 rounded-full bg-[#007AFF]/15 blur-[100px]"
+        className="pointer-events-none absolute -left-10 top-1/4 h-72 w-72 rounded-full bg-blue/15 blur-[100px]"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-[#9B59B6]/15 blur-[100px]"
+        className="pointer-events-none absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-violet/15 blur-[100px]"
       />
 
       {/* Interface de supervision */}
       <motion.div
         {...entrance()}
-        className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#1C1C1C] shadow-[0_30px_90px_rgba(0,0,0,0.45)]"
+        className="relative overflow-hidden rounded-2xl border border-white/10 bg-surface-deep shadow-[0_30px_90px_rgba(0,0,0,0.45)]"
       >
         {/* Barre de fenêtre */}
-        <div className="flex h-12 items-center justify-between border-b border-white/[0.06] bg-[#252525] px-5">
+        <div className="flex h-12 items-center justify-between border-b border-white/[0.06] bg-surface px-5">
           <div className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#9B59B6]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#007AFF]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#5AC8FA]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-violet" />
+            <span className="h-2.5 w-2.5 rounded-full bg-blue" />
+            <span className="h-2.5 w-2.5 rounded-full bg-accent" />
           </div>
 
           <span className="text-[10px] text-gray-500 sm:text-xs">
@@ -127,7 +127,7 @@ export default function MaintenanceMockup() {
               </p>
             </div>
 
-            <div className="flex items-center gap-2 rounded-full border border-[#007AFF]/20 bg-[#007AFF]/10 px-3 py-2">
+            <div className="flex items-center gap-2 rounded-full border border-blue/20 bg-blue/10 px-3 py-2">
               <motion.span
                 animate={
                   reducedMotion
@@ -139,10 +139,10 @@ export default function MaintenanceMockup() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="h-2 w-2 rounded-full bg-[#007AFF]"
+                className="h-2 w-2 rounded-full bg-blue"
               />
 
-              <span className="text-xs font-medium text-[#76B4FF]">
+              <span className="text-xs font-medium text-blue-light">
                 Site opérationnel
               </span>
             </div>
@@ -151,13 +151,13 @@ export default function MaintenanceMockup() {
           {/* Carte principale */}
           <motion.div
             {...entrance(0.3)}
-            className="mt-7 flex flex-col gap-5 rounded-xl border border-white/[0.06] bg-[#252525] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6"
+            className="mt-7 flex flex-col gap-5 rounded-xl border border-white/[0.06] bg-surface p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6"
           >
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#007AFF]/15">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue/15">
                 <Globe2
                   size={24}
-                  className="text-[#007AFF]"
+                  className="text-blue"
                   aria-hidden="true"
                 />
               </div>
@@ -176,7 +176,7 @@ export default function MaintenanceMockup() {
             <div className="flex items-center gap-2">
               <CheckCircle2
                 size={18}
-                className="text-[#007AFF]"
+                className="text-blue"
                 aria-hidden="true"
               />
 
@@ -194,7 +194,7 @@ export default function MaintenanceMockup() {
             {indicators.map(({ icon: Icon, label, value, detail, color }) => (
               <div
                 key={label}
-                className="rounded-xl border border-white/[0.06] bg-[#252525] p-5"
+                className="rounded-xl border border-white/[0.06] bg-surface p-5"
               >
                 <div className="flex items-center justify-between">
                   <p className="text-xs text-gray-400">{label}</p>
@@ -220,13 +220,13 @@ export default function MaintenanceMockup() {
           {/* Historique */}
           <motion.div
             {...entrance(0.6)}
-            className="mt-4 overflow-hidden rounded-xl border border-white/[0.06] bg-[#252525]"
+            className="mt-4 overflow-hidden rounded-xl border border-white/[0.06] bg-surface"
           >
             <div className="flex items-center justify-between border-b border-white/[0.06] px-5 py-4">
               <div className="flex items-center gap-2">
                 <Activity
                   size={17}
-                  className="text-[#9B59B6]"
+                  className="text-violet"
                   aria-hidden="true"
                 />
 
@@ -251,7 +251,7 @@ export default function MaintenanceMockup() {
                   <div className="flex min-w-0 items-center gap-3">
                     <Icon
                       size={17}
-                      className="shrink-0 text-[#007AFF]"
+                      className="shrink-0 text-blue"
                       aria-hidden="true"
                     />
 
@@ -266,7 +266,7 @@ export default function MaintenanceMockup() {
                     </div>
                   </div>
 
-                  <span className="shrink-0 rounded-full bg-[#007AFF]/10 px-3 py-1 text-[10px] text-[#76B4FF]">
+                  <span className="shrink-0 rounded-full bg-blue/10 px-3 py-1 text-[10px] text-blue-light">
                     {status}
                   </span>
                 </div>

@@ -14,21 +14,21 @@ export default function WebsiteCreationWhyAndSeo() {
   return (
     <Section className="text-base sm:text-lg lg:text-xl">
       <h2 className="text-xl font-semibold mt-10 mb-3 flex items-center gap-2">
-        <Zap className="w-5 h-5 text-[#9B59B6]" />
+        <Zap className="w-5 h-5 text-violet" />
         Pourquoi partir sur une base sur mesure ?
       </h2>
 
       <ul className="list-none ml-6 space-y-2">
         {whyItems.map((item) => (
           <li key={item} className="flex items-start gap-2">
-            <Zap className="w-5 h-5 text-[#9B59B6] mt-1" />
+            <Zap className="w-5 h-5 text-violet mt-1" />
             <div className="flex-1">{item}</div>
           </li>
         ))}
       </ul>
 
       <h3 className="text-xl font-semibold mt-10 mb-3 flex items-center gap-2">
-        <Search className="w-5 h-5 text-[#9B59B6]" />
+        <Search className="w-5 h-5 text-violet" />
         Visibilité locale & référencement
       </h3>
 

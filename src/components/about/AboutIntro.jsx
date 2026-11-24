@@ -36,12 +36,12 @@ export default function AboutIntro() {
               key={information.label}
               className="
                 rounded-xl
-                border border-[#2f2f2f]
-                bg-[#2a2a2a]
+                border border-line-subtle
+                bg-surface-raised
                 p-5
               "
             >
-              <h2 className="mb-3 text-sm font-semibold text-[#5AC8FA]">
+              <h2 className="mb-3 text-sm font-semibold text-accent">
                 {information.label}
               </h2>
 

@@ -12,12 +12,12 @@ export default function ContactForm() {
       action={sendContact}
       className="
         w-full max-w-2xl
-        bg-[#2a2a2a]
+        bg-surface-raised
         rounded-2xl
         p-5 sm:p-8
         space-y-6
         transition-all duration-300
-        focus-within:border-[#5AC8FA]
+        focus-within:border-accent
         focus-within:shadow-[0_0_14px_rgba(0,122,255,0.35)]
       "
     >

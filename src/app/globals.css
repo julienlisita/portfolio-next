@@ -1,8 +1,44 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* ==========================================================================
+   Design tokens
+   `static` : toutes les variables sont émises, donc utilisables via
+   var(--color-*) dans le CSS, les styles inline et les valeurs arbitraires.
+   Utilitaires générés : bg-accent, text-accent, border-line, from-blue, etc.
+   ========================================================================== */
+@theme static {
+  /* Marque */
+  --color-accent: #5ac8fa;
+  --color-accent-strong: #3fcbff;
+  --color-accent-soft: #83d6fb;
+  --color-blue: #007aff;
+  --color-blue-light: #76b4ff;
+  --color-violet: #9b59b6;
+  --color-violet-light: #c79add;
+  --color-violet-mid: #7960d9;
+  --color-indigo: #5265e8;
+  --color-pink: #ff66b2;
+
+  /* Fonds et surfaces (du plus sombre au plus clair) */
+  --color-surface-deep: #1c1c1c;
+  --color-surface-admin: #1e1e1e;
+  --color-surface-alt: #1f1f1f;
+  --color-canvas: #222222;
+  --color-surface: #252525;
+  --color-surface-soft: #292929;
+  --color-surface-raised: #2a2a2a;
+
+  /* Bordures */
+  --color-line-faint: #2a2a2a;
+  --color-line-subtle: #2f2f2f;
+  --color-line: #333333;
+  --color-line-strong: #3a3a3a;
+  --color-line-hover: #444444;
+}
+
 :root {
-  --background: #222222;
+  --background: var(--color-canvas);
   --foreground: #ffffff;
 }
 

@@ -10,9 +10,9 @@ export default function FloatingInput({ label, name, type = "text", required = f
         required={required}
         placeholder=" "
         className="
-          block px-3 pb-2.5 pt-4 w-full text-sm text-white bg-[#1f1f1f] 
-          rounded-md border border-[#3a3a3a] appearance-none 
-          focus:outline-none focus:ring-0 focus:border-[#5AC8FA] 
+          block px-3 pb-2.5 pt-4 w-full text-sm text-white bg-surface-alt 
+          rounded-md border border-line-strong appearance-none 
+          focus:outline-none focus:ring-0 focus:border-accent 
           peer transition
         "
       />

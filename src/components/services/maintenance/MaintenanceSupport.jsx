@@ -19,6 +19,7 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import { alpha } from "@/utils/color";
 
 const supportOptions = [
   {
@@ -29,7 +30,7 @@ const supportOptions = [
     description:
       "Un problème à résoudre ou une modification à effectuer ? Je vous accompagne sur un besoin précis, sans engagement récurrent.",
     icon: Wrench,
-    color: "#5AC8FA",
+    color: "var(--color-accent)",
     features: [
       "Diagnostic et intervention ciblée",
       "Corrections ou modifications définies ensemble",
@@ -45,7 +46,7 @@ const supportOptions = [
     description:
       "Pour les sites qui nécessitent une attention dans la durée, nous définissons ensemble un accompagnement adapté à leur environnement technique.",
     icon: CalendarDays,
-    color: "#9B59B6",
+    color: "var(--color-violet)",
     features: [
       "Vérifications techniques planifiées",
       "Maintenance selon les besoins du site",
@@ -65,7 +66,7 @@ function OneTimeVisual() {
         className="
           pointer-events-none absolute
           h-40 w-40 rounded-full
-          bg-[#007AFF]/10 blur-[60px]
+          bg-blue/10 blur-[60px]
         "
       />
 
@@ -75,7 +76,7 @@ function OneTimeVisual() {
         className="
           relative w-full max-w-[280px]
           rounded-xl border border-white/[0.08]
-          bg-[#1C1C1C] p-4
+          bg-surface-deep p-4
           shadow-[0_15px_40px_rgba(0,0,0,0.2)]
         "
       >
@@ -83,7 +84,7 @@ function OneTimeVisual() {
           <div className="flex items-center gap-2">
             <Wrench
               size={16}
-              className="text-[#007AFF]"
+              className="text-blue"
               aria-hidden="true"
             />
 
@@ -94,9 +95,9 @@ function OneTimeVisual() {
 
           <span
             className="
-              rounded-full bg-[#007AFF]/10
+              rounded-full bg-blue/10
               px-2 py-1 text-[10px]
-              text-[#76B4FF]
+              text-blue-light
             "
           >
             Résolu
@@ -128,7 +129,7 @@ function OneTimeVisual() {
 
           <CheckCircle2
             size={18}
-            className="text-[#007AFF]"
+            className="text-blue"
             aria-hidden="true"
           />
         </div>
@@ -165,7 +166,7 @@ function RecurringVisual() {
         className="
           pointer-events-none absolute
           h-40 w-40 rounded-full
-          bg-[#9B59B6]/10 blur-[60px]
+          bg-violet/10 blur-[60px]
         "
       />
 
@@ -175,7 +176,7 @@ function RecurringVisual() {
         className="
           relative w-full max-w-[280px]
           rounded-xl border border-white/[0.08]
-          bg-[#1C1C1C] p-4
+          bg-surface-deep p-4
           shadow-[0_15px_40px_rgba(0,0,0,0.2)]
         "
       >
@@ -192,7 +193,7 @@ function RecurringVisual() {
 
           <CalendarDays
             size={18}
-            className="text-[#9B59B6]"
+            className="text-violet"
             aria-hidden="true"
           />
         </div>
@@ -204,13 +205,13 @@ function RecurringVisual() {
               className="
                 flex items-center justify-between gap-3
                 rounded-lg border border-white/[0.05]
-                bg-[#252525] px-3 py-2.5
+                bg-surface px-3 py-2.5
               "
             >
               <div className="flex min-w-0 items-center gap-2">
                 <Icon
                   size={14}
-                  className="shrink-0 text-[#9B59B6]"
+                  className="shrink-0 text-violet"
                   aria-hidden="true"
                 />
 
@@ -222,7 +223,7 @@ function RecurringVisual() {
               {done ? (
                 <CheckCircle2
                   size={15}
-                  className="shrink-0 text-[#007AFF]"
+                  className="shrink-0 text-blue"
                   aria-hidden="true"
                 />
               ) : (
@@ -276,7 +277,7 @@ function SupportCard({ option, index, reducedMotion }) {
         group relative flex h-full flex-col
         overflow-hidden rounded-3xl
         border border-white/[0.07]
-        bg-[#252525]/70 p-6
+        bg-surface/70 p-6
         transition-colors duration-300
         hover:border-white/15
         sm:p-8
@@ -291,7 +292,7 @@ function SupportCard({ option, index, reducedMotion }) {
             rounded-xl
           "
           style={{
-            backgroundColor: `${option.color}18`,
+            backgroundColor: `${alpha(option.color, "18")}`,
           }}
         >
           <Icon
@@ -344,7 +345,7 @@ function SupportCard({ option, index, reducedMotion }) {
             >
               <CheckCircle2
                 size={17}
-                className="mt-0.5 shrink-0 text-[#007AFF]"
+                className="mt-0.5 shrink-0 text-blue"
                 aria-hidden="true"
               />
 
@@ -377,7 +378,7 @@ export default function MaintenanceSupport() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <Section id="maintenance-support" bgColor="#222222">
+    <Section id="maintenance-support" bgColor="canvas">
       <SectionWrapper>
         <SectionHeading
           eyebrow="UN ACCOMPAGNEMENT FLEXIBLE"
@@ -405,13 +406,13 @@ export default function MaintenanceSupport() {
             mx-auto mt-10 flex max-w-3xl
             items-start gap-4 rounded-2xl
             border border-white/[0.07]
-            bg-[#252525]/60 p-5
+            bg-surface/60 p-5
             sm:items-center sm:p-6
           "
         >
           <Info
             size={21}
-            className="mt-0.5 shrink-0 text-[#9B59B6] sm:mt-0"
+            className="mt-0.5 shrink-0 text-violet sm:mt-0"
             aria-hidden="true"
           />
 

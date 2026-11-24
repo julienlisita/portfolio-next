@@ -25,7 +25,7 @@ export default function HowIWorkNoCodeComparison() {
     <Section
       id="how-i-work-comparison"
       labelledBy="how-i-work-comparison-title"
-      bgColor="#222222"
+      bgColor="canvas"
     >
       <SectionWrapper>
         <SectionHeading
@@ -37,7 +37,7 @@ export default function HowIWorkNoCodeComparison() {
         />
 
         <div className="grid gap-6 lg:grid-cols-2">
-          <article className="rounded-xl border border-[#2f2f2f] bg-[#1e1e1e] p-5 sm:p-6">
+          <article className="rounded-xl border border-line-subtle bg-surface-admin p-5 sm:p-6">
             <h3 className="mb-5 font-semibold text-gray-100">
               Solutions clé en main
             </h3>
@@ -59,7 +59,7 @@ export default function HowIWorkNoCodeComparison() {
             </ul>
           </article>
 
-          <article className="rounded-xl border border-[#2f2f2f] bg-[#1e1e1e] p-5 sm:p-6">
+          <article className="rounded-xl border border-line-subtle bg-surface-admin p-5 sm:p-6">
             <h3 className="mb-5 font-semibold text-gray-100">
               Ma méthode
             </h3>
@@ -72,7 +72,7 @@ export default function HowIWorkNoCodeComparison() {
                 >
                   <span
                     aria-hidden="true"
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5AC8FA]"
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
                   />
 
                   <span>{feature}</span>

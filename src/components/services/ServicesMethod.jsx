@@ -28,6 +28,7 @@ import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
 
 import Button from "../UI/Button";
+import { alpha } from "@/utils/color";
 
 // ─────────────────────────────────────────────
 // Données des étapes
@@ -40,7 +41,7 @@ const steps = [
     description:
       "Nous clarifions vos besoins, vos objectifs et les priorités du projet.",
     icon: MessagesSquare,
-    color: "#5AC8FA",
+    color: "var(--color-accent)",
   },
   {
     number: "02",
@@ -48,7 +49,7 @@ const steps = [
     description:
       "Je vous propose une structure claire, un parcours cohérent et une direction visuelle adaptée.",
     icon: PenTool,
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     number: "03",
@@ -56,7 +57,7 @@ const steps = [
     description:
       "Je développe le site ou les fonctionnalités, avec des points réguliers pour valider l’avancement.",
     icon: Code2,
-    color: "#5265E8",
+    color: "var(--color-indigo)",
   },
   {
     number: "04",
@@ -64,7 +65,7 @@ const steps = [
     description:
       "Votre site est publié, testé et accessible sur tous les supports.",
     icon: Rocket,
-    color: "#7960D9",
+    color: "var(--color-violet-mid)",
   },
   {
     number: "05",
@@ -72,7 +73,7 @@ const steps = [
     description:
       "Je peux rester disponible pour les ajustements, la maintenance ou les futures évolutions.",
     icon: Wrench,
-    color: "#9B59B6",
+    color: "var(--color-violet)",
   },
 ];
 
@@ -386,10 +387,10 @@ function AnimatedStep({
           background: `linear-gradient(
             135deg,
             ${step.color},
-            ${step.color}55
+            ${alpha(step.color, "55")}
           )`,
           boxShadow: visible
-            ? `0 0 35px ${step.color}25`
+            ? `0 0 35px ${alpha(step.color, "25")}`
             : "none",
         }}
       >
@@ -491,11 +492,11 @@ function DesktopAnimatedPath({
           x2="0%"
           y2="100%"
         >
-          <stop offset="0%" stopColor="#5AC8FA" />
-          <stop offset="25%" stopColor="#007AFF" />
-          <stop offset="50%" stopColor="#5265E8" />
-          <stop offset="75%" stopColor="#7960D9" />
-          <stop offset="100%" stopColor="#9B59B6" />
+          <stop offset="0%" stopColor="var(--color-accent)" />
+          <stop offset="25%" stopColor="var(--color-blue)" />
+          <stop offset="50%" stopColor="var(--color-indigo)" />
+          <stop offset="75%" stopColor="var(--color-violet-mid)" />
+          <stop offset="100%" stopColor="var(--color-violet)" />
         </linearGradient>
       </defs>
 
@@ -564,7 +565,7 @@ function MobileAnimatedPath({
   }
 
   const gradient =
-    "linear-gradient(to bottom, #5AC8FA 0%, #007AFF 25%, #5265E8 50%, #7960D9 75%, #9B59B6 100%)";
+    "linear-gradient(to bottom, var(--color-accent) 0%, var(--color-blue) 25%, var(--color-indigo) 50%, var(--color-violet-mid) 75%, var(--color-violet) 100%)";
 
   return (
     <div

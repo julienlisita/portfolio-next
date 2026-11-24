@@ -30,7 +30,7 @@ export default function AudiencePreview() {
 
 function AudienceCard({ title, description }) {
   return (
-    <div className="bg-[#1f1f1f] rounded-2xl p-6 h-full flex flex-col shadow-lg">
+    <div className="bg-surface-alt rounded-2xl p-6 h-full flex flex-col shadow-lg">
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-sm sm:text-base text-gray-200">{description}</p>
     </div>

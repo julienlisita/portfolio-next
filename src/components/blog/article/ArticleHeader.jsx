@@ -26,7 +26,7 @@ export default function ArticleHeader({ title, date, category }) {
           )}
 
           {category && (
-            <span className="rounded-md bg-[#2a2a2a] px-3 py-1 text-xs text-gray-300">
+            <span className="rounded-md bg-surface-raised px-3 py-1 text-xs text-gray-300">
               {category}
             </span>
           )}

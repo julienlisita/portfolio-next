@@ -59,7 +59,7 @@ export default function PricingIntroAndPacks() {
     <Section
       id="pricing-packs"
       labelledBy="pricing-packs-title"
-      bgColor="#222222"
+      bgColor="canvas"
     >
       <SectionWrapper>
         <SectionHeading
@@ -76,8 +76,8 @@ export default function PricingIntroAndPacks() {
               key={pack.title}
               className="
                 flex h-full flex-col
-                rounded-2xl border border-[#2f2f2f]
-                bg-[#2a2a2a] p-5
+                rounded-2xl border border-line-subtle
+                bg-surface-raised p-5
                 text-gray-200
                 sm:p-6
               "
@@ -86,7 +86,7 @@ export default function PricingIntroAndPacks() {
                 {pack.title}
               </h3>
 
-              <p className="mb-3 text-center text-sm font-medium text-[#5AC8FA]">
+              <p className="mb-3 text-center text-sm font-medium text-accent">
                 {pack.subtitle}
               </p>
 
@@ -103,7 +103,7 @@ export default function PricingIntroAndPacks() {
                     <Check
                       size={16}
                       aria-hidden="true"
-                      className="mt-0.5 shrink-0 text-[#5AC8FA]"
+                      className="mt-0.5 shrink-0 text-accent"
                     />
 
                     <span>{item}</span>
@@ -111,7 +111,7 @@ export default function PricingIntroAndPacks() {
                 ))}
               </ul>
 
-              <p className="mt-6 border-t border-white/10 pt-5 text-center text-base font-bold text-[#5AC8FA]">
+              <p className="mt-6 border-t border-white/10 pt-5 text-center text-base font-bold text-accent">
                 {pack.price}
               </p>
             </article>

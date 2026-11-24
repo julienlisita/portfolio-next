@@ -2,7 +2,7 @@
 
 export default function ContactLocation() {
   return (
-    <div className="rounded-2xl bg-[#2a2a2a] p-6">
+    <div className="rounded-2xl bg-surface-raised p-6">
       <h3 className="mb-4 text-lg font-semibold text-white">
         Localisation
       </h3>

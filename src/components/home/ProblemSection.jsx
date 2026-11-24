@@ -49,7 +49,7 @@ export default function ProblemSection() {
               hover:bg-white/[0.02]
             "
           >
-            <span className="text-sm font-semibold text-[#007AFF]">
+            <span className="text-sm font-semibold text-blue">
               {problem.number}
             </span>
 
@@ -70,7 +70,7 @@ export default function ProblemSection() {
                 transition-all duration-300
                 group-hover:-translate-y-1
                 group-hover:translate-x-1
-                group-hover:text-[#5AC8FA]
+                group-hover:text-accent
               "
             />
           </div>

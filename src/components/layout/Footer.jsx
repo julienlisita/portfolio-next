@@ -9,7 +9,7 @@ export default function Footer() {
   
 
   return (
-    <footer className="bg-[#222222] border-t border-gray-600 text-white">
+    <footer className="bg-canvas border-t border-gray-600 text-white">
       <div className="px-4 sm:px-8 py-8 space-y-6 max-w-6xl mx-auto">
         {/* Bloc haut */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-8">
@@ -60,7 +60,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Suivez-moi sur LinkedIn"
-                  className="rounded-md p-2 hover:outline-1 hover:outline-[#5AC8FA] hover:shadow-[0_0_10px_#5AC8FA]"
+                  className="rounded-md p-2 hover:outline-1 hover:outline-accent hover:shadow-[0_0_10px_var(--color-accent)]"
                 >
                   <LuLinkedin className="h-6 w-6" aria-hidden="true" />
                 </a>
@@ -70,7 +70,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Voir mon GitHub"
-                  className="rounded-md p-2 hover:outline-1 hover:outline-[#5AC8FA] hover:shadow-[0_0_10px_#5AC8FA]"
+                  className="rounded-md p-2 hover:outline-1 hover:outline-accent hover:shadow-[0_0_10px_var(--color-accent)]"
                 >
                   <LuGithub className="h-6 w-6" aria-hidden="true" />
                 </a>
@@ -80,7 +80,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Suivez-moi sur Facebook"
-                  className="rounded-md p-2 hover:outline-1 hover:outline-[#5AC8FA] hover:shadow-[0_0_10px_#5AC8FA]"
+                  className="rounded-md p-2 hover:outline-1 hover:outline-accent hover:shadow-[0_0_10px_var(--color-accent)]"
                 >
                   <LuFacebook className="h-6 w-6" aria-hidden="true" />
                 </a>

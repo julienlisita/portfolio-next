@@ -34,7 +34,7 @@ export default function AboutPreview() {
               mx-auto
               overflow-hidden
               rounded-2xl
-              bg-[#252525]
+              bg-surface
             "
           >
             <div className="relative aspect-[4/5]">
@@ -101,7 +101,7 @@ export default function AboutPreview() {
               <MapPin
                 size={18}
                 aria-hidden="true"
-                className="shrink-0 text-[#007AFF]"
+                className="shrink-0 text-blue"
               />
 
               <span>

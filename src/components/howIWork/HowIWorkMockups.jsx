@@ -13,7 +13,7 @@ export default function HowIWorkMockups() {
     <Section
       id="how-i-work-mockups"
       labelledBy="how-i-work-mockups-title"
-      bgColor="#222222"
+      bgColor="canvas"
     >
       <SectionWrapper>
         <SectionHeading
@@ -29,7 +29,7 @@ export default function HowIWorkMockups() {
             icon={FaFigma}
             name="Figma"
             description="Maquettes & structure du site"
-            color="#007AFF"
+            color="var(--color-blue)"
           />
         </div>
       </SectionWrapper>

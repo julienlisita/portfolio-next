@@ -58,7 +58,7 @@ export default function HowIWorkMethod() {
           className="mb-8 sm:mb-10 lg:mb-12"
         />
 
-        <ol className="relative max-w-4xl border-l border-[#2f2f2f] pl-8 sm:pl-10">
+        <ol className="relative max-w-4xl border-l border-line-subtle pl-8 sm:pl-10">
           {steps.map((step, index) => (
             <li
               key={step.title}
@@ -71,10 +71,10 @@ export default function HowIWorkMethod() {
                   flex h-7 w-7
                   items-center justify-center
                   rounded-full
-                  border border-[#2f2f2f]
-                  bg-[#2a2a2a]
+                  border border-line-subtle
+                  bg-surface-raised
                   text-xs font-semibold
-                  text-[#5AC8FA]
+                  text-accent
                   sm:-left-[53px]
                 "
               >

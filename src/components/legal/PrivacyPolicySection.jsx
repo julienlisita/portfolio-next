@@ -9,7 +9,7 @@ export default function PrivacyPolicySection() {
     <Section
       id="privacy-policy"
       labelledBy="privacy-policy-title"
-      bgColor="#222222"
+      bgColor="canvas"
     >
       <SectionWrapper>
         <SectionHeading
@@ -67,7 +67,7 @@ export default function PrivacyPolicySection() {
               de vos données en m’écrivant à{" "}
               <a
                 href="mailto:contact@julienlisita.com"
-                className="text-[#5AC8FA] transition-colors hover:underline"
+                className="text-accent transition-colors hover:underline"
               >
                 contact@julienlisita.com
               </a>

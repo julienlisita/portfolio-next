@@ -18,9 +18,9 @@ export default function Header() {
 
   const baseLink =
     "px-2 py-1 rounded-md transition " +
-    "hover:outline-1 hover:outline-[#5AC8FA] hover:shadow-[0_0_8px_#5AC8FA]";
+    "hover:outline-1 hover:outline-accent hover:shadow-[0_0_8px_var(--color-accent)]";
 
-  const activeLink = "text-[#5AC8FA] font-semibold shadow-[0_0_8px_#5AC8FA]";
+  const activeLink = "text-accent font-semibold shadow-[0_0_8px_var(--color-accent)]";
 
   // Bloquer le scroll quand le menu mobile est ouvert
   useEffect(() => {
@@ -60,8 +60,8 @@ export default function Header() {
             flex items-center justify-between
             px-3 sm:px-4
             backdrop-blur
-            bg-[#1e1e1e]/85
-            border border-[#2f2f2f]
+            bg-surface-admin/85
+            border border-line-subtle
             rounded-2xl
             shadow-[0_8px_30px_rgba(0,0,0,0.35)]
           "
@@ -122,9 +122,9 @@ export default function Header() {
                 p-2
                 rounded-full
                 transition
-                hover:ring-2 hover:ring-[#5AC8FA]/50
-                hover:shadow-[0_0_8px_#5AC8FA]
-                focus-visible:ring-2 focus-visible:ring-[#5AC8FA]
+                hover:ring-2 hover:ring-accent/50
+                hover:shadow-[0_0_8px_var(--color-accent)]
+                focus-visible:ring-2 focus-visible:ring-accent
               "
               onClick={toggleState}
               aria-label="Ouvrir le menu"
@@ -145,8 +145,8 @@ export default function Header() {
           id="mobile-menu"
           className={[
             "lg:hidden mt-2",
-            "bg-[#1e1e1e]/95 backdrop-blur",
-            "border border-[#2f2f2f]",
+            "bg-surface-admin/95 backdrop-blur",
+            "border border-line-subtle",
             "rounded-2xl",
             "overflow-hidden transition-[max-height,opacity,transform] duration-300",
             isOpen
@@ -158,7 +158,7 @@ export default function Header() {
             <Link
               href="/"
               onClick={toggleState}
-              className={`text-center py-3 border-b border-[#2a2a2a] ${baseLink} ${
+              className={`text-center py-3 border-b border-line-faint ${baseLink} ${
                 isActive("/") ? activeLink : ""
               }`}
             >
@@ -167,7 +167,7 @@ export default function Header() {
             <Link
               href="/services"
               onClick={toggleState}
-              className={`text-center py-3 border-b border-[#2a2a2a] ${baseLink} ${
+              className={`text-center py-3 border-b border-line-faint ${baseLink} ${
                 isActive("/services") ? activeLink : ""
               }`}
             >
@@ -176,7 +176,7 @@ export default function Header() {
             <Link
               href="/realisations"
               onClick={toggleState}
-              className={`text-center py-3 border-b border-[#2a2a2a] ${baseLink} ${
+              className={`text-center py-3 border-b border-line-faint ${baseLink} ${
                 isActive("/realisations") ? activeLink : ""
               }`}
             >
@@ -185,7 +185,7 @@ export default function Header() {
             <Link
               href="/tarifs"
               onClick={toggleState}
-              className={`text-center py-3 border-b border-[#2a2a2a] ${baseLink} ${
+              className={`text-center py-3 border-b border-line-faint ${baseLink} ${
                 isActive("/tarifs") ? activeLink : ""
               }`}
             >

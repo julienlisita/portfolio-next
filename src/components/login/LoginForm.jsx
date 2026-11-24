@@ -10,7 +10,7 @@ export default function LoginForm({ error }) {
     <div
       className="
         w-full
-        bg-[#2a2a2a]
+        bg-surface-raised
         rounded-2xl
         p-6 sm:p-8
         transition-all duration-300

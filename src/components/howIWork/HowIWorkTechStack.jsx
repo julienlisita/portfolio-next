@@ -12,22 +12,22 @@ const categories = [
   {
     id: "frontend",
     title: "Front-end",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "backend",
     title: "Back-end & données",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "deployment",
     title: "Déploiement & outils",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "complementary",
     title: "Complément (profil technique)",
-    color: "#9B59B6",
+    color: "var(--color-violet)",
     description:
       "Avant le web, j’ai travaillé sur des projets plus techniques (C, C++, Java). Ça renforce ma rigueur et ma capacité à concevoir des solutions robustes.",
   },
@@ -86,7 +86,7 @@ export default function HowIWorkTechStack() {
             href="https://github.com/julienlisita"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-[#5AC8FA] transition-colors hover:underline"
+            className="font-medium text-accent transition-colors hover:underline"
           >
             GitHub
           </a>

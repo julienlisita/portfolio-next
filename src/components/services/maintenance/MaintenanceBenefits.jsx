@@ -19,6 +19,7 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import { alpha } from "@/utils/color";
 
 const benefits = [
   {
@@ -28,7 +29,7 @@ const benefits = [
     title: "Sécurité",
     description:
       "Limiter les risques liés aux vulnérabilités, aux composants obsolètes et aux problèmes de configuration.",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "reliability",
@@ -37,7 +38,7 @@ const benefits = [
     title: "Fiabilité",
     description:
       "Identifier les dysfonctionnements et intervenir pour préserver le bon fonctionnement de votre site.",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "performance",
@@ -46,7 +47,7 @@ const benefits = [
     title: "Performances",
     description:
       "Surveiller les éléments qui peuvent ralentir votre site et maintenir une navigation agréable.",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "evolution",
@@ -55,7 +56,7 @@ const benefits = [
     title: "Pérennité",
     description:
       "Faire évoluer votre site pour qu'il reste compatible avec les technologies et adapté à vos besoins.",
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
 ];
 
@@ -64,24 +65,24 @@ function SecurityVisual() {
     <div className="relative flex h-36 items-center justify-center">
       <div
         aria-hidden="true"
-        className="absolute h-28 w-28 rounded-full border border-[#007AFF]/10"
+        className="absolute h-28 w-28 rounded-full border border-blue/10"
       />
 
       <div
         aria-hidden="true"
-        className="absolute h-20 w-20 rounded-full border border-[#007AFF]/20"
+        className="absolute h-20 w-20 rounded-full border border-blue/20"
       />
 
-      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-[#007AFF]/30 bg-[#007AFF]/10">
+      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-blue/30 bg-blue/10">
         <ShieldCheck
           size={30}
-          className="text-[#007AFF]"
+          className="text-blue"
           aria-hidden="true"
         />
       </div>
 
-      <div className="absolute bottom-3 right-[22%] flex items-center gap-1.5 rounded-lg border border-white/10 bg-[#252525] px-2.5 py-1.5">
-        <Check size={12} className="text-[#007AFF]" />
+      <div className="absolute bottom-3 right-[22%] flex items-center gap-1.5 rounded-lg border border-white/10 bg-surface px-2.5 py-1.5">
+        <Check size={12} className="text-blue" />
         <span className="text-[10px] text-gray-300">
           Vérification OK
         </span>
@@ -93,14 +94,14 @@ function SecurityVisual() {
 function ReliabilityVisual({ reducedMotion }) {
   return (
     <div className="relative flex h-36 items-center justify-center">
-      <div className="w-full max-w-[230px] rounded-xl border border-white/[0.08] bg-[#252525] p-4">
+      <div className="w-full max-w-[230px] rounded-xl border border-white/[0.08] bg-surface p-4">
         <div className="mb-4 flex items-center justify-between">
           <span className="text-[10px] text-gray-400">
             État du site
           </span>
 
-          <span className="flex items-center gap-1.5 text-[10px] text-[#C79ADD]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#9B59B6]" />
+          <span className="flex items-center gap-1.5 text-[10px] text-violet-light">
+            <span className="h-1.5 w-1.5 rounded-full bg-violet" />
             En ligne
           </span>
         </div>
@@ -113,7 +114,7 @@ function ReliabilityVisual({ reducedMotion }) {
           <path
             d="M0 25 H35 L45 12 L60 35 L75 20 H110 L122 8 L138 32 L150 25 H200"
             fill="none"
-            stroke="#9B59B6"
+            stroke="var(--color-violet)"
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -123,7 +124,7 @@ function ReliabilityVisual({ reducedMotion }) {
             cx="150"
             cy="25"
             r="4"
-            fill="#9B59B6"
+            fill="var(--color-violet)"
             animate={
               reducedMotion
                 ? undefined
@@ -163,7 +164,7 @@ function PerformanceVisual({ reducedMotion }) {
             cy="60"
             r="48"
             fill="none"
-            stroke="#007AFF"
+            stroke="var(--color-blue)"
             strokeWidth="8"
             strokeLinecap="round"
             strokeDasharray="301.6"
@@ -184,7 +185,7 @@ function PerformanceVisual({ reducedMotion }) {
         <div className="absolute flex flex-col items-center">
           <Gauge
             size={24}
-            className="text-[#007AFF]"
+            className="text-blue"
             aria-hidden="true"
           />
 
@@ -225,8 +226,8 @@ function EvolutionVisual({ reducedMotion }) {
                 rounded-xl border text-xs font-semibold
                 ${
                   index === 2
-                    ? "border-[#9B59B6]/40 bg-[#9B59B6]/15 text-[#C79ADD]"
-                    : "border-white/10 bg-[#252525] text-gray-400"
+                    ? "border-violet/40 bg-violet/15 text-violet-light"
+                    : "border-white/10 bg-surface text-gray-400"
                 }
               `}
             >
@@ -275,13 +276,13 @@ function BenefitCard({ benefit, index, reducedMotion }) {
         delay: reducedMotion ? 0 : index * 0.1,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#252525]/70 p-6 transition-colors duration-300 hover:border-white/15 sm:p-7"
+      className="group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-surface/70 p-6 transition-colors duration-300 hover:border-white/15 sm:p-7"
     >
       <div className="flex items-center justify-between">
         <div
           className="flex h-10 w-10 items-center justify-center rounded-xl"
           style={{
-            backgroundColor: `${benefit.color}18`,
+            backgroundColor: `${alpha(benefit.color, "18")}`,
           }}
         >
           <Icon
@@ -313,7 +314,7 @@ export default function MaintenanceBenefits() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <Section id="maintenance-benefits" bgColor="#222222">
+    <Section id="maintenance-benefits" bgColor="canvas">
       <SectionWrapper>
         <SectionHeading
           eyebrow="POURQUOI ENTRETENIR SON SITE ?"

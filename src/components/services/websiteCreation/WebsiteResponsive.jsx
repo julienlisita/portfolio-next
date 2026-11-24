@@ -70,7 +70,7 @@ function DeviceSelector({ activeDevice, onChange }) {
         inline-flex flex-wrap items-center
         justify-center gap-1.5
         rounded-xl border border-white/10
-        bg-[#252525] p-1.5
+        bg-surface p-1.5
       "
     >
       {devices.map((device) => {
@@ -91,7 +91,7 @@ function DeviceSelector({ activeDevice, onChange }) {
               sm:px-5 sm:text-sm
               ${
                 active
-                  ? "text-[#1C1C1C]"
+                  ? "text-surface-deep"
                   : "text-gray-400 hover:bg-white/[0.05] hover:text-white"
               }
             `}
@@ -101,7 +101,7 @@ function DeviceSelector({ activeDevice, onChange }) {
                 layoutId="website-responsive-active-device"
                 className="
                   absolute inset-0 rounded-lg
-                  bg-[#5AC8FA]
+                  bg-accent
                 "
                 transition={{
                   type: "spring",
@@ -152,7 +152,7 @@ function DevicePreview({ device, reducedMotion }) {
         relative mx-auto
         overflow-hidden
         border border-white/10
-        bg-[#252525]
+        bg-surface
         shadow-[0_25px_70px_rgba(0,0,0,0.45)]
       "
       style={{
@@ -164,7 +164,7 @@ function DevicePreview({ device, reducedMotion }) {
         <div
           className="
             flex h-7 items-center justify-center
-            bg-[#252525]
+            bg-surface
           "
         >
           <span className="h-1 w-12 rounded-full bg-white/20" />
@@ -174,19 +174,19 @@ function DevicePreview({ device, reducedMotion }) {
           className="
             flex h-9 items-center gap-2
             border-b border-white/[0.06]
-            bg-[#2A2A2A] px-3
+            bg-surface-raised px-3
           "
         >
           <div className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-[#9B59B6]" />
-            <span className="h-2 w-2 rounded-full bg-[#007AFF]" />
-            <span className="h-2 w-2 rounded-full bg-[#5AC8FA]" />
+            <span className="h-2 w-2 rounded-full bg-violet" />
+            <span className="h-2 w-2 rounded-full bg-blue" />
+            <span className="h-2 w-2 rounded-full bg-accent" />
           </div>
 
           <div
             className="
               mx-auto h-4 w-1/2
-              rounded-md bg-[#1C1C1C]
+              rounded-md bg-surface-deep
             "
           />
         </div>
@@ -301,7 +301,7 @@ export default function WebsiteResponsive() {
             items-center justify-center
             overflow-hidden rounded-3xl
             border border-white/[0.06]
-            bg-[#1C1C1C]
+            bg-surface-deep
             px-5 py-8
             sm:mt-10 sm:min-h-[480px]
             sm:px-10 sm:py-10
@@ -316,7 +316,7 @@ export default function WebsiteResponsive() {
               left-1/2 top-1/2
               h-[350px] w-[500px]
               -translate-x-1/2 -translate-y-1/2
-              rounded-full bg-[#5AC8FA]/[0.06]
+              rounded-full bg-accent/[0.06]
               blur-[100px]
             "
           />
@@ -341,7 +341,7 @@ export default function WebsiteResponsive() {
           <div className="flex items-start gap-3">
             <CheckCircle2
               size={21}
-              className="mt-0.5 shrink-0 text-[#5AC8FA]"
+              className="mt-0.5 shrink-0 text-accent"
               aria-hidden="true"
             />
 
@@ -362,8 +362,8 @@ export default function WebsiteResponsive() {
             className="
               group inline-flex shrink-0
               items-center gap-2
-              border-b border-[#5AC8FA]/50 pb-1
-              text-sm font-semibold text-[#5AC8FA]
+              border-b border-accent/50 pb-1
+              text-sm font-semibold text-accent
               transition-colors hover:text-white
             "
           >

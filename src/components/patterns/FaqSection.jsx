@@ -29,7 +29,7 @@ export default function FaqSection({
     <Section
       id={id}
       labelledBy={headingId}
-      bgColor="#222222"
+      bgColor="canvas"
       className="faq-section relative"
     >
       <SectionWrapper>
@@ -111,8 +111,8 @@ export default function FaqSection({
                       rounded-full border border-white/10
                       bg-white/[0.03]
                       transition-colors duration-300
-                      group-open:border-[#5AC8FA]/30
-                      group-open:bg-[#5AC8FA]/10
+                      group-open:border-accent/30
+                      group-open:bg-accent/10
                     "
                   >
                     <Plus
@@ -122,7 +122,7 @@ export default function FaqSection({
                         text-gray-400
                         transition-transform duration-300
                         group-open:rotate-45
-                        group-open:text-[#5AC8FA]
+                        group-open:text-accent
                       "
                     />
                   </span>

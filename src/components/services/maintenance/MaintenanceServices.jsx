@@ -17,6 +17,7 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import { alpha } from "@/utils/color";
 
 const services = [
   {
@@ -34,7 +35,7 @@ const services = [
       "Sauvegardes selon la solution d'hébergement",
       "Vérification des formulaires et fonctionnalités essentielles",
     ],
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "fixes",
@@ -51,7 +52,7 @@ const services = [
       "Vérification du responsive",
       "Tests après intervention",
     ],
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
   {
     id: "evolution",
@@ -68,7 +69,7 @@ const services = [
       "Optimisations ciblées",
       "Développement de nouvelles fonctionnalités",
     ],
-    color: "#007AFF",
+    color: "var(--color-blue)",
   },
 ];
 
@@ -89,8 +90,8 @@ function ServicePanel({ service, active, onSelect, reducedMotion }) {
         border transition-colors duration-300
         ${
           active
-            ? "border-[#5AC8FA]/30 bg-[#252525]"
-            : "border-white/[0.07] bg-[#252525]/50 hover:border-white/15"
+            ? "border-accent/30 bg-surface"
+            : "border-white/[0.07] bg-surface/50 hover:border-white/15"
         }
       `}
       style={{
@@ -109,7 +110,7 @@ function ServicePanel({ service, active, onSelect, reducedMotion }) {
           p-5 text-left
           focus-visible:outline-2
           focus-visible:outline-offset-[-3px]
-          focus-visible:outline-[#5AC8FA]
+          focus-visible:outline-accent
           sm:p-6
         "
       >
@@ -120,7 +121,7 @@ function ServicePanel({ service, active, onSelect, reducedMotion }) {
               rounded-xl
             "
             style={{
-              backgroundColor: `${service.color}18`,
+              backgroundColor: `${alpha(service.color, "18")}`,
             }}
           >
             <Icon
@@ -147,7 +148,7 @@ function ServicePanel({ service, active, onSelect, reducedMotion }) {
           size={19}
           aria-hidden="true"
           className={`
-            mt-1 shrink-0 text-[#5AC8FA]
+            mt-1 shrink-0 text-accent
             transition-transform duration-300
             ${active ? "rotate-180" : ""}
           `}
@@ -183,7 +184,7 @@ function ServicePanel({ service, active, onSelect, reducedMotion }) {
               <li key={item} className="flex items-start gap-3">
                 <Check
                   size={16}
-                  className="mt-0.5 shrink-0 text-[#007AFF]"
+                  className="mt-0.5 shrink-0 text-blue"
                   aria-hidden="true"
                 />
 
@@ -204,7 +205,7 @@ export default function MaintenanceServices() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <Section id="maintenance-services" bgColor="#1C1C1C">
+    <Section id="maintenance-services" bgColor="surface-deep">
       <SectionWrapper>
         <SectionHeading
           eyebrow="MES INTERVENTIONS"
@@ -234,7 +235,7 @@ export default function MaintenanceServices() {
           className="
             mx-auto mt-10 max-w-3xl
             rounded-xl border border-white/[0.06]
-            bg-[#252525]/60 px-5 py-4
+            bg-surface/60 px-5 py-4
             text-center
           "
         >

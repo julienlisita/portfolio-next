@@ -11,7 +11,7 @@ export default function AboutJourney() {
       <Section
         id="about-journey"
         labelledBy="about-journey-title"
-        bgColor="#222222"
+        bgColor="canvas"
       >
         <SectionWrapper>
           <SectionHeading

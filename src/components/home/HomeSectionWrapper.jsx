@@ -20,7 +20,7 @@ export default function HomeSectionWrapper({
     <Section
       id={id}
       labelledBy={title ? `${id}-title` : undefined}
-      className={`bg-[#222222] text-gray-200 scroll-mt-14 sm:scroll-mt-16 lg:scroll-mt-20 ${className}`}
+      className={`bg-canvas text-gray-200 scroll-mt-14 sm:scroll-mt-16 lg:scroll-mt-20 ${className}`}
     >
       <SectionWrapper>
         <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
