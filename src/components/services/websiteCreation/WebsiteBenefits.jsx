@@ -8,6 +8,7 @@ import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import Reveal from "@/components/animations/Reveal";
 
 import {
   ArrowUpRight,
@@ -284,26 +285,14 @@ export default function WebsiteBenefits() {
     >
       <SectionWrapper>
         {/* En-tête */}
-        <motion.div
-          initial={
-            reducedMotion
-              ? false
-              : { opacity: 0, y: 25 }
-          }
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{
-            duration: reducedMotion ? 0 : 0.7,
-          }}
-          className="mb-8 max-w-3xl sm:mb-10 lg:mb-12"
-        >
+        <Reveal className="mb-8 max-w-3xl sm:mb-10 lg:mb-12">
           <SectionHeading
             id="website-benefits-title"
             eyebrow="LES BÉNÉFICES"
             title="Bien plus qu'une présence en ligne."
             description="Votre site internet est un véritable outil pour développer votre activité. Il doit vous aider à être visible, à inspirer confiance et à transformer les visites en opportunités."
           />
-        </motion.div>
+        </Reveal>
 
         {/* Contenu */}
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-12">

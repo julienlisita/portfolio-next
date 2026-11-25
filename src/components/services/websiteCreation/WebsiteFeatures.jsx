@@ -1,12 +1,10 @@
-"use client";
-
 // src/components/services/website/WebsiteFeatures.jsx
-
-import { motion, useReducedMotion } from "motion/react";
 
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import Reveal from "@/components/animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 
 import {
   Check,
@@ -247,23 +245,12 @@ function FeatureCard({
   description,
   children,
   className = "",
-  index,
-  reducedMotion,
+  delay = 0,
 }) {
   return (
-    <motion.article
-      initial={
-        reducedMotion
-          ? false
-          : { opacity: 0, y: 30 }
-      }
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{
-        duration: 0.65,
-        delay: reducedMotion ? 0 : index * 0.06,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+    <Reveal
+      as="article"
+      delay={delay}
       className={`
         group relative overflow-hidden
         rounded-2xl border border-white/[0.07]
@@ -289,7 +276,7 @@ function FeatureCard({
       </p>
 
       {children}
-    </motion.article>
+    </Reveal>
   );
 }
 
@@ -298,8 +285,6 @@ function FeatureCard({
 // ─────────────────────────────────────────────
 
 export default function WebsiteFeatures() {
-  const reducedMotion = useReducedMotion();
-
   return (
     <Section
       id="website-features"
@@ -308,34 +293,22 @@ export default function WebsiteFeatures() {
     >
       <SectionWrapper>
         {/* En-tête */}
-        <motion.div
-          initial={
-            reducedMotion
-              ? false
-              : { opacity: 0, y: 25 }
-          }
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="mb-8 max-w-3xl sm:mb-10 lg:mb-12"
-        >
+        <Reveal className="mb-8 max-w-3xl sm:mb-10 lg:mb-12">
           <SectionHeading
             id="website-features-title"
             eyebrow="VOTRE SITE, DE A À Z"
             title="Ce qui est inclus dans votre site."
             description="De la conception à la mise en ligne, je prends en charge les éléments essentiels pour créer un site professionnel, fonctionnel et adapté à votre activité."
           />
-        </motion.div>
+        </Reveal>
 
-        {/* Bento grid */}
+        {/* Bento grid : le décalage suit les rangées de la grille en lg */}
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {/* Design : grand bloc */}
           <FeatureCard
             icon={Palette}
             title="Design personnalisé"
             description="Une interface soignée, pensée pour refléter votre identité et mettre en valeur votre activité."
-            index={0}
-            reducedMotion={reducedMotion}
             className="md:col-span-2"
           >
             <DesignVisual />
@@ -346,8 +319,7 @@ export default function WebsiteFeatures() {
             icon={LayoutTemplate}
             title="Structure claire"
             description="Des pages organisées pour guider vos visiteurs et rendre vos informations accessibles."
-            index={1}
-            reducedMotion={reducedMotion}
+            delay={STAGGER}
           >
             <StructureVisual />
           </FeatureCard>
@@ -357,8 +329,6 @@ export default function WebsiteFeatures() {
             icon={Mail}
             title="Formulaire de contact"
             description="Un moyen simple et fiable pour recevoir les demandes de vos futurs clients."
-            index={2}
-            reducedMotion={reducedMotion}
           >
             <ContactVisual />
           </FeatureCard>
@@ -368,8 +338,7 @@ export default function WebsiteFeatures() {
             icon={Search}
             title="Référencement naturel"
             description="Une base technique optimisée pour aider les moteurs de recherche à comprendre votre site."
-            index={3}
-            reducedMotion={reducedMotion}
+            delay={STAGGER}
           >
             <SEOVisual />
           </FeatureCard>
@@ -379,8 +348,7 @@ export default function WebsiteFeatures() {
             icon={Monitor}
             title="Adapté à tous les écrans"
             description="Un affichage optimisé pour les ordinateurs, les tablettes et les smartphones."
-            index={4}
-            reducedMotion={reducedMotion}
+            delay={STAGGER * 2}
           >
             <ResponsiveVisual />
           </FeatureCard>
@@ -390,8 +358,6 @@ export default function WebsiteFeatures() {
             icon={Globe2}
             title="Mise en ligne"
             description="Je m'occupe de la publication de votre site et vous accompagne dans sa prise en main."
-            index={5}
-            reducedMotion={reducedMotion}
             className="md:col-span-2 lg:col-span-3"
           >
             <LaunchVisual />

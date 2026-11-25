@@ -22,6 +22,7 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import Reveal from "@/components/animations/Reveal";
 
 // ─────────────────────────────────────────────
 // Configuration des appareils
@@ -263,20 +264,7 @@ export default function WebsiteResponsive() {
     >
       <SectionWrapper>
         {/* Introduction */}
-        <motion.div
-          initial={
-            reducedMotion
-              ? false
-              : { opacity: 0, y: 28 }
-          }
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{
-            duration: 0.7,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="mx-auto max-w-3xl"
-        >
+        <Reveal className="mx-auto max-w-3xl">
           <SectionHeading
             id="website-responsive-title"
             eyebrow="UNE EXPÉRIENCE ADAPTÉE"
@@ -284,7 +272,7 @@ export default function WebsiteResponsive() {
             description="Vos clients consultent votre site depuis leur téléphone, leur tablette ou leur ordinateur. Chaque interface est pensée pour offrir une navigation claire et agréable, quel que soit le support utilisé."
             align="center"
           />
-        </motion.div>
+        </Reveal>
 
         {/* Sélecteur */}
         <div className="mt-8 flex justify-center sm:mt-10">

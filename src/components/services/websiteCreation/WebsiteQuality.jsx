@@ -9,6 +9,8 @@ import Link from "next/link";
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import Reveal from "@/components/animations/Reveal";
+import { DISTANCE, DURATION, EASE as ease, STAGGER } from "@/lib/motion";
 
 import {
   Activity,
@@ -60,12 +62,6 @@ const qualities = [
       "Après la mise en ligne, je peux également assurer le suivi, les mises à jour et les évolutions de votre site.",
   },
 ];
-
-// ─────────────────────────────────────────────
-// Animation commune
-// ─────────────────────────────────────────────
-
-const ease = [0.22, 1, 0.36, 1];
 
 // ─────────────────────────────────────────────
 // Petit indicateur de statut
@@ -398,22 +394,11 @@ function EvolutionPanel({ reducedMotion }) {
 
 function QualityDashboard({ reducedMotion }) {
   return (
-    <motion.div
-      initial={
-        reducedMotion
-          ? false
-          : { opacity: 0, y: 35, scale: 0.97 }
-      }
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        scale: 1,
-      }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{
-        duration: reducedMotion ? 0 : 0.8,
-        ease,
-      }}
+    <Reveal
+      y={DISTANCE.lg}
+      scale={0.97}
+      duration={DURATION.slow}
+      amount={0.15}
       className="
         relative overflow-hidden
         rounded-2xl border border-white/[0.08]
@@ -452,7 +437,7 @@ function QualityDashboard({ reducedMotion }) {
           <EvolutionPanel reducedMotion={reducedMotion} />
         </div>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -474,48 +459,24 @@ export default function WebsiteQuality() {
           {/* Contenu */}
           <div className="min-w-0">
             {/* En-tête */}
-            <motion.div
-              initial={
-                reducedMotion
-                  ? false
-                  : { opacity: 0, y: 25 }
-              }
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: reducedMotion ? 0 : 0.7,
-                ease,
-              }}
-            >
+            <Reveal>
               <SectionHeading
                 id="website-quality-title"
                 eyebrow="QUALITÉ & PÉRENNITÉ"
                 title="Un site conçu pour durer."
                 description="Un site internet ne doit pas seulement être esthétique. Il doit aussi être fiable, agréable à utiliser et capable d'évoluer avec votre activité."
               />
-            </motion.div>
+            </Reveal>
 
             {/* Arguments */}
             <div className="mt-8 space-y-6 sm:mt-10 sm:space-y-8">
               {qualities.map(
                 ({ number, icon: Icon, title, description }, index) => (
-                  <motion.div
+                  <Reveal
                     key={number}
-                    initial={
-                      reducedMotion
-                        ? false
-                        : { opacity: 0, x: -20 }
-                    }
-                    whileInView={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{
-                      duration: reducedMotion ? 0 : 0.6,
-                      delay: reducedMotion ? 0 : index * 0.08,
-                      ease,
-                    }}
+                    x={-20}
+                    y={0}
+                    delay={index * STAGGER}
                     className="flex items-start gap-4"
                   >
                     <span className="pt-1 text-sm font-semibold text-accent">
@@ -539,26 +500,13 @@ export default function WebsiteQuality() {
                         {description}
                       </p>
                     </div>
-                  </motion.div>
+                  </Reveal>
                 )
               )}
             </div>
 
             {/* Lien vers la maintenance */}
-            <motion.div
-              initial={
-                reducedMotion
-                  ? false
-                  : { opacity: 0, y: 15 }
-              }
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: reducedMotion ? 0 : 0.6,
-                delay: reducedMotion ? 0 : 0.2,
-              }}
-              className="mt-8"
-            >
+            <Reveal y={DISTANCE.sm} delay={0.2} className="mt-8">
               <Link
                 href="/services/suivi-et-evolutions"
                 className="
@@ -580,7 +528,7 @@ export default function WebsiteQuality() {
                   "
                 />
               </Link>
-            </motion.div>
+            </Reveal>
           </div>
 
           {/* Tableau de bord */}
