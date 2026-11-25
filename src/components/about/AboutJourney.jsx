@@ -3,6 +3,7 @@
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
+import Reveal from "../animations/Reveal";
 
 export default function AboutJourney() {
   return (
@@ -19,9 +20,10 @@ export default function AboutJourney() {
             eyebrow="MON PARCOURS"
             title="Un parcours orienté rigueur et fiabilité"
             className="mb-8"
+            reveal
           />
 
-          <div className="max-w-4xl space-y-5 text-base leading-relaxed text-gray-300 sm:text-lg">
+          <Reveal className="max-w-4xl space-y-5 text-base leading-relaxed text-gray-300 sm:text-lg">
             <p>
               J’ai commencé ma carrière dans le développement logiciel en
               environnement exigeant, où la rigueur, la fiabilité et la
@@ -33,7 +35,7 @@ export default function AboutJourney() {
               bien comprendre le besoin, construire proprement, tester et
               livrer quelque chose de stable et durable.
             </p>
-          </div>
+          </Reveal>
         </SectionWrapper>
       </Section>
 
@@ -48,9 +50,10 @@ export default function AboutJourney() {
             eyebrow="MON ÉVOLUTION"
             title="Du logiciel aux applications web"
             className="mb-8"
+            reveal
           />
 
-          <div className="max-w-4xl space-y-5 text-base leading-relaxed text-gray-300 sm:text-lg">
+          <Reveal className="max-w-4xl space-y-5 text-base leading-relaxed text-gray-300 sm:text-lg">
             <p>
               J’ai choisi le développement web pour me rapprocher des
               utilisateurs finaux et concevoir des solutions directement
@@ -70,7 +73,7 @@ export default function AboutJourney() {
               , en mettant l’accent sur la performance, l’accessibilité et
               le référencement naturel.
             </p>
-          </div>
+          </Reveal>
         </SectionWrapper>
       </Section>
     </>

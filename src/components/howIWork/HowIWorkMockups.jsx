@@ -4,6 +4,7 @@ import { FaFigma } from "react-icons/fa";
 
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
+import Reveal from "../animations/Reveal";
 import SectionHeading from "../layout/SectionHeading";
 
 import TechCard from "./TechCard";
@@ -22,16 +23,17 @@ export default function HowIWorkMockups() {
           title="Maquettes (si besoin)"
           description="Selon le projet, on peut valider le rendu via une maquette avant de développer, notamment lorsque vous souhaitez définir précisément le design."
           className="mb-8 sm:mb-10 lg:mb-12"
+          reveal
         />
 
-        <div className="grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+        <Reveal className="grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
           <TechCard
             icon={FaFigma}
             name="Figma"
             description="Maquettes & structure du site"
             color="var(--color-blue)"
           />
-        </div>
+        </Reveal>
       </SectionWrapper>
     </Section>
   );

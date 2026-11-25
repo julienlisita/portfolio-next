@@ -1,6 +1,7 @@
 // src/components/portfolio/projectDetail/ProjectStackSection.jsx
 
 import Section from "../../layout/Section";
+import Reveal from "../../animations/Reveal";
 
 const labelByCategory = (category) => {
   if (category === "frontend") return "Front-end";
@@ -23,7 +24,7 @@ export default function ProjectStackSection({ stack }) {
 
   return (
     <Section title="Détails techniques (pour les curieux)">
-      <div className="space-y-6 mt-6">
+      <Reveal className="space-y-6 mt-6">
         {entries.map(([category, items]) => (
           <div key={category}>
             <h3 className="text-lg font-semibold capitalize text-gray-100">
@@ -42,7 +43,7 @@ export default function ProjectStackSection({ stack }) {
             </div>
           </div>
         ))}
-      </div>
+      </Reveal>
     </Section>
   );
 }

@@ -7,6 +7,8 @@ import { useState } from "react";
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
+import Reveal from "../animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 
 import Pagination from "../navigation/Pagination";
 
@@ -39,16 +41,23 @@ export default function BlogList() {
           eyebrow="PUBLICATIONS"
           title="Tous les articles"
           className="mb-8 sm:mb-10 lg:mb-12"
+          reveal
         />
 
         {paginatedArticles.length > 0 ? (
           <>
-            <div className="grid gap-6 xl:grid-cols-2">
-              {paginatedArticles.map((article) => (
-                <BlogCard
+            <div
+              key={currentPage}
+              className="grid gap-6 xl:grid-cols-2"
+            >
+              {paginatedArticles.map((article, index) => (
+                <Reveal
                   key={article.slug}
-                  article={article}
-                />
+                  delay={(index % 2) * STAGGER}
+                  className="h-full"
+                >
+                  <BlogCard article={article} />
+                </Reveal>
               ))}
             </div>
 

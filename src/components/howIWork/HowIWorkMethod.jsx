@@ -2,6 +2,7 @@
 
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
+import Reveal from "../animations/Reveal";
 import SectionHeading from "../layout/SectionHeading";
 
 import Button from "../UI/Button";
@@ -56,11 +57,13 @@ export default function HowIWorkMethod() {
           title="Ma méthode de travail"
           description="Un parcours simple, avec des points de validation à chaque étape."
           className="mb-8 sm:mb-10 lg:mb-12"
+          reveal
         />
 
         <ol className="relative max-w-4xl border-l border-line-subtle pl-8 sm:pl-10">
           {steps.map((step, index) => (
-            <li
+            <Reveal
+              as="li"
               key={step.title}
               className="relative pb-8 last:pb-0"
             >
@@ -92,7 +95,7 @@ export default function HowIWorkMethod() {
               <p className="mt-2 text-xs leading-relaxed text-gray-400 sm:text-sm">
                 {step.bonus}
               </p>
-            </li>
+            </Reveal>
           ))}
         </ol>
 

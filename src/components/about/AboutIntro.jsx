@@ -2,6 +2,7 @@
 
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
+import { RevealGroup, RevealItem } from "../animations/RevealGroup";
 
 const informations = [
   {
@@ -30,9 +31,10 @@ export default function AboutIntro() {
       aria-label="Mon profil en bref"
     >
       <SectionWrapper>
-        <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <RevealGroup as="ul" className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {informations.map((information) => (
-            <li
+            <RevealItem
+              as="li"
               key={information.label}
               className="
                 rounded-xl
@@ -54,9 +56,9 @@ export default function AboutIntro() {
                   {information.detail}
                 </p>
               )}
-            </li>
+            </RevealItem>
           ))}
-        </ul>
+        </RevealGroup>
       </SectionWrapper>
     </Section>
   );

@@ -2,6 +2,7 @@
 
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
+import Reveal from "../animations/Reveal";
 import SectionHeading from "../layout/SectionHeading";
 
 import TechCard from "./TechCard";
@@ -46,6 +47,7 @@ export default function HowIWorkTechStack() {
           title="Mes choix techniques"
           description="Pour garantir performance, SEO et maintenabilité, j’utilise une stack moderne. Si vous n’êtes pas particulièrement technique, cette partie est facultative."
           className="mb-10 sm:mb-12"
+          reveal
         />
 
         <div className="space-y-12">
@@ -55,7 +57,7 @@ export default function HowIWorkTechStack() {
             );
 
             return (
-              <div key={category.id}>
+              <Reveal key={category.id}>
                 <h3 className="mb-5 text-lg font-semibold text-gray-100">
                   {category.title}
                 </h3>
@@ -75,7 +77,7 @@ export default function HowIWorkTechStack() {
                     />
                   ))}
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>

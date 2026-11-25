@@ -1,6 +1,7 @@
 // src/components/howIWork/HowIWorkIntro.jsx
 
 import Section from "../layout/Section";
+import Reveal from "../animations/Reveal";
 
 export default function HowIWorkIntro() {
   return (
@@ -14,7 +15,7 @@ export default function HowIWorkIntro() {
       </Section>
 
       <Section>
-        <div className="flex justify-center mt-6">
+        <Reveal className="flex justify-center mt-6">
           <img
             src="/assets/images/me-working.avif"
             alt="Julien Lisita en train de travailler"
@@ -24,7 +25,7 @@ export default function HowIWorkIntro() {
             loading="lazy"
             decoding="async"
           />
-        </div>
+        </Reveal>
       </Section>
     </>
   );

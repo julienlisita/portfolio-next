@@ -2,6 +2,7 @@
 
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
+import Reveal from "../animations/Reveal";
 
 import Button from "../UI/Button";
 
@@ -12,7 +13,7 @@ export default function BlogCta() {
       aria-label="Découvrir mes services"
     >
       <SectionWrapper>
-        <div
+        <Reveal
           className="
             flex flex-col gap-5
             rounded-xl
@@ -44,7 +45,7 @@ export default function BlogCta() {
               Réserver un échange ›
             </Button>
           </div>
-        </div>
+        </Reveal>
       </SectionWrapper>
     </Section>
   );

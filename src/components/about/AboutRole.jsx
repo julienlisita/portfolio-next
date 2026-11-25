@@ -3,6 +3,7 @@
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
+import Reveal from "../animations/Reveal";
 
 export default function AboutRole() {
   return (
@@ -16,9 +17,10 @@ export default function AboutRole() {
           eyebrow="MON ACTIVITÉ"
           title="Ce que je fais"
           className="mb-8"
+          reveal
         />
 
-        <div className="max-w-4xl space-y-5 text-base leading-relaxed text-gray-300 sm:text-lg">
+        <Reveal className="max-w-4xl space-y-5 text-base leading-relaxed text-gray-300 sm:text-lg">
           <p>
             J’accompagne les indépendants, artisans et entreprises dans la
             conception de solutions web adaptées à leurs besoins, du site
@@ -52,7 +54,7 @@ export default function AboutRole() {
             L’objectif : développer une solution utile, fiable et adaptée au
             fonctionnement réel de votre activité.
           </p>
-        </div>
+        </Reveal>
       </SectionWrapper>
     </Section>
   );

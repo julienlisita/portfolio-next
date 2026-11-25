@@ -1,6 +1,7 @@
 // src/components/portfolio/projectDetail/ProjectLinksSection.jsx
 
 import Section from "../../layout/Section";
+import Reveal from "../../animations/Reveal";
 
 export default function ProjectLinksSection({ project }) {
   const hasLinks = Boolean(
@@ -13,7 +14,7 @@ export default function ProjectLinksSection({ project }) {
 
   return (
     <Section title="Liens">
-      <div className="flex flex-wrap justify-between gap-8 mt-6">
+      <Reveal className="flex flex-wrap justify-between gap-8 mt-6">
         {project.liveSite && (
           <div className="flex-1 min-w-[220px]">
             <h4 className="text-lg font-semibold text-white mb-2">Site en ligne</h4>
@@ -67,7 +68,7 @@ export default function ProjectLinksSection({ project }) {
             </ul>
           </div>
         )}
-      </div>
+      </Reveal>
     </Section>
   );
 }

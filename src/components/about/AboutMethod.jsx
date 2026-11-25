@@ -5,6 +5,8 @@ import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
 
 import Button from "../UI/Button";
+import Reveal from "../animations/Reveal";
+import { RevealGroup, RevealItem } from "../animations/RevealGroup";
 
 const pillars = [
   {
@@ -45,9 +47,10 @@ export default function AboutMethod() {
           eyebrow="MA FAÇON DE TRAVAILLER"
           title="Une méthode simple et transparente"
           className="mb-8"
+          reveal
         />
 
-        <div className="max-w-4xl space-y-5 text-base leading-relaxed text-gray-300 sm:text-lg">
+        <Reveal className="max-w-4xl space-y-5 text-base leading-relaxed text-gray-300 sm:text-lg">
           <p>
             Mon rôle est de vous guider et de transformer votre besoin en
             un site clair et efficace, sans jargon inutile. Vous suivez
@@ -75,11 +78,11 @@ export default function AboutMethod() {
           <p className="pt-4 font-medium text-gray-100">
             Ma méthode repose sur quatre piliers :
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <RevealGroup className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {pillars.map((pillar) => (
-            <div
+            <RevealItem
               key={pillar.title}
               className="
                 rounded-xl
@@ -95,9 +98,9 @@ export default function AboutMethod() {
               <p className="mt-2 text-sm leading-relaxed text-gray-300">
                 {pillar.description}
               </p>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </SectionWrapper>
     </Section>
   );

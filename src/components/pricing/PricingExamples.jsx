@@ -3,6 +3,8 @@
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
+import Reveal from "@/components/animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 
 const examples = [
   {
@@ -45,12 +47,15 @@ export default function PricingExamples() {
           title="Quelques exemples de budgets."
           description="Des fourchettes indicatives pour mieux comprendre le budget à prévoir selon le type de projet."
           className="mb-8 sm:mb-10 lg:mb-12"
+          reveal
         />
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {examples.map((example) => (
-            <article
+          {examples.map((example, index) => (
+            <Reveal
+              as="article"
               key={example.title}
+              delay={(index % 2) * STAGGER}
               className="
                 flex h-full flex-col
                 rounded-xl border border-line-subtle
@@ -68,7 +73,7 @@ export default function PricingExamples() {
               <p className="mt-6 border-t border-white/10 pt-4 font-bold text-accent">
                 {example.price}
               </p>
-            </article>
+            </Reveal>
           ))}
         </div>
       </SectionWrapper>

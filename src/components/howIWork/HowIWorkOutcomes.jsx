@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
+import { RevealGroup, RevealItem } from "../animations/RevealGroup";
 import SectionHeading from "../layout/SectionHeading";
 
 const outcomes = [
@@ -26,11 +27,13 @@ export default function HowIWorkOutcomes() {
           eyebrow="LES RÉSULTATS"
           title="Ce que vous obtenez"
           className="mb-8 sm:mb-10 lg:mb-12"
+          reveal
         />
 
-        <ul className="grid max-w-5xl gap-4 sm:grid-cols-2">
+        <RevealGroup as="ul" className="grid max-w-5xl gap-4 sm:grid-cols-2">
           {outcomes.map((outcome) => (
-            <li
+            <RevealItem
+              as="li"
               key={outcome}
               className="
                 flex items-start gap-3
@@ -49,9 +52,9 @@ export default function HowIWorkOutcomes() {
               <span className="text-sm leading-relaxed text-gray-300 sm:text-base">
                 {outcome}
               </span>
-            </li>
+            </RevealItem>
           ))}
-        </ul>
+        </RevealGroup>
       </SectionWrapper>
     </Section>
   );

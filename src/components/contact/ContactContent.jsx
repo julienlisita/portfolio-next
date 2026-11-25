@@ -20,6 +20,7 @@ export default function ContactContent() {
           eyebrow="ÉCHANGEONS"
           title="Comment souhaitez-vous me contacter ?"
           className="mb-8 sm:mb-10 lg:mb-12"
+          reveal
         />
 
         <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">

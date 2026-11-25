@@ -2,6 +2,8 @@
 
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
+import Reveal from "../animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 import SectionHeading from "../layout/SectionHeading";
 
 const turnkeyFeatures = [
@@ -34,10 +36,11 @@ export default function HowIWorkNoCodeComparison() {
           title="Pourquoi ne pas utiliser un outil clé en main ?"
           description="Des solutions comme Wix, WordPress.com ou des offres tout-en-un peuvent convenir pour démarrer rapidement. Mais dès qu’un site doit être clair, bien référencé et évoluer dans le temps, leurs limites peuvent apparaître."
           className="mb-8 sm:mb-10 lg:mb-12"
+          reveal
         />
 
         <div className="grid gap-6 lg:grid-cols-2">
-          <article className="rounded-xl border border-line-subtle bg-surface-admin p-5 sm:p-6">
+          <Reveal as="article" className="rounded-xl border border-line-subtle bg-surface-admin p-5 sm:p-6">
             <h3 className="mb-5 font-semibold text-gray-100">
               Solutions clé en main
             </h3>
@@ -57,9 +60,9 @@ export default function HowIWorkNoCodeComparison() {
                 </li>
               ))}
             </ul>
-          </article>
+          </Reveal>
 
-          <article className="rounded-xl border border-line-subtle bg-surface-admin p-5 sm:p-6">
+          <Reveal as="article" delay={STAGGER} className="rounded-xl border border-line-subtle bg-surface-admin p-5 sm:p-6">
             <h3 className="mb-5 font-semibold text-gray-100">
               Ma méthode
             </h3>
@@ -79,7 +82,7 @@ export default function HowIWorkNoCodeComparison() {
                 </li>
               ))}
             </ul>
-          </article>
+          </Reveal>
         </div>
 
         <p className="mt-6 max-w-4xl text-sm leading-relaxed text-gray-400">

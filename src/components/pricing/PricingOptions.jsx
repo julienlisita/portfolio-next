@@ -3,6 +3,8 @@
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
+import Reveal from "@/components/animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 
 const commonOptions = [
   {
@@ -42,9 +44,12 @@ const advancedOptions = [
   },
 ];
 
-function OptionsCard({ title, options, note }) {
+function OptionsCard({ title, options, note, delay = 0 }) {
   return (
-    <div className="rounded-xl border border-line-subtle bg-surface-admin p-5 sm:p-6">
+    <Reveal
+      delay={delay}
+      className="rounded-xl border border-line-subtle bg-surface-admin p-5 sm:p-6"
+    >
       <h3 className="font-semibold text-gray-100">
         {title}
       </h3>
@@ -71,7 +76,7 @@ function OptionsCard({ title, options, note }) {
           {note}
         </p>
       )}
-    </div>
+    </Reveal>
   );
 }
 
@@ -89,6 +94,7 @@ export default function PricingOptions() {
           title="Des options selon vos besoins."
           description="Vous n’avez pas besoin de tout : on choisit ensemble les options utiles selon votre activité."
           className="mb-8 sm:mb-10 lg:mb-12"
+          reveal
         />
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -101,6 +107,7 @@ export default function PricingOptions() {
             title="Fonctionnalités avancées"
             options={advancedOptions}
             note="Autres possibles : espace admin complet, espace client, paiement, intégrations spécifiques…"
+            delay={STAGGER}
           />
         </div>
       </SectionWrapper>

@@ -5,6 +5,8 @@ import { Check } from "lucide-react";
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
+import Reveal from "@/components/animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 
 const packs = [
   {
@@ -68,12 +70,15 @@ export default function PricingIntroAndPacks() {
           title="Une solution adaptée à vos besoins."
           description="Du site professionnel à l'application sur mesure, choisissez une solution adaptée à votre activité et à vos objectifs."
           className="mb-8 sm:mb-10 lg:mb-12"
+          reveal
         />
 
         <div className="grid gap-6 xl:grid-cols-3">
-          {packs.map((pack) => (
-            <article
+          {packs.map((pack, index) => (
+            <Reveal
+              as="article"
               key={pack.title}
+              delay={(index % 3) * STAGGER}
               className="
                 flex h-full flex-col
                 rounded-2xl border border-line-subtle
@@ -114,7 +119,7 @@ export default function PricingIntroAndPacks() {
               <p className="mt-6 border-t border-white/10 pt-5 text-center text-base font-bold text-accent">
                 {pack.price}
               </p>
-            </article>
+            </Reveal>
           ))}
         </div>
 
