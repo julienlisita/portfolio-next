@@ -1,10 +1,8 @@
-"use client";
-
 // src/components/home/ServicesPreview.jsx
 
-import { motion, useReducedMotion } from "motion/react";
-
 import ServiceCard from "@/components/services/ServiceCard";
+import Reveal from "@/components/animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 import HomeSectionWrapper from "./HomeSectionWrapper";
 
 const services = [
@@ -35,11 +33,10 @@ const services = [
 ];
 
 export default function ServicesPreview() {
-  const reducedMotion = useReducedMotion();
-
   return (
     <HomeSectionWrapper
       id="service"
+      reveal
       eyebrow="MES PRESTATIONS"
       title="Comment je peux vous aider"
       description="Selon votre besoin, je vous accompagne de la création d'un site professionnel clair et rapide jusqu'au développement d'applications et d'outils sur mesure pour simplifier votre activité."
@@ -50,30 +47,10 @@ export default function ServicesPreview() {
     >
       <div className="grid w-full grid-cols-1 gap-6 sm:gap-7 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {services.map((service, index) => (
-          <motion.div
+          <Reveal
             key={service.theme}
+            delay={index * STAGGER}
             className="h-full min-w-0"
-            initial={
-              reducedMotion
-                ? false
-                : {
-                    opacity: 0,
-                    y: 25,
-                  }
-            }
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.2,
-            }}
-            transition={{
-              duration: reducedMotion ? 0 : 0.6,
-              delay: reducedMotion ? 0 : index * 0.12,
-              ease: [0.22, 1, 0.36, 1],
-            }}
           >
             <ServiceCard
               title={service.title}
@@ -82,7 +59,7 @@ export default function ServicesPreview() {
               link={service.link}
               theme={service.theme}
             />
-          </motion.div>
+          </Reveal>
         ))}
       </div>
     </HomeSectionWrapper>

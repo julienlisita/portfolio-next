@@ -2,6 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import HomeSectionWrapper from "./HomeSectionWrapper";
+import { RevealGroup, RevealItem } from "../animations/RevealGroup";
 
 const problems = [
   {
@@ -28,13 +29,14 @@ export default function ProblemSection() {
   return (
     <HomeSectionWrapper
       id="problemes"
+      reveal
       eyebrow="VOS ENJEUX"
       title="Des solutions adaptées aux défis de votre activité"
       description="Chaque activité rencontre ses propres défis. Un site ou une application bien pensé peut vous aider à les relever."
     >
-      <div className="w-full border-t border-white/10">
+      <RevealGroup className="w-full border-t border-white/10">
         {problems.map((problem) => (
-          <div
+          <RevealItem
             key={problem.number}
             className="
               group
@@ -73,9 +75,9 @@ export default function ProblemSection() {
                 group-hover:text-accent
               "
             />
-          </div>
+          </RevealItem>
         ))}
-      </div>
+      </RevealGroup>
     </HomeSectionWrapper>
   );
 }

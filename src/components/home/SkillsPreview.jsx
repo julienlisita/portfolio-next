@@ -20,6 +20,8 @@ import {
 
 import HomeSectionWrapper from "./HomeSectionWrapper";
 import SkillCard from "./SkillCard";
+import Reveal from "../animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 
 const skillsData = [
   {
@@ -61,6 +63,7 @@ export default function SkillsPreview() {
   return (
     <HomeSectionWrapper
       id="competences"
+      reveal
       eyebrow="TECHNOLOGIES & SAVOIR-FAIRE"
       title="Une base technique fiable"
       description="Je sélectionne les technologies adaptées à chaque projet pour concevoir des sites et applications performants, sécurisés et capables d’évoluer dans la durée."
@@ -72,13 +75,14 @@ export default function SkillsPreview() {
           lg:grid-cols-3 lg:gap-10
         "
       >
-        {skillsData.map((skill) => (
-          <SkillCard
-            key={skill.title}
-            title={skill.title}
-            description={skill.description}
-            icons={skill.icons}
-          />
+        {skillsData.map((skill, index) => (
+          <Reveal key={skill.title} delay={index * STAGGER} className="h-full">
+            <SkillCard
+              title={skill.title}
+              description={skill.description}
+              icons={skill.icons}
+            />
+          </Reveal>
         ))}
       </div>
     </HomeSectionWrapper>

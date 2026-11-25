@@ -203,7 +203,7 @@ function DevicePreview({ device, reducedMotion }) {
               : "relative aspect-[16/10] overflow-hidden"
         }
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={device.id}
             initial={

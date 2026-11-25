@@ -45,6 +45,42 @@ export function useRevealGate() {
 }
 
 /**
+ * Variante « sur mesure » de la même mécanique, pour les animations
+ * spécifiques (micro-animations d'un mockup, d'un tableau de bord…) qui
+ * gardent leur propre chorégraphie mais ne doivent pas masquer leur contenu
+ * avant hydratation ou sans JavaScript.
+ *
+ * Retourne les props à étaler sur un élément `motion.*` :
+ *   const props = useGatedInView({ from, to, transition, amount, disabled });
+ *   <motion.div {...props}>
+ *
+ * - from        état masqué (ex. { opacity: 0, x: -12 })
+ * - to          état final (ex. { opacity: 1, x: 0 })
+ * - transition  transition jouée à l'apparition (délais, durée, ease…)
+ * - amount      part visible déclenchant l'animation
+ * - disabled    true (ex. reduced motion) : l'élément reste visible, sans animation
+ */
+export function useGatedInView({
+  from,
+  to,
+  transition,
+  amount = VIEWPORT.amount,
+  once = VIEWPORT.once,
+  disabled = false,
+}) {
+  const [ref, isHidden] = useRevealGate();
+  const hide = isHidden && !disabled;
+
+  return {
+    ref,
+    initial: false,
+    animate: hide ? { ...from, transition: { duration: 0 } } : to,
+    whileInView: { ...to, transition },
+    viewport: { once, amount },
+  };
+}
+
+/**
  * Apparition au défilement d'un élément : fondu + translation légère.
  * Rend UN SEUL élément DOM (choisi via `as`) : pas de wrapper supplémentaire.
  *

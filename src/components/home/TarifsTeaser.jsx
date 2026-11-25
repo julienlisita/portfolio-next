@@ -6,6 +6,8 @@ import Button from "../UI/Button";
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
+import Reveal from "../animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 
 export default function TarifsTeaser() {
   return (
@@ -20,17 +22,18 @@ export default function TarifsTeaser() {
               eyebrow="MES TARIFS"
               title="Des tarifs clairs, adaptés à votre projet"
               description="Chaque projet est différent. Je vous propose une solution adaptée à vos objectifs et à votre budget, avec un devis détaillé avant de commencer."
+              reveal
             />
 
-            <div className="shrink-0">
+            <Reveal delay={STAGGER} className="shrink-0">
               <Button href="/tarifs" variant="secondary">
                 Découvrir mes tarifs
               </Button>
-            </div>
+            </Reveal>
           </div>
 
           {/* Bloc tarifaire */}
-          <div
+          <Reveal
             className="
               grid grid-cols-1 lg:grid-cols-3
               overflow-hidden
@@ -114,7 +117,7 @@ export default function TarifsTeaser() {
                 souhaitées et la disponibilité des contenus.
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </SectionWrapper>
     </Section>

@@ -7,6 +7,8 @@ import Button from "../UI/Button";
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
+import Reveal from "../animations/Reveal";
+import { RevealGroup, RevealItem } from "../animations/RevealGroup";
 
 export default function AboutPreview() {
   return (
@@ -25,7 +27,8 @@ export default function AboutPreview() {
           "
         >
           {/* Photo */}
-          <div
+          <Reveal
+            scale={0.98}
             className="
               relative
               order-2 lg:order-1
@@ -59,23 +62,25 @@ export default function AboutPreview() {
                 to-transparent
               "
             />
-          </div>
+          </Reveal>
 
           {/* Présentation */}
-          <div
+          <RevealGroup
             className="
               order-1 lg:order-2
               flex flex-col items-start
             "
           >
-            <SectionHeading
-              id="about-title"
-              eyebrow="FAISONS CONNAISSANCE"
-              title="Derrière chaque projet, un interlocuteur unique"
-            />
+            <RevealItem>
+              <SectionHeading
+                id="about-title"
+                eyebrow="FAISONS CONNAISSANCE"
+                title="Derrière chaque projet, un interlocuteur unique"
+              />
+            </RevealItem>
 
             {/* Texte */}
-            <div className="mt-6 space-y-4 sm:space-y-5">
+            <RevealItem className="mt-6 space-y-4 sm:space-y-5">
               <p className="text-base sm:text-lg leading-relaxed text-gray-300">
                 Moi, c'est Julien, développeur web freelance basé à Bordeaux.
                 J'accompagne les indépendants, artisans et entreprises dans
@@ -87,10 +92,10 @@ export default function AboutPreview() {
                 interlocuteur unique, de la première discussion jusqu'à
                 la mise en ligne de votre projet.
               </p>
-            </div>
+            </RevealItem>
 
             {/* Localisation */}
-            <div
+            <RevealItem
               className="
                 mt-6
                 flex items-center gap-2
@@ -107,17 +112,17 @@ export default function AboutPreview() {
               <span>
                 Bordeaux · Partout en France et à distance
               </span>
-            </div>
+            </RevealItem>
 
             {/* Bouton */}
-            <div className="mt-8">
+            <RevealItem className="mt-8">
               <Button href="/a-propos" variant="secondary">
                 <span className="inline-flex items-center gap-2">
                   En savoir plus sur moi
                 </span>
               </Button>
-            </div>
-          </div>
+            </RevealItem>
+          </RevealGroup>
         </div>
       </SectionWrapper>
     </Section>

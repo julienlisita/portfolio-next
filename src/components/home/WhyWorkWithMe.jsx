@@ -11,6 +11,8 @@ import Button from "../UI/Button";
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
+import Reveal from "../animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 
 const commitments = [
   {
@@ -61,26 +63,28 @@ export default function WhyWorkWithMe() {
               eyebrow="MON APPROCHE"
               title="Un accompagnement humain, des solutions pensées pour durer"
               description="Chaque projet commence par une discussion. Mon rôle est de comprendre vos besoins, de vous conseiller et de construire une solution adaptée à votre activité."
+              reveal
             />
 
-            <div className="mt-8">
+            <Reveal delay={STAGGER} className="mt-8">
               <Button
                 href="/comment-je-travaille"
                 variant="secondary"
               >
                 Découvrir ma méthode
               </Button>
-            </div>
+            </Reveal>
           </div>
 
           {/* Engagements */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-            {commitments.map((commitment) => {
+            {commitments.map((commitment, index) => {
               const Icon = commitment.icon;
 
               return (
-                <div
+                <Reveal
                   key={commitment.title}
+                  delay={(index % 2) * STAGGER}
                   className="
                     group
                     flex flex-col
@@ -121,7 +125,7 @@ export default function WhyWorkWithMe() {
                   >
                     {commitment.description}
                   </p>
-                </div>
+                </Reveal>
               );
             })}
           </div>

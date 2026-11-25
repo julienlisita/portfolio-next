@@ -1,6 +1,7 @@
 // src/components/UI/SectionHeading.jsx
 
 import SectionTitle from "../UI/SectionTitle";
+import Reveal from "../animations/Reveal";
 
 
 export default function SectionHeading({
@@ -10,11 +11,16 @@ export default function SectionHeading({
   description,
   align = "left",
   className = "",
+  reveal = false,
 }) {
   const isCentered = align === "center";
 
+  // `reveal` : apparition au défilement (désactivée par défaut). Le conteneur
+  // reste le même élément <div> : aucun wrapper supplémentaire.
+  const Wrapper = reveal ? Reveal : "div";
+
   return (
-    <div
+    <Wrapper
       className={`
         ${isCentered ? "text-center" : "text-left"}
         ${className}
@@ -56,6 +62,6 @@ export default function SectionHeading({
           {description}
         </p>
       )}
-    </div>
+    </Wrapper>
   );
 }

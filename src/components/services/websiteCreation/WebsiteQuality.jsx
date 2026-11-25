@@ -9,7 +9,7 @@ import Link from "next/link";
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
-import Reveal from "@/components/animations/Reveal";
+import Reveal, { useGatedInView } from "@/components/animations/Reveal";
 import { DISTANCE, DURATION, EASE as ease, STAGGER } from "@/lib/motion";
 
 import {
@@ -248,6 +248,44 @@ function PerformancePanel({ reducedMotion }) {
 // Illustration — Sécurité
 // ─────────────────────────────────────────────
 
+function SecurityCheck({ icon: Icon, label, index, reducedMotion }) {
+  // Animation spécifique conservée ; contenu visible sans JavaScript.
+  const motionProps = useGatedInView({
+    from: { opacity: 0, x: -12 },
+    to: { opacity: 1, x: 0 },
+    transition: {
+      duration: reducedMotion ? 0 : 0.5,
+      delay: reducedMotion ? 0 : 0.2 + index * 0.15,
+    },
+    amount: 0.5,
+    disabled: reducedMotion,
+  });
+
+  return (
+    <motion.div
+      {...motionProps}
+      className="
+        flex items-center justify-between
+        rounded-lg border border-white/[0.05]
+        bg-surface-deep px-3 py-3
+      "
+    >
+      <div className="flex items-center gap-3">
+        <Icon size={16} className="text-gray-400" />
+
+        <span className="text-xs text-gray-300">
+          {label}
+        </span>
+      </div>
+
+      <CheckCircle2
+        size={16}
+        className="text-accent"
+      />
+    </motion.div>
+  );
+}
+
 function SecurityPanel({ reducedMotion }) {
   const checks = [
     {
@@ -275,42 +313,14 @@ function SecurityPanel({ reducedMotion }) {
       </div>
 
       <div className="space-y-3">
-        {checks.map(({ icon: Icon, label }, index) => (
-          <motion.div
+        {checks.map(({ icon, label }, index) => (
+          <SecurityCheck
             key={label}
-            initial={
-              reducedMotion
-                ? false
-                : { opacity: 0, x: -12 }
-            }
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{
-              duration: reducedMotion ? 0 : 0.5,
-              delay: reducedMotion ? 0 : 0.2 + index * 0.15,
-            }}
-            className="
-              flex items-center justify-between
-              rounded-lg border border-white/[0.05]
-              bg-surface-deep px-3 py-3
-            "
-          >
-            <div className="flex items-center gap-3">
-              <Icon size={16} className="text-gray-400" />
-
-              <span className="text-xs text-gray-300">
-                {label}
-              </span>
-            </div>
-
-            <CheckCircle2
-              size={16}
-              className="text-accent"
-            />
-          </motion.div>
+            icon={icon}
+            label={label}
+            index={index}
+            reducedMotion={reducedMotion}
+          />
         ))}
       </div>
     </div>
@@ -320,6 +330,33 @@ function SecurityPanel({ reducedMotion }) {
 // ─────────────────────────────────────────────
 // Illustration — Évolutivité
 // ─────────────────────────────────────────────
+
+function EvolutionModule({ icon: Icon, index, reducedMotion }) {
+  // Animation spécifique conservée ; contenu visible sans JavaScript.
+  const motionProps = useGatedInView({
+    from: { opacity: 0, scale: 0.8 },
+    to: { opacity: 1, scale: 1 },
+    transition: {
+      duration: reducedMotion ? 0 : 0.45,
+      delay: reducedMotion ? 0 : 0.25 + index * 0.15,
+    },
+    amount: 0.5,
+    disabled: reducedMotion,
+  });
+
+  return (
+    <motion.div
+      {...motionProps}
+      className="
+        flex h-10 w-10 items-center justify-center
+        rounded-lg border border-white/10
+        bg-surface-deep
+      "
+    >
+      <Icon size={17} className="text-gray-300" />
+    </motion.div>
+  );
+}
 
 function EvolutionPanel({ reducedMotion }) {
   return (
@@ -351,30 +388,12 @@ function EvolutionPanel({ reducedMotion }) {
         {/* Modules */}
         <div className="flex gap-2">
           {[Code2, Mail, Activity].map((Icon, index) => (
-            <motion.div
+            <EvolutionModule
               key={index}
-              initial={
-                reducedMotion
-                  ? false
-                  : { opacity: 0, scale: 0.8 }
-              }
-              whileInView={{
-                opacity: 1,
-                scale: 1,
-              }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{
-                duration: reducedMotion ? 0 : 0.45,
-                delay: reducedMotion ? 0 : 0.25 + index * 0.15,
-              }}
-              className="
-                flex h-10 w-10 items-center justify-center
-                rounded-lg border border-white/10
-                bg-surface-deep
-              "
-            >
-              <Icon size={17} className="text-gray-300" />
-            </motion.div>
+              icon={Icon}
+              index={index}
+              reducedMotion={reducedMotion}
+            />
           ))}
         </div>
       </div>

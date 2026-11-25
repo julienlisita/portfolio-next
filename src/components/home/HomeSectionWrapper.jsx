@@ -4,6 +4,8 @@ import Button from "../UI/Button";
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
 import SectionHeading from "../layout/SectionHeading";
+import Reveal from "../animations/Reveal";
+import { DISTANCE } from "@/lib/motion";
 
 export default function HomeSectionWrapper({
   id,
@@ -15,6 +17,7 @@ export default function HomeSectionWrapper({
   className = "",
   contentClassName = "",
   align = "left",
+  reveal = false,
 }) {
   return (
     <Section
@@ -31,6 +34,7 @@ export default function HomeSectionWrapper({
               title={title}
               description={description}
               align={align}
+              reveal={reveal}
             />
           )}
 
@@ -39,11 +43,19 @@ export default function HomeSectionWrapper({
           </div>
 
           {link && (
-            <div className="flex justify-center">
-              <Button href={link.href}>
-                {link.text}
-              </Button>
-            </div>
+            reveal ? (
+              <Reveal y={DISTANCE.sm} className="flex justify-center">
+                <Button href={link.href}>
+                  {link.text}
+                </Button>
+              </Reveal>
+            ) : (
+              <div className="flex justify-center">
+                <Button href={link.href}>
+                  {link.text}
+                </Button>
+              </div>
+            )
           )}
         </div>
       </SectionWrapper>

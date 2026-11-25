@@ -431,7 +431,7 @@ export default function WebsiteBenefits() {
               "
             />
 
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={activeBenefit}
                 initial={
