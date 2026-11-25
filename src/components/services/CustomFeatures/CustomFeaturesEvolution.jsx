@@ -400,6 +400,7 @@ export default function CustomFeaturesEvolution() {
     <Section id="custom-features-evolution" bgColor="canvas">
       <SectionWrapper>
         <SectionHeading
+          reveal
           eyebrow="UNE SOLUTION ÉVOLUTIVE"
           title="Une application qui grandit avec votre activité."
           description="Pas besoin de tout développer dès le départ. Nous commençons par les fonctionnalités essentielles, puis faisons évoluer votre application selon vos besoins, vos retours et vos priorités."

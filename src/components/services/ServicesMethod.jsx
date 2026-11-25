@@ -735,6 +735,7 @@ export default function ServicesMethod() {
         <SectionHeading
           id="services-method-title"
           eyebrow="MON ACCOMPAGNEMENT"
+          reveal
           title="Ma méthode de travail"
           description="De notre premier échange jusqu'à la mise en ligne, chaque étape est pensée pour faire avancer votre projet sereinement, avec une vision claire de son évolution."
           align="left"

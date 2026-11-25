@@ -332,6 +332,7 @@ export default function CustomFeaturesShowcase() {
     <Section id="custom-features-showcase" bgColor="canvas">
       <SectionWrapper>
         <SectionHeading
+          reveal
           eyebrow="DES SOLUTIONS CONCRÈTES"
           title="Imaginez ce que votre application pourrait faire."
           description="Chaque activité a ses besoins. Voici quelques exemples d'outils que nous pouvons concevoir pour simplifier votre organisation et améliorer l'expérience de vos clients."
@@ -379,7 +380,7 @@ export default function CustomFeaturesShowcase() {
               })}
             </div>
 
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={activeId}
                 initial={reducedMotion ? false : { opacity: 0, y: 15 }}
@@ -443,7 +444,7 @@ export default function CustomFeaturesShowcase() {
               style={{ backgroundColor: activeExample.color }}
             />
 
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={activeId}
                 initial={

@@ -20,6 +20,8 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import Reveal, { useGatedInView } from "@/components/animations/Reveal";
+import { DURATION } from "@/lib/motion";
 import { alpha } from "@/utils/color";
 
 const scatteredTools = [
@@ -68,6 +70,72 @@ const centralizedFeatures = [
   },
 ];
 
+const scatterOffsets = [
+  { x: -12, y: -10 },
+  { x: 12, y: -5 },
+  { x: -8, y: 12 },
+  { x: 14, y: 10 },
+];
+
+function ScatteredTool({ tool, index, reducedMotion }) {
+  const Icon = tool.icon;
+
+  // Animation spécifique conservée (décalage propre à chaque outil) ;
+  // contenu visible sans JavaScript.
+  const motionProps = useGatedInView({
+    from: {
+      opacity: 0,
+      x: scatterOffsets[index].x,
+      y: scatterOffsets[index].y,
+    },
+    to: { opacity: 1, x: 0, y: 0 },
+    transition: {
+      duration: 0.65,
+      delay: reducedMotion ? 0 : index * 0.12,
+      ease: [0.22, 1, 0.36, 1],
+    },
+    amount: 0.4,
+    disabled: reducedMotion,
+  });
+
+  return (
+    <motion.div
+      {...motionProps}
+      className="
+        rounded-2xl border border-white/[0.08]
+        bg-surface p-4
+        shadow-[0_15px_35px_rgba(0,0,0,0.15)]
+        sm:p-5
+      "
+    >
+      <div
+        className="
+          mb-4 flex h-10 w-10
+          items-center justify-center
+          rounded-xl
+        "
+        style={{
+          backgroundColor: `${alpha(tool.color, "18")}`,
+        }}
+      >
+        <Icon
+          size={20}
+          style={{ color: tool.color }}
+          aria-hidden="true"
+        />
+      </div>
+
+      <p className="text-sm font-semibold text-white">
+        {tool.label}
+      </p>
+
+      <p className="mt-1 text-xs text-gray-500">
+        {tool.detail}
+      </p>
+    </motion.div>
+  );
+}
+
 function ScatteredTools({ reducedMotion }) {
   return (
     <div className="relative w-full max-w-sm">
@@ -86,73 +154,14 @@ function ScatteredTools({ reducedMotion }) {
       {/* Outils dispersés */}
 
       <div className="relative grid grid-cols-2 gap-3 sm:gap-4">
-        {scatteredTools.map((tool, index) => {
-          const Icon = tool.icon;
-
-          const offsets = [
-            { x: -12, y: -10 },
-            { x: 12, y: -5 },
-            { x: -8, y: 12 },
-            { x: 14, y: 10 },
-          ];
-
-          return (
-            <motion.div
-              key={tool.label}
-              initial={
-                reducedMotion
-                  ? false
-                  : {
-                      opacity: 0,
-                      x: offsets[index].x,
-                      y: offsets[index].y,
-                    }
-              }
-              whileInView={{
-                opacity: 1,
-                x: 0,
-                y: 0,
-              }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{
-                duration: 0.65,
-                delay: reducedMotion ? 0 : index * 0.12,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="
-                rounded-2xl border border-white/[0.08]
-                bg-surface p-4
-                shadow-[0_15px_35px_rgba(0,0,0,0.15)]
-                sm:p-5
-              "
-            >
-              <div
-                className="
-                  mb-4 flex h-10 w-10
-                  items-center justify-center
-                  rounded-xl
-                "
-                style={{
-                  backgroundColor: `${alpha(tool.color, "18")}`,
-                }}
-              >
-                <Icon
-                  size={20}
-                  style={{ color: tool.color }}
-                  aria-hidden="true"
-                />
-              </div>
-
-              <p className="text-sm font-semibold text-white">
-                {tool.label}
-              </p>
-
-              <p className="mt-1 text-xs text-gray-500">
-                {tool.detail}
-              </p>
-            </motion.div>
-          );
-        })}
+        {scatteredTools.map((tool, index) => (
+          <ScatteredTool
+            key={tool.label}
+            tool={tool}
+            index={index}
+            reducedMotion={reducedMotion}
+          />
+        ))}
       </div>
 
       {/* Étiquette */}
@@ -170,27 +179,10 @@ function ScatteredTools({ reducedMotion }) {
 
 function CentralizedApp({ reducedMotion }) {
   return (
-    <motion.div
-      initial={
-        reducedMotion
-          ? false
-          : {
-              opacity: 0,
-              y: 25,
-              scale: 0.95,
-            }
-      }
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        scale: 1,
-      }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{
-        duration: 0.75,
-        delay: reducedMotion ? 0 : 0.3,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+    <Reveal
+      scale={0.95}
+      delay={0.3}
+      duration={DURATION.slow}
       className="relative w-full max-w-sm"
     >
 
@@ -304,7 +296,7 @@ function CentralizedApp({ reducedMotion }) {
           Une organisation centralisée
         </span>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -388,6 +380,7 @@ export default function CustomFeaturesWorkflow() {
       <SectionWrapper>
 
         <SectionHeading
+          reveal
           eyebrow="SIMPLIFIEZ VOTRE ORGANISATION"
           title="Moins d'outils dispersés. Plus de temps pour votre activité."
           description="Emails, tableaux, agendas, messages… Lorsque les informations sont réparties entre plusieurs outils, leur gestion devient vite chronophage. Une application sur mesure permet de réunir l'essentiel dans un espace adapté à votre organisation."
@@ -411,23 +404,7 @@ export default function CustomFeaturesWorkflow() {
 
         {/* Message final */}
 
-        <motion.div
-          initial={
-            reducedMotion
-              ? false
-              : {
-                  opacity: 0,
-                  y: 20,
-                }
-          }
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{
-            duration: 0.6,
-          }}
+        <Reveal
           className="
             mx-auto mt-14 flex max-w-2xl
             items-start gap-4
@@ -448,7 +425,7 @@ export default function CustomFeaturesWorkflow() {
             une solution qui s'intègre naturellement à votre manière
             de travailler.
           </p>
-        </motion.div>
+        </Reveal>
 
       </SectionWrapper>
     </Section>

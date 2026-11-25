@@ -17,6 +17,7 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import Reveal from "@/components/animations/Reveal";
 import { alpha } from "@/utils/color";
 
 const services = [
@@ -208,12 +209,13 @@ export default function MaintenanceServices() {
     <Section id="maintenance-services" bgColor="surface-deep">
       <SectionWrapper>
         <SectionHeading
+          reveal
           eyebrow="MES INTERVENTIONS"
           title="Un accompagnement adapté aux besoins de votre site."
           description="Suivi technique, résolution de problèmes ou améliorations : j'interviens selon les besoins de votre site et les priorités de votre activité."
         />
 
-        <div className="mt-12 flex flex-col gap-4 lg:flex-row lg:items-start">
+        <Reveal className="mt-12 flex flex-col gap-4 lg:flex-row lg:items-start">
           {services.map((service) => (
             <ServicePanel
               key={service.id}
@@ -227,7 +229,7 @@ export default function MaintenanceServices() {
               reducedMotion={reducedMotion}
             />
           ))}
-        </div>
+        </Reveal>
 
         {/* Précision commerciale */}
 

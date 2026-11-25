@@ -1,8 +1,4 @@
-"use client";
-
 // src/components/services/maintenance/MaintenanceSupport.jsx
-
-import { motion, useReducedMotion } from "motion/react";
 
 import {
   Wrench,
@@ -19,6 +15,8 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import Reveal from "@/components/animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 import { alpha } from "@/utils/color";
 
 const supportOptions = [
@@ -246,33 +244,14 @@ const visuals = {
   recurring: RecurringVisual,
 };
 
-function SupportCard({ option, index, reducedMotion }) {
+function SupportCard({ option, index }) {
   const Icon = option.icon;
   const Visual = visuals[option.id];
 
   return (
-    <motion.article
-      initial={
-        reducedMotion
-          ? false
-          : {
-              opacity: 0,
-              y: 30,
-            }
-      }
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-        amount: 0.2,
-      }}
-      transition={{
-        duration: 0.65,
-        delay: reducedMotion ? 0 : index * 0.15,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+    <Reveal
+      as="article"
+      delay={index * STAGGER}
       className="
         group relative flex h-full flex-col
         overflow-hidden rounded-3xl
@@ -370,17 +349,16 @@ function SupportCard({ option, index, reducedMotion }) {
           aria-hidden="true"
         />
       </div>
-    </motion.article>
+    </Reveal>
   );
 }
 
 export default function MaintenanceSupport() {
-  const reducedMotion = useReducedMotion();
-
   return (
     <Section id="maintenance-support" bgColor="canvas">
       <SectionWrapper>
         <SectionHeading
+          reveal
           eyebrow="UN ACCOMPAGNEMENT FLEXIBLE"
           title="Un accompagnement à votre rythme."
           description="Un besoin ponctuel ou un suivi dans la durée ? Je vous propose une solution adaptée à votre site, à vos priorités et à votre budget, sans vous imposer de formule inutile."
@@ -394,7 +372,6 @@ export default function MaintenanceSupport() {
               key={option.id}
               option={option}
               index={index}
-              reducedMotion={reducedMotion}
             />
           ))}
         </div>

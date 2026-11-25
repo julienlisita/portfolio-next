@@ -15,6 +15,8 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import Reveal from "@/components/animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 
 const steps = [
   {
@@ -51,29 +53,13 @@ const steps = [
   },
 ];
 
-function ProcessStep({ step, index, reducedMotion }) {
+function ProcessStep({ step, index }) {
   const Icon = step.icon;
 
   return (
-    <motion.li
-      initial={
-        reducedMotion
-          ? false
-          : { opacity: 0, y: 25 }
-      }
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-        amount: 0.3,
-      }}
-      transition={{
-        duration: 0.6,
-        delay: reducedMotion ? 0 : index * 0.15,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+    <Reveal
+      as="li"
+      delay={index * STAGGER}
       className="
         relative flex gap-6
         md:flex-col md:gap-0
@@ -123,7 +109,7 @@ function ProcessStep({ step, index, reducedMotion }) {
           {step.description}
         </p>
       </div>
-    </motion.li>
+    </Reveal>
   );
 }
 
@@ -137,6 +123,7 @@ export default function MaintenanceProcess() {
     >
       <SectionWrapper>
         <SectionHeading
+          reveal
           eyebrow="UN PROCESSUS CLAIR"
           title="De votre demande à sa résolution."
           description="Un problème technique ou une modification à effectuer ? Je vous accompagne à chaque étape, du premier échange jusqu'à la vérification du résultat."
@@ -211,7 +198,6 @@ export default function MaintenanceProcess() {
                 key={step.number}
                 step={step}
                 index={index}
-                reducedMotion={reducedMotion}
               />
             ))}
           </ol>

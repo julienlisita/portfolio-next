@@ -12,6 +12,7 @@ import {
 
 import Section from "../layout/Section";
 import SectionWrapper from "../layout/SectionWrapper";
+import Reveal from "@/components/animations/Reveal";
 import { alpha } from "@/utils/color";
 
 // ─────────────────────────────────────────────
@@ -553,7 +554,7 @@ export default function ServicesShowcase() {
                 "
               >
                 {/* Texte */}
-                <div className={reversed ? "lg:order-2" : "lg:order-1"}>
+                <Reveal className={reversed ? "lg:order-2" : "lg:order-1"}>
                   {/* Numéro et catégorie */}
                   <div className="mb-5 flex items-center gap-3">
                     <span className="text-sm font-bold text-accent">
@@ -629,12 +630,15 @@ export default function ServicesShowcase() {
                       aria-hidden="true"
                     />
                   </Link>
-                </div>
+                </Reveal>
 
                 {/* Illustration */}
-                <div className={reversed ? "lg:order-1" : "lg:order-2"}>
+                <Reveal
+                  delay={0.12}
+                  className={reversed ? "lg:order-1" : "lg:order-2"}
+                >
                   <Visual color={service.color} />
-                </div>
+                </Reveal>
               </article>
 
               {/* Séparateur */}

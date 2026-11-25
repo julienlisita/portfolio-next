@@ -19,6 +19,8 @@ import {
 import Section from "@/components/layout/Section";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import SectionHeading from "@/components/layout/SectionHeading";
+import Reveal, { useGatedInView } from "@/components/animations/Reveal";
+import { STAGGER } from "@/lib/motion";
 import { alpha } from "@/utils/color";
 
 const benefits = [
@@ -198,6 +200,37 @@ function PerformanceVisual({ reducedMotion }) {
   );
 }
 
+function VersionChip({ version, index, reducedMotion }) {
+  // Animation spécifique conservée ; contenu visible sans JavaScript.
+  const motionProps = useGatedInView({
+    from: { opacity: 0, y: 12 },
+    to: { opacity: 1, y: 0 },
+    transition: {
+      duration: 0.4,
+      delay: reducedMotion ? 0 : index * 0.2,
+    },
+    amount: 0,
+    disabled: reducedMotion,
+  });
+
+  return (
+    <motion.div
+      {...motionProps}
+      className={`
+        flex h-12 w-14 items-center justify-center
+        rounded-xl border text-xs font-semibold
+        ${
+          index === 2
+            ? "border-violet/40 bg-violet/15 text-violet-light"
+            : "border-white/10 bg-surface text-gray-400"
+        }
+      `}
+    >
+      {version}
+    </motion.div>
+  );
+}
+
 function EvolutionVisual({ reducedMotion }) {
   const versions = ["v1.0", "v1.1", "v1.2"];
 
@@ -206,33 +239,11 @@ function EvolutionVisual({ reducedMotion }) {
       <div className="flex items-center gap-2">
         {versions.map((version, index) => (
           <div key={version} className="flex items-center gap-2">
-            <motion.div
-              initial={
-                reducedMotion
-                  ? false
-                  : { opacity: 0, y: 12 }
-              }
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.4,
-                delay: reducedMotion ? 0 : index * 0.2,
-              }}
-              className={`
-                flex h-12 w-14 items-center justify-center
-                rounded-xl border text-xs font-semibold
-                ${
-                  index === 2
-                    ? "border-violet/40 bg-violet/15 text-violet-light"
-                    : "border-white/10 bg-surface text-gray-400"
-                }
-              `}
-            >
-              {version}
-            </motion.div>
+            <VersionChip
+              version={version}
+              index={index}
+              reducedMotion={reducedMotion}
+            />
 
             {index < versions.length - 1 && (
               <ArrowUpRight
@@ -260,22 +271,9 @@ function BenefitCard({ benefit, index, reducedMotion }) {
   const Visual = visuals[benefit.id];
 
   return (
-    <motion.article
-      initial={
-        reducedMotion
-          ? false
-          : { opacity: 0, y: 25 }
-      }
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{
-        duration: 0.6,
-        delay: reducedMotion ? 0 : index * 0.1,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+    <Reveal
+      as="article"
+      delay={(index % 2) * STAGGER}
       className="group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-surface/70 p-6 transition-colors duration-300 hover:border-white/15 sm:p-7"
     >
       <div className="flex items-center justify-between">
@@ -306,7 +304,7 @@ function BenefitCard({ benefit, index, reducedMotion }) {
       <p className="mt-3 text-sm leading-relaxed text-gray-400">
         {benefit.description}
       </p>
-    </motion.article>
+    </Reveal>
   );
 }
 
@@ -317,6 +315,7 @@ export default function MaintenanceBenefits() {
     <Section id="maintenance-benefits" bgColor="canvas">
       <SectionWrapper>
         <SectionHeading
+          reveal
           eyebrow="POURQUOI ENTRETENIR SON SITE ?"
           title="Un site performant aujourd'hui. Et demain."
           description="La mise en ligne n'est pas la fin d'un projet web. Un suivi adapté permet de prévenir certains problèmes, de maintenir le bon fonctionnement de votre site et de le faire évoluer dans le temps."
