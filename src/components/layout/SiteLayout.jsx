@@ -3,6 +3,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { MotionConfig } from "motion/react";
 import HeaderWrapper from "@/components/layout/HeaderWrapper";
 import Footer from "@/components/layout/Footer";
 
@@ -11,7 +12,7 @@ export default function SiteLayout({ children }) {
   const isHome = pathname === "/";
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <HeaderWrapper />
       <main
         className={
@@ -25,6 +26,6 @@ export default function SiteLayout({ children }) {
         {children}
       </main>
       <Footer />
-    </>
+    </MotionConfig>
   );
 }
