@@ -11,8 +11,8 @@ export default async function AdminLayout({ children }) {
   await requireAdmin();
 
   return (
-    <div className="min-h-screen bg-[#1e1e1e]">
-      <header className="border-b border-[#333] bg-[#252525]">
+    <div className="min-h-screen bg-surface-admin">
+      <header className="border-b border-line bg-surface">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <div>
             <p className="text-xs uppercase tracking-wider text-gray-500">
