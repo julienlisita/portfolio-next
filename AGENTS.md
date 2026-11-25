@@ -69,7 +69,15 @@ Principes :
 
 - Bibliothèque : `motion/react` exclusivement. Ne pas importer `framer-motion` (dépendance supprimée du projet).
 - **Sobriété** : l'animation sert la lecture (apparition, hiérarchie, feedback), jamais la décoration continue ou envahissante.
-- **Cohérence** : réutiliser les patterns existants (fondu + translation Y modérée, `whileInView` avec `viewport={{ once: true }}`, easing `[0.22, 1, 0.36, 1]`, durées proches de l'existant). Ne pas introduire un nouveau style de mouvement sans raison.
+- **Système commun** : valeurs de référence dans `src/lib/motion.js` (`EASE`, `DURATION`, `DISTANCE`, `VIEWPORT`, `STAGGER`…), composants dans `src/components/animations/`. Ne pas écrire de `whileInView` ad hoc pour une simple apparition au scroll.
+  - `Reveal` : un élément qui apparaît (props `as`, `y`, `x`, `scale`, `delay`, `duration`).
+  - `RevealGroup` + `RevealItem` : un ensemble qui tient dans l'écran, avec décalage progressif plafonné.
+  - Grille qui s'empile plus haut que l'écran sur mobile : un `Reveal` par élément, avec `delay={(index % colonnes) * STAGGER}` (un `RevealGroup` ferait attendre les éléments du bas).
+  - Titres : `<SectionHeading reveal>` et `<HomeSectionWrapper reveal>` (désactivés par défaut ; activer explicitement). Éviter la double animation (pas de `Reveal` autour d'un titre déjà `reveal`).
+  - Animation spécifique (mockup, jauge, frise) : `useGatedInView` (`Reveal.jsx`) et `AnimatePresence initial={false}`.
+- **Visible sans JS et au chargement** : `Reveal` rend le contenu visible côté serveur ; après hydratation, seuls les éléments situés sous le pli sont masqués puis révélés. Ne pas masquer d'élément visible au chargement (LCP) : `h1`, image principale, `PageHero`, `LandingSection` conservent leurs animations propres.
+- **Réduction de mouvement** : `MotionConfig reducedMotion="user"` est posé dans `SiteLayout` ; `Reveal` ne garde alors qu'un fondu court. Les boucles infinies doivent être couvertes (`useReducedMotion()`).
+- **Cohérence** : ne pas introduire un nouveau style de mouvement sans raison.
 - **Mutualisation** : si un pattern se répète, l'extraire (variants partagés, petit composant) plutôt que le recopier.
 - **Accessibilité** : respecter `useReducedMotion()` (supprimer déplacements et durées) ; ne pas masquer de contenu essentiel derrière une animation ; ne pas piéger le focus.
 - **Performances** : animer `transform` et `opacity` de préférence ; pas de boucles infinies lourdes ; pas d'animation sur de grandes listes sans nécessité ; `once: true` pour les apparitions au scroll.

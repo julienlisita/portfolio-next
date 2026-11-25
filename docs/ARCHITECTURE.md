@@ -20,12 +20,12 @@ src/
   app/            Routes (page.js fins), layouts, metadata, sitemap, robots, globals.css
   screens/        Assemblage des sections d'une page
   components/     Sections et composants, groupés par domaine
-    UI/ layout/ patterns/ form/ navigation/   → briques réutilisables
+    UI/ layout/ patterns/ form/ navigation/ animations/   → briques réutilisables
     home/ services/ about/ howIWork/ pricing/ portfolio/ blog/ contact/
     reservations/ legal/ login/ analytics/ crm/   → domaines
   data/           Contenu statique (articles, faqs, projectsData, technologies)
   server/         guards/ repositories/ services/   (code serveur uniquement)
-  lib/            prisma, auth (session), blog (lecture Markdown), analytics
+  lib/            prisma, auth (session), blog (lecture Markdown), analytics, motion (constantes d'animation)
   hooks/          useToggle
   utils/          formatDate, readingTime
   generated/prisma/   Client Prisma généré (ne pas éditer)
@@ -127,9 +127,18 @@ Les tokens sont définis dans `src/app/globals.css` via `@theme static` (Tailwin
 ## 8. Animations
 
 - Bibliothèque : `motion`, importée uniquement via `motion/react`. La dépendance directe `framer-motion` a été retirée ; `motion` embarque sa propre copie en dépendance interne, qui n'est pas à importer directement.
-- Patterns : entrée en fondu + translation (`y` 22–30 px) ; `PageHero` utilise des `variants` avec `staggerChildren` (0,12 s) ; sections utilisent `whileInView` avec `viewport={{ once: true, amount }}` ; easing `[0.22, 1, 0.36, 1]`.
-- Accessibilité : `useReducedMotion()` annule déplacements et durées dans les composants principaux (`PageHero`, `FaqSection`).
-- Éléments spécifiques : animation de réservation du hero d'accueil (`HeroBookingAnimation`), frise « process » de la page maintenance, mockups animés des pages de services.
+- **Système commun** (pages publiques, hors Réservations et mentions légales) :
+  - `src/lib/motion.js` : constantes de référence (easing `[0.22, 1, 0.36, 1]`, durées 0,3 / 0,65 / 0,8 s, distances 16 / 24 / 40 px, viewport `once` + `amount` 0,2, `STAGGER` 0,08 s plafonné à 0,5 s au total, durée réduite 0,2 s). Sans `"use client"`.
+  - `src/components/animations/Reveal.jsx` : `Reveal` (apparition d'un élément), `useRevealGate`, `useGatedInView` (animations spécifiques).
+  - `src/components/animations/RevealGroup.jsx` : `RevealGroup` + `RevealItem` (apparition échelonnée d'un ensemble).
+  - `SiteLayout` enveloppe le site dans `MotionConfig reducedMotion="user"`.
+  - `SectionHeading` et `HomeSectionWrapper` ont une prop `reveal` (désactivée par défaut). `Section` et `SectionWrapper` restent purement structurels.
+- **Visibilité sans JS (« gate »)** : rendu serveur et premier rendu visibles ; après montage, seuls les éléments sous le pli sont masqués (instantanément) puis révélés au défilement. Un élément visible au chargement n'est jamais animé (LCP, contenu lisible sans JS).
+- **Règle de choix** : `RevealGroup` pour un ensemble qui tient dans l'écran ; un `Reveal` par élément avec `delay={(index % colonnes) * STAGGER}` pour les grilles plus hautes que l'écran sur mobile.
+- Accessibilité : `reducedMotion="user"` supprime les déplacements ; `Reveal` ne garde qu'un fondu court. `useReducedMotion()` reste utilisé localement quand c'est nécessaire (`PageHero`, `FaqSection`).
+- **Hors système commun (volontairement conservés)** : `PageHero` (`variants` + `staggerChildren` 0,12 s), `LandingSection`, `FaqSection`, `CtaFinal`, `HeroBookingAnimation`, `ServicesMethod` (étapes pilotées par le défilement). Animations spécifiques des mockups de services via `useGatedInView`.
+- **Limites connues** : `PageHero`, FAQ, `CtaFinal` et mockups du hero restent masqués (`opacity: 0`) avant hydratation et sans JS ; `ServicesMethod` et les panneaux d'accordéon repliés aussi ; animation de `box-shadow` (`ProjectCard`, `CtaFinal`) à optimiser ; `LazyMotion` non évalué. Le moteur `motion` est dupliqué entre groupes de routes dans les chunks (≈150 Ko gzip chacun, une seule copie chargée par page).
+- Non animés : formulaire de contact, page article du blog, image principale du détail d'une réalisation (LCP).
 - Transitions de survol : classes Tailwind (`transition`, `duration-300`), pas de `motion`.
 
 ## 9. SEO et accessibilité
